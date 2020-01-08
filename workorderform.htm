@@ -1,0 +1,1722 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>    
+<style>          
+<!-- body {font-family: Arial, Helvetica, sans-serif;} --> body {font-family: "Lato", sans-serif;} .sidenav {
+  height: 100%;
+  width: 125px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #4a4a4a;
+  overflow-x: hidden;
+  padding-top: 20px;
+  font-size: 1.3em;
+}
+
+.main {font-size: 1.2em;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  font-size: 1.1em;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+  font-size: 1.6em;
+}
+
+.modal { 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+  padding-top: 60px;
+  font-size: 1.1em;
+}
+
+.Fixed
+{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color:#000000;
+    color:#dddddd;
+}
+
+
+input[type="text"]
+{
+    font-size:15px;
+}
+
+select
+{
+    font-size:13px;
+}
+table tr#divider  {background-color:#000000;}
+table tr#ROW1  {background-color:#dddddd;}
+table tr#ROW2  {background-color:#dddddd;}
+table tr#ROW3  {background-color:#dddddd;}
+table tr#ROW4  {background-color:#dddddd;}
+table tr#ROW5  {background-color:#dddddd;}
+table tr#ROW6  {background-color:#dddddd;}
+table tr#ROW7  {background-color:#F7A33B;}
+table tr#des  {font-size:0.7em;}
+div#info1  {background-color:#F2EE79;}
+div#info2  {background-color:#F2EE79;}
+div#info3  {background-color:#F2EE79;}
+div#info4  {background-color:#F2EE79;}
+
+#overlay {
+  position: fixed;
+  width: 100%; 
+  height: 100%; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:#000000; 
+  z-index: 2; 
+  cursor: pointer; 
+  font-size: 1.7em;
+  color:#dddddd;
+}
+#overlay1 {
+  position: fixed;
+  width: 100%; 
+  height: 100%; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:#ffffff; 
+  z-index: 2; 
+  cursor: pointer; 
+  font-size: 1.7em;
+  color:#dddddd;
+}
+input[type=password] {
+  width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size:15px;
+}
+.username{width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;}
+.greenfield {background-color: #00A146;}
+.yellowfield {background-color: #EEF52C;}
+.redfield {background-color: #F71302;}
+.grayfield {background-color:#dddddd;}
+.orangefield {background-color:#fc7f03;}
+.bluefield {background-color:#0202fa;}
+.purplefield {background-color:#e605ff;}
+.torqfield {background-color:#05ffd1;}
+.limegreenfield {background-color:#82ff05;}
+.pinkfield {background-color:#ff8cea;}
+.peachfield {background-color:#f0c3a3;}
+.button {font-size: 16px;}
+.submitbutton {font-size: 16px;
+padding: 15px 32px;
+background-color: #00A146;
+}
+.buttontext {font-size:0.4em;}
+input.largerCheckbox
+{
+width: 30px;
+height: 30px;
+}
+
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+#frame {
+ width: 420px;
+ height: 150px; 
+ overflow:hidden;
+ position:relative;
+}
+#bottomframe {
+ width: 400px;
+ height: 100px;
+ position:absolute;
+ top:53px;
+ left:11px;
+ background-color:#F2EE79;
+}
+#leftframe {
+ width: 45px;
+ height: 150px;
+ position:absolute;
+ top:3px;
+ left:10px;
+ background-color:#F2EE79;
+}
+#rightframe {
+ width: 14px;
+ height: 150px;
+ position:absolute;
+ top:3px;
+ right:10px;
+ background-color:#F2EE79;
+}
+#topframe {
+ width: 420px;
+ height: 26px;
+ position:absolute;
+ top:0px;
+ background-color:#F2EE79;
+}
+
+.sidepanel  {
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  height: 250px;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidepanel a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidepanel a:hover {
+  color: #f1f1f1;
+}
+
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color:#444;
+}
+</style>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-56318310-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    <base target="_top"/>
+<script>
+function homepage() {
+  document.getElementById("overlay1").style.display = "none";
+  //eventually i want to change this so that it navigates to the Home page 
+}
+</script>
+
+<script>
+function intakeform() {
+  document.getElementById("overlay1").style.display = "none";
+  document.getElementById("saskrcmpintake").style.display = "none";
+  document.getElementById("timespent").style.display = "block";
+  
+var strip = document.getElementById("stripcheckbox");
+var stripformbutton = document.getElementById("stripformbutton");
+if (strip.checked == true)
+{
+stripformbutton.style.display = "block";
+} else {
+stripformbutton.style.display = "none";
+  }
+
+//var cleaning = document.getElementById("cleaningcheckbox");
+//var cleaningformbutton = document.getElementById("cleaningformbutton");
+//if (cleaning.checked == true)
+//{
+//cleaningformbutton.style.display = "block";
+//} else {
+//cleaningformbutton.style.display = "none";
+ // }
+
+var build = document.getElementById("buildcheckbox");
+var buildformbutton = document.getElementById("buildformbutton");
+if (build.checked == true)
+{
+buildformbutton.style.display = "block";
+} else {
+buildformbutton.style.display = "none";
+  }
+  
+var other = document.getElementById("othercheckbox");
+var otherformbutton = document.getElementById("otherformbutton");
+if (other.checked == true)
+{
+otherformbutton.style.display = "block";
+} else {
+otherformbutton.style.display = "none";
+  }
+
+}
+</script>
+
+<script>
+function showstripform() {
+  document.getElementById("stripformbutton").style.display = "none";
+  document.getElementById("stripform").style.display = "block";
+}
+</script>
+
+<script>
+function showcleaningform() {
+  document.getElementById("cleaningformbutton").style.display = "none";
+  document.getElementById("cleaningform").style.display = "block";
+}
+</script>
+
+<script>
+function showbuildform() {
+  document.getElementById("buildformbutton").style.display = "none";
+  document.getElementById("buildform").style.display = "block";
+}
+</script>
+
+<script>
+function showotherform() {
+  document.getElementById("otherformbutton").style.display = "none";
+  document.getElementById("otherform").style.display = "block";
+}
+</script>
+
+<script>
+function submissionspage() {
+  document.getElementById("overlay1").style.display = "block";
+}
+</script>
+
+<script>
+window.onload = () => {
+  let hour = 0;
+  let minute = 0;
+  let seconds = 0;
+  let totalSeconds = 0;
+  
+  let intervalId = null;
+  
+  function startTimer() {
+    ++totalSeconds;
+    hour = Math.floor(totalSeconds /3600);
+    minute = Math.floor((totalSeconds - hour*3600)/60);
+    seconds = totalSeconds - (hour*3600 + minute*60);
+
+    document.getElementById("hour").innerHTML =hour+":"+ minute;
+    
+    //document.getElementById("minute").innerHTML =minute;
+    document.getElementById("seconds").innerHTML =totalSeconds;
+  }
+
+  document.getElementById('start-btn').addEventListener('click', () => {
+    intervalId = setInterval(startTimer, 1000);
+  })
+  
+  document.getElementById('stop-btn').addEventListener('click', () => {
+    if (intervalId)
+      clearInterval(intervalId);
+  });
+  
+   
+  document.getElementById('reset-btn').addEventListener('click', () => {
+     totalSeconds = 0;
+     document.getElementById("hour").innerHTML = '0';
+     document.getElementById("minute").innerHTML = '0';
+     document.getElementById("seconds").innerHTML = '0';
+  });
+}
+</script>
+
+</head>
+
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$.fn.serializeObject = function()
+{
+var o = {};
+var a = this.serializeArray();
+$.each(a, function() {
+if (o[this.name]) {
+if (!o[this.name].push) {
+o[this.name] = [o[this.name]];
+}
+o[this.name].push(this.value || '');
+} else {
+o[this.name] = this.value || '';
+}
+});
+return o;
+};
+</script>
+
+<div>
+<img src="https://drive.google.com/uc?id=1T2TM9M4LCFyk0cl-Y8rEtI0mt6ugVGQT"  top=35px left=65px height=60 width=170/><br>
+</div>
+
+<div id="mySidepanel" class="sidepanel">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="#">Home</a>
+  <a href="#">Sask. RCMP Intake</a>
+  <a href="#">Sask. RCMP Job Form</a>
+</div>
+
+<button class="openbtn" onclick="openNav()">☰</button>  
+<script>
+function openNav() {
+  document.getElementById("mySidepanel").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidepanel").style.width = "0";
+}
+</script>
+
+<div id=timespent style="display:none;" class="Fixed">
+<p>
+Time Spent
+</p>
+<div>HH:mm <span id="hour" style="color:green;"></span></div>
+<div style="display:none;"><p id="seconds"></p></div>
+
+<button id="start-btn">Continue</button>
+<button id="stop-btn">Pause Job</button>
+
+</div>
+<br><br>
+<center>
+  <form id="saskrcmpintake">
+  <h1>
+  Saskatchewan RCMP Intake
+  </h1>
+<br><br>
+
+  <b><label style="color:blue"><font size ="5">Job Type</font></label></b><br><br>
+   <label><font size="5"><input id="stripcheckbox" class=largerCheckbox type="checkbox" > Strip</font></label><br>
+    <!--<label><font size="5"><input id="cleaningcheckbox" class=largerCheckbox type="checkbox" > Cleaning</font></label><br>-->
+    <label><font size="5"><input id="buildcheckbox" class=largerCheckbox type="checkbox" > Build</font></label><br>
+    <label><font size="5"><input id="othercheckbox" class=largerCheckbox type="checkbox" onclick="otherinput();" > Other</font></label><br>
+    <input type="text" id="othertextinput" name="othertextinput" style="display:none;font-size:23px;"><br><br>
+    
+    <label style="color:blue"><font size="5">Work Required:&nbsp;&nbsp;<input style="font-size:23px;" id="workrequiredintake" name="workrequiredintake" type="text"></font></label>
+    
+    <br><br><br>
+
+<label style="color:blue"><font size="5">Receiver's Name:&nbsp;&nbsp;<input style="color:blue;font-size:23px;" id="receiversname" name="receiversname" type="text" list=receiverslist></font><datalist id="receiverslist" name="receiverslist" style="font-size:23px;">
+<select>
+</select> 
+</datalist></label>
+<br><br><br>
+
+<table>
+<tr>
+  <td><label style="color:blue"><font size="5">Unit Number:&nbsp;&nbsp;<input style="font-size:23px;" id="unitnumberintake" name="unitnumberintake" type="text"></font></label></td>
+  
+  <td><input class="button" id="img1" type="file" accept="image/*"/><input id ="imgtext1" name="unitnumber-imagelink" type="hidden"/></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">Call Sign:&nbsp;&nbsp;<input style="font-size:23px;" id="callsignintake" name="callsignintake" type="text"></font></label></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">Call Up #:&nbsp;&nbsp;<input style="font-size:23px;" id="callupintake" name="callupintake" type="text"></font></label></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">Odometer Reading:&nbsp;&nbsp;<input style="font-size:23px;" id="odometerintake" name="odometerintake" type="number"></font></label></td>
+  <td><input class="button" id="img2" name="img2" type="file" accept="image/*"/><input id ="imgtext2" name="" type="hidden"/></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">VIN:&nbsp;&nbsp;&nbsp;<input style="font-size:23px;" id="vinintake" type="text"></font></label></td>
+  <td><input class="button" id="img3" name="img3" type="file" accept="image/*"/><input id ="imgtext3" name="" type="hidden"/></td>
+</tr>
+
+</table>
+
+
+<br><br><br><br>
+ 
+ <table>
+ <tr>
+   <td style="color:black"><font size="5"><b>Driver-side view of vehicle</b><br><input class="button" id="img4" name="img4" type="file" accept="image/*"/><input id ="imgtext4" name="" type="hidden"/></font>
+   </td>
+   <td style="color:black">
+     <font size="5"><b>Front view of vehicle</b><br><input class="button" id="img5" name="img5" type="file" accept="image/*"/><input id ="imgtext5" name="" type="hidden"/></font>
+   </td>
+ </tr>
+ <tr><td></td><td></td></tr>
+ <tr>
+   <td style="color:black"><font size="5"><b>Passenger-side view of vehicle</b><br><input class="button" id="img6" name="img6" type="file" accept="image/*"/><input id ="imgtext6" name="" type="hidden"/></font>
+   </td>
+   <td style="color:black">
+     <font size="5"><b>Rear view of vehicle</b><br><input class="button" id="img7" name="img7" type="file" accept="image/*"/><input id ="imgtext7" name="" type="hidden"/></font>
+   </td>
+ </tr>
+ 
+ </table>
+ <br><br><br>
+
+<label style="color:blue"><font size="5">Notes/Comments:&nbsp;&nbsp;&nbsp;<input style="font-size:23px;" id="notesintake" name="notesintake" type="text"></font></label><br><br><br>
+<button class="submitbutton" id="submit-form" type="submit" onclick="submissionspage();">Submit</button>
+
+
+  
+<div id="overlay1" style="display:none" class="modal">
+    <img src="https://drive.google.com/uc?id=1T2TM9M4LCFyk0cl-Y8rEtI0mt6ugVGQT"  top=35px left=65px height=60 width=170/>
+    
+    <h2 style="color:black;">
+    Thank you.<br><br> Please click 'Continue to Job Form' to start a job or 'Home' to return to the homepage. 
+    </h2>
+    
+    <button class="button" id="homepage" onclick="homepage();">Home</button>
+    
+    <button class="button" id="formnav" onclick="intakeform();">Continue to Job Form</button>
+    
+</div> 
+ 
+ 
+<script>
+var fileInput = document.getElementById('img1');
+//var preview = document.getElementById('preview');
+
+fileInput.addEventListener('change', function(e) {
+  
+    var imgurl = URL.createObjectURL(e.target.files[0]);
+    document.getElementById("imgtext1").value = imgurl;
+}, false);
+</script>
+
+<script>
+var fileInput = document.getElementById('img2');
+//var preview = document.getElementById('preview');
+
+fileInput.addEventListener('change', function(e) {
+  
+    var imgurl = URL.createObjectURL(e.target.files[0]);
+    document.getElementById("imgtext2").value = imgurl;
+}, false);
+</script>
+
+<script>
+var fileInput = document.getElementById('img3');
+//var preview = document.getElementById('preview');
+
+fileInput.addEventListener('change', function(e) {
+  
+    var imgurl = URL.createObjectURL(e.target.files[0]);
+    document.getElementById("imgtext3").value = imgurl;
+}, false);
+</script>
+
+<script>
+var fileInput = document.getElementById('img4');
+//var preview = document.getElementById('preview');
+
+fileInput.addEventListener('change', function(e) {
+  
+    var imgurl = URL.createObjectURL(e.target.files[0]);
+    document.getElementById("imgtext4").value = imgurl;
+}, false);
+</script>
+
+<script>
+var fileInput = document.getElementById('img5');
+//var preview = document.getElementById('preview');
+
+fileInput.addEventListener('change', function(e) {
+  
+    var imgurl = URL.createObjectURL(e.target.files[0]);
+    document.getElementById("imgtext5").value = imgurl;
+}, false);
+</script>
+
+<script>
+var fileInput = document.getElementById('img6');
+//var preview = document.getElementById('preview');
+
+fileInput.addEventListener('change', function(e) {
+  
+    var imgurl = URL.createObjectURL(e.target.files[0]);
+    document.getElementById("imgtext6").value = imgurl;
+}, false);
+</script>
+
+<script>
+var fileInput = document.getElementById('img7');
+//var preview = document.getElementById('preview');
+
+fileInput.addEventListener('change', function(e) {
+  
+    var imgurl = URL.createObjectURL(e.target.files[0]);
+    document.getElementById("imgtext7").value = imgurl;
+}, false);
+</script>
+
+  </form>
+  
+</center>
+
+<center><button style="display:none" class="submitbutton" id="stripformbutton" type="submit" onclick="showstripform();clickcontinue();">Start Strip</button></center>
+
+<center>
+  <form style="display:none" id="stripform">
+<h2>
+Sask. RCMP Strip
+</h2>
+
+<table>
+<tr>
+  <td><label style="color:blue"><font size="5">Unit Number:&nbsp;&nbsp;<input style="font-size:23px;" id="unitnumberstrip" name="unitnumberstrip" type="text"></font></label></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">Odometer Reading:&nbsp;&nbsp;<input style="font-size:23px;" id="odometerstrip" name="odometerstrip" type="number"></font></label></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">VIN:&nbsp;&nbsp;&nbsp;<input style="font-size:23px;" id="vinstrip" name="vinstrip" type="text"></font></label></td>
+</tr>
+
+</table>
+<br><br>
+<h3>
+RCMP Vehicle Inspection Guide
+</h3>
+<br><br>
+
+<canvas style="background: url('https://drive.google.com/uc?id=1mqYqIfOuhDo90zlmHaHo2Qu3Kh6qoIW2');" width="392" height="500">
+</canvas>
+
+<br><br><br>
+<table>
+<tr>
+  <td>Item</td>
+  <td>Pass</td>
+  <td>Fail</td>
+  <td>Description</td>
+</tr>
+<tr>
+<td><label><font size="5"> Dash Indicator Lights&nbsp;&nbsp;</font></label></td>
+<td><input id="stripdashpasscheckbox" class=largerCheckbox type="checkbox"></td>
+<td><input id="stripdashfailcheckbox" class=largerCheckbox type="checkbox" ></td>
+  <td><input style="font-size:23px;" id="stripdashtext" name="stripdashtext" type="text"></td>
+</tr>
+
+<tr>
+<td><label><font size="5"> Mirrors&nbsp;&nbsp;</font></label></td>
+<td><input id="mirrorspassstripcheckbox" class=largerCheckbox type="checkbox"></td>
+<td><input id="mirrorsfailstripcheckbox" class=largerCheckbox type="checkbox" ></td>
+  <td><input style="font-size:23px;" id="mirrorsstriptext" name="mirrorsstriptext" type="text"></td>
+</tr>
+
+<tr>
+<td><label><font size="5"> Wipers&nbsp;&nbsp;</font></label></td>
+<td><input id="wiperspassstripcheckbox" class=largerCheckbox type="checkbox"></td>
+<td><input id="wipersfailstripcheckbox" class=largerCheckbox type="checkbox" ></td>
+  <td><input style="font-size:23px;" id="wipersstriptext" name="wipersstriptext" type="text"></td>
+</tr>
+
+<tr>
+<td><label><font size="5"> Tire condition&nbsp;&nbsp;</font></label></td>
+<td><input id="tireconditionpassstripcheckbox" class=largerCheckbox type="checkbox"></td>
+<td><input id="tireconditionstripcheckbox" class=largerCheckbox type="checkbox" ></td>
+  <td><input style="font-size:23px;" id="tireconditionstriptext" name="tireconditionstriptext" type="text"></td>
+</tr>
+
+<tr>
+<td><label><font size="5"> Glass condition&nbsp;&nbsp;</font></label></td>
+<td><input id="glassconditionpassstripcheckbox" class=largerCheckbox type="checkbox"></td>
+<td><input id="glassconditionstripcheckbox" class=largerCheckbox type="checkbox" ></td>
+  <td><input style="font-size:23px;" id="glassconditionstriptext" name="glassconditionstriptext" type="text"></td>
+</tr>
+
+<tr>
+<td><label><font size="5"> Battery condition&nbsp;&nbsp;</font></label></td>
+<td><input id="batteryconditionpassstripcheckbox" class=largerCheckbox type="checkbox"></td>
+<td><input id="batteryconditionfailstripcheckbox" class=largerCheckbox type="checkbox" ></td>
+  <td><input style="font-size:23px;" id="batteryconditionstriptext" name="batteryconditionstriptext" type="text"></td>
+</tr>
+
+</table>
+
+
+<br><br><br>
+<h2>
+RCMP Standing Offer No. M5000-160786/001/WNP<br><br>SUMMARY OF REMOVAL OF EQUIPMENT
+</h2>
+<table>
+<tr>
+  <td>All types - if present, check to indicate removal:</td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="siren" class=largerCheckbox type="checkbox" > Siren controller unit, keypad and siren speaker</font></label></td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="lightbar" class=largerCheckbox type="checkbox" > Light bar assembly</font></label></td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="headlightflasher" class=largerCheckbox type="checkbox" > Headlight flasher</font></label></td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="cornerstrobe" class=largerCheckbox type="checkbox" > Corner strobes/Power supply and/or LED lights</font></label></td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="reartraffic" class=largerCheckbox type="checkbox" > Rear traffic advisor</font></label></td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="additionallighting" class=largerCheckbox type="checkbox" > Any additional lighting</font></label></td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="horntransfer" class=largerCheckbox type="checkbox" > Horn transfer and vehicle lighting enable (returned to OEM status)</font></label></td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="powerdistributionunit" class=largerCheckbox type="checkbox" > Power distribution unit</font></label></td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="interiorlighting" class=largerCheckbox type="checkbox" > Added interior lighting (partition and additional roof lighting)</font></label></td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="basewiring" class=largerCheckbox type="checkbox" > Base wiring harness</font></label></td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="policeradio" class=largerCheckbox type="checkbox" > Police radio/s system</font></label></td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="antennascabling" class=largerCheckbox type="checkbox" > Antennas and cabling</font></label></td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="centerconsole" class=largerCheckbox type="checkbox" > Center console assembly</font></label></td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="dashmount" class=largerCheckbox type="checkbox" > Dash mount system</font></label></td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="laptopdocking" class=largerCheckbox type="checkbox" > Laptop docking station</font></label></td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="icdvs" class=largerCheckbox type="checkbox" > In-car Digital Video System (ICDVS)</font></label></td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="prisonerpartition" class=largerCheckbox type="checkbox" > Prisoner partition shield (potentially two in the SUV)</font></label></td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="rearequipment" class=largerCheckbox type="checkbox" > Rear equipment/Storage box or Equipment tray and toll box</font></label></td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="shotgunrack" class=largerCheckbox type="checkbox" > Shotgun rack/Carbine rack</font></label></td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="rearsidewindowbars" class=largerCheckbox type="checkbox" > Rear and/or Side window bars</font></label></td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="radarsystem" class=largerCheckbox type="checkbox" > Radar system including VSS cable installation and video interface cable</font></label></td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="secureidle" class=largerCheckbox type="checkbox" > Secure idle (returned to OEM status)</font></label></td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="allipvequipment" class=largerCheckbox type="checkbox" > All Integrated Police Vehicle (IPV) Equipment</font></label></td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="otherstrip" class=largerCheckbox type="checkbox" > Other - (e.g. hidden lighting, lock boxes)</font></label></td>
+</tr>
+<tr>
+  <td style="background-color:black"></td>
+</tr>
+<tr>
+  <td style="background-color:black"></td>
+</tr>
+<tr>
+  <td style="background-color:black"></td>
+</tr>
+<tr>
+  <td style="background-color:black"></td>
+</tr>
+<tr>
+  <td>
+    DETAILS OF EQUIPMENT REMOVAL
+  </td>
+</tr>
+<tr>
+  <td>
+    The contractor will be contacted by the identified user, as per Contract Part 7A, 7.7 "as when required" to remove all or requested police/safety/additional equipment without damage to the equipment, vehicle and manufacturers wiring in various vehicle platforms. In addition to the removal of the police/safety equipment platform specific factory equipment will need to be re-enabled (e.g. daytime running lights, lighting, horn, secure idle removal).A pre-inspection check sheet will be provided by the RCMP to assist with the location of all police/safety equipment for removal. All equipment must be returned to the identified user, as per Contract Part 7 A 7.7, in an organized fashion.
+  </td>
+</tr>
+
+</table>
+</form>
+</center>
+
+<!-- Cleaning Intake Form. -->
+<center><button style="display:none" class="submitbutton" id="cleaningformbutton" type="submit" onclick="showcleaningform();clickcontinue();">Start Cleaning Job</button></center>
+
+<center>
+  <form style="display:none" id="cleaningform">
+<h2>
+Sask. RCMP Cleaning
+</h2>
+
+<table>
+<tr>
+  <td><label style="color:blue"><font size="5">Unit Number:&nbsp;&nbsp;<input style="font-size:23px;" id="unitnumbercleaning" name="unitnumbercleaning"type="text"></font></label></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">Odometer Reading:&nbsp;&nbsp;<input style="font-size:23px;" id="odometercleaning" name="odometercleaning" type="number"></font></label></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">VIN:&nbsp;&nbsp;&nbsp;<input style="font-size:23px;" id="vincleaning" name="vincleaning" type="text"></font></label></td>
+</tr>
+
+</table>
+
+</form>
+</center>
+
+<!-- Build-Intake Form. -->
+<center><button style="display:none" class="submitbutton" id="buildformbutton" type="submit" onclick="showbuildform();clickcontinue();">Start Build Job</button></center>
+
+<center>
+  <form style="display:none" id="buildform">
+<h2>
+Sask. RCMP Build
+</h2>
+
+<table>
+<tr>
+  <td><label style="color:blue"><font size="5">Unit Number:&nbsp;&nbsp;<input style="font-size:23px;" id="unitnumberbuild" name="unitnumberbuild"type="text"></font></label></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">Odometer Reading:&nbsp;&nbsp;<input style="font-size:23px;" id="odometerbuild" name="odometerbuild" type="number"></font></label></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">VIN:&nbsp;&nbsp;&nbsp;<input style="font-size:23px;" id="vinbuild" name="vinbuild" type="text"></font></label></td>
+</tr>
+
+</table>
+
+<br><br>
+<h3>
+RCMP Vehicle Inspection Guide
+</h3>
+<br><br>
+
+<canvas style="background: url('https://drive.google.com/uc?id=1mqYqIfOuhDo90zlmHaHo2Qu3Kh6qoIW2');" width="392" height="500">
+</canvas>
+
+<br><br><br>
+<table>
+<tr>
+  <td>Item</td>
+  <td>Pass</td>
+  <td>Fail</td>
+  <td>Description</td>
+</tr>
+<tr>
+<td><label><font size="5"> Dash Indicator Lights&nbsp;&nbsp;</font></label></td>
+<td><input id="builddashpasscheckbox" class=largerCheckbox type="checkbox"></td>
+<td><input id="builddashfailcheckbox" class=largerCheckbox type="checkbox" ></td>
+  <td><input style="font-size:23px;" id="builddashtext" name="builddashtext" type="text"></td>
+</tr>
+
+<tr>
+<td><label><font size="5"> Mirrors&nbsp;&nbsp;</font></label></td>
+<td><input id="mirrorspassbuildcheckbox" class=largerCheckbox type="checkbox"></td>
+<td><input id="mirrorsfailbuildcheckbox" class=largerCheckbox type="checkbox" ></td>
+  <td><input style="font-size:23px;" id="mirrorsbuildtext" name="mirrorsbuildtext" type="text"></td>
+</tr>
+
+<tr>
+<td><label><font size="5"> Wipers&nbsp;&nbsp;</font></label></td>
+<td><input id="wiperspassbuildcheckbox" class=largerCheckbox type="checkbox"></td>
+<td><input id="wipersfailbuildcheckbox" class=largerCheckbox type="checkbox" ></td>
+  <td><input style="font-size:23px;" id="wipersbuildtext" name="wipersbuildtext" type="text"></td>
+</tr>
+
+<tr>
+<td><label><font size="5"> Tire condition&nbsp;&nbsp;</font></label></td>
+<td><input id="tireconditionpassbuildcheckbox" class=largerCheckbox type="checkbox"></td>
+<td><input id="tireconditionbuildcheckbox" class=largerCheckbox type="checkbox" ></td>
+  <td><input style="font-size:23px;" id="tireconditionbuildtext" name="tireconditionbuildtext" type="text"></td>
+</tr>
+
+<tr>
+<td><label><font size="5"> Glass condition&nbsp;&nbsp;</font></label></td>
+<td><input id="glassconditionpassbuildcheckbox" class=largerCheckbox type="checkbox"></td>
+<td><input id="glassconditionbuildcheckbox" class=largerCheckbox type="checkbox" ></td>
+  <td><input style="font-size:23px;" id="glassconditionbuildtext" name="glassconditionbuildtext" type="text"></td>
+</tr>
+
+<tr>
+<td><label><font size="5"> Battery condition&nbsp;&nbsp;</font></label></td>
+<td><input id="batteryconditionpassbuildcheckbox" class=largerCheckbox type="checkbox"></td>
+<td><input id="batteryconditionfailbuildcheckbox" class=largerCheckbox type="checkbox" ></td>
+  <td><input style="font-size:23px;" id="batteryconditionbuildtext" name="batteryconditionbuildtext" type="text"></td>
+</tr>
+
+</table>
+
+
+
+<br><br><br>
+<h2>
+Check off installed items for this build
+</h2>
+<h3>
+Interior Disassembly and Reassembly
+</h3>
+
+<table>
+<tr>
+  <td><label><font size="5"><input id="headlinercheckbox" class=largerCheckbox type="checkbox" > Headliner</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="headlinertext" name="headlinertext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="frontseatscheckbox" class=largerCheckbox type="checkbox" > Front Seats (sedan only)</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="frontseatstext" name="frontseatstext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="rearseatscheckbox" class=largerCheckbox type="checkbox" > Rear Seats (sedan only)</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="rearseatstext" name="rearseatstext">
+  </td>
+</tr>
+
+</table>
+
+<h3>
+Roof Assembly
+</h3>
+
+<table>
+<tr>
+  <td><label><font size="5"><input id="lightbarcheckbox" class=largerCheckbox type="checkbox" > Light bar mount and feed</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="lightbartext" name="lightbartext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="antennascheckbox" class=largerCheckbox type="checkbox" > Antennas mount and feed</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="antennastext" name="antennastext">
+  </td>
+</tr>
+
+</table>
+
+<h3>
+Radar
+</h3>
+
+<table>
+<tr>
+  <td><label><font size="5"><input id="mountfrontandrearcheckbox" class=largerCheckbox type="checkbox" > Mount front and rear brackets</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="mountfrontandreartext" name="mountfrontandreartext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="mountantennacheckbox" class=largerCheckbox type="checkbox" > Mount antenna heads if provided</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="mountantennatext" name="mountantennatext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="layradarcheckbox" class=largerCheckbox type="checkbox" > Lay radar head control on dash if provided</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="layradartext" name="layradartext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="radarwiringcheckbox" class=largerCheckbox type="checkbox" > Wiring</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="radarwiringtext" name="radarwiringtext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="radartestcheckbox" class=largerCheckbox type="checkbox" > Test</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="radartesttext" name="radartesttext">
+  </td>
+</tr>
+</table>
+
+<h3>
+Watch Guard
+</h3>
+
+<table>
+<tr>
+  <td><label><font size="5"><input id="watchguardcheckbox" class=largerCheckbox type="checkbox" > Watch Guard</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="watchguardtext" name="watchguardtext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="wiringdetailscheckbox" class=largerCheckbox type="checkbox" > Wiring details</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="wiringdetailstext" name="wiringdetailstext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="videomountingcheckbox" class=largerCheckbox type="checkbox" > Video mounting plate</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="videomountingtext" name="videomountingtext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="displayoverheadcheckbox" class=largerCheckbox type="checkbox" > Display overhead mount</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="displayoverheadtext" name="displayoverheadtext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="frontcameracheckbox" class=largerCheckbox type="checkbox" > Front camera mount</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="frontcameratext" name="frontcameratext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="wirelessmiccheckbox" class=largerCheckbox type="checkbox" > Wireless mic mount</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="wirelessmictext" name="wirelessmictext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="rearcammiccheckbox" class=largerCheckbox type="checkbox" > Rear camera and mic mount</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="rearcammictext" name="rearcammictext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="watchguardwiringcheckbox" class=largerCheckbox type="checkbox" > Wiring</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="watchguardwiringtext" name="watchguardwiringtext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="watchguardtestingcheckbox" class=largerCheckbox type="checkbox" > Testing</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="watchguardtestingtext" name="watchguardtestingtext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="shutsoffcheckbox" class=largerCheckbox type="checkbox" > Shuts off with key off</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="shutsofftext" name="shutsofftext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="testtimercheckbox" class=largerCheckbox type="checkbox" > Test timer</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="testtimertext" name="testtimertext">
+  </td>
+</tr>
+</table>
+
+<h3>
+Dash and Radio Cencom Controller
+</h3>
+
+<table>
+<tr>
+  <td><label><font size="5"><input id="motorolacheckbox" class=largerCheckbox type="checkbox" > Motorola XTL5000-'05' Control Head</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="motorolatext" name="motorolatext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="radiomiccheckbox" class=largerCheckbox type="checkbox" > Radio microphone/PA microphone</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="radiomictext" name="radiomictext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="papositioncheckbox" class=largerCheckbox type="checkbox" > Position of PA (PTT) microphone</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="papositiontext" name="papositiontext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="radiocablecheckbox" class=largerCheckbox type="checkbox" > Radio cable installation</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="radiocabletext" name="radiocabletext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="cencomcheckbox" class=largerCheckbox type="checkbox" > Cencom controller label and mount</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="cencomtext" name="cencomtext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="wiringharnesscheckbox" class=largerCheckbox type="checkbox" > Wiring harness layout</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="wiringharnesstext" name="wiringharnesstext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="hardwareinstallationcheckbox" class=largerCheckbox type="checkbox" > Hardware Installation</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="hardwareinstallationtext" name="hardwareinstallationtext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="dashradiowiringcheckbox" class=largerCheckbox type="checkbox" > Wiring</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="dashradiowiringtext" name="dashradiowiringtext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="dashtestingcheckbox" class=largerCheckbox type="checkbox" > Testing</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="dashtestingtext" name="dashtestingtext">
+  </td>
+</tr>
+</table>
+
+<h3>
+PMT Center Console
+</h3>
+
+<table>
+<tr>
+  <td><label><font size="5"><input id="disassemblepmtcheckbox" class=largerCheckbox type="checkbox" > Disassemble PMT Center Console</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="disassemblepmttext" name="disassemblepmttext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="removetopplatescheckbox" class=largerCheckbox type="checkbox" > Remove all top plates</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="removetopplatestext" name="removetopplatestext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="removemountingcheckbox" class=largerCheckbox type="checkbox" > Remove mounting brackets</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="removemountingtext" name="removemountingtext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="installmountingcheckbox" class=largerCheckbox type="checkbox" > Install mounting brackets to vehicle</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="installmountingtext" name="installmountingtext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="mountsidebracketscheckbox" class=largerCheckbox type="checkbox" > (SUV only) mount side brackets for lower dash DS/PS sides</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="mountsidebracketstext" name="mountsidebracketstext">
+  </td>
+</tr>
+</table>
+
+<h3>
+Docking Station (if required)
+</h3>
+
+<table>
+<tr>
+  <td><label><font size="5"><input id="prewiredockingcheckbox" class=largerCheckbox type="checkbox" > Pre-wire docking station, tape and loom to proper length</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="prewiredockingtext" name="prewiredockingtext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="mountdockingcheckbox" class=largerCheckbox type="checkbox" > Mount docking station to center console</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="mountdockingtext" name="mountdockingtext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="mountpowercheckbox" class=largerCheckbox type="checkbox" > Mount power distribution to center console</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="mountpowertext" name="mountpowertext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="mountmiccheckbox" class=largerCheckbox type="checkbox" > Mount mic clip to center console plate</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="mountmictext" name="mountmictext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="predrillholecheckbox" class=largerCheckbox type="checkbox" > Pre-drill hole to the center console plate for extra USB cable</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="predrillholetext" name="predrillholetext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="installcenterconsolecheckbox" class=largerCheckbox type="checkbox" > Install center console to vehicle</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="installcenterconsoletext" name="installcenterconsoletext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="dockingstationwirecheckbox" class=largerCheckbox type="checkbox" > Wire</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="dockingstationwiretext" name="dockingstationwiretext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="dockingstationtestcheckbox" class=largerCheckbox type="checkbox" > Test</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="dockingstationtesttext" name="dockingstationtesttext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="mountcenterconsolecheckbox" class=largerCheckbox type="checkbox" > Mount center console plates</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="mountcenterconsoletext" name="mountcenterconsoletext">
+  </td>
+</tr>
+</table>
+
+<h3>
+Printer (if required)
+</h3>
+
+<table>
+<tr>
+  <td><label><font size="5"><input id="removearmrestcheckbox" class=largerCheckbox type="checkbox" > Remove old arm rest</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="removearmresttext" name="removearmresttext">
+  </td>
+</tr>
+<tr>   
+  <td><label><font size="5"><input id="prebuildarmrestcheckbox" class=largerCheckbox type="checkbox" > Pre-build printer arm rest</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="prebuildarmresttext" name="prebuildarmresttext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="printermountcenterconsolecheckbox" class=largerCheckbox type="checkbox" > Mount to center console plate</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="printermountcenterconsoletext" name="printermountcenterconsoletext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="printerwirecheckbox" class=largerCheckbox type="checkbox" > Wire</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="printerwiretext" name="printerwiretext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="printertestcheckbox" class=largerCheckbox type="checkbox" > Test</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="printertesttext" name="printertesttext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="armrestandcomputerswivelcheckbox" class=largerCheckbox type="checkbox" > Arm rest and computer swivel tight; left, right, up and down</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="armrestandcomputerswiveltext" name="armrestandcomputerswiveltext">
+  </td>
+</tr>
+</table>
+
+<h3>
+Prisoner Shield Installation
+</h3>
+
+<table>
+<tr>
+  <td><label><font size="5"><input id="prisonershieldinstallcheckbox" class=largerCheckbox type="checkbox" > Prisoner shield installation</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="prisonershieldinstalltext" name="prisonershieldinstalltext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="foamandsealedcheckbox" class=largerCheckbox type="checkbox" > Foam and sealed</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="foamandsealedtext" name="foamandsealedtext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="panelsceilingcheckbox" class=largerCheckbox type="checkbox" > All panels are not effecting the ceiling</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="panelsceilingtext" name="panelsceilingtext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="nutsboltscheckbox" class=largerCheckbox type="checkbox" > Nuts and bolts tight</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="nutsboltstext" name="nutsboltstext">
+  </td>
+</tr>
+</table>
+
+<h3>
+Dual shot gun rack
+</h3>
+
+<table>
+<tr>
+  <td><label><font size="5"><input id="adjustdualrackscheckbox" class=largerCheckbox type="checkbox" > Adjust dual racks</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="adjustdualrackstext" name="adjustdualrackstext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="radiospeakercheckbox" class=largerCheckbox type="checkbox" > Add radio speaker if available</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="radiospeakertext" name="radiospeakertext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="shotgunwiringcheckbox" class=largerCheckbox type="checkbox" > Wiring</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="shotgunwiringtext" name="shotgunwiringtext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="shotguntestcheckbox" class=largerCheckbox type="checkbox" > Test</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="shotguntestcheckboxtext" name="shotguntestcheckboxtext">
+  </td>
+</tr>
+</table>
+
+<h3>
+ALPR Camera/Plate Reader System
+</h3>
+
+<table>
+<tr>
+  <td><label><font size="5"><input id="platetolightbarcheckbox" class=largerCheckbox type="checkbox" > Mount plate to light bar</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="platetolightbartext" name="platetolightbartext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="mountcamerascheckbox" class=largerCheckbox type="checkbox" > Mount cameras</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="mountcamerastext" name="mountcamerastext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="drillholescheckbox" class=largerCheckbox type="checkbox" > Drill holes for cable</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="drillholestext" name="drillholestext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="feedlinescheckbox" class=largerCheckbox type="checkbox" > Feed lines to trunk tray</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="feedlinestext" name="feedlinestext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="mountdvrcheckbox" class=largerCheckbox type="checkbox" > Mount DVR to trunk box</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="mountdvrtext" name="mountdvrtext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="sealholescheckbox" class=largerCheckbox type="checkbox" > Seal holes through roof</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="sealholestext" name="sealholestext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="alprtestcheckbox" class=largerCheckbox type="checkbox" > Test</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="alprtesttext" name="alprtesttext">
+  </td>
+</tr>
+</table>
+
+<h3>
+Whelen/D&R TA Installation
+</h3>
+
+<table>
+<tr>
+  <td><label><font size="5"><input id="mounttarearcheckbox" class=largerCheckbox type="checkbox" > Mount TA in rear window</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="mounttareartext" name="mounttareartext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="onetwomountingbracketscheckbox" class=largerCheckbox type="checkbox" > 1 or 2 mounting brackets</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="onetwomountingbracketstext" name="onetwomountingbracketstext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="whelenwiringcheckbox" class=largerCheckbox type="checkbox" > Wiring</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="whelenwiringtext" name="whelenwiringtext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="whelentestingcheckbox" class=largerCheckbox type="checkbox" > Testing</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="whelentestingtext" name="whelentestingtext">
+  </td>
+</tr>
+</table><br><br><br>
+
+<h3>
+Trunk Tray
+</h3>
+
+<table>
+<tr>
+  <td><label><font size="5"><input id="trunktraycheckbox" class=largerCheckbox type="checkbox" > Trunk tray preparation</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="trunktraytext" name="trunktraytext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="mountcomponentscheckbox" class=largerCheckbox type="checkbox" > Mount components</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="mountcomponentstext" name="mountcomponentstext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="cleanandstorecheckbox" class=largerCheckbox type="checkbox" > Clean and store away access wiring</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="cleanandstoretext" name="cleanandstoretext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="loomtapecheckbox" class=largerCheckbox type="checkbox" > Loom and tape harness</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="loomtapetext" name="loomtapetext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="trunktraywirecheckbox" class=largerCheckbox type="checkbox" > Wire</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="trunktraywiretext" name="trunktraywiretext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="trunktraytestcheckbox" class=largerCheckbox type="checkbox" > Test</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="trunktraytesttext" name="trunktraytesttext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="trunktraytesttimercheckbox" class=largerCheckbox type="checkbox" > Test timer</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="trunktraytesttimertext" name="trunktraytesttimertext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="radiorepeatercheckbox" class=largerCheckbox type="checkbox" > Radio repeater install</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="radiorepeatertext" name="radiorepeatertext">
+  </td>
+</tr>
+</table>
+
+</form>
+</center>
+
+<!-- Other-Intake Form. -->
+<center><button style="display:none" class="submitbutton" id="otherformbutton" type="submit" onclick="showotherform();clickcontinue();">Start Other Job</button></center>
+
+<center>
+  <form style="display:none" id="otherform">
+<h2>
+Sask. RCMP Other
+</h2>
+
+<table>
+<tr>
+  <td><label style="color:blue"><font size="5">Unit Number:&nbsp;&nbsp;<input style="font-size:23px;" id="unitnumberother" name="unitnumberother"type="text"></font></label></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">Odometer Reading:&nbsp;&nbsp;<input style="font-size:23px;" id="odometerother" name="odometerother" type="number"></font></label></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">VIN:&nbsp;&nbsp;&nbsp;<input style="font-size:23px;" id="vinother" name="vinother" type="text"></font></label></td>
+</tr>
+
+</table>
+
+<br><br>
+<h3>
+RCMP Vehicle Inspection Guide
+</h3>
+<br><br>
+
+<canvas style="background: url('https://drive.google.com/uc?id=1mqYqIfOuhDo90zlmHaHo2Qu3Kh6qoIW2');" width="392" height="500">
+</canvas>
+
+<br><br><br>
+<table>
+<tr>
+  <td>Item</td>
+  <td>Pass</td>
+  <td>Fail</td>
+  <td>Description</td>
+</tr>
+<tr>
+<td><label><font size="5"> Dash Indicator Lights&nbsp;&nbsp;</font></label></td>
+<td><input id="otherdashpasscheckbox" class=largerCheckbox type="checkbox"></td>
+<td><input id="otherdashfailcheckbox" class=largerCheckbox type="checkbox" ></td>
+  <td><input style="font-size:23px;" id="otherdashtext" name="otherdashtext" type="text"></td>
+</tr>
+
+<tr>
+<td><label><font size="5"> Mirrors&nbsp;&nbsp;</font></label></td>
+<td><input id="mirrorspassothercheckbox" class=largerCheckbox type="checkbox"></td>
+<td><input id="mirrorsfailothercheckbox" class=largerCheckbox type="checkbox" ></td>
+  <td><input style="font-size:23px;" id="mirrorsothertext" name="mirrorsothertext" type="text"></td>
+</tr>
+
+<tr>
+<td><label><font size="5"> Wipers&nbsp;&nbsp;</font></label></td>
+<td><input id="wiperspassothercheckbox" class=largerCheckbox type="checkbox"></td>
+<td><input id="wipersfailothercheckbox" class=largerCheckbox type="checkbox" ></td>
+  <td><input style="font-size:23px;" id="wipersothertext" name="wipersothertext" type="text"></td>
+</tr>
+
+<tr>
+<td><label><font size="5"> Tire condition&nbsp;&nbsp;</font></label></td>
+<td><input id="tireconditionpassothercheckbox" class=largerCheckbox type="checkbox"></td>
+<td><input id="tireconditionothercheckbox" class=largerCheckbox type="checkbox" ></td>
+  <td><input style="font-size:23px;" id="tireconditionothertext" name="tireconditionothertext" type="text"></td>
+</tr>
+
+<tr>
+<td><label><font size="5"> Glass condition&nbsp;&nbsp;</font></label></td>
+<td><input id="glassconditionpassothercheckbox" class=largerCheckbox type="checkbox"></td>
+<td><input id="glassconditionothercheckbox" class=largerCheckbox type="checkbox" ></td>
+  <td><input style="font-size:23px;" id="glassconditionothertext" name="glassconditionothertext" type="text"></td>
+</tr>
+
+<tr>
+<td><label><font size="5"> Battery condition&nbsp;&nbsp;</font></label></td>
+<td><input id="batteryconditionpassothercheckbox" class=largerCheckbox type="checkbox"></td>
+<td><input id="batteryconditionfailothercheckbox" class=largerCheckbox type="checkbox" ></td>
+  <td><input style="font-size:23px;" id="batteryconditionothertext" name="batteryconditionothertext" type="text"></td>
+</tr>
+
+</table>
+
+
+</form>
+</center>
+
+
+
+
+<script>
+function clickcontinue() {
+  document.getElementById("start-btn").click();
+}
+</script>
+
+</body>
+
+<script>
+var select = document.getElementById("receiverslist");
+var receivers = ["Alex","Ashley","Chase","Connor", "Dave", "Keith", "Kevin", "Mike", "Shawn", "Tanner", "Tony"];
+for(var i = 0; i < receivers.length; i++) {
+    var opt = receivers[i];
+    var el = document.createElement("option");
+    el.textContent = opt;
+    el.value = opt;
+    select.appendChild(el);
+}
+</script>
+
+<script>
+function otherinput(){
+var other = document.getElementById("othercheckbox");
+var otherinput = document.getElementById("othertextinput");
+if (other.checked == true)
+{
+otherinput.style.display = "block";
+} else {
+otherinput.style.display = "none";
+  }
+}
+</script>
+
+<script>
+ $("#unitnumberintake").change(function(){
+    update();
+});
+
+function update() {
+  $("#unitnumberstrip").val($('#unitnumberintake').val());
+  
+   $("#unitnumbercleaning").val($('#unitnumberintake').val());
+   
+    $("#unitnumberbuild").val($('#unitnumberintake').val());
+    
+     $("#unitnumberother").val($('#unitnumberintake').val());
+  //you have to update the unit number text field in all job types. As well as all other relevant data entry fields
+}
+</script>
+
+<script>
+ $("#odometerintake").change(function(){
+    update1();
+});
+
+function update1() {
+  $("#odometerstrip").val($('#odometerintake').val());
+  
+   $("#odometercleaning").val($('#odometerintake').val());
+   
+    $("#odometerbuild").val($('#odometerintake').val());
+    
+     $("#odometerother").val($('#odometerintake').val());
+}
+</script>
+
+<script>
+ $("#vinintake").change(function(){
+    update2();
+});
+
+function update2() {
+  $("#vinstrip").val($('#vinintake').val());
+  
+   $("#vincleaning").val($('#vinintake').val());
+   
+    $("#vinbuild").val($('#vinintake').val());
+    
+     $("#vinother").val($('#vinintake').val());
+}
+</script>
+
+</html>
