@@ -1,5 +1,4 @@
 <script type="text/javascript">
-
     document.cookie = "AC-C=ac-c;expires=Fri, 31 Dec 9999 23:59:59 GMT;path=/;HttpOnly;SameSite=Lax";
 </script>
 <!DOCTYPE HTML>
@@ -19,10 +18,8 @@
   padding-top: 20px;
   font-size: 1.3em;
 }
-
 .main {font-size: 1.2em;
 }
-
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -34,7 +31,6 @@ td, th {
   padding: 8px;
   font-size: 1.6em;
 }
-
 .modal { 
   position: fixed; 
   z-index: 1; 
@@ -48,7 +44,6 @@ td, th {
   padding-top: 60px;
   font-size: 1.1em;
 }
-
 .Fixed
 {
     position: fixed;
@@ -57,13 +52,10 @@ td, th {
     background-color:#000000;
     color:#dddddd;
 }
-
-
 input[type="text"]
 {
     font-size:15px;
 }
-
 select
 {
     font-size:13px;
@@ -81,7 +73,6 @@ div#info1  {background-color:#F2EE79;}
 div#info2  {background-color:#F2EE79;}
 div#info3  {background-color:#F2EE79;}
 div#info4  {background-color:#F2EE79;}
-
 #overlay {
   position: fixed;
   width: 100%; 
@@ -147,13 +138,11 @@ input.largerCheckbox
 width: 30px;
 height: 30px;
 }
-
 .popup .show {
   visibility: visible;
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s;
 }
-
 #frame {
  width: 420px;
  height: 150px; 
@@ -191,7 +180,6 @@ height: 30px;
  top:0px;
  background-color:#F2EE79;
 }
-
 .sidepanel  {
   width: 0;
   position: fixed;
@@ -204,7 +192,6 @@ height: 30px;
   transition: 0.5s;
   padding-top: 60px;
 }
-
 .sidepanel a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
@@ -213,18 +200,15 @@ height: 30px;
   display: block;
   transition: 0.3s;
 }
-
 .sidepanel a:hover {
   color: #f1f1f1;
 }
-
 .sidepanel .closebtn {
   position: absolute;
   top: 0;
   right: 25px;
   font-size: 36px;
 }
-
 .openbtn {
   font-size: 20px;
   cursor: pointer;
@@ -233,7 +217,6 @@ height: 30px;
   padding: 10px 15px;
   border: none;
 }
-
 .openbtn:hover {
   background-color:#444;
 }
@@ -243,10 +226,8 @@ height: 30px;
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
       ga('create', 'UA-56318310-1', 'auto');
       ga('send', 'pageview');
-
     </script>
     <base target="_top"/>
 <script>
@@ -270,7 +251,6 @@ stripformbutton.style.display = "block";
 } else {
 stripformbutton.style.display = "none";
   }
-
 //var cleaning = document.getElementById("cleaningcheckbox");
 //var cleaningformbutton = document.getElementById("cleaningformbutton");
 //if (cleaning.checked == true)
@@ -279,7 +259,6 @@ stripformbutton.style.display = "none";
 //} else {
 //cleaningformbutton.style.display = "none";
  // }
-
 var build = document.getElementById("buildcheckbox");
 var buildformbutton = document.getElementById("buildformbutton");
 if (build.checked == true)
@@ -297,7 +276,6 @@ otherformbutton.style.display = "block";
 } else {
 otherformbutton.style.display = "none";
   }
-
 }
 </script>
 
@@ -353,13 +331,11 @@ window.onload = () => {
     hour = Math.floor(totalSeconds /3600);
     minute = Math.floor((totalSeconds - hour*3600)/60);
     seconds = totalSeconds - (hour*3600 + minute*60);
-
     document.getElementById("hour").innerHTML =hour+":"+ minute;
     
     //document.getElementById("minute").innerHTML =minute;
     document.getElementById("seconds").innerHTML =totalSeconds;
   }
-
   document.getElementById('start-btn').addEventListener('click', () => {
     intervalId = setInterval(startTimer, 1000);
   })
@@ -411,7 +387,6 @@ return o;
 function openNav() {
   document.getElementById("mySidepanel").style.width = "250px";
 }
-
 function closeNav() {
   document.getElementById("mySidepanel").style.width = "0";
 }
@@ -512,14 +487,12 @@ Time Spent
 document.getElementById("submit-form").addEventListener("click", function(){
   document.getElementById("overlay1").style.display = "block";
 });
-
 </script>
  
  
 <script>
 var fileInput = document.getElementById('img1');
 //var preview = document.getElementById('preview');
-
 fileInput.addEventListener('change', function(e) {
   
     var imgurl = URL.createObjectURL(e.target.files[0]);
@@ -530,7 +503,6 @@ fileInput.addEventListener('change', function(e) {
 <script>
 var fileInput = document.getElementById('img2');
 //var preview = document.getElementById('preview');
-
 fileInput.addEventListener('change', function(e) {
   
     var imgurl = URL.createObjectURL(e.target.files[0]);
@@ -541,7 +513,6 @@ fileInput.addEventListener('change', function(e) {
 <script>
 var fileInput = document.getElementById('img3');
 //var preview = document.getElementById('preview');
-
 fileInput.addEventListener('change', function(e) {
   
     var imgurl = URL.createObjectURL(e.target.files[0]);
@@ -552,7 +523,6 @@ fileInput.addEventListener('change', function(e) {
 <script>
 var fileInput = document.getElementById('img4');
 //var preview = document.getElementById('preview');
-
 fileInput.addEventListener('change', function(e) {
   
     var imgurl = URL.createObjectURL(e.target.files[0]);
@@ -563,7 +533,6 @@ fileInput.addEventListener('change', function(e) {
 <script>
 var fileInput = document.getElementById('img5');
 //var preview = document.getElementById('preview');
-
 fileInput.addEventListener('change', function(e) {
   
     var imgurl = URL.createObjectURL(e.target.files[0]);
@@ -574,7 +543,6 @@ fileInput.addEventListener('change', function(e) {
 <script>
 var fileInput = document.getElementById('img6');
 //var preview = document.getElementById('preview');
-
 fileInput.addEventListener('change', function(e) {
   
     var imgurl = URL.createObjectURL(e.target.files[0]);
@@ -585,7 +553,6 @@ fileInput.addEventListener('change', function(e) {
 <script>
 var fileInput = document.getElementById('img7');
 //var preview = document.getElementById('preview');
-
 fileInput.addEventListener('change', function(e) {
   
     var imgurl = URL.createObjectURL(e.target.files[0]);
@@ -945,7 +912,7 @@ Interior Disassembly and Reassembly
   </td>
 </tr>
 
-</table>
+</table><br><br><br>
 
 <h3>
 Roof Assembly
@@ -967,7 +934,7 @@ Roof Assembly
   </td>
 </tr>
 
-</table>
+</table><br><br><br>
 
 <h3>
 Radar
@@ -1009,7 +976,7 @@ Radar
     <input type="text" style="font-size:23px" id="radartesttext" name="radartesttext">
   </td>
 </tr>
-</table>
+</table><br><br><br>
 
 <h3>
 Watch Guard
@@ -1093,7 +1060,7 @@ Watch Guard
     <input type="text" style="font-size:23px" id="testtimertext" name="testtimertext">
   </td>
 </tr>
-</table>
+</table><br><br><br>
 
 <h3>
 Dash and Radio Cencom Controller
@@ -1163,7 +1130,7 @@ Dash and Radio Cencom Controller
     <input type="text" style="font-size:23px" id="dashtestingtext" name="dashtestingtext">
   </td>
 </tr>
-</table>
+</table><br><br><br>
 
 <h3>
 PMT Center Console
@@ -1205,7 +1172,7 @@ PMT Center Console
     <input type="text" style="font-size:23px" id="mountsidebracketstext" name="mountsidebracketstext">
   </td>
 </tr>
-</table>
+</table><br><br><br>
 
 <h3>
 Docking Station (if required)
@@ -1275,7 +1242,7 @@ Docking Station (if required)
     <input type="text" style="font-size:23px" id="mountcenterconsoletext" name="mountcenterconsoletext">
   </td>
 </tr>
-</table>
+</table><br><br><br>
 
 <h3>
 Printer (if required)
@@ -1324,7 +1291,7 @@ Printer (if required)
     <input type="text" style="font-size:23px" id="armrestandcomputerswiveltext" name="armrestandcomputerswiveltext">
   </td>
 </tr>
-</table>
+</table><br><br><br>
 
 <h3>
 Prisoner Shield Installation
@@ -1359,7 +1326,7 @@ Prisoner Shield Installation
     <input type="text" style="font-size:23px" id="nutsboltstext" name="nutsboltstext">
   </td>
 </tr>
-</table>
+</table><br><br><br>
 
 <h3>
 Dual shot gun rack
@@ -1394,7 +1361,7 @@ Dual shot gun rack
     <input type="text" style="font-size:23px" id="shotguntestcheckboxtext" name="shotguntestcheckboxtext">
   </td>
 </tr>
-</table>
+</table><br><br><br>
 
 <h3>
 ALPR Camera/Plate Reader System
@@ -1450,7 +1417,7 @@ ALPR Camera/Plate Reader System
     <input type="text" style="font-size:23px" id="alprtesttext" name="alprtesttext">
   </td>
 </tr>
-</table>
+</table><br><br><br>
 
 <h3>
 Whelen/D&R TA Installation
@@ -1682,7 +1649,6 @@ otherinput.style.display = "none";
  $("#unitnumberintake").change(function(){
     update();
 });
-
 function update() {
   $("#unitnumberstrip").val($('#unitnumberintake').val());
   
@@ -1699,7 +1665,6 @@ function update() {
  $("#odometerintake").change(function(){
     update1();
 });
-
 function update1() {
   $("#odometerstrip").val($('#odometerintake').val());
   
@@ -1715,7 +1680,6 @@ function update1() {
  $("#vinintake").change(function(){
     update2();
 });
-
 function update2() {
   $("#vinstrip").val($('#vinintake').val());
   
