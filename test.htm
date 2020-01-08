@@ -324,13 +324,15 @@ function showotherform() {
 }
 </script>
 
-<script>
+<!--<script>
 function submissionspage() {
   document.getElementById("overlay1").style.display = "block";
   document.getElementById("saskrcmpintake").style.display = "none";
   
 }
-</script>
+</script>-->
+
+
 
 <script>
 window.onload = () => {
@@ -497,11 +499,16 @@ Time Spent
  <br><br><br>
 
 <label style="color:blue"><font size="5">Notes/Comments:&nbsp;&nbsp;&nbsp;<input style="font-size:23px;" id="notesintake" name="notesintake" type="text"></font></label><br><br><br>
-<button class="submitbutton" id="submit-form" type="submit" onclick="submissionspage();">Submit</button>
+<button class="submitbutton" id="submit-form" type="submit" >Submit</button>
 
 
   
+<script>
+document.getElementById("submit-form").addEventListener("click", function(){
+  document.getElementById("overlay1").style.display = "block";
+});
 
+</script>
  
  
 <script>
