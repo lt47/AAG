@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
 
-<style>          
+<style>             
 <!-- body {font-family: Arial, Helvetica, sans-serif;} --> body {font-family: "Lato", sans-serif;} .sidenav {
   height: 100%;
   width: 125px;
@@ -101,6 +101,20 @@ div#info4  {background-color:#F2EE79;}
   font-size: 1.7em;
   color:#dddddd;
 }
+#overlay2 {
+  position: fixed;
+  width: 100%; 
+  height: 100%; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:#000000; 
+  z-index: 2; 
+  cursor: pointer; 
+  font-size: 1.7em;
+  color:#dddddd;
+}
 input[type=password] {
   width: 20%;
   padding: 12px 20px;
@@ -131,6 +145,10 @@ input[type=password] {
 .submitbutton {font-size: 16px;
 padding: 15px 32px;
 background-color: #00A146;
+}
+.bigbutton {font-size: 16px;
+padding: 15px 32px;
+background-color: #dddddd;
 }
 .buttontext {font-size:0.4em;}
 input.largerCheckbox
@@ -348,6 +366,32 @@ window.onload = () => {
 }
 </script>
 
+<script>
+function authentication(){
+if ((document.getElementById("uname").value == "waldner") && 
+   (document.getElementById("psw").value == "0247"))
+   document.getElementById("overlay").style.display = "none";
+   else {
+  alert("Please enter valid credentials.");
+}
+
+}
+</script>
+
+<script>
+function homescreen(){
+document.getElementById("overlay2").style.display ="block";
+}
+</script>
+
+<script>
+function gotointake() {
+document.getElementById("overlay2").style.display ="none";
+document.getElementById("saskrcmpintake").style.display ="block";
+}
+</script>
+
+
 </head>
 
 <body>
@@ -371,26 +415,50 @@ return o;
 };
 </script>
 
+<center>
+<div id="overlay" style="background-color:white" class="modal"><center><img src="https://drive.google.com/uc?id=14b58YMTShxQ2Eb8g_EwSnLJn2P2pyGbe"  top=35px right=125px height=70 width=120/></center>
+  <div class="container">
+      <label style="color:black" for="uname"><b>Username:</b></label>
+      <input style="font-size:23px;color:black;" class="username" type="text" placeholder="Enter Username" name="uname" id="uname" required>
+<br>
+      <label style="color:black;" for="psw"><b>Password:</b></label>
+      <input style="font-size:23px;" type="password" placeholder="Enter Password" id="psw" name="psw" required>
+        <br><br>
+      <button style="background-color:red" class="submitbutton" onclick="authentication();homescreen();">Login</button>
+    </div>
+</div></center>
+
+<center>
+  <div id="overlay2" style="display:none;background-color:white">
+<img src="https://drive.google.com/uc?id=1T2TM9M4LCFyk0cl-Y8rEtI0mt6ugVGQT"  top=35px right=125px height=60 width=170/><br>
+<h1 style="color:black">
+Home
+</h1>
+    <div class="container">
+    <label style="color:black;"><font size="6">Click to proceed to Intake form</font></label>&nbsp;&nbsp;&nbsp;&nbsp;<br><br><input id="gotointakebutton" type="button" class="bigbutton" value="Intake" onclick="gotointake();"><br><br><br>
+    <label style="color:black;"><font size="6">Click to receive the most recent dispatch information</font></label>&nbsp;&nbsp;&nbsp;&nbsp;<br><br><input id="receivedispatchbutton" type="button" class="bigbutton" value="Receive Dispatch"><br><br><br>
+    <label style="color:black;"><font size="6">Retrieve a job that you recently placed on hold:</font></label><br><br>
+    <input id="hold1" style="font-size:23px;" type="text" disabled>&nbsp;&nbsp;&nbsp;&nbsp;<input id="hold1btn" type="button" class="bigbutton" value="Retrieve"><br><br>
+    <input id="hold2" style="font-size:23px;" type="text" disabled>&nbsp;&nbsp;&nbsp;&nbsp;<input id="hold2btn" type="button" class="bigbutton" value="Retrieve"><br><br>
+    <input id="hold3" style="font-size:23px;" type="text" disabled>&nbsp;&nbsp;&nbsp;&nbsp;<input id="hold3btn" type="button" class="bigbutton" value="Retrieve"><br><br>
+    <input id="hold4" style="font-size:23px;" type="text" disabled>&nbsp;&nbsp;&nbsp;&nbsp;<input id="hold4btn" type="button" class="bigbutton" value="Retrieve"><br><br>
+    <input id="hold5" style="font-size:23px;" type="text" disabled>&nbsp;&nbsp;&nbsp;&nbsp;<input id="hold5btn" type="button" class="bigbutton" value="Retrieve"><br><br>
+    </div>   
+</div>
+  
+</center>
+
+
+
+
+
+
+
 <div>
-<img src="https://drive.google.com/uc?id=1T2TM9M4LCFyk0cl-Y8rEtI0mt6ugVGQT"  top=35px left=65px height=60 width=170/><br>
+<img src="https://drive.google.com/uc?id=1T2TM9M4LCFyk0cl-Y8rEtI0mt6ugVGQT" onclick="homescreen();" top=35px left=65px height=60 width=170/><br>
 </div>
+ 
 
-<div id="mySidepanel" class="sidepanel">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-  <a href="#">Home</a>
-  <a href="#">Sask. RCMP Intake</a>
-  <a href="#">Sask. RCMP Job Form</a>
-</div>
-
-<button class="openbtn" onclick="openNav()">☰</button>  
-<script>
-function openNav() {
-  document.getElementById("mySidepanel").style.width = "250px";
-}
-function closeNav() {
-  document.getElementById("mySidepanel").style.width = "0";
-}
-</script>
 
 <div id=timespent style="display:none;" class="Fixed">
 <p>
