@@ -376,6 +376,18 @@ if ((document.getElementById("uname").value == "waldner") &&
 }
 
 }
+    function loadData() {
+          var url = "https://docs.google.com/spreadsheet/pub?key=1Nj5Q6P-0XD2Bh3sf_namtabB2jtoTYANDC84IMvE5XQ&single=true&gid=0&range=A1&output=csv";
+          xmlhttp = new XMLHttpRequest();
+          xmlhttp.onreadystatechange = function () {
+              if (xmlhttp.readyState == 4) {
+                  document.getElementById("hold1").value = xmlhttp.responseText;
+                  //alert(xmlhttp.responseText);
+              }
+          };
+          xmlhttp.open("GET", url, true);
+          xmlhttp.send(null);
+      }
 </script>
 
 <script>
@@ -424,7 +436,7 @@ return o;
       <label style="color:black;" for="psw"><b>Password:</b></label>
       <input style="font-size:23px;" type="password" placeholder="Enter Password" id="psw" name="psw" required>
         <br><br>
-      <button style="background-color:red" class="submitbutton" onclick="authentication();homescreen();">Login</button>
+      <button style="background-color:red" class="submitbutton" onclick="authentication();homescreen();loadData();">Login</button>
     </div>
 </div></center>
 
