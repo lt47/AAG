@@ -1,0 +1,567 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  
+<style>                   
+<!-- body {font-family: Arial, Helvetica, sans-serif;} --> body {font-family: "Lato", sans-serif;} .sidenav {
+  height: 100%;
+  width: 125px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #4a4a4a;
+  overflow-x: hidden;
+  padding-top: 20px;
+  font-size: 1.3em;
+}
+.main {font-size: 1.2em;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  font-size: 1.1em;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+  font-size: 1.6em;
+}
+.modal { 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+  padding-top: 60px;
+  font-size: 1.1em;
+}
+.Fixed
+{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color:#000000;
+    color:#dddddd;
+}
+input[type="text"]
+{
+    font-size:15px;
+}
+select
+{
+    font-size:13px;
+}
+table tr#divider  {background-color:#000000;}
+table tr#ROW1  {background-color:#dddddd;}
+table tr#ROW2  {background-color:#dddddd;}
+table tr#ROW3  {background-color:#dddddd;}
+table tr#ROW4  {background-color:#dddddd;}
+table tr#ROW5  {background-color:#dddddd;}
+table tr#ROW6  {background-color:#dddddd;}
+table tr#ROW7  {background-color:#F7A33B;}
+table tr#des  {font-size:0.7em;}
+div#info1  {background-color:#F2EE79;}
+div#info2  {background-color:#F2EE79;}
+div#info3  {background-color:#F2EE79;}
+div#info4  {background-color:#F2EE79;}
+#overlay {
+  position: fixed;
+  width: 100%; 
+  height: 100%; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:#000000; 
+  z-index: 2; 
+  cursor: pointer; 
+  font-size: 1.7em;
+  color:#dddddd;
+}
+#overlay1 {
+  position: fixed;
+  width: 100%; 
+  height: 100%; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:#ffffff; 
+  z-index: 2; 
+  cursor: pointer; 
+  font-size: 1.7em;
+  color:#dddddd;
+}
+#overlay2 {
+  
+  width: 100%; 
+  height: 100%; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:#000000; 
+  z-index: 2; 
+  cursor: pointer; 
+  font-size: 1.7em;
+  color:#dddddd;
+}
+input[type=password] {
+  width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size:15px;
+}
+.username{width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;}
+.greenfield {background-color: #00A146;}
+.yellowfield {background-color: #EEF52C;}
+.redfield {background-color: #F71302;}
+.grayfield {background-color:#dddddd;}
+.orangefield {background-color:#fc7f03;}
+.bluefield {background-color:#0202fa;}
+.purplefield {background-color:#e605ff;}
+.torqfield {background-color:#05ffd1;}
+.limegreenfield {background-color:#82ff05;}
+.pinkfield {background-color:#ff8cea;}
+.peachfield {background-color:#f0c3a3;}
+.button {font-size: 16px;}
+.submitbutton {font-size: 16px;
+padding: 15px 32px;
+background-color: #00A146;
+}
+.bigbutton {font-size: 16px;
+padding: 15px 32px;
+background-color: #dddddd;
+}
+.buttontext {font-size:0.4em;}
+input.largerCheckbox
+{
+width: 30px;
+height: 30px;
+}
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+#frame {
+ width: 420px;
+ height: 150px; 
+ overflow:hidden;
+ position:relative;
+}
+#bottomframe {
+ width: 400px;
+ height: 100px;
+ position:absolute;
+ top:53px;
+ left:11px;
+ background-color:#F2EE79;
+}
+#leftframe {
+ width: 45px;
+ height: 150px;
+ position:absolute;
+ top:3px;
+ left:10px;
+ background-color:#F2EE79;
+}
+#rightframe {
+ width: 14px;
+ height: 150px;
+ position:absolute;
+ top:3px;
+ right:10px;
+ background-color:#F2EE79;
+}
+#topframe {
+ width: 420px;
+ height: 26px;
+ position:absolute;
+ top:0px;
+ background-color:#F2EE79;
+}
+.sidepanel  {
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  height: 250px;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.sidepanel a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.sidepanel a:hover {
+  color: #f1f1f1;
+}
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+.openbtn:hover {
+  background-color:#444;
+}
+</style>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-56318310-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <base target="_top"/>
+<script>
+function homepage() {
+  document.getElementById("overlay1").style.display = "none";
+  //eventually i want to change this so that it navigates to the Home page 
+}
+</script>
+
+<script>
+window.onload = () => {
+  let hour = 0;
+  let minute = 0;
+  let seconds = 0;
+  let totalSeconds = 0;
+  
+  let intervalId = null;
+  
+  function startTimer() {
+    ++totalSeconds;
+    hour = Math.floor(totalSeconds /3600);
+    minute = Math.floor((totalSeconds - hour*3600)/60);
+    seconds = totalSeconds - (hour*3600 + minute*60);
+    document.getElementById("hour").innerHTML =hour+":"+ minute;
+    document.getElementById("striptime").innerHTML =hour+":"+ minute;
+    //document.getElementById("minute").innerHTML =minute;
+    document.getElementById("seconds").innerHTML =totalSeconds;
+  }
+  document.getElementById('start-btn').addEventListener('click', () => {
+    intervalId = setInterval(startTimer, 1000);
+  })
+  
+  document.getElementById('stop-btn').addEventListener('click', () => {
+    if (intervalId)
+      clearInterval(intervalId);
+  });
+  
+}
+</script>
+
+<script>
+
+function loadData() {
+          var url = "https://docs.google.com/spreadsheet/pub?key=1Nj5Q6P-0XD2Bh3sf_namtabB2jtoTYANDC84IMvE5XQ&single=true&gid=0&range=A1&output=csv";
+          xmlhttp = new XMLHttpRequest();
+          xmlhttp.onreadystatechange = function () {
+              if (xmlhttp.readyState == 4) {
+                  document.getElementById("hold1").value = xmlhttp.responseText;
+                  //alert(xmlhttp.responseText);
+              }
+          };
+          xmlhttp.open("GET", url, true);
+          xmlhttp.send(null);
+      }
+</script>
+
+<script>
+function homescreen(){
+document.getElementById("overlay2").style.display ="block";
+}
+</script>
+
+<script>
+function gotoother() {
+document.getElementById("overlay2").style.display ="none";
+document.getElementById("otherform").style.display ="block";
+document.getElementById("timespent").style.display ="block";
+}
+</script>
+
+
+</head>
+
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$.fn.serializeObject = function()
+{
+var o = {};
+var a = this.serializeArray();
+$.each(a, function() {
+if (o[this.name]) {
+if (!o[this.name].push) {
+o[this.name] = [o[this.name]];
+}
+o[this.name].push(this.value || '');
+} else {
+o[this.name] = this.value || '';
+}
+});
+return o;
+};
+</script>
+
+<script>  
+function getTimeStamp() {
+       var now = new Date();
+       return ((now.getMonth() + 1) + '/' + (now.getDate()) + '/' + now.getFullYear() + " " + now.getHours() + ':'
+                     + ((now.getMinutes() < 10) ? ("0" + now.getMinutes()) : (now.getMinutes())) + ':' + ((now.getSeconds() < 10) ? ("0" + now
+                     .getSeconds()) : (now.getSeconds())));
+}
+function otherdashpassfunc() {
+    document.getElementById("otherdashpass").value = getTimeStamp();
+}
+function otherdashfailfunc() {
+    document.getElementById("otherdashfail").value = getTimeStamp();
+}
+function mirrorspassotherfunc() {
+    document.getElementById("mirrorspassother").value = getTimeStamp();
+}
+function mirrorsfailotherfunc() {
+    document.getElementById("mirrorsfailother").value = getTimeStamp();
+}
+
+
+
+function wiperspassotherfunc() {
+    document.getElementById("wiperspassother").value = getTimeStamp();
+}
+function wipersfailotherfunc() {
+    document.getElementById("wipersfailother").value = getTimeStamp();
+}
+function tireconditionpassotherfunc() {
+    document.getElementById("tireconditionpassother").value = getTimeStamp();
+}
+function tireconditionfailotherfunc() {
+    document.getElementById("tireconditionfailother").value = getTimeStamp();
+}
+function glassconditionpassotherfunc() {
+    document.getElementById("glassconditionpassother").value = getTimeStamp();
+}
+function glassconditionfailotherfunc() {
+    document.getElementById("glassconditionfailother").value = getTimeStamp();
+}
+function batteryconditionpassotherfunc() {
+    document.getElementById("batteryconditionpassother").value = getTimeStamp();
+}
+function batteryconditionfailotherfunc() {
+    document.getElementById("batteryconditionfailother").value = getTimeStamp();
+}
+</script>
+
+<center>
+  <div id="overlay2" style="background-color:white">
+<img src="https://drive.google.com/uc?id=1T2TM9M4LCFyk0cl-Y8rEtI0mt6ugVGQT"  top=35px right=125px height=60 width=170/><br>
+<h1 style="color:black">
+Sask. RCMP (Other)
+</h1>
+    <div class="container">
+    <label style="color:black;"><font size="6">Click to proceed to "Other" form</font></label>&nbsp;&nbsp;&nbsp;&nbsp;<br><br><input id="gotootherbutton" type="button" class="bigbutton" value="Other" onclick="gotoother();clickcontinue();"><br><br><br>
+    <label style="color:black;"><font size="6">Click to receive the most recent dispatch information</font></label>&nbsp;&nbsp;&nbsp;&nbsp;<br><br><input id="receivedispatchbutton" type="button" class="bigbutton" value="Receive Dispatch"><br><br><br>
+    <label style="color:black;"><font size="6">Retrieve an intake submission:</font></label><br><br>
+    <input id="hold1" style="font-size:23px;" type="text" disabled>&nbsp;&nbsp;&nbsp;&nbsp;<input id="hold1btn" type="button" class="bigbutton" value="Retrieve"><br><br>
+    <input id="hold2" style="font-size:23px;" type="text" disabled>&nbsp;&nbsp;&nbsp;&nbsp;<input id="hold2btn" type="button" class="bigbutton" value="Retrieve"><br><br>
+    <input id="hold3" style="font-size:23px;" type="text" disabled>&nbsp;&nbsp;&nbsp;&nbsp;<input id="hold3btn" type="button" class="bigbutton" value="Retrieve"><br><br>
+    <input id="hold4" style="font-size:23px;" type="text" disabled>&nbsp;&nbsp;&nbsp;&nbsp;<input id="hold4btn" type="button" class="bigbutton" value="Retrieve"><br><br>
+    <input id="hold5" style="font-size:23px;" type="text" disabled>&nbsp;&nbsp;&nbsp;&nbsp;<input id="hold5btn" type="button" class="bigbutton" value="Retrieve"><br><br>
+    </div>   
+</div>
+  
+</center>
+
+
+<div id=timespent style="display:none;" class="Fixed">
+<p>
+Time Spent
+</p>
+<div>HH:mm <p id="hour" style="color:green;" type="text"></p></div>
+<div style="display:none;"><p id="seconds"></p></div>
+
+<button id="start-btn">Continue</button>
+<button id="stop-btn" onclick="clickpause();">Pause Job</button>
+
+</div>
+<br><br>
+
+
+<center>
+<form style="display:none" id="otherform">
+<img src="https://drive.google.com/uc?id=1T2TM9M4LCFyk0cl-Y8rEtI0mt6ugVGQT"  top=35px right=125px height=60 width=170/>
+<h2>
+Sask. RCMP Other
+</h2>
+
+<table>
+<tr>
+  <td><label style="color:blue"><font size="5">Unit Number:&nbsp;&nbsp;<input style="font-size:23px;" id="unitnumberother" name="unitnumberother"type="text"></font></label></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">Odometer Reading:&nbsp;&nbsp;<input style="font-size:23px;" id="odometerother" name="odometerother" type="number"></font></label></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">VIN:&nbsp;&nbsp;&nbsp;<input style="font-size:23px;" id="vinother" name="vinother" type="text"></font></label></td>
+</tr>
+
+</table>
+
+<br><br>
+<h3>
+RCMP Vehicle Inspection Guide
+</h3>
+<br><br>
+
+<canvas style="background: url('https://drive.google.com/uc?id=1mqYqIfOuhDo90zlmHaHo2Qu3Kh6qoIW2');" width="392" height="500">
+</canvas>
+
+<br><br><br>
+<table>
+<tr>
+  <td>Item</td>
+  <td>Pass</td>
+  <td>Fail</td>
+  <td>Description</td>
+</tr>
+<tr>
+<td><label><font size="5"> Dash Indicator Lights&nbsp;&nbsp;</font></label></td>
+<td><input id="otherdashpasscheckbox" class=largerCheckbox type="checkbox" onclick="otherdashpassfunc();"></td>
+<td><input id="otherdashfailcheckbox" class=largerCheckbox type="checkbox" onclick="otherdashfailfunc();"></td>
+  <td><input style="font-size:23px;" id="otherdashtext" name="otherdashtext" type="text"></td>
+</tr>
+
+<tr>
+<td><label><font size="5"> Mirrors&nbsp;&nbsp;</font></label></td>
+<td><input id="mirrorspassothercheckbox" class=largerCheckbox type="checkbox" onclick="mirrorspassotherfunc();"></td>
+<td><input id="mirrorsfailothercheckbox" class=largerCheckbox type="checkbox" onclick="mirrorsfailotherfunc();" ></td>
+  <td><input style="font-size:23px;" id="mirrorsothertext" name="mirrorsothertext" type="text"></td>
+</tr>
+
+<tr>
+<td><label><font size="5"> Wipers&nbsp;&nbsp;</font></label></td>
+<td><input id="wiperspassothercheckbox" class=largerCheckbox type="checkbox" onclick="wiperspassotherfunc();"></td>
+<td><input id="wipersfailothercheckbox" class=largerCheckbox type="checkbox" onclick="wipersfailotherfunc();" ></td>
+  <td><input style="font-size:23px;" id="wipersothertext" name="wipersothertext" type="text"></td>
+</tr>
+
+<tr>
+<td><label><font size="5"> Tire condition&nbsp;&nbsp;</font></label></td>
+<td><input id="tireconditionpassothercheckbox" class=largerCheckbox type="checkbox" onclick="tireconditionpassotherfunc();"></td>
+<td><input id="tireconditionfailothercheckbox" class=largerCheckbox type="checkbox"  onclick="tireconditionfailotherfunc();"></td>
+  <td><input style="font-size:23px;" id="tireconditionothertext" name="tireconditionothertext" type="text"></td>
+</tr>
+
+<tr>
+<td><label><font size="5"> Glass condition&nbsp;&nbsp;</font></label></td>
+<td><input id="glassconditionpassothercheckbox" class=largerCheckbox type="checkbox" onclick="glassconditionpassotherfunc();"></td>
+<td><input id="glassconditionfailothercheckbox" class=largerCheckbox type="checkbox" onclick="glassconditionfailotherfunc();" ></td>
+  <td><input style="font-size:23px;" id="glassconditionothertext" name="glassconditionothertext" type="text"></td>
+</tr>
+
+<tr>
+<td><label><font size="5"> Battery condition&nbsp;&nbsp;</font></label></td>
+<td><input id="batteryconditionpassothercheckbox" class=largerCheckbox type="checkbox" onclick="batteryconditionpassotherfunc();"></td>
+<td><input id="batteryconditionfailothercheckbox" class=largerCheckbox type="checkbox" onclick="batteryconditionfailotherfunc();"></td>
+  <td><input style="font-size:23px;" id="batteryconditionothertext" name="batteryconditionothertext" type="text"></td>
+</tr>
+<p id="othertime" name="othertime" style="color:green;display:none;" type="text"></p>
+</table><br>
+
+<center><button class="submitbutton" id="submit-otherform" type="submit">Submit</button></center>
+
+<button style="display:none" class="submitbutton" id="pause-otherform" type="submit">Pause</button>
+
+<script>
+var $form = $('form#otherform'),
+    url4 = 'https://script.google.com/macros/s/AKfycbyrsdqMUzM2fy_8fyVAkyux_nX45PbAA8mlcl9F/exec',
+
+$submit = $('#submit-otherform').on('click', function(i) {
+  i.preventDefault();
+  var jqxhr = $.ajax({
+    url: url4,
+    method: "GET",
+    dataType: "json",
+    data: $form.serializeObject()
+  }).done(
+    // do something
+  );
+   $('#otherform')[0].reset();
+})
+</script>
+
+<script>
+var $form = $('form#otherform'),
+    url5 = 'https://script.google.com/macros/s/AKfycbzTZsUf-l6aUsEYwn0fQSrvG3I1qGb7oTbsJf-x/exec',
+
+$submit = $('#pause-otherform').on('click', function(j) {
+  j.preventDefault();
+  var jqxhr = $.ajax({
+    url: url5,
+    method: "GET",
+    dataType: "json",
+    data: $form.serializeObject()
+  }).done(
+    // do something
+  );
+   //$('#otherform')[0].reset();
+})
+</script>
+
+
+</form>
+
+</center>
+
+
+
+
+<script>
+function clickcontinue() {
+  document.getElementById("start-btn").click();
+}
+</script>
+<script>
+function clickpause() {
+  document.getElementById("pause-otherform").click();
+}
+</script>
+
+</body>
+
+</html>
