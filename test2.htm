@@ -1,0 +1,3375 @@
+<script type="text/javascript">
+    document.cookie = "AC-C=ac-c;expires=Fri, 31 Dec 9999 23:59:59 GMT;path=/;HttpOnly;SameSite=Lax";
+</script>
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  
+<style>             
+<!-- body {font-family: Arial, Helvetica, sans-serif;} --> body {font-family: "Lato", sans-serif;} .sidenav {
+  height: 100%;
+  width: 125px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #4a4a4a;
+  overflow-x: hidden;
+  padding-top: 20px;
+  font-size: 1.3em;
+}
+.main {font-size: 1.2em;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  font-size: 1.1em;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+  font-size: 1.6em;
+}
+.modal { 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+  padding-top: 60px;
+  font-size: 1.1em;
+}
+.Fixed
+{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color:#000000;
+    color:#dddddd;
+}
+input[type="text"]
+{
+    font-size:15px;
+}
+select
+{
+    font-size:13px;
+}
+table tr#divider  {background-color:#000000;}
+table tr#ROW1  {background-color:#dddddd;}
+table tr#ROW2  {background-color:#dddddd;}
+table tr#ROW3  {background-color:#dddddd;}
+table tr#ROW4  {background-color:#dddddd;}
+table tr#ROW5  {background-color:#dddddd;}
+table tr#ROW6  {background-color:#dddddd;}
+table tr#ROW7  {background-color:#F7A33B;}
+table tr#des  {font-size:0.7em;}
+div#info1  {background-color:#F2EE79;}
+div#info2  {background-color:#F2EE79;}
+div#info3  {background-color:#F2EE79;}
+div#info4  {background-color:#F2EE79;}
+#overlay {
+  position: fixed;
+  width: 100%; 
+  height: 100%; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:#000000; 
+  z-index: 2; 
+  cursor: pointer; 
+  font-size: 1.7em;
+  color:#dddddd;
+}
+#overlay1 {
+  position: fixed;
+  width: 100%; 
+  height: 100%; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:#ffffff; 
+  z-index: 2; 
+  cursor: pointer; 
+  font-size: 1.7em;
+  color:#dddddd;
+}
+#overlay2 {
+  
+  width: 100%; 
+  height: 100%; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:#000000; 
+  z-index: 2; 
+  cursor: pointer; 
+  font-size: 1.7em;
+  color:#dddddd;
+}
+input[type=password] {
+  width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size:15px;
+}
+.username{width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;}
+.greenfield {background-color: #00A146;}
+.yellowfield {background-color: #EEF52C;}
+.redfield {background-color: #F71302;}
+.grayfield {background-color:#dddddd;}
+.orangefield {background-color:#fc7f03;}
+.bluefield {background-color:#0202fa;}
+.purplefield {background-color:#e605ff;}
+.torqfield {background-color:#05ffd1;}
+.limegreenfield {background-color:#82ff05;}
+.pinkfield {background-color:#ff8cea;}
+.peachfield {background-color:#f0c3a3;}
+.button {font-size: 16px;}
+.submitbutton {font-size: 16px;
+padding: 15px 32px;
+background-color: #00A146;
+}
+.bigbutton {font-size: 16px;
+padding: 15px 32px;
+background-color: #dddddd;
+}
+.buttontext {font-size:0.4em;}
+input.largerCheckbox
+{
+width: 30px;
+height: 30px;
+}
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+#frame {
+ width: 420px;
+ height: 150px; 
+ overflow:hidden;
+ position:relative;
+}
+#bottomframe {
+ width: 400px;
+ height: 100px;
+ position:absolute;
+ top:53px;
+ left:11px;
+ background-color:#F2EE79;
+}
+#leftframe {
+ width: 45px;
+ height: 150px;
+ position:absolute;
+ top:3px;
+ left:10px;
+ background-color:#F2EE79;
+}
+#rightframe {
+ width: 14px;
+ height: 150px;
+ position:absolute;
+ top:3px;
+ right:10px;
+ background-color:#F2EE79;
+}
+#topframe {
+ width: 420px;
+ height: 26px;
+ position:absolute;
+ top:0px;
+ background-color:#F2EE79;
+}
+.sidepanel  {
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  height: 250px;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.sidepanel a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.sidepanel a:hover {
+  color: #f1f1f1;
+}
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+.openbtn:hover {
+  background-color:#444;
+}
+</style>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-56318310-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <base target="_top"/>
+<script>
+function homepage() {
+  document.getElementById("overlay1").style.display = "none";
+  //eventually i want to change this so that it navigates to the Home page 
+}
+</script>
+
+<script>
+function intakeform() {
+  document.getElementById("overlay1").style.display = "none";
+  document.getElementById("saskrcmpintake").style.display = "none";
+  document.getElementById("timespent").style.display = "block";
+  
+var strip = document.getElementById("stripcheckbox");
+var stripformbutton = document.getElementById("stripformbutton");
+if (strip.checked == true)
+{
+stripformbutton.style.display = "block";
+} else {
+stripformbutton.style.display = "none";
+  }
+//var cleaning = document.getElementById("cleaningcheckbox");
+//var cleaningformbutton = document.getElementById("cleaningformbutton");
+//if (cleaning.checked == true)
+//{
+//cleaningformbutton.style.display = "block";
+//} else {
+//cleaningformbutton.style.display = "none";
+ // }
+var build = document.getElementById("buildcheckbox");
+var buildformbutton = document.getElementById("buildformbutton");
+if (build.checked == true)
+{
+buildformbutton.style.display = "block";
+} else {
+buildformbutton.style.display = "none";
+  }
+  
+var other = document.getElementById("othercheckbox");
+var otherformbutton = document.getElementById("otherformbutton");
+if (other.checked == true)
+{
+otherformbutton.style.display = "block";
+} else {
+otherformbutton.style.display = "none";
+  }
+}
+</script>
+
+<script>
+function showstripform() {
+  document.getElementById("stripformbutton").style.display = "none";
+  document.getElementById("stripform").style.display = "block";
+}
+</script>
+
+<script>
+function showcleaningform() {
+  document.getElementById("cleaningformbutton").style.display = "none";
+  document.getElementById("cleaningform").style.display = "block";
+}
+</script>
+
+<script>
+function showbuildform() {
+  document.getElementById("buildformbutton").style.display = "none";
+  document.getElementById("buildform").style.display = "block";
+}
+</script>
+
+<script>
+function showotherform() {
+  document.getElementById("otherformbutton").style.display = "none";
+  document.getElementById("otherform").style.display = "block";
+}
+</script>
+
+<!--<script>
+function submissionspage() {
+  document.getElementById("overlay1").style.display = "block";
+  document.getElementById("saskrcmpintake").style.display = "none";
+  
+}
+</script>-->
+
+
+<script>
+window.onload = () => {
+  let hour = 0;
+  let minute = 0;
+  let seconds = 0;
+  let totalSeconds = 0;
+  
+  let intervalId = null;
+  
+  function startTimer() {
+    ++totalSeconds;
+    hour = Math.floor(totalSeconds /3600);
+    minute = Math.floor((totalSeconds - hour*3600)/60);
+    seconds = totalSeconds - (hour*3600 + minute*60);
+    document.getElementById("hour").innerHTML =hour+":"+ minute;
+    
+    //document.getElementById("minute").innerHTML =minute;
+    document.getElementById("seconds").innerHTML =totalSeconds;
+  }
+  document.getElementById('start-btn').addEventListener('click', () => {
+    intervalId = setInterval(startTimer, 1000);
+  })
+  
+  document.getElementById('stop-btn').addEventListener('click', () => {
+    if (intervalId)
+      clearInterval(intervalId);
+  });
+  
+}
+</script>
+
+<script>
+function authentication(){
+if ((document.getElementById("uname").value == "waldner") && 
+   (document.getElementById("psw").value == "0247"))
+   document.getElementById("overlay").style.display = "none";
+   else {
+  alert("Please enter valid credentials.");
+}
+
+}
+
+function loadData() {
+          var url = "https://docs.google.com/spreadsheet/pub?key=1Nj5Q6P-0XD2Bh3sf_namtabB2jtoTYANDC84IMvE5XQ&single=true&gid=0&range=A1&output=csv";
+          xmlhttp = new XMLHttpRequest();
+          xmlhttp.onreadystatechange = function () {
+              if (xmlhttp.readyState == 4) {
+                  document.getElementById("hold1").value = xmlhttp.responseText;
+                  //alert(xmlhttp.responseText);
+              }
+          };
+          xmlhttp.open("GET", url, true);
+          xmlhttp.send(null);
+      }
+</script>
+
+<script>
+function homescreen(){
+document.getElementById("overlay2").style.display ="block";
+}
+</script>
+
+<script>
+function gotointake() {
+document.getElementById("overlay2").style.display ="none";
+document.getElementById("saskrcmpintake").style.display ="block";
+}
+</script>
+
+
+</head>
+
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$.fn.serializeObject = function()
+{
+var o = {};
+var a = this.serializeArray();
+$.each(a, function() {
+if (o[this.name]) {
+if (!o[this.name].push) {
+o[this.name] = [o[this.name]];
+}
+o[this.name].push(this.value || '');
+} else {
+o[this.name] = this.value || '';
+}
+});
+return o;
+};
+</script>
+
+<script>  
+function getTimeStamp() {
+       var now = new Date();
+       return ((now.getMonth() + 1) + '/' + (now.getDate()) + '/' + now.getFullYear() + " " + now.getHours() + ':'
+                     + ((now.getMinutes() < 10) ? ("0" + now.getMinutes()) : (now.getMinutes())) + ':' + ((now.getSeconds() < 10) ? ("0" + now
+                     .getSeconds()) : (now.getSeconds())));
+}
+function stripdashpass() {
+    var input = document.createElement("input");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "stripdashpasstime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function stripdashfail() {
+    var input = document.createElement("input1");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "stripdashfailtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function mirrorspassstrip() {
+    var input = document.createElement("input2");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "mirrorspassstriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function mirrorsfailstrip() {
+    var input = document.createElement("input3");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "mirrorsfailstriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+
+
+
+function wiperspassstrip() {
+    var input = document.createElement("input4");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "wiperspassstriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function wipersfailstrip() {
+    var input = document.createElement("input5");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "wipersfailstriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function tireconditionpassstrip() {
+    var input = document.createElement("input6");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "tireconditionpassstriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function tireconditionfailstrip() {
+    var input = document.createElement("input7");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "tireconditionfailstriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function glassconditionpassstrip() {
+    var input = document.createElement("input8");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "glassconditionpassstriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function glassconditionfailstrip() {
+    var input = document.createElement("input9");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "glassconditionfailstriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function batteryconditionpassstrip() {
+    var input = document.createElement("input10");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "glassconditionpassstriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function batteryconditionfailstrip() {
+    var input = document.createElement("input11");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "batteryconditionfailstriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function sirenstrip() {
+    var input = document.createElement("input12");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", " sirenstriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function lightbarstrip() {
+    var input = document.createElement("input13");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "lightbarstriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function headlightflasherstrip() {
+    var input = document.createElement("input14");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", " headlightflasherstriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function cornerstrobestrip() {
+    var input = document.createElement("input15");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "cornerstrobestriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function reartrafficstrip() {
+    var input = document.createElement("input16");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "reartrafficstriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function additionallightingstrip() {
+    var input = document.createElement("input17");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "additionallightingstriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function horntransferstrip() {
+    var input = document.createElement("input18");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "horntransferstriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function powerdistributionunitstrip() {
+    var input = document.createElement("input19");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "powerdistributionunitstriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function interiorlightingstrip() {
+    var input = document.createElement("input20");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "interiorlightingstriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function basewiringstrip() {
+    var input = document.createElement("input21");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "basewiringstriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function policeradiostrip() {
+    var input = document.createElement("input22");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "policeradiostriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function antennascablingstrip() {
+    var input = document.createElement("input23");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "antennascablingstriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function centerconsolestrip() {
+    var input = document.createElement("input24");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "centerconsolestriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function dashmountstrip() {
+    var input = document.createElement("input25");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "dashmountstriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function laptopdockingstrip() {
+    var input = document.createElement("input26");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "laptopdockingstriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function icdvsstrip() {
+    var input = document.createElement("input27");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "icdvsstriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function prisonerpartitionstrip() {
+    var input = document.createElement("input28");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "prisonerpartitionstriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function rearequipmentstrip() {
+    var input = document.createElement("input29");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "rearequipmentstriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function shotgunrackstrip() {
+    var input = document.createElement("input30");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "shotgunrackstriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function rearsidewindowbarsstrip() {
+    var input = document.createElement("input31");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "rearsidewindowbarsstriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function radarsystemstrip() {
+    var input = document.createElement("input32");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "radarsystemstriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function secureidlestrip() {
+    var input = document.createElement("input33");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "secureidlestriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+} 
+function allipvequipmentstrip() {
+    var input = document.createElement("input34");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "allipvequipmentstriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+function otherstrip() {
+    var input = document.createElement("input35");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "otherstriptime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("stripform").appendChild(input);
+}
+
+function builddashpass() {
+    var input = document.createElement("input36");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "builddashpasstime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function builddashfail() {
+    var input = document.createElement("input37");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "builddashfailtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function mirrorspassbuild() {
+    var input = document.createElement("input38");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "mirrorspassbuildtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function mirrorsfailbuild() {
+    var input = document.createElement("input39");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "mirrorsfailbuildtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);}
+
+
+
+function wiperspassbuild() {
+    var input = document.createElement("input40");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "wiperspassbuildtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function wipersfailbuild() {
+    var input = document.createElement("input41");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "wipersfailbuildtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function tireconditionpassbuild() {
+    var input = document.createElement("input42");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "tireconditionpassbuildtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function tireconditionfailbuild() {
+    var input = document.createElement("input43");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "tireconditionfailbuildtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function glassconditionpassbuild() {
+    var input = document.createElement("input44");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "glassconditionpassbuildtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function glassconditionfailbuild() {
+    var input = document.createElement("input45");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "glassconditionfailbuildtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function batteryconditionpassbuild() {
+    var input = document.createElement("input46");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "glassconditionpassbuildtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function batteryconditionfailbuild() {
+    var input = document.createElement("input47");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "batteryconditionfailbuildtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function headliner() {
+    var input = document.createElement("input48");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "headlinertime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function frontseats() {
+    var input = document.createElement("input49");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "frontseatstime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function rearseats() {
+    var input = document.createElement("input50");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "rearseatstime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function rearseats() {
+    var input = document.createElement("input50");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "rearseatstime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function lightbar() {
+    var input = document.createElement("input51");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "lightbartime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function antennas() {
+    var input = document.createElement("input52");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "antennastime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function mountfrontandrear() {
+    var input = document.createElement("input53");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "mountfrontandreartime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function mountantenna() {
+    var input = document.createElement("input54");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "mountantennatime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function layradar() {
+    var input = document.createElement("input55");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "layradartime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function radarwiring() {
+    var input = document.createElement("input56");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "radarwiringtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function radartest() {
+    var input = document.createElement("input57");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "radartesttime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function watchguard() {
+    var input = document.createElement("input58");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "watchguardtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function wiringdetails() {
+    var input = document.createElement("input59");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "wiringdetailstime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function videomounting() {
+    var input = document.createElement("input60");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "videomountingtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function displayoverhead() {
+    var input = document.createElement("input61");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "displayoverheadtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function frontcamera() {
+    var input = document.createElement("input62");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "frontcameratime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function wirelessmic() {
+    var input = document.createElement("input63");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "wirelessmictime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function rearcammic() {
+    var input = document.createElement("input64");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "rearcammictime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function watchguardwiring() {
+    var input = document.createElement("input65");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "watchguardwiringtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function watchguardtesting() {
+    var input = document.createElement("input66");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "watchguardtestingtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function shutsoff() {
+    var input = document.createElement("input67");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "shutsofftime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function testtimer() {
+    var input = document.createElement("input68");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "testtimertime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function motorola() {
+    var input = document.createElement("input69");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "motorolatime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function radiomic() {
+    var input = document.createElement("input70");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "radiomictime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function paposition() {
+    var input = document.createElement("input71");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "papositiontime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function radiocable() {
+    var input = document.createElement("input72");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "radiocabletime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function cencom() {
+    var input = document.createElement("input73");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "cencomtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function wiringharness() {
+    var input = document.createElement("input74");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "wiringharnesstime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function hardwareinstallation() {
+    var input = document.createElement("input75");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "hardwareinstallationtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function dashradiowiring() {
+    var input = document.createElement("input76");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "dashradiowiringtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function dashtesting() {
+    var input = document.createElement("input77");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "dashtestingtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function disassemblepmt() {
+    var input = document.createElement("input78");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "disassemblepmttime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function removetopplates() {
+    var input = document.createElement("input79");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "removetopplatestime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function removemounting() {
+    var input = document.createElement("input80");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "removemountingtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function installmounting() {
+    var input = document.createElement("input81");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "installmountingtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function mountsidebrackets() {
+    var input = document.createElement("input82");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "mountsidebracketstime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function prewiredocking() {
+    var input = document.createElement("input83");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "prewiredockingtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function mountdocking() {
+    var input = document.createElement("input84");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "mountdockingtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function mountpower() {
+    var input = document.createElement("input85");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "mountpower");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function mountmic() {
+    var input = document.createElement("input86");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "mountmictime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function predrillhole() {
+    var input = document.createElement("input87");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "predrillholetime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function installcenterconsole() {
+    var input = document.createElement("input88");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "installcenterconsoletime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function dockingstationwire() {
+    var input = document.createElement("input89");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "dockingstationwiretime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function dockingstationtest() {
+    var input = document.createElement("input90");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "dockingstationtesttime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function mountcenterconsole() {
+    var input = document.createElement("input91");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "mountcenterconsoletime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function removearmrest() {
+    var input = document.createElement("input92");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "removearmresttime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function prebuildarmrest() {
+    var input = document.createElement("input93");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "prebuildarmresttime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function printermountcenterconsole() {
+    var input = document.createElement("input94");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "printermountcenterconsoletime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function printerwire() {
+    var input = document.createElement("input95");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "printerwiretime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function printertest() {
+    var input = document.createElement("input96");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "printertesttime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function armrestandcomputerswivel() {
+    var input = document.createElement("input97");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "armrestandcomputerswiveltime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function prisonershieldinstall() {
+    var input = document.createElement("input98");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "prisonershieldinstalltime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function foamandsealed() {
+    var input = document.createElement("input99");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "foamandsealedtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function panelsceiling() {
+    var input = document.createElement("input100");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "panelsceiling");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function panelsceiling() {
+    var input = document.createElement("input101");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "panelsceilingtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function nutsbolts() {
+    var input = document.createElement("input102");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "nutsboltstime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function adjustdualracks() {
+    var input = document.createElement("input103");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "adjustdualrackstime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function radiospeaker() {
+    var input = document.createElement("input104");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "radiospeakertime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function shotgunwiring() {
+    var input = document.createElement("input105");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "shotgunwiringtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function shotguntest() {
+    var input = document.createElement("input106");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "shotguntesttime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function platetolightbar() {
+    var input = document.createElement("input107");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "platetolightbartime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function mountcameras() {
+    var input = document.createElement("input108");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "mountcamerastime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function drillholes() {
+    var input = document.createElement("input109");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "drillholestime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function feedlines() {
+    var input = document.createElement("input110");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "feedlinestime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function mountdvr() {
+    var input = document.createElement("input111");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "mountdvrtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function sealholes() {
+    var input = document.createElement("input112");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "sealholestime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function alprtest() {
+    var input = document.createElement("input113");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "alprtesttime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function mounttarear() {
+    var input = document.createElement("input114");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "mounttareartime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function onetwomountingbrackets() {
+    var input = document.createElement("input115");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "onetwomountingbracketstime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function whelenwiring() {
+    var input = document.createElement("input116");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "whelenwiringtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function whelentesting() {
+    var input = document.createElement("input117");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "whelentestingtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function trunktray() {
+    var input = document.createElement("input118");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "trunktraytime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function mountcomponents() {
+    var input = document.createElement("input119");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "mountcomponentstime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function cleanandstore() {
+    var input = document.createElement("input120");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "cleanandstoretime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function loomtape() {
+    var input = document.createElement("input121");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "loomtapetime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function trunktraywire() {
+    var input = document.createElement("input122");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "trunktraywiretime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function trunktraytest() {
+    var input = document.createElement("input123");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "trunktraytesttime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+function radiorepeater() {
+    var input = document.createElement("input124");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "radiorepeatertime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("buildform").appendChild(input);
+}
+
+function otherdashpass() {
+    var input = document.createElement("input125");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "otherdashpasstime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("otherform").appendChild(input);
+}
+function otherdashfail() {
+    var input = document.createElement("input126");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "otherdashfailtime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("otherform").appendChild(input);
+}
+function mirrorspassother() {
+    var input = document.createElement("input127");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "mirrorspassothertime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("otherform").appendChild(input);
+}
+function mirrorsfailother() {
+    var input = document.createElement("input128");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "mirrorsfailothertime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("otherform").appendChild(input);}
+
+
+
+function wiperspassother() {
+    var input = document.createElement("input129");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "wiperspassothertime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("otherform").appendChild(input);
+}
+function wipersfailother() {
+    var input = document.createElement("input130");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "wipersfailothertime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("otherform").appendChild(input);
+}
+function tireconditionpassother() {
+    var input = document.createElement("input131");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "tireconditionpassothertime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("otherform").appendChild(input);
+}
+function tireconditionfailother() {
+    var input = document.createElement("input132");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "tireconditionfailothertime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("otherform").appendChild(input);
+}
+function glassconditionpassother() {
+    var input = document.createElement("input133");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "glassconditionpassothertime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("otherform").appendChild(input);
+}
+function glassconditionfailother() {
+    var input = document.createElement("input134");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "glassconditionfailothertime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("otherform").appendChild(input);
+}
+function batteryconditionpassother() {
+    var input = document.createElement("input135");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "glassconditionpassothertime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("otherform").appendChild(input);
+}
+function batteryconditionfailother() {
+    var input = document.createElement("input136");
+   input.setAttribute("hidden", true);
+   input.setAttribute("type", "text");
+   input.setAttribute("name", "batteryconditionfailothertime");                                    
+   input.setAttribute("value", getTimeStamp());
+   document.getElementById("otherform").appendChild(input);
+}
+
+</script>
+
+<center>
+<div id="overlay" style="background-color:white" class="modal"><center><img src="https://drive.google.com/uc?id=14b58YMTShxQ2Eb8g_EwSnLJn2P2pyGbe"  top=35px right=125px height=70 width=120/></center>
+  <div class="container">
+      <label style="color:black" for="uname"><b>Username:</b></label>
+      <input style="font-size:23px;color:black;" class="username" type="text" placeholder="Enter Username" name="uname" id="uname" required>
+<br>
+      <label style="color:black;" for="psw"><b>Password:</b></label>
+      <input style="font-size:23px;" type="password" placeholder="Enter Password" id="psw" name="psw" required>
+        <br><br>
+      <button style="background-color:red" class="submitbutton" onclick="authentication();homescreen();loadData();">Login</button>
+    </div>
+</div></center>
+
+<center>
+  <div id="overlay2" style="display:none;background-color:white">
+<img src="https://drive.google.com/uc?id=1T2TM9M4LCFyk0cl-Y8rEtI0mt6ugVGQT"  top=35px right=125px height=60 width=170/><br>
+<h1 style="color:black">
+Home
+</h1>
+    <div class="container">
+    <label style="color:black;"><font size="6">Click to proceed to Intake form</font></label>&nbsp;&nbsp;&nbsp;&nbsp;<br><br><input id="gotointakebutton" type="button" class="bigbutton" value="Intake" onclick="gotointake();"><br><br><br>
+    <label style="color:black;"><font size="6">Click to receive the most recent dispatch information</font></label>&nbsp;&nbsp;&nbsp;&nbsp;<br><br><input id="receivedispatchbutton" type="button" class="bigbutton" value="Receive Dispatch"><br><br><br>
+    <label style="color:black;"><font size="6">Retrieve a job that you recently placed on hold:</font></label><br><br>
+    <input id="hold1" style="font-size:23px;" type="text" disabled>&nbsp;&nbsp;&nbsp;&nbsp;<input id="hold1btn" type="button" class="bigbutton" value="Retrieve"><br><br>
+    <input id="hold2" style="font-size:23px;" type="text" disabled>&nbsp;&nbsp;&nbsp;&nbsp;<input id="hold2btn" type="button" class="bigbutton" value="Retrieve"><br><br>
+    <input id="hold3" style="font-size:23px;" type="text" disabled>&nbsp;&nbsp;&nbsp;&nbsp;<input id="hold3btn" type="button" class="bigbutton" value="Retrieve"><br><br>
+    <input id="hold4" style="font-size:23px;" type="text" disabled>&nbsp;&nbsp;&nbsp;&nbsp;<input id="hold4btn" type="button" class="bigbutton" value="Retrieve"><br><br>
+    <input id="hold5" style="font-size:23px;" type="text" disabled>&nbsp;&nbsp;&nbsp;&nbsp;<input id="hold5btn" type="button" class="bigbutton" value="Retrieve"><br><br>
+    </div>   
+</div>
+  
+</center>
+
+
+<div id=timespent style="display:none;" class="Fixed">
+<p>
+Time Spent
+</p>
+<div>HH:mm <span id="hour" style="color:green;"></span></div>
+<div style="display:none;"><p id="seconds"></p></div>
+
+<button id="start-btn">Continue</button>
+<button id="stop-btn">Pause Job</button>
+
+</div>
+<br><br>
+
+
+<center>
+  <form id="saskrcmpintake" style="display:none;">
+  <div>
+<img src="https://drive.google.com/uc?id=1T2TM9M4LCFyk0cl-Y8rEtI0mt6ugVGQT" onclick="homescreen();" top=35px left=65px height=60 width=170/><br>
+</div>
+
+  <h1>
+  Saskatchewan RCMP Intake
+  </h1>
+<br><br>
+
+  <b><label style="color:blue"><font size ="5">Job Type</font></label></b><br><br>
+   <label><font size="5"><input id="stripcheckbox" class=largerCheckbox type="checkbox" onclick="jobtypeinputtest();"> Strip</font></label><br>
+    <!--<label><font size="5"><input id="cleaningcheckbox" class=largerCheckbox type="checkbox" > Cleaning</font></label><br>-->
+    <label><font size="5"><input id="buildcheckbox" class=largerCheckbox type="checkbox" onclick="jobtypeinputtest();" > Build</font></label><br>
+    <label><font size="5"><input id="othercheckbox" class=largerCheckbox type="checkbox" onclick="otherinput();jobtypeinputtest();" > Other</font></label><br>
+    <input type="text" id="othertextinput" name="othertextinput" style="display:none;font-size:23px;"><br><br>
+   <input type="text" id="jobtypeinput" name="jobtypeinput" style="display:none;"> 
+    <label style="color:blue"><font size="5">Work Required:&nbsp;&nbsp;<input style="font-size:23px;" id="workrequiredintake" name="workrequiredintake" type="text"></font></label>
+    
+    <br><br><br>
+
+<label style="color:blue"><font size="5">Receiver's Name:&nbsp;&nbsp;<input style="color:blue;font-size:23px;" id="receiversname" name="receiversname" type="text" list=receiverslist></font><datalist id="receiverslist" name="receiverslist" style="font-size:23px;">
+<select>
+</select> 
+</datalist></label>
+<br><br><br>
+
+<table>
+<tr>
+  <td><label style="color:blue"><font size="5">Unit Number:&nbsp;&nbsp;<input style="font-size:23px;" id="unitnumberintake" name="unitnumberintake" type="text"></font></label></td>
+  
+  <td><input class="button" id="img1" type="file" accept="image/*"/><input id ="imgtext1" name="unitnumber-imagelink" type="hidden"/></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">Call Sign:&nbsp;&nbsp;<input style="font-size:23px;" id="callsignintake" name="callsignintake" type="text"></font></label></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">Call Up #:&nbsp;&nbsp;<input style="font-size:23px;" id="callupintake" name="callupintake" type="text"></font></label></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">Odometer Reading:&nbsp;&nbsp;<input style="font-size:23px;" id="odometerintake" name="odometerintake" type="number"></font></label></td>
+  <td><input class="button" id="img2" name="img2" type="file" accept="image/*"/><input id ="imgtext2" name="" type="hidden"/></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">VIN:&nbsp;&nbsp;&nbsp;<input style="font-size:23px;" id="vinintake" type="text"></font></label></td>
+  <td><input class="button" id="img3" name="img3" type="file" accept="image/*"/><input id ="imgtext3" name="" type="hidden"/></td>
+</tr>
+
+</table>
+
+
+<br><br><br><br>
+ 
+ <table>
+ <tr>
+   <td style="color:black"><font size="5"><b>Driver-side view of vehicle</b><br><input class="button" id="img4" name="img4" type="file" accept="image/*"/><input id ="imgtext4" name="" type="hidden"/></font>
+   </td>
+   <td style="color:black">
+     <font size="5"><b>Front view of vehicle</b><br><input class="button" id="img5" name="img5" type="file" accept="image/*"/><input id ="imgtext5" name="" type="hidden"/></font>
+   </td>
+ </tr>
+ <tr><td></td><td></td></tr>
+ <tr>
+   <td style="color:black"><font size="5"><b>Passenger-side view of vehicle</b><br><input class="button" id="img6" name="img6" type="file" accept="image/*"/><input id ="imgtext6" name="" type="hidden"/></font>
+   </td>
+   <td style="color:black">
+     <font size="5"><b>Rear view of vehicle</b><br><input class="button" id="img7" name="img7" type="file" accept="image/*"/><input id ="imgtext7" name="" type="hidden"/></font>
+   </td>
+ </tr>
+ 
+ </table>
+ <br><br><br>
+
+<label style="color:blue"><font size="5">Notes/Comments:&nbsp;&nbsp;&nbsp;<input style="font-size:23px;" id="notesintake" name="notesintake" type="text"></font></label><br><br><br>
+
+<input class="submitbutton" value="Submit" id="submit-form"> 
+
+  
+<script>
+document.getElementById("submit-form").addEventListener("click", function(){
+  document.getElementById("overlay1").style.display = "block";
+});
+</script>
+ 
+ 
+<script>
+var fileInput = document.getElementById('img1');
+//var preview = document.getElementById('preview');
+fileInput.addEventListener('change', function(e) {
+  
+    var imgurl = URL.createObjectURL(e.target.files[0]);
+    document.getElementById("imgtext1").value = imgurl;
+}, false);
+</script>
+
+<script>
+var fileInput = document.getElementById('img2');
+//var preview = document.getElementById('preview');
+fileInput.addEventListener('change', function(e) {
+  
+    var imgurl = URL.createObjectURL(e.target.files[0]);
+    document.getElementById("imgtext2").value = imgurl;
+}, false);
+</script>
+
+<script>
+var fileInput = document.getElementById('img3');
+//var preview = document.getElementById('preview');
+fileInput.addEventListener('change', function(e) {
+  
+    var imgurl = URL.createObjectURL(e.target.files[0]);
+    document.getElementById("imgtext3").value = imgurl;
+}, false);
+</script>
+
+<script>
+var fileInput = document.getElementById('img4');
+//var preview = document.getElementById('preview');
+fileInput.addEventListener('change', function(e) {
+  
+    var imgurl = URL.createObjectURL(e.target.files[0]);
+    document.getElementById("imgtext4").value = imgurl;
+}, false);
+</script>
+
+<script>
+var fileInput = document.getElementById('img5');
+//var preview = document.getElementById('preview');
+fileInput.addEventListener('change', function(e) {
+  
+    var imgurl = URL.createObjectURL(e.target.files[0]);
+    document.getElementById("imgtext5").value = imgurl;
+}, false);
+</script>
+
+<script>
+var fileInput = document.getElementById('img6');
+//var preview = document.getElementById('preview');
+fileInput.addEventListener('change', function(e) {
+  
+    var imgurl = URL.createObjectURL(e.target.files[0]);
+    document.getElementById("imgtext6").value = imgurl;
+}, false);
+</script>
+
+<script>
+var fileInput = document.getElementById('img7');
+//var preview = document.getElementById('preview');
+fileInput.addEventListener('change', function(e) {
+  
+    var imgurl = URL.createObjectURL(e.target.files[0]);
+    document.getElementById("imgtext7").value = imgurl;
+}, false);
+</script>
+
+  </form>
+  
+  <div id="overlay1" style="display:none" class="modal">
+    <img src="https://drive.google.com/uc?id=1T2TM9M4LCFyk0cl-Y8rEtI0mt6ugVGQT"  top=35px left=65px height=60 width=170/>
+    
+    <h2 style="color:black;">
+    Thank you.<br><br> Please click 'Continue to Job Form' to start a job or 'Home' to return to the homepage. 
+    </h2>
+    
+    <button class="button" id="homepage" onclick="homepage();">Home</button>
+    
+    <button class="button" id="formnav" onclick="intakeform();">Continue to Job Form</button>
+    
+</div> 
+</center>
+
+<center><button style="display:none" class="submitbutton" id="stripformbutton" type="submit" onclick="showstripform();clickcontinue();">Start Strip</button></center>
+
+<center>
+<form style="display:none" id="stripform">
+<h2>
+Sask. RCMP Strip
+</h2>
+
+<table>
+<tr>
+  <td><label style="color:blue"><font size="5">Unit Number:&nbsp;&nbsp;<input style="font-size:23px;" id="unitnumberstrip" name="unitnumberstrip" type="text"></font></label></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">Odometer Reading:&nbsp;&nbsp;<input style="font-size:23px;" id="odometerstrip" name="odometerstrip" type="number"></font></label></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">VIN:&nbsp;&nbsp;&nbsp;<input style="font-size:23px;" id="vinstrip" name="vinstrip" type="text"></font></label></td>
+</tr>
+
+</table>
+<br><br>
+<h3>
+RCMP Vehicle Inspection Guide
+</h3>
+<br><br>
+
+<canvas style="background: url('https://drive.google.com/uc?id=1mqYqIfOuhDo90zlmHaHo2Qu3Kh6qoIW2');" width="392" height="500">
+</canvas>
+
+<br><br><br>
+<table>
+<tr>
+  <td>Item</td>
+  <td>Pass</td>
+  <td>Fail</td>
+  <td>Description</td>
+</tr>
+<tr>
+<td><label><font size="5"> Dash Indicator Lights&nbsp;&nbsp;</font></label></td>
+<td><input id="stripdashpasscheckbox" class=largerCheckbox type="checkbox" onclick=" stripdashpass();" ></td>
+<td><input id="stripdashfailcheckbox" class=largerCheckbox type="checkbox" onclick="stripdashfail();" ></td>
+  <td><input style="font-size:23px;" id="stripdashtext" name="stripdashtext" type="text"></td>
+</tr>
+<input style="display:none;" id="stripdashpass" name="stripdashpass" type="text">
+<input style="display:none;" id="stripdashfail" name="stripdashfail" type="text">
+
+<tr>
+<td><label><font size="5"> Mirrors&nbsp;&nbsp;</font></label></td>
+<td><input id="mirrorspassstripcheckbox" class=largerCheckbox type="checkbox" onclick=" mirrorspassstrip();" ></td>
+<td><input id="mirrorsfailstripcheckbox" class=largerCheckbox type="checkbox" onclick=" mirrorsfailstrip();" ></td>
+  <td><input style="font-size:23px;" id="mirrorsstriptext" name="mirrorsstriptext" type="text"></td>
+</tr>
+<input style="display:none;" id="mirrorspassstrip" name="mirrorspassstrip" type="text">
+<input style="display:none;" id="mirrorsfailstrip" name="mirrorsfailstrip" type="text">
+
+
+<tr>
+<td><label><font size="5"> Wipers&nbsp;&nbsp;</font></label></td>
+<td><input id="wiperspassstripcheckbox" class=largerCheckbox type="checkbox" onclick=" wiperspassstrip();"></td>
+<td><input id="wipersfailstripcheckbox" class=largerCheckbox type="checkbox" onclick=" wipersfailstrip();"></td>
+  <td><input style="font-size:23px;" id="wipersstriptext" name="wipersstriptext" type="text"></td>
+</tr>
+<input style="display:none;" id="wiperspassstrip" name="wiperspassstrip" type="text">
+<input style="display:none;" id="wipersfailstrip" name="wipersfailstrip" type="text">
+
+
+
+<tr>
+<td><label><font size="5"> Tire condition&nbsp;&nbsp;</font></label></td>
+<td><input id="tireconditionpassstripcheckbox" class=largerCheckbox type="checkbox" onclick="tireconditionpassstrip();"></td>
+<td><input id="tireconditionfailstripcheckbox" class=largerCheckbox type="checkbox" onclick="tireconditionfailstrip();"></td>
+  <td><input style="font-size:23px;" id="tireconditionfailstriptext" name="tireconditionfailstriptext" type="text"></td>
+</tr>
+<input style="display:none;" id="tireconditionpassstrip" name="tireconditionpassstrip" type="text">
+<input style="display:none;" id="tireconditionfailstrip" name="tireconditionfailstrip" type="text">
+
+
+<tr>
+<td><label><font size="5"> Glass condition&nbsp;&nbsp;</font></label></td>
+<td><input id="glassconditionpassstripcheckbox" class=largerCheckbox type="checkbox" onclick="glassconditionpassstrip();"></td>
+<td><input id="glassconditionfailstripcheckbox" class=largerCheckbox type="checkbox" onclick="glassconditionfailstrip();" ></td>
+  <td><input style="font-size:23px;" id="glassconditionstriptext" name="glassconditionfailstriptext" type="text"></td>
+</tr>
+<input style="display:none;" id="glassconditionpassstrip" name="glassconditionpassstrip" type="text">
+<input style="display:none;" id="glassconditionfailstrip" name="glassconditionfailstrip" type="text">
+
+
+
+<tr>
+<td><label><font size="5"> Battery condition&nbsp;&nbsp;</font></label></td>
+<td><input id="batteryconditionpassstripcheckbox" class=largerCheckbox type="checkbox" onclick="batteryconditionpassstrip();"></td>
+<td><input id="batteryconditionfailstripcheckbox" class=largerCheckbox type="checkbox" onclick="batteryconditionfailstrip();"></td>
+  <td><input style="font-size:23px;" id="batteryconditionstriptext" name="batteryconditionstriptext" type="text"></td>
+</tr>
+<input style="display:none;" id="batteryconditionpassstrip" name="batteryconditionpassstrip" type="text">
+<input style="display:none;" id="batteryconditionfailstrip" name="batteryconditionfailstrip" type="text">
+
+
+</table>
+
+
+<br><br><br>
+<h2>
+RCMP Standing Offer No. M5000-160786/001/WNP<br><br>SUMMARY OF REMOVAL OF EQUIPMENT
+</h2>
+<table>
+<tr>
+  <td>All types - if present, check to indicate removal:</td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="siren" class=largerCheckbox type="checkbox" onclick="sirenstrip();"> Siren controller unit, keypad and siren speaker</font></label></td>
+</tr>
+<input style="display:none;" id="sirenstrip" name="sirenstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="lightbar" class=largerCheckbox type="checkbox" onclick="lightbarstrip();" > Light bar assembly</font></label></td>
+</tr>
+<input style="display:none;" id="lightbarstrip" name="lightbarstrip" type="text">
+
+
+
+<tr>
+  <td><label><font size="5"><input id="headlightflasher" class=largerCheckbox type="checkbox" onclick="headlightflasherstrip();"  > Headlight flasher</font></label></td>
+</tr>
+<input style="display:none;" id="headlightflasherstrip" name="headlightflasherstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="cornerstrobe" class=largerCheckbox type="checkbox" onclick="cornerstrobestrip();" > Corner strobes/Power supply and/or LED lights</font></label></td>
+</tr>
+<input style="display:none;" id="cornerstrobestrip" name="cornerstrobestrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="reartraffic" class=largerCheckbox type="checkbox" onclick="reartrafficstrip();"> Rear traffic advisor</font></label></td>
+</tr>
+<input style="display:none;" id="reartrafficstrip" name="reartrafficstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="additionallighting" class=largerCheckbox type="checkbox" onclick="additionallightingstrip();" > Any additional lighting</font></label></td>
+</tr>
+<input style="display:none;" id="additionallightingstrip" name="additionallightingstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="horntransfer" class=largerCheckbox type="checkbox" onclick="horntransferstrip();"  > Horn transfer and vehicle lighting enable (returned to OEM status)</font></label></td>
+</tr>
+<input style="display:none;" id="horntransferstrip" name="horntransferstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="powerdistributionunit" class=largerCheckbox type="checkbox" onclick="powerdistributionunitstrip();"  > Power distribution unit</font></label></td>
+</tr>
+<input style="display:none;" id="powerdistributionunitstrip" name="powerdistributionunitstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="interiorlighting" class=largerCheckbox type="checkbox" onclick="interiorlightingstrip();"  > Added interior lighting (partition and additional roof lighting)</font></label></td>
+</tr>
+<input style="display:none;" id="interiorlightingstrip" name="interiorlightingstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="basewiring" class=largerCheckbox type="checkbox" onclick="basewiringstrip();" > Base wiring harness</font></label></td>
+</tr>
+<input style="display:none;" id="basewiringstrip" name="basewiringstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="policeradio" class=largerCheckbox type="checkbox" onclick="policeradiostrip();" > Police radio/s system</font></label></td>
+</tr>
+<input style="display:none;" id="policeradiostrip" name="policeradiostrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="antennascabling" class=largerCheckbox type="checkbox" onclick="antennascablingstrip();"  > Antennas and cabling</font></label></td>
+</tr>
+<input style="display:none;" id="antennascablingstrip" name="antennascablingstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="centerconsole" class=largerCheckbox type="checkbox" onclick="centerconsolestrip();" > Center console assembly</font></label></td>
+</tr>
+<input style="display:none;" id="centerconsolestrip" name="centerconsolestrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="dashmount" class=largerCheckbox type="checkbox" onclick="dashmountstrip();" > Dash mount system</font></label></td>
+</tr>
+<input style="display:none;" id="dashmountstrip" name="dashmountstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="laptopdocking" class=largerCheckbox type="checkbox" onclick="laptopdockingstrip();"  > Laptop docking station</font></label></td>
+</tr>
+<input style="display:none;" id="laptopdockingstrip" name="laptopdockingstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="icdvs" class=largerCheckbox type="checkbox" onclick="icdvsstrip();"  > In-car Digital Video System (ICDVS)</font></label></td>
+</tr>
+<input style="display:none;" id="icdvsstrip" name="icdvsstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="prisonerpartition" class=largerCheckbox type="checkbox" onclick="prisonerpartitionstrip();"  > Prisoner partition shield (potentially two in the SUV)</font></label></td>
+</tr>
+<input style="display:none;" id="prisonerpartitionstrip" name="prisonerpartitionstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="rearequipment" class=largerCheckbox type="checkbox" onclick="rearequipmentstrip();"  > Rear equipment/Storage box or Equipment tray and toll box</font></label></td>
+</tr>
+<input style="display:none;" id="rearequipmentstrip" name="rearequipmentstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="shotgunrack" class=largerCheckbox type="checkbox" onclick="shotgunrackstrip();" > Shotgun rack/Carbine rack</font></label></td>
+</tr>
+<input style="display:none;" id="shotgunrackstrip" name="shotgunrackstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="rearsidewindowbars" class=largerCheckbox type="checkbox" onclick="rearsidewindowbarsstrip();" > Rear and/or Side window bars</font></label></td>
+</tr>
+<input style="display:none;" id="rearsidewindowbarsstrip" name="rearsidewindowbarsstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="radarsystem" class=largerCheckbox type="checkbox" onclick="radarsystemstrip();"  > Radar system including VSS cable installation and video interface cable</font></label></td>
+</tr>
+<input style="display:none;" id="radarsystemstrip" name="radarsystemstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="secureidle" class=largerCheckbox type="checkbox" onclick="secureidlestrip();" > Secure idle (returned to OEM status)</font></label></td>
+</tr>
+<input style="display:none;" id="secureidlestrip" name="secureidlestrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="allipvequipment" class=largerCheckbox type="checkbox" onclick="allipvequipmentstrip();"  > All Integrated Police Vehicle (IPV) Equipment</font></label></td>
+</tr>
+<input style="display:none;" id="allipvequipmentstrip" name="allipvequipmentstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="otherstrip" class=largerCheckbox type="checkbox" onclick="otherstrip();"  > Other - (e.g. hidden lighting, lock boxes)</font></label></td>
+</tr>
+<input style="display:none;" id="otherstrip" name="otherstrip" type="text">
+
+
+<tr>
+  <td style="background-color:black"></td>
+</tr>
+<tr>
+  <td style="background-color:black"></td>
+</tr>
+<tr>
+  <td style="background-color:black"></td>
+</tr>
+<tr>
+  <td style="background-color:black"></td>
+</tr>
+<tr>
+  <td>
+    DETAILS OF EQUIPMENT REMOVAL
+  </td>
+</tr>
+<tr>
+  <td>
+    The contractor will be contacted by the identified user, as per Contract Part 7A, 7.7 "as when required" to remove all or requested police/safety/additional equipment without damage to the equipment, vehicle and manufacturers wiring in various vehicle platforms. In addition to the removal of the police/safety equipment platform specific factory equipment will need to be re-enabled (e.g. daytime running lights, lighting, horn, secure idle removal).A pre-inspection check sheet will be provided by the RCMP to assist with the location of all police/safety equipment for removal. All equipment must be returned to the identified user, as per Contract Part 7 A 7.7, in an organized fashion.
+  </td>
+</tr>
+
+</table><br>
+
+<center><button class="submitbutton" id="submit-stripform" type="submit">Submit</button></center>
+
+<button style="display:none" class="submitbutton" id="pause-stripform" type="submit">Pause</button>
+
+<script>
+var $form = $('form#stripform'),
+    url = 'https://script.google.com/macros/s/AKfycbwW9QmK6ThcTF18y5kIug0vpZblQZA6b9v_gWXmAiHWbaSy_BQ/exec',
+
+$submit = $('#submit-stripform').on('click', function(e) {
+  e.preventDefault();
+  var jqxhr = $.ajax({
+    url: url,
+    method: "GET",
+    dataType: "json",
+    data: $form.serializeObject()
+  }).done(
+    // do something
+  );
+   $('#stripform')[0].reset();
+})
+</script>
+
+<script>
+var $form = $('form#stripform'),
+    url1 = 'https://script.google.com/macros/s/AKfycbzk1Jm3bHFOQOsjSKhfRd0lBQAQWxfggGFDBmn19nja_CB9gAxi/exec',
+
+$submit = $('#pause-stripform').on('click', function(f) {
+  f.preventDefault();
+  var jqxhr = $.ajax({
+    url: url1,
+    method: "GET",
+    dataType: "json",
+    data: $form.serializeObject()
+  }).done(
+    // do something
+  );
+   //$('#stripform')[0].reset();
+})
+</script>
+
+
+</form>
+
+</center>
+
+<!-- Cleaning Intake Form. -->
+<center><button style="display:none" class="submitbutton" id="cleaningformbutton" type="submit" onclick="showcleaningform();clickcontinue();">Start Cleaning Job</button></center>
+
+<center>
+  <form style="display:none" id="cleaningform">
+<h2>
+Sask. RCMP Cleaning
+</h2>
+
+<table>
+<tr>
+  <td><label style="color:blue"><font size="5">Unit Number:&nbsp;&nbsp;<input style="font-size:23px;" id="unitnumbercleaning" name="unitnumbercleaning"type="text"></font></label></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">Odometer Reading:&nbsp;&nbsp;<input style="font-size:23px;" id="odometercleaning" name="odometercleaning" type="number"></font></label></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">VIN:&nbsp;&nbsp;&nbsp;<input style="font-size:23px;" id="vincleaning" name="vincleaning" type="text"></font></label></td>
+</tr>
+
+</table>
+
+</form>
+</center>
+
+<!-- Build-Intake Form. -->
+<center><button style="display:none" class="submitbutton" id="buildformbutton" type="submit" onclick="showbuildform();clickcontinue();">Start Build Job</button></center>
+
+<center>
+<form style="display:none" id="buildform">
+<h2>
+Sask. RCMP Build
+</h2>
+
+<table>
+<tr>
+  <td><label style="color:blue"><font size="5">Unit Number:&nbsp;&nbsp;<input style="font-size:23px;" id="unitnumberbuild" name="unitnumberbuild"type="text"></font></label></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">Odometer Reading:&nbsp;&nbsp;<input style="font-size:23px;" id="odometerbuild" name="odometerbuild" type="number"></font></label></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">VIN:&nbsp;&nbsp;&nbsp;<input style="font-size:23px;" id="vinbuild" name="vinbuild" type="text"></font></label></td>
+</tr>
+
+</table>
+
+<br><br>
+<h3>
+RCMP Vehicle Inspection Guide
+</h3>
+<br><br>
+
+<canvas style="background: url('https://drive.google.com/uc?id=1mqYqIfOuhDo90zlmHaHo2Qu3Kh6qoIW2');" width="392" height="500">
+</canvas>
+
+<br><br><br>
+<table>
+<tr>
+  <td>Item</td>
+  <td>Pass</td>
+  <td>Fail</td>
+  <td>Description</td>
+</tr>
+<tr>
+<td><label><font size="5"> Dash Indicator Lights&nbsp;&nbsp;</font></label></td>
+<td><input id="builddashpasscheckbox" class=largerCheckbox type="checkbox" onclick="builddashpass();"></td>
+<td><input id="builddashfailcheckbox" class=largerCheckbox type="checkbox" onclick="builddashfail();" ></td>
+  <td><input style="font-size:23px;" id="builddashtext" name="builddashtext" type="text"></td>
+</tr>
+<input style="display:none;" id="builddashpass" name="builddashpass" type="text">
+<input style="display:none;" id="builddashfail" name="builddashfail" type="text">
+
+<tr>
+<td><label><font size="5"> Mirrors&nbsp;&nbsp;</font></label></td>
+<td><input id="mirrorspassbuildcheckbox" class=largerCheckbox type="checkbox" onclick="mirrorspassbuild();"></td>
+<td><input id="mirrorsfailbuildcheckbox" class=largerCheckbox type="checkbox" onclick="mirrorsfailbuild();" ></td>
+  <td><input style="font-size:23px;" id="mirrorsbuildtext" name="mirrorsbuildtext" type="text"></td>
+</tr>
+<input style="display:none;" id="mirrorspassbuild" name="mirrorspassbuild" type="text">
+<input style="display:none;" id="mirrorsfailbuild" name="mirrorsfailbuild" type="text">
+
+
+<tr>
+<td><label><font size="5"> Wipers&nbsp;&nbsp;</font></label></td>
+<td><input id="wiperspassbuildcheckbox" class=largerCheckbox type="checkbox" onclick="wiperspassbuild();"></td>
+<td><input id="wipersfailbuildcheckbox" class=largerCheckbox type="checkbox" onclick="wipersfailbuild();" ></td>
+  <td><input style="font-size:23px;" id="wipersbuildtext" name="wipersbuildtext" type="text"></td>
+</tr>
+<input style="display:none;" id="wiperspassbuild" name="wiperspassbuild" type="text">
+<input style="display:none;" id="wipersfailbuild" name="wipersfailbuild" type="text">
+
+
+<tr>
+<td><label><font size="5"> Tire condition&nbsp;&nbsp;</font></label></td>
+<td><input id="tireconditionpassbuildcheckbox" class=largerCheckbox type="checkbox" onclick="tireconditionpassbuild();"></td>
+<td><input id="tireconditionfailbuildcheckbox" class=largerCheckbox type="checkbox" onclick="tireconditionfailbuild();" ></td>
+  <td><input style="font-size:23px;" id="tireconditionbuildtext" name="tireconditionbuildtext" type="text"></td>
+</tr>
+<input style="display:none;" id="tireconditionpassbuild" name="tireconditionpassbuild" type="text">
+<input style="display:none;" id="tireconditionfailbuild" name="tireconditionfailbuild" type="text">
+
+
+<tr>
+<td><label><font size="5"> Glass condition&nbsp;&nbsp;</font></label></td>
+<td><input id="glassconditionpassbuildcheckbox" class=largerCheckbox type="checkbox" onclick="glassconditionpassbuild();"></td>
+<td><input id="glassconditionfailbuildcheckbox" class=largerCheckbox type="checkbox" onclick="glassconditionfailbuild();"></td>
+  <td><input style="font-size:23px;" id="glassconditionbuildtext" name="glassconditionbuildtext" type="text"></td>
+</tr>
+<input style="display:none;" id="glassconditionpassbuild" name="glassconditionpassbuild" type="text">
+<input style="display:none;" id="glassconditionfailbuild" name="glassconditionfailbuild" type="text">
+
+
+<tr>
+<td><label><font size="5"> Battery condition&nbsp;&nbsp;</font></label></td>
+<td><input id="batteryconditionpassbuildcheckbox" class=largerCheckbox type="checkbox" onclick="batteryconditionpassbuild();"></td>
+<td><input id="batteryconditionfailbuildcheckbox" class=largerCheckbox type="checkbox" onclick="batteryconditionfailbuild();"></td>
+  <td><input style="font-size:23px;" id="batteryconditionbuildtext" name="batteryconditionbuildtext" type="text"></td>
+</tr>
+<input style="display:none;" id="batteryconditionpassbuild" name="batteryconditionpassbuild" type="text">
+<input style="display:none;" id="batteryconditionfailbuild" name="batteryconditionfailbuild" type="text">
+
+
+</table>
+
+
+
+<br><br><br>
+<h2>
+Check off installed items for this build
+</h2>
+<h3>
+Interior Disassembly and Reassembly
+</h3>
+
+<table>
+<tr>
+  <td><label><font size="5"><input id="headlinercheckbox" class=largerCheckbox type="checkbox" onclick="headliner();"> Headliner</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="headlinertext" name="headlinertext">
+  </td>
+</tr>
+<input style="display:none;" id="headliner" name="headliner" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="frontseatscheckbox" class=largerCheckbox type="checkbox" onclick="frontseats();" > Front Seats (sedan only)</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="frontseatstext" name="frontseatstext">
+  </td>
+</tr>
+<input style="display:none;" id="frontseats" name="frontseats" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="rearseatscheckbox" class=largerCheckbox type="checkbox" onclick="rearseats();" > Rear Seats (sedan only)</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="rearseatstext" name="rearseatstext">
+  </td>
+</tr>
+<input style="display:none;" id="rearseats" name="rearseats" type="text">
+
+
+</table><br><br><br>
+
+<h3>
+Roof Assembly
+</h3>
+
+<table>
+<tr>
+  <td><label><font size="5"><input id="lightbarcheckbox" class=largerCheckbox type="checkbox" onclick="lightbar();"  > Light bar mount and feed</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="lightbartext" name="lightbartext">
+  </td>
+</tr>
+<input style="display:none;" id="lightbar" name="lightbar" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="antennascheckbox" class=largerCheckbox type="checkbox" onclick="antennas();"> Antennas mount and feed</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="antennastext" name="antennastext">
+  </td>
+</tr>
+<input style="display:none;" id="antennas" name="antennas" type="text">
+
+
+</table><br><br><br>
+
+<h3>
+Radar
+</h3>
+
+<table>
+<tr>
+  <td><label><font size="5"><input id="mountfrontandrearcheckbox" class=largerCheckbox type="checkbox" onclick="mountfrontandrear();" > Mount front and rear brackets</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="mountfrontandreartext" name="mountfrontandreartext">
+  </td>
+</tr>
+<input style="display:none;" id="mountfrontandrear" name="mountfrontandrear" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="mountantennacheckbox" class=largerCheckbox type="checkbox" onclick="mountantenna();"  > Mount antenna heads if provided</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="mountantennatext" name="mountantennatext">
+  </td>
+</tr>
+<input style="display:none;" id="mountantenna" name="mountantenna" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="layradarcheckbox" class=largerCheckbox type="checkbox" onclick="layradar();" > Lay radar head control on dash if provided</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="layradartext" name="layradartext">
+  </td>
+</tr>
+<input style="display:none;" id="layradar" name="layradar" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="radarwiringcheckbox" class=largerCheckbox type="checkbox" onclick="radarwiring();"> Wiring</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="radarwiringtext" name="radarwiringtext">
+  </td>
+</tr>
+<input style="display:none;" id="radarwiring" name="radarwiring" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="radartestcheckbox" class=largerCheckbox type="checkbox" onclick="radartest();" > Test</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="radartesttext" name="radartesttext">
+  </td>
+</tr>
+<input style="display:none;" id="radartest" name="radartest" type="text">
+
+
+</table><br><br><br>
+
+<h3>
+Watch Guard
+</h3>
+
+<table>
+<tr>
+  <td><label><font size="5"><input id="watchguardcheckbox" class=largerCheckbox type="checkbox" onclick="watchguard();"  > Watch Guard</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="watchguardtext" name="watchguardtext">
+  </td>
+</tr>
+<input style="display:none;" id="watchguard" name="watchguard" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="wiringdetailscheckbox" class=largerCheckbox type="checkbox" onclick="wiringdetails();" > Wiring details</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="wiringdetailstext" name="wiringdetailstext">
+  </td>
+</tr>
+<input style="display:none;" id="wiringdetails" name="wiringdetails" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="videomountingcheckbox" class=largerCheckbox type="checkbox" onclick="videomounting();"  > Video mounting plate</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="videomountingtext" name="videomountingtext">
+  </td>
+</tr>
+<input style="display:none;" id="videomounting" name="videomounting" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="displayoverheadcheckbox" class=largerCheckbox type="checkbox" onclick="displayoverhead();" > Display overhead mount</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="displayoverheadtext" name="displayoverheadtext">
+  </td>
+</tr>
+<input style="display:none;" id="displayoverhead" name="displayoverhead" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="frontcameracheckbox" class=largerCheckbox type="checkbox" onclick="frontcamera();" > Front camera mount</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="frontcameratext" name="frontcameratext">
+  </td>
+</tr>
+<input style="display:none;" id="frontcamera" name="frontcamera" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="wirelessmiccheckbox" class=largerCheckbox type="checkbox" onclick="wirelessmic();" > Wireless mic mount</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="wirelessmictext" name="wirelessmictext">
+  </td>
+</tr>
+<input style="display:none;" id="wirelessmic" name="wirelessmic" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="rearcammiccheckbox" class=largerCheckbox type="checkbox" onclick="rearcammic();"  > Rear camera and mic mount</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="rearcammictext" name="rearcammictext">
+  </td>
+</tr>
+<input style="display:none;" id="rearcammic" name="rearcammic" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="watchguardwiringcheckbox" class=largerCheckbox type="checkbox" onclick="watchguardwiring();"  > Wiring</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="watchguardwiringtext" name="watchguardwiringtext">
+  </td>
+</tr>
+<input style="display:none;" id="watchguardwiring" name="watchguardwiring" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="watchguardtestingcheckbox" class=largerCheckbox type="checkbox" onclick="watchguardtesting();"  > Testing</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="watchguardtestingtext" name="watchguardtestingtext">
+  </td>
+</tr>
+<input style="display:none;" id="watchguardtesting" name="watchguardtesting" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="shutsoffcheckbox" class=largerCheckbox type="checkbox" onclick="shutsoff();"  > Shuts off with key off</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="shutsofftext" name="shutsofftext">
+  </td>
+</tr>
+<input style="display:none;" id="shutsoff" name="shutsoff" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="testtimercheckbox" class=largerCheckbox type="checkbox" onclick="testtimer();" > Test timer</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="testtimertext" name="testtimertext">
+  </td>
+</tr>
+<input style="display:none;" id="testtimer" name="testtimer" type="text">
+
+</table><br><br><br>
+
+<h3>
+Dash and Radio Cencom Controller
+</h3>
+
+<table>
+<tr>
+  <td><label><font size="5"><input id="motorolacheckbox" class=largerCheckbox type="checkbox" onclick="motorola();"  > Motorola XTL5000-'05' Control Head</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="motorolatext" name="motorolatext">
+  </td>
+</tr>
+<input style="display:none;" id="motorola" name="motorola" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="radiomiccheckbox" class=largerCheckbox type="checkbox" onclick="radiomic();"  > Radio microphone/PA microphone</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="radiomictext" name="radiomictext">
+  </td>
+</tr>
+<input style="display:none;" id="radiomic" name="radiomic" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="papositioncheckbox" class=largerCheckbox type="checkbox" onclick="paposition();" > Position of PA (PTT) microphone</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="papositiontext" name="papositiontext">
+  </td>
+</tr>
+<input style="display:none;" id="paposition" name="paposition" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="radiocablecheckbox" class=largerCheckbox type="checkbox" onclick="radiocable();"  > Radio cable installation</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="radiocabletext" name="radiocabletext">
+  </td>
+</tr>
+<input style="display:none;" id="radiocable" name="radiocable" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="cencomcheckbox" class=largerCheckbox type="checkbox" onclick="cencom();" > Cencom controller label and mount</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="cencomtext" name="cencomtext">
+  </td>
+</tr>
+<input style="display:none;" id="cencom" name="cencom" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="wiringharnesscheckbox" class=largerCheckbox type="checkbox" onclick="wiringharness();" > Wiring harness layout</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="wiringharnesstext" name="wiringharnesstext">
+  </td>
+</tr>
+<input style="display:none;" id="wiringharness" name="wiringharness" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="hardwareinstallationcheckbox" class=largerCheckbox type="checkbox" onclick="hardwareinstallation();"  > Hardware Installation</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="hardwareinstallationtext" name="hardwareinstallationtext">
+  </td>
+</tr>
+<input style="display:none;" id="hardwareinstallation" name="hardwareinstallation" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="dashradiowiringcheckbox" class=largerCheckbox type="checkbox" onclick="dashradiowiring();" > Wiring</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="dashradiowiringtext" name="dashradiowiringtext">
+  </td>
+</tr>
+<input style="display:none;" id="dashradiowiring" name="dashradiowiring" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="dashtestingcheckbox" class=largerCheckbox type="checkbox" onclick="dashtesting();" > Testing</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="dashtestingtext" name="dashtestingtext">
+  </td>
+</tr>
+<input style="display:none;" id="dashtesting" name="dashtesting" type="text">
+
+
+</table><br><br><br>
+
+<h3>
+PMT Center Console
+</h3>
+
+<table>
+<tr>
+  <td><label><font size="5"><input id="disassemblepmtcheckbox" class=largerCheckbox type="checkbox" onclick="disassemblepmt();"  > Disassemble PMT Center Console</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="disassemblepmttext" name="disassemblepmttext">
+  </td>
+</tr>
+<input style="display:none;" id="disassemblepmt" name="disassemblepmt" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="removetopplatescheckbox" class=largerCheckbox type="checkbox" onclick="removetopplates();" > Remove all top plates</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="removetopplatestext" name="removetopplatestext">
+  </td>
+</tr>
+<input style="display:none;" id="removetopplates" name="removetopplates" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="removemountingcheckbox" class=largerCheckbox type="checkbox" onclick="removemounting();"  > Remove mounting brackets</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="removemountingtext" name="removemountingtext">
+  </td>
+</tr>
+<input style="display:none;" id="removemounting" name="removemounting" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="installmountingcheckbox" class=largerCheckbox type="checkbox" onclick="installmounting();"  > Install mounting brackets to vehicle</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="installmountingtext" name="installmountingtext">
+  </td>
+</tr>
+<input style="display:none;" id="installmounting" name="installmounting" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="mountsidebracketscheckbox" class=largerCheckbox type="checkbox" onclick="mountsidebrackets();"  > (SUV only) mount side brackets for lower dash DS/PS sides</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="mountsidebracketstext" name="mountsidebracketstext">
+  </td>
+</tr>
+<input style="display:none;" id="mountsidebrackets" name="mountsidebrackets" type="text">
+
+
+</table><br><br><br>
+
+<h3>
+Docking Station (if required)
+</h3>
+
+<table>
+<tr>
+  <td><label><font size="5"><input id="prewiredockingcheckbox" class=largerCheckbox type="checkbox" onclick="prewiredocking();"  > Pre-wire docking station, tape and loom to proper length</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="prewiredockingtext" name="prewiredockingtext">
+  </td>
+</tr>
+<input style="display:none;" id="prewiredocking" name="prewiredocking" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="mountdockingcheckbox" class=largerCheckbox type="checkbox" onclick="mountdocking();" > Mount docking station to center console</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="mountdockingtext" name="mountdockingtext">
+  </td>
+</tr>
+<input style="display:none;" id="mountdocking" name="mountdocking" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="mountpowercheckbox" class=largerCheckbox type="checkbox" onclick="mountpower();" > Mount power distribution to center console</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="mountpowertext" name="mountpowertext">
+  </td>
+</tr>
+<input style="display:none;" id="mountpower" name="mountpower" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="mountmiccheckbox" class=largerCheckbox type="checkbox" onclick="mountmic();"  > Mount mic clip to center console plate</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="mountmictext" name="mountmictext">
+  </td>
+</tr>
+<input style="display:none;" id="mountmic" name="mountmic" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="predrillholecheckbox" class=largerCheckbox type="checkbox"  onclick="predrillhole();" > Pre-drill hole to the center console plate for extra USB cable</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="predrillholetext" name="predrillholetext">
+  </td>
+</tr>
+<input style="display:none;" id="predrillhole" name="predrillhole" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="installcenterconsolecheckbox" class=largerCheckbox type="checkbox" onclick="installcenterconsole();" > Install center console to vehicle</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="installcenterconsoletext" name="installcenterconsoletext">
+  </td>
+</tr>
+<input style="display:none;" id="installcenterconsole" name="installcenterconsole" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="dockingstationwirecheckbox" class=largerCheckbox type="checkbox" onclick="dockingstationwire();" > Wire</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="dockingstationwiretext" name="dockingstationwiretext">
+  </td>
+</tr>
+<input style="display:none;" id="dockingstationwire" name="dockingstationwire" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="dockingstationtestcheckbox" class=largerCheckbox type="checkbox" onclick="dockingstationtest();"  > Test</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="dockingstationtesttext" name="dockingstationtesttext">
+  </td>
+</tr>
+<input style="display:none;" id="dockingstationtest" name="dockingstationtest" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="mountcenterconsolecheckbox" class=largerCheckbox type="checkbox" onclick="mountcenterconsole();"  > Mount center console plates</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="mountcenterconsoletext" name="mountcenterconsoletext">
+  </td>
+</tr>
+<input style="display:none;" id="mountcenterconsole" name="mountcenterconsole" type="text">
+
+
+</table><br><br><br>
+
+<h3>
+Printer (if required)
+</h3>
+
+<table>
+<tr>
+  <td><label><font size="5"><input id="removearmrestcheckbox" class=largerCheckbox type="checkbox" onclick="removearmrest();"  > Remove old arm rest</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="removearmresttext" name="removearmresttext">
+  </td>
+</tr>
+<input style="display:none;" id="removearmrest" name="removearmrest" type="text">
+
+
+<tr>   
+  <td><label><font size="5"><input id="prebuildarmrestcheckbox" class=largerCheckbox type="checkbox" onclick="prebuildarmrest();" > Pre-build printer arm rest</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="prebuildarmresttext" name="prebuildarmresttext">
+  </td>
+</tr>
+<input style="display:none;" id="prebuildarmrest" name="prebuildarmrest" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="printermountcenterconsolecheckbox" class=largerCheckbox type="checkbox" onclick="printermountcenterconsole();" > Mount to center console plate</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="printermountcenterconsoletext" name="printermountcenterconsoletext">
+  </td>
+</tr>
+<input style="display:none;" id="printermountcenterconsole" name="printermountcenterconsole" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="printerwirecheckbox" class=largerCheckbox type="checkbox" onclick="printerwire();"  > Wire</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="printerwiretext" name="printerwiretext">
+  </td>
+</tr>
+<input style="display:none;" id="printerwire" name="printerwire" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="printertestcheckbox" class=largerCheckbox type="checkbox" onclick="printertest();"  > Test</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="printertesttext" name="printertesttext">
+  </td>
+</tr>
+<input style="display:none;" id="printertest" name="printertest" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="armrestandcomputerswivelcheckbox" class=largerCheckbox type="checkbox" onclick="armrestandcomputerswivel();" > Arm rest and computer swivel tight; left, right, up and down</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="armrestandcomputerswiveltext" name="armrestandcomputerswiveltext">
+  </td>
+</tr>
+<input style="display:none;" id="armrestandcomputerswivel" name="armrestandcomputerswivel" type="text">
+
+
+</table><br><br><br>
+
+<h3>
+Prisoner Shield Installation
+</h3>
+
+<table>
+<tr>
+  <td><label><font size="5"><input id="prisonershieldinstallcheckbox" class=largerCheckbox type="checkbox" onclick="prisonershieldinstall();"  > Prisoner shield installation</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="prisonershieldinstalltext" name="prisonershieldinstalltext">
+  </td>
+</tr>
+<input style="display:none;" id="prisonershieldinstall" name="prisonershieldinstall" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="foamandsealedcheckbox" class=largerCheckbox type="checkbox" onclick="foamandsealed();"  > Foam and sealed</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="foamandsealedtext" name="foamandsealedtext">
+  </td>
+</tr>
+<input style="display:none;" id="foamandsealed" name="foamandsealed" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="panelsceilingcheckbox" class=largerCheckbox type="checkbox" onclick="panelsceiling();"  > All panels are not effecting the ceiling</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="panelsceilingtext" name="panelsceilingtext">
+  </td>
+</tr>
+<input style="display:none;" id="panelsceiling" name="panelsceiling" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="nutsboltscheckbox" class=largerCheckbox type="checkbox" onclick="nutsbolts();"  > Nuts and bolts tight</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="nutsboltstext" name="nutsboltstext">
+  </td>
+</tr>
+<input style="display:none;" id="nutsbolts" name="nutsbolts" type="text">
+
+
+</table><br><br><br>
+
+<h3>
+Dual shot gun rack
+</h3>
+
+<table>
+<tr>
+  <td><label><font size="5"><input id="adjustdualrackscheckbox" class=largerCheckbox type="checkbox" onclick="adjustdualracks();"> Adjust dual racks</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="adjustdualrackstext" name="adjustdualrackstext">
+  </td>
+</tr>
+<input style="display:none;" id="adjustdualracks" name="adjustdualracks" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="radiospeakercheckbox" class=largerCheckbox type="checkbox" onclick="radiospeaker();"> Add radio speaker if available</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="radiospeakertext" name="radiospeakertext">
+  </td>
+</tr>
+<input style="display:none;" id="radiospeaker" name="radiospeaker" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="shotgunwiringcheckbox" class=largerCheckbox type="checkbox" onclick="shotgunwiring();"> Wiring</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="shotgunwiringtext" name="shotgunwiringtext">
+  </td>
+</tr>
+<input style="display:none;" id="shotgunwiring" name="shotgunwiring" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="shotguntestcheckbox" class=largerCheckbox type="checkbox" onclick="shotguntest();" > Test</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="shotguntestcheckboxtext" name="shotguntestcheckboxtext">
+  </td>
+</tr>
+<input style="display:none;" id="shotguntest" name="shotguntest" type="text">
+
+
+</table><br><br><br>
+
+<h3>
+ALPR Camera/Plate Reader System
+</h3>
+
+<table>
+<tr>
+  <td><label><font size="5"><input id="platetolightbarcheckbox" class=largerCheckbox type="checkbox" onclick="platetolightbar();" > Mount plate to light bar</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="platetolightbartext" name="platetolightbartext">
+  </td>
+</tr>
+<input style="display:none;" id="platetolightbar" name="platetolightbar" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="mountcamerascheckbox" class=largerCheckbox type="checkbox" onclick="mountcameras();" > Mount cameras</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="mountcamerastext" name="mountcamerastext">
+  </td>
+</tr>
+<input style="display:none;" id="mountcameras" name="mountcameras" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="drillholescheckbox" class=largerCheckbox type="checkbox" onclick="drillholes();" > Drill holes for cable</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="drillholestext" name="drillholestext">
+  </td>
+</tr>
+<input style="display:none;" id="drillholes" name="drillholes" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="feedlinescheckbox" class=largerCheckbox type="checkbox" onclick="feedlines();"> Feed lines to trunk tray</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="feedlinestext" name="feedlinestext">
+  </td>
+</tr>
+<input style="display:none;" id="feedlines" name="feedlines" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="mountdvrcheckbox" class=largerCheckbox type="checkbox" onclick="mountdvr();"> Mount DVR to trunk box</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="mountdvrtext" name="mountdvrtext">
+  </td>
+</tr>
+<input style="display:none;" id="mountdvr" name="mountdvr" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="sealholescheckbox" class=largerCheckbox type="checkbox" onclick="sealholes();"> Seal holes through roof</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="sealholestext" name="sealholestext">
+  </td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="alprtestcheckbox" class=largerCheckbox type="checkbox" onclick="alprtest();" > Test</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="alprtesttext" name="alprtesttext">
+  </td>
+</tr>
+<input style="display:none;" id="alprtest" name="alprtest" type="text">
+
+
+</table><br><br><br>
+
+<h3>
+Whelen/D&R TA Installation
+</h3>
+
+<table>
+<tr>
+  <td><label><font size="5"><input id="mounttarearcheckbox" class=largerCheckbox type="checkbox" onclick="mounttarear();"> Mount TA in rear window</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="mounttareartext" name="mounttareartext">
+  </td>
+</tr>
+<input style="display:none;" id="mounttarear" name="mounttarear" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="onetwomountingbracketscheckbox" class=largerCheckbox type="checkbox" onclick="onetwomountingbrackets();"> 1 or 2 mounting brackets</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="onetwomountingbracketstext" name="onetwomountingbracketstext">
+  </td>
+</tr>
+<input style="display:none;" id="onetwomountingbrackets" name="onetwomountingbrackets" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="whelenwiringcheckbox" class=largerCheckbox type="checkbox" onclick="whelenwiring();" > Wiring</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="whelenwiringtext" name="whelenwiringtext">
+  </td>
+</tr>
+<input style="display:none;" id="whelenwiring" name="whelenwiring" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="whelentestingcheckbox" class=largerCheckbox type="checkbox" onclick="whelentesting();" > Testing</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="whelentestingtext" name="whelentestingtext">
+  </td>
+</tr>
+<input style="display:none;" id="whelentesting" name="whelentesting" type="text">
+
+
+</table><br><br><br>
+
+<h3>
+Trunk Tray
+</h3>
+
+<table>
+<tr>
+  <td><label><font size="5"><input id="trunktraycheckbox" class=largerCheckbox type="checkbox" onclick="trunktray();" > Trunk tray preparation</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="trunktraytext" name="trunktraytext">
+  </td>
+</tr>
+<input style="display:none;" id="trunktray" name="trunktray" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="mountcomponentscheckbox" class=largerCheckbox type="checkbox" onclick="mountcomponents();" > Mount components</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="mountcomponentstext" name="mountcomponentstext">
+  </td>
+</tr>
+<input style="display:none;" id="mountcomponents" name="mountcomponents" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="cleanandstorecheckbox" class=largerCheckbox type="checkbox" onclick="cleanandstore();" > Clean and store away access wiring</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="cleanandstoretext" name="cleanandstoretext">
+  </td>
+</tr>
+<input style="display:none;" id="cleanandstore" name="cleanandstore" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="loomtapecheckbox" class=largerCheckbox type="checkbox" onclick="loomtape();" > Loom and tape harness</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="loomtapetext" name="loomtapetext">
+  </td>
+</tr>
+<input style="display:none;" id="loomtape" name="loomtape" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="trunktraywirecheckbox" class=largerCheckbox type="checkbox" onclick="trunktraywire();" > Wire</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="trunktraywiretext" name="trunktraywiretext">
+  </td>
+</tr>
+<input style="display:none;" id="trunktraywire" name="trunktraywire" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="trunktraytestcheckbox" class=largerCheckbox type="checkbox" onclick="trunktraytest();" > Test</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="trunktraytesttext" name="trunktraytesttext">
+  </td>
+</tr>
+<input style="display:none;" id="trunktraytest" name="trunktraytest" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="trunktraytesttimercheckbox" class=largerCheckbox type="checkbox"  onclick="trunktraytesttimer();"> Test timer</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="trunktraytesttimertext" name="trunktraytesttimertext">
+  </td>
+</tr>
+<input style="display:none;" id="trunktraytesttimer" name="trunktraytesttimer" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="radiorepeatercheckbox" class=largerCheckbox type="checkbox" onclick="radiorepeater();" > Radio repeater install</font></label>
+  </td>
+  <td>
+    <input type="text" style="font-size:23px" id="radiorepeatertext" name="radiorepeatertext">
+  </td>
+</tr>
+<input style="display:none;" id="radiorepeater" name="radiorepeater" type="text">
+
+
+</table>
+<br>
+<center><button class="submitbutton" id="submit-buildform" type="submit">Submit</button></center>
+
+<button style="display:none" class="submitbutton" id="pause-buildform" type="submit">Pause</button>
+
+<script>
+var $form = $('form#buildform'),
+    url = 'https://script.google.com/macros/s/AKfycbzf68yQKBAfZpfrIm5uiuPe2Q492y7mzO7Snkms/exec',
+
+$submit = $('#submit-buildform').on('click', function(g) {
+  g.preventDefault();
+  var jqxhr = $.ajax({
+    url: url,
+    method: "GET",
+    dataType: "json",
+    data: $form.serializeObject()
+  }).done(
+    // do something
+  );
+   $('#buildform')[0].reset();
+})
+</script>
+
+<script>
+var $form = $('form#buildform'),
+    url1 = 'https://script.google.com/macros/s/AKfycby07M0sr_w8fpy0ExBqt4-NcLFkMcxIK7u2vRyhBw/exec',
+
+$submit = $('#pause-buildform').on('click', function(h) {
+  h.preventDefault();
+  var jqxhr = $.ajax({
+    url: url1,
+    method: "GET",
+    dataType: "json",
+    data: $form.serializeObject()
+  }).done(
+    // do something
+  );
+   //$('#buildform')[0].reset();
+})
+</script>
+
+
+</form>
+
+</center>
+
+<!-- Other-Intake Form. -->
+<center><button style="display:none" class="submitbutton" id="otherformbutton" type="submit" onclick="showotherform();clickcontinue();">Start Other Job</button></center>
+
+<center>
+<form style="display:none" id="otherform">
+<h2>
+Sask. RCMP Other
+</h2>
+
+<table>
+<tr>
+  <td><label style="color:blue"><font size="5">Unit Number:&nbsp;&nbsp;<input style="font-size:23px;" id="unitnumberother" name="unitnumberother"type="text"></font></label></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">Odometer Reading:&nbsp;&nbsp;<input style="font-size:23px;" id="odometerother" name="odometerother" type="number"></font></label></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">VIN:&nbsp;&nbsp;&nbsp;<input style="font-size:23px;" id="vinother" name="vinother" type="text"></font></label></td>
+</tr>
+
+</table>
+
+<br><br>
+<h3>
+RCMP Vehicle Inspection Guide
+</h3>
+<br><br>
+
+<canvas style="background: url('https://drive.google.com/uc?id=1mqYqIfOuhDo90zlmHaHo2Qu3Kh6qoIW2');" width="392" height="500">
+</canvas>
+
+<br><br><br>
+<table>
+<tr>
+  <td>Item</td>
+  <td>Pass</td>
+  <td>Fail</td>
+  <td>Description</td>
+</tr>
+<tr>
+<td><label><font size="5"> Dash Indicator Lights&nbsp;&nbsp;</font></label></td>
+<td><input id="otherdashpasscheckbox" class=largerCheckbox type="checkbox" onclick="otherdashpass();"></td>
+<td><input id="otherdashfailcheckbox" class=largerCheckbox type="checkbox" onclick="otherdashfail();"></td>
+  <td><input style="font-size:23px;" id="otherdashtext" name="otherdashtext" type="text"></td>
+</tr>
+
+<tr>
+<td><label><font size="5"> Mirrors&nbsp;&nbsp;</font></label></td>
+<td><input id="mirrorspassothercheckbox" class=largerCheckbox type="checkbox" onclick="mirrorspassother();"></td>
+<td><input id="mirrorsfailothercheckbox" class=largerCheckbox type="checkbox" onclick="mirrorsfailother();" ></td>
+  <td><input style="font-size:23px;" id="mirrorsothertext" name="mirrorsothertext" type="text"></td>
+</tr>
+
+<tr>
+<td><label><font size="5"> Wipers&nbsp;&nbsp;</font></label></td>
+<td><input id="wiperspassothercheckbox" class=largerCheckbox type="checkbox" onclick="wiperspassother();"></td>
+<td><input id="wipersfailothercheckbox" class=largerCheckbox type="checkbox" onclick="wipersfailother();" ></td>
+  <td><input style="font-size:23px;" id="wipersothertext" name="wipersothertext" type="text"></td>
+</tr>
+
+<tr>
+<td><label><font size="5"> Tire condition&nbsp;&nbsp;</font></label></td>
+<td><input id="tireconditionpassothercheckbox" class=largerCheckbox type="checkbox" onclick="tireconditionpassother();"></td>
+<td><input id="tireconditionfailothercheckbox" class=largerCheckbox type="checkbox"  onclick="tireconditionfailother();"></td>
+  <td><input style="font-size:23px;" id="tireconditionothertext" name="tireconditionothertext" type="text"></td>
+</tr>
+
+<tr>
+<td><label><font size="5"> Glass condition&nbsp;&nbsp;</font></label></td>
+<td><input id="glassconditionpassothercheckbox" class=largerCheckbox type="checkbox" onclick="glassconditionpassother();"></td>
+<td><input id="glassconditionfailothercheckbox" class=largerCheckbox type="checkbox" onclick="glassconditionfailother();" ></td>
+  <td><input style="font-size:23px;" id="glassconditionothertext" name="glassconditionothertext" type="text"></td>
+</tr>
+
+<tr>
+<td><label><font size="5"> Battery condition&nbsp;&nbsp;</font></label></td>
+<td><input id="batteryconditionpassothercheckbox" class=largerCheckbox type="checkbox" onclick="batteryconditionpassother();"></td>
+<td><input id="batteryconditionfailothercheckbox" class=largerCheckbox type="checkbox" onclick="batteryconditionfailother();"></td>
+  <td><input style="font-size:23px;" id="batteryconditionothertext" name="batteryconditionothertext" type="text"></td>
+</tr>
+
+</table><br>
+
+<center><button class="submitbutton" id="submit-otherform" type="submit">Submit</button></center>
+
+<button style="display:none" class="submitbutton" id="pause-otherform" type="submit">Pause</button>
+
+<script>
+var $form = $('form#otherform'),
+    url = 'https://script.google.com/macros/s/AKfycbyrsdqMUzM2fy_8fyVAkyux_nX45PbAA8mlcl9F/exec',
+
+$submit = $('#submit-otherform').on('click', function(i) {
+  i.preventDefault();
+  var jqxhr = $.ajax({
+    url: url,
+    method: "GET",
+    dataType: "json",
+    data: $form.serializeObject()
+  }).done(
+    // do something
+  );
+   $('#otherform')[0].reset();
+})
+</script>
+
+<script>
+var $form = $('form#otherform'),
+    url1 = 'https://script.google.com/macros/s/AKfycbzTZsUf-l6aUsEYwn0fQSrvG3I1qGb7oTbsJf-x/exec',
+
+$submit = $('#pause-otherform').on('click', function(j) {
+  j.preventDefault();
+  var jqxhr = $.ajax({
+    url: url1,
+    method: "GET",
+    dataType: "json",
+    data: $form.serializeObject()
+  }).done(
+    // do something
+  );
+   //$('#otherform')[0].reset();
+})
+</script>
+
+
+</form>
+
+</center>
+
+
+
+
+<script>
+function clickcontinue() {
+  document.getElementById("start-btn").click();
+}
+</script>
+
+</body>
+
+<script>
+var select = document.getElementById("receiverslist");
+var receivers = ["Alex","Ashley","Chase","Connor", "Dave", "Keith", "Kevin", "Mike", "Shawn", "Tanner", "Tony"];
+for(var i = 0; i < receivers.length; i++) {
+    var opt = receivers[i];
+    var el = document.createElement("option");
+    el.textContent = opt;
+    el.value = opt;
+    select.appendChild(el);
+}
+</script>
+
+<script>
+function jobtypeinputtest() {
+var strip1 = document.getElementById("stripcheckbox");
+if (strip1.checked == true)
+{
+document.getElementById("jobtypeinput").value = "Strip";
+}
+
+var build1 = document.getElementById("buildcheckbox");
+if (build1.checked == true)
+{
+document.getElementById("jobtypeinput").value = "Build";
+} 
+
+var other1 = document.getElementById("othercheckbox");
+if (other1.checked == true)
+{
+document.getElementById("jobtypeinput").value = "Other";
+} 
+
+}
+</script>
+
+<script>
+function otherinput(){
+var other = document.getElementById("othercheckbox");
+var otherinput = document.getElementById("othertextinput");
+if (other.checked == true)
+{
+otherinput.style.display = "block";
+} else {
+otherinput.style.display = "none";
+  }
+}
+</script>
+
+<script>
+ $("#unitnumberintake").change(function(){
+    update();
+});
+function update() {
+  $("#unitnumberstrip").val($('#unitnumberintake').val());
+  
+   $("#unitnumbercleaning").val($('#unitnumberintake').val());
+   
+    $("#unitnumberbuild").val($('#unitnumberintake').val());
+    
+     $("#unitnumberother").val($('#unitnumberintake').val());
+  //you have to update the unit number text field in all job types. As well as all other relevant data entry fields
+}
+</script>
+
+<script>
+ $("#odometerintake").change(function(){
+    update1();
+});
+function update1() {
+  $("#odometerstrip").val($('#odometerintake').val());
+  
+   $("#odometercleaning").val($('#odometerintake').val());
+   
+    $("#odometerbuild").val($('#odometerintake').val());
+    
+     $("#odometerother").val($('#odometerintake').val());
+}
+</script>
+
+<script>
+ $("#vinintake").change(function(){
+    update2();
+});
+function update2() {
+  $("#vinstrip").val($('#vinintake').val());
+  
+   $("#vincleaning").val($('#vinintake').val());
+   
+    $("#vinbuild").val($('#vinintake').val());
+    
+     $("#vinother").val($('#vinintake').val());
+}
+</script>
+
+</html>
