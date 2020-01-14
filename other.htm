@@ -428,6 +428,14 @@ Sask. RCMP Other
 </h2>
 
 <table>
+
+<tr> 
+  <td><label style="color:blue"><font size="5">Technician:&nbsp;&nbsp;<input style="color:blue;font-size:23px;" id="techname" name="techname" type="text" list=techlist></font><datalist id="techlist" name="techlist" style="font-size:23px;">
+<select>
+</select> 
+</datalist></label></td>
+</tr>
+
 <tr>
   <td><label style="color:blue"><font size="5">Unit Number:&nbsp;&nbsp;<input style="font-size:23px;" id="unitnumberother" name="unitnumberother"type="text"></font></label></td>
 </tr>
@@ -465,6 +473,8 @@ RCMP Vehicle Inspection Guide
 <td><input id="otherdashfailcheckbox" class=largerCheckbox type="checkbox" onclick="otherdashfailfunc();"></td>
   <td><input style="font-size:23px;" id="otherdashtext" name="otherdashtext" type="text"></td>
 </tr>
+<input style="display:none;" id="otherdashpass" name="otherdashpass" type="text">
+<input style="display:none;" id="otherdashfail" name="otherdashfail" type="text">
 
 <tr>
 <td><label><font size="5"> Mirrors&nbsp;&nbsp;</font></label></td>
@@ -472,6 +482,9 @@ RCMP Vehicle Inspection Guide
 <td><input id="mirrorsfailothercheckbox" class=largerCheckbox type="checkbox" onclick="mirrorsfailotherfunc();" ></td>
   <td><input style="font-size:23px;" id="mirrorsothertext" name="mirrorsothertext" type="text"></td>
 </tr>
+<input style="display:none;" id="mirrorspassother" name="mirrorspassother" type="text">
+<input style="display:none;" id="mirrorsfailother" name="mirrorsfailother" type="text">
+
 
 <tr>
 <td><label><font size="5"> Wipers&nbsp;&nbsp;</font></label></td>
@@ -479,6 +492,9 @@ RCMP Vehicle Inspection Guide
 <td><input id="wipersfailothercheckbox" class=largerCheckbox type="checkbox" onclick="wipersfailotherfunc();" ></td>
   <td><input style="font-size:23px;" id="wipersothertext" name="wipersothertext" type="text"></td>
 </tr>
+<input style="display:none;" id="wiperspassother" name="wiperspassother" type="text">
+<input style="display:none;" id="wipersfailother" name="wipersfailother" type="text">
+
 
 <tr>
 <td><label><font size="5"> Tire condition&nbsp;&nbsp;</font></label></td>
@@ -486,6 +502,9 @@ RCMP Vehicle Inspection Guide
 <td><input id="tireconditionfailothercheckbox" class=largerCheckbox type="checkbox"  onclick="tireconditionfailotherfunc();"></td>
   <td><input style="font-size:23px;" id="tireconditionothertext" name="tireconditionothertext" type="text"></td>
 </tr>
+<input style="display:none;" id="tireconditionpassother" name="tireconditionpassother" type="text">
+<input style="display:none;" id="tireconditionfailother" name="tireconditionfailother" type="text">
+
 
 <tr>
 <td><label><font size="5"> Glass condition&nbsp;&nbsp;</font></label></td>
@@ -493,6 +512,9 @@ RCMP Vehicle Inspection Guide
 <td><input id="glassconditionfailothercheckbox" class=largerCheckbox type="checkbox" onclick="glassconditionfailotherfunc();" ></td>
   <td><input style="font-size:23px;" id="glassconditionothertext" name="glassconditionothertext" type="text"></td>
 </tr>
+<input style="display:none;" id="glassconditionpassother" name="glassconditionpassother" type="text">
+<input style="display:none;" id="glassconditionfailother" name="glassconditionfailother" type="text">
+
 
 <tr>
 <td><label><font size="5"> Battery condition&nbsp;&nbsp;</font></label></td>
@@ -500,6 +522,8 @@ RCMP Vehicle Inspection Guide
 <td><input id="batteryconditionfailothercheckbox" class=largerCheckbox type="checkbox" onclick="batteryconditionfailotherfunc();"></td>
   <td><input style="font-size:23px;" id="batteryconditionothertext" name="batteryconditionothertext" type="text"></td>
 </tr>
+<input style="display:none;" id="batteryconditionpassother" name="batteryconditionpassother" type="text">
+<input style="display:none;" id="batteryconditionfailother" name="batteryconditionfailother" type="text">
 <p id="othertime" name="othertime" style="color:green;display:none;" type="text"></p>
 </table><br>
 
@@ -563,5 +587,15 @@ function clickpause() {
 </script>
 
 </body>
-
+<script>
+var select = document.getElementById("techlist");
+var techs = ["Alex","Chase","Connor", "Dave", "Keith", "Kevin", "Mike", "Shawn", "Tanner", "Tony"];
+for(var i = 0; i < techs.length; i++) {
+    var opt = techs[i];
+    var el = document.createElement("option");
+    el.textContent = opt;
+    el.value = opt;
+    select.appendChild(el);
+}
+</script>
 </html>
