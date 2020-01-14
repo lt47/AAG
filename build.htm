@@ -344,7 +344,7 @@ function getTimeStamp() {
                      + ((now.getMinutes() < 10) ? ("0" + now.getMinutes()) : (now.getMinutes())) + ':' + ((now.getSeconds() < 10) ? ("0" + now
                      .getSeconds()) : (now.getSeconds())));
 }
-function builddashpassfunc() {
+ffunction builddashpassfunc() {
   document.getElementById("builddashpass").value = getTimeStamp();
 }
 function builddashfailfunc() {
@@ -657,6 +657,13 @@ Sask. RCMP Build
 </h2>
 
 <table>
+<tr> 
+  <td><label style="color:blue"><font size="5">Technician:&nbsp;&nbsp;<input style="color:blue;font-size:23px;" id="techname" name="techname" type="text" list=techlist></font><datalist id="techlist" name="techlist" style="font-size:23px;">
+<select>
+</select> 
+</datalist></label></td>
+</tr>
+
 <tr>
   <td><label style="color:blue"><font size="5">Unit Number:&nbsp;&nbsp;<input style="font-size:23px;" id="unitnumberbuild" name="unitnumberbuild"type="text"></font></label></td>
 </tr>
@@ -1466,6 +1473,8 @@ ALPR Camera/Plate Reader System
     <input type="text" style="font-size:23px" id="sealholestext" name="sealholestext">
   </td>
 </tr>
+<input style="display:none;" id="sealholes" name="sealholes" type="text">
+
 <tr>
   <td><label><font size="5"><input id="alprtestcheckbox" class=largerCheckbox type="checkbox" onclick="alprtestfunc();" > Test</font></label>
   </td>
@@ -1655,6 +1664,7 @@ $submit = $('#pause-buildform').on('click', function(h) {
 
 </form>
 
+
 </center>
 
 
@@ -1671,5 +1681,17 @@ function clickpause() {
 </script>
 
 </body>
+
+<script>
+var select = document.getElementById("techlist");
+var techs = ["Alex","Chase","Connor", "Dave", "Keith", "Kevin", "Mike", "Shawn", "Tanner", "Tony"];
+for(var i = 0; i < techs.length; i++) {
+    var opt = techs[i];
+    var el = document.createElement("option");
+    el.textContent = opt;
+    el.value = opt;
+    select.appendChild(el);
+}
+</script>
 
 </html>
