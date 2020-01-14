@@ -253,43 +253,6 @@ function homepage() {
 </script>
 
 <script>
-function intakeform() {
-  document.getElementById("overlay1").style.display = "none";
-  document.getElementById("saskrcmpintake").style.display = "none";
-  document.getElementById("timespent").style.display = "block";
-  
-var strip = document.getElementById("stripcheckbox");
-var stripformbutton = document.getElementById("stripformbutton");
-if (strip.checked == true)
-{
-stripformbutton.style.display = "block";
-} else {
-stripformbutton.style.display = "none";
-  }
-var build = document.getElementById("buildcheckbox");
-var buildformbutton = document.getElementById("buildformbutton");
-if (build.checked == true)
-{
-buildformbutton.style.display = "block";
-} else {
-buildformbutton.style.display = "none";
-  }
-  
-var other = document.getElementById("othercheckbox");
-var otherformbutton = document.getElementById("otherformbutton");
-if (other.checked == true)
-{
-otherformbutton.style.display = "block";
-} else {
-otherformbutton.style.display = "none";
-  }
-}
-</script>
-
-
-
-
-<script>
 window.onload = () => {
   let hour = 0;
   let minute = 0;
@@ -304,7 +267,7 @@ window.onload = () => {
     minute = Math.floor((totalSeconds - hour*3600)/60);
     seconds = totalSeconds - (hour*3600 + minute*60);
     document.getElementById("hour").innerHTML =hour+":"+ minute;
-    
+    document.getElementById("striptime").innerHTML =hour+":"+ minute;
     //document.getElementById("minute").innerHTML =minute;
     document.getElementById("seconds").innerHTML =totalSeconds;
   }
@@ -346,6 +309,7 @@ document.getElementById("overlay2").style.display ="block";
 function gotostrip() {
 document.getElementById("overlay2").style.display ="none";
 document.getElementById("stripform").style.display ="block";
+document.getElementById("timespent").style.display ="block";
 }
 </script>
 
@@ -514,23 +478,23 @@ Sask. RCMP Strip
 </center>
 
 
-
-<br><br>
-
-
-<center>
-<form style="display:none" id="stripform">
-<div id=timespent class="Fixed">
+<div id=timespent style="display:none;" class="Fixed">
 <p>
 Time Spent
 </p>
-<div>HH:mm <span id="hour" style="color:green;"></span></div>
+<div>HH:mm <p id="hour" style="color:green;" type="text"></p></div>
 <div style="display:none;"><p id="seconds"></p></div>
 
 <button id="start-btn">Continue</button>
 <button id="stop-btn" onclick="clickpause();">Pause Job</button>
 
 </div>
+<br><br>
+
+
+<center>
+<form style="display:none" id="stripform">
+<img src="https://drive.google.com/uc?id=1T2TM9M4LCFyk0cl-Y8rEtI0mt6ugVGQT"  top=35px left=65px height=60 width=170/>
 <h2>
 Sask. RCMP Strip
 </h2>
@@ -781,6 +745,7 @@ RCMP Standing Offer No. M5000-160786/001/WNP<br><br>SUMMARY OF REMOVAL OF EQUIPM
   <td><label><font size="5"><input id="otherstripcheckbox" class=largerCheckbox type="checkbox" onclick="otherstripfunc();"  > Other - (e.g. hidden lighting, lock boxes)</font></label></td>
 </tr>
 <input style="display:none;" id="otherstrip" name="otherstrip" type="text">
+<p id="striptime" style="color:green;display:none;" type="text">
 
 
 <tr>
@@ -855,10 +820,6 @@ $submit = $('#pause-stripform').on('click', function(f) {
 
 
 
-
-
-
-
 <script>
 function clickcontinue() {
   document.getElementById("start-btn").click();
@@ -871,9 +832,5 @@ function clickpause() {
 </script>
 
 </body>
-
-
-
-
 
 </html>
