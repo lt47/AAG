@@ -1,0 +1,1123 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  
+<style>             
+<!-- body {font-family: Arial, Helvetica, sans-serif;} --> body {font-family: "Lato", sans-serif;} .sidenav {
+  height: 100%;
+  width: 125px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #4a4a4a;
+  overflow-x: hidden;
+  padding-top: 20px;
+  font-size: 1.3em;
+}
+.main {font-size: 1.2em;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  font-size: 1.1em;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+  font-size: 1.6em;
+}
+.modal { 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+  padding-top: 60px;
+  font-size: 1.1em;
+}
+.Fixed
+{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color:#000000;
+    color:#dddddd;
+}
+input[type="text"]
+{
+    font-size:15px;
+}
+select
+{
+    font-size:13px;
+}
+table tr#divider  {background-color:#000000;}
+table tr#ROW1  {background-color:#dddddd;}
+table tr#ROW2  {background-color:#dddddd;}
+table tr#ROW3  {background-color:#dddddd;}
+table tr#ROW4  {background-color:#dddddd;}
+table tr#ROW5  {background-color:#dddddd;}
+table tr#ROW6  {background-color:#dddddd;}
+table tr#ROW7  {background-color:#F7A33B;}
+table tr#des  {font-size:0.7em;}
+div#info1  {background-color:#F2EE79;}
+div#info2  {background-color:#F2EE79;}
+div#info3  {background-color:#F2EE79;}
+div#info4  {background-color:#F2EE79;}
+#overlay {
+  position: fixed;
+  width: 100%; 
+  height: 100%; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:#000000; 
+  z-index: 2; 
+  cursor: pointer; 
+  font-size: 1.7em;
+  color:#dddddd;
+}
+#overlay1 {
+  position: fixed;
+  width: 100%; 
+  height: 100%; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:#ffffff; 
+  z-index: 2; 
+  cursor: pointer; 
+  font-size: 1.7em;
+  color:#dddddd;
+}
+#overlay2 {
+  
+  width: 100%; 
+  height: 100%; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:#000000; 
+  z-index: 2; 
+  cursor: pointer; 
+  font-size: 1.7em;
+  color:#dddddd;
+}
+input[type=password] {
+  width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size:15px;
+}
+.username{width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;}
+.greenfield {background-color: #00A146;}
+.yellowfield {background-color: #EEF52C;}
+.redfield {background-color: #F71302;}
+.grayfield {background-color:#dddddd;}
+.orangefield {background-color:#fc7f03;}
+.bluefield {background-color:#0202fa;}
+.purplefield {background-color:#e605ff;}
+.torqfield {background-color:#05ffd1;}
+.limegreenfield {background-color:#82ff05;}
+.pinkfield {background-color:#ff8cea;}
+.peachfield {background-color:#f0c3a3;}
+.button {font-size: 16px;}
+.submitbutton {font-size: 16px;
+padding: 15px 32px;
+background-color: #00A146;
+}
+.bigbutton {font-size: 16px;
+padding: 15px 32px;
+background-color: #dddddd;
+}
+.buttontext {font-size:0.4em;}
+input.largerCheckbox
+{
+width: 30px;
+height: 30px;
+}
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+#frame {
+ width: 420px;
+ height: 150px; 
+ overflow:hidden;
+ position:relative;
+}
+#bottomframe {
+ width: 400px;
+ height: 100px;
+ position:absolute;
+ top:53px;
+ left:11px;
+ background-color:#F2EE79;
+}
+#leftframe {
+ width: 45px;
+ height: 150px;
+ position:absolute;
+ top:3px;
+ left:10px;
+ background-color:#F2EE79;
+}
+#rightframe {
+ width: 14px;
+ height: 150px;
+ position:absolute;
+ top:3px;
+ right:10px;
+ background-color:#F2EE79;
+}
+#topframe {
+ width: 420px;
+ height: 26px;
+ position:absolute;
+ top:0px;
+ background-color:#F2EE79;
+}
+.sidepanel  {
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  height: 250px;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.sidepanel a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.sidepanel a:hover {
+  color: #f1f1f1;
+}
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+.openbtn:hover {
+  background-color:#444;
+}
+</style>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-56318310-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <base target="_top"/>
+<script>
+function homepage() {
+  document.getElementById("overlay1").style.display = "none";
+  //eventually i want to change this so that it navigates to the Home page 
+}
+</script>
+
+<script>
+function intakeform() {
+  document.getElementById("overlay1").style.display = "none";
+  document.getElementById("saskrcmpintake").style.display = "none";
+  document.getElementById("timespent").style.display = "block";
+  
+var strip = document.getElementById("stripcheckbox");
+var stripformbutton = document.getElementById("stripformbutton");
+if (strip.checked == true)
+{
+stripformbutton.style.display = "block";
+} else {
+stripformbutton.style.display = "none";
+  }
+var build = document.getElementById("buildcheckbox");
+var buildformbutton = document.getElementById("buildformbutton");
+if (build.checked == true)
+{
+buildformbutton.style.display = "block";
+} else {
+buildformbutton.style.display = "none";
+  }
+  
+var other = document.getElementById("othercheckbox");
+var otherformbutton = document.getElementById("otherformbutton");
+if (other.checked == true)
+{
+otherformbutton.style.display = "block";
+} else {
+otherformbutton.style.display = "none";
+  }
+}
+</script>
+
+<script>
+function showstripform() {
+  document.getElementById("stripformbutton").style.display = "none";
+  document.getElementById("stripform").style.display = "block";
+}
+</script>
+
+
+<script>
+function showbuildform() {
+  document.getElementById("buildformbutton").style.display = "none";
+  document.getElementById("buildform").style.display = "block";
+}
+</script>
+
+<script>
+function showotherform() {
+  document.getElementById("otherformbutton").style.display = "none";
+  document.getElementById("otherform").style.display = "block";
+}
+</script>
+
+
+<script>
+window.onload = () => {
+  let hour = 0;
+  let minute = 0;
+  let seconds = 0;
+  let totalSeconds = 0;
+  
+  let intervalId = null;
+  
+  function startTimer() {
+    ++totalSeconds;
+    hour = Math.floor(totalSeconds /3600);
+    minute = Math.floor((totalSeconds - hour*3600)/60);
+    seconds = totalSeconds - (hour*3600 + minute*60);
+    document.getElementById("hour").innerHTML =hour+":"+ minute;
+    document.getElementById("intaketime").innerHTML =hour+":"+ minute;
+    //document.getElementById("minute").innerHTML =minute;
+    document.getElementById("seconds").innerHTML =totalSeconds;
+  }
+  document.getElementById('start-btn').addEventListener('click', () => {
+    intervalId = setInterval(startTimer, 1000);
+  })
+  
+  document.getElementById('stop-btn').addEventListener('click', () => {
+    if (intervalId)
+      clearInterval(intervalId);
+  });
+  
+}
+</script>
+
+<script>
+function authentication(){
+if ((document.getElementById("uname").value == "waldner") && 
+   (document.getElementById("psw").value == "0247"))
+   document.getElementById("overlay").style.display = "none";
+   else {
+  alert("Please enter valid credentials.");
+}
+
+}
+
+function loadData() {
+          var url = "https://docs.google.com/spreadsheet/pub?key=1Nj5Q6P-0XD2Bh3sf_namtabB2jtoTYANDC84IMvE5XQ&single=true&gid=0&range=A1&output=csv";
+          xmlhttp = new XMLHttpRequest();
+          xmlhttp.onreadystatechange = function () {
+              if (xmlhttp.readyState == 4) {
+                  document.getElementById("hold1").value = xmlhttp.responseText;
+                  //alert(xmlhttp.responseText);
+              }
+          };
+          xmlhttp.open("GET", url, true);
+          xmlhttp.send(null);
+      }
+</script>
+
+<script>
+function homescreen(){
+document.getElementById("overlay2").style.display ="block";
+}
+</script>
+
+<script>
+function gotointake() {
+document.getElementById("overlay2").style.display ="none";
+document.getElementById("saskrcmpintake").style.display ="block";
+}
+</script>
+
+
+</head>
+
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$.fn.serializeObject = function()
+{
+var o = {};
+var a = this.serializeArray();
+$.each(a, function() {
+if (o[this.name]) {
+if (!o[this.name].push) {
+o[this.name] = [o[this.name]];
+}
+o[this.name].push(this.value || '');
+} else {
+o[this.name] = this.value || '';
+}
+});
+return o;
+};
+</script>
+
+<script>  
+function getTimeStamp() {
+       var now = new Date();
+       return ((now.getMonth() + 1) + '/' + (now.getDate()) + '/' + now.getFullYear() + " " + now.getHours() + ':'
+                     + ((now.getMinutes() < 10) ? ("0" + now.getMinutes()) : (now.getMinutes())) + ':' + ((now.getSeconds() < 10) ? ("0" + now
+                     .getSeconds()) : (now.getSeconds())));
+}
+function stripdashpassfunc() {
+   document.getElementById("stripdashpass").value = getTimeStamp();
+}
+function stripdashfailfunc() {
+     document.getElementById("stripdashfail").value = getTimeStamp();
+}
+function mirrorspassstripfunc() {
+    document.getElementById("mirrorspassstrip").value = getTimeStamp();
+}
+function mirrorsfailstripfunc() {
+  document.getElementById("mirrorsfailstrip").value = getTimeStamp();
+}
+
+
+
+function wiperspassstripfunc() {
+   document.getElementById("wiperspassstrip").value = getTimeStamp();
+}
+function wipersfailstripfunc() {
+   document.getElementById("wipersfailstrip").value = getTimeStamp();
+}
+function tireconditionpassstripfunc() {
+   document.getElementById("tireconditionpassstrip").value = getTimeStamp();
+}
+function tireconditionfailstripfunc() {
+    document.getElementById("tireconditionfailstrip").value = getTimeStamp();
+}
+function glassconditionpassstripfunc() {
+   document.getElementById("glassconditionpassstrip").value = getTimeStamp();
+}
+function glassconditionfailstripfunc() {
+    document.getElementById("glassconditionfailstrip").value = getTimeStamp();
+}
+function batteryconditionpassstripfunc() {
+   document.getElementById("batteryconditionpassstrip").value = getTimeStamp();
+}
+function batteryconditionfailstripfunc() {
+   document.getElementById("batteryconditionfailstrip").value = getTimeStamp();
+}
+function sirenstripfunc() {
+    document.getElementById("sirenstripfunc").value = getTimeStamp();
+}
+function lightbarstripfunc() {
+  document.getElementById("lightbarstrip").value = getTimeStamp();
+}
+function headlightflasherstripfunc() {
+   document.getElementById("headlightflasherstrip").value = getTimeStamp();
+}
+function cornerstrobestripfunc() {
+   document.getElementById("cornerstrobestrip").value = getTimeStamp();
+}
+function reartrafficstripfunc() {
+   document.getElementById("reartrafficstrip").value = getTimeStamp();
+}
+function additionallightingstripfunc() {
+   document.getElementById("additionallightingstrip").value = getTimeStamp();
+}
+function horntransferstripfunc() {
+    document.getElementById("horntransferstrip").value = getTimeStamp();
+}
+function powerdistributionunitstripfunc() {
+  document.getElementById("powerdistributionunitstrip").value = getTimeStamp();
+}
+function interiorlightingstripfunc() {
+   document.getElementById("interiorlightingstrip").value = getTimeStamp();
+}
+function basewiringstripfunc() {
+   document.getElementById("basewiringstrip").value = getTimeStamp();
+}
+function policeradiostripfunc() {
+   document.getElementById("policeradiostrip").value = getTimeStamp();
+}
+function antennascablingstripfunc() {
+   document.getElementById("antennascablingstrip").value = getTimeStamp();
+}
+function centerconsolestripfunc() {
+   document.getElementById("centerconsolestrip").value = getTimeStamp();
+}
+function dashmountstripfunc() {
+ document.getElementById("dashmountstrip").value = getTimeStamp();
+}
+function laptopdockingstripfunc() {
+   document.getElementById("laptopdockingstrip").value = getTimeStamp();
+}
+function icdvsstripfunc() {
+  document.getElementById("icdvsstrip").value = getTimeStamp();
+}
+function prisonerpartitionstripfunc() {
+   document.getElementById("prisonerpartitionstrip").value = getTimeStamp();
+}
+function rearequipmentstripfunc() {
+   document.getElementById("rearequipmentstrip").value = getTimeStamp();
+}
+function shotgunrackstripfunc() {
+   document.getElementById("shotgunrackstrip").value = getTimeStamp();
+}
+function rearsidewindowbarsstripfunc() {
+  document.getElementById("rearsidewindowbarsstrip").value = getTimeStamp();
+}
+function radarsystemstripfunc() {
+   document.getElementById("radarsystemstrip").value = getTimeStamp();
+}
+function secureidlestripfunc() {
+ document.getElementById("secureidlestrip").value = getTimeStamp();
+} 
+function allipvequipmentstripfunc() {
+  document.getElementById("allipvequipmentstrip").value = getTimeStamp();
+}
+function otherstripfunc() {
+  document.getElementById("otherstrip").value = getTimeStamp();
+}
+
+function builddashpassfunc() {
+  document.getElementById("builddashpass").value = getTimeStamp();
+}
+function builddashfailfunc() {
+   document.getElementById("builddashfail").value = getTimeStamp();
+}
+function mirrorspassbuildfunc() {
+  document.getElementById("mirrorspassbuild").value = getTimeStamp();
+}
+function mirrorsfailbuildfunc() {
+document.getElementById("mirrorsfailbuild").value = getTimeStamp();
+}
+
+
+
+function wiperspassbuildfunc() {
+    document.getElementById("wiperspassbuild").value = getTimeStamp();
+}
+function wipersfailbuildfunc() {
+    document.getElementById("wipersfailbuild").value = getTimeStamp();
+}
+function tireconditionpassbuildfunc() {
+   document.getElementById("tireconditionpassbuild").value = getTimeStamp();
+}
+function tireconditionfailbuildfunc() {
+    document.getElementById("tireconditionfailbuild").value = getTimeStamp();
+}
+function glassconditionpassbuildfunc() {
+    document.getElementById("glassconditionpassbuild").value = getTimeStamp();
+}
+function glassconditionfailbuildfunc() {
+    document.getElementById("glassconditionfailbuild").value = getTimeStamp();
+}
+function batteryconditionpassbuildfunc() {
+    document.getElementById("batteryconditionpassbuild").value = getTimeStamp();
+}
+function batteryconditionfailbuildfunc() {
+    document.getElementById("batteryconditionfailbuild").value = getTimeStamp();
+}
+function headlinerfunc() {
+    document.getElementById("headliner").value = getTimeStamp();
+}
+function frontseatsfunc() {
+document.getElementById("frontseats").value = getTimeStamp();
+}
+function rearseatsfunc() {
+    document.getElementById("rearseats").value = getTimeStamp();
+}
+function lightbarfunc() {
+    document.getElementById("lightbar").value = getTimeStamp();
+}
+function antennasfunc() {
+    document.getElementById("antennas").value = getTimeStamp();
+}
+function mountfrontandrearfunc() {
+    document.getElementById("mountfrontandrear").value = getTimeStamp();
+}
+function mountantennafunc() {
+    document.getElementById("mountantenna").value = getTimeStamp();
+}
+function layradarfunc() {
+    document.getElementById("layradar").value = getTimeStamp();
+}
+function radarwiringfunc() {
+    document.getElementById("radarwiring").value = getTimeStamp();
+}
+function radartestfunc() {
+    document.getElementById("radartest").value = getTimeStamp();
+}
+function watchguardfunc() {
+    document.getElementById("watchguard").value = getTimeStamp();
+}
+function wiringdetailsfunc() {
+    document.getElementById("wiringdetails").value = getTimeStamp();
+}
+function videomountingfunc() {
+    document.getElementById("videomounting").value = getTimeStamp();
+}
+function displayoverheadfunc() {
+    document.getElementById("displayoverhead").value = getTimeStamp();
+}
+function frontcamerafunc() {
+    document.getElementById("frontcamera").value = getTimeStamp();
+}
+function wirelessmicfunc() {
+    document.getElementById("wirelessmic").value = getTimeStamp();
+}
+function rearcammicfunc() {
+    document.getElementById("rearcammic").value = getTimeStamp();
+}
+function watchguardwiringfunc() {
+    document.getElementById("watchguardwiring").value = getTimeStamp();
+}
+function watchguardtestingfunc() {
+    document.getElementById("watchguardtesting").value = getTimeStamp();
+}
+function shutsofffunc() {
+    document.getElementById("shutsoff").value = getTimeStamp();
+}
+function testtimerfunc() {
+    document.getElementById("testtimer").value = getTimeStamp();
+}
+function motorolafunc() {
+    document.getElementById("motorola").value = getTimeStamp();
+}
+function radiomicfunc() {
+    document.getElementById("radiomic").value = getTimeStamp();
+}
+function papositionfunc() {
+    document.getElementById("paposition").value = getTimeStamp();
+}
+function radiocablefunc() {
+    document.getElementById("radiocable").value = getTimeStamp();
+}
+function cencomfunc() {
+    document.getElementById("cencom").value = getTimeStamp();
+}
+function wiringharnessfunc() {
+    document.getElementById("wiringharness").value = getTimeStamp();
+}
+function hardwareinstallationfunc() {
+    document.getElementById("hardwareinstallation").value = getTimeStamp();
+}
+function dashradiowiringfunc() {
+    document.getElementById("dashradiowiring").value = getTimeStamp();
+}
+function dashtestingfunc() {
+    document.getElementById("dashtesting").value = getTimeStamp();
+}
+function disassemblepmtfunc() {
+    document.getElementById("disassemblepmt").value = getTimeStamp();
+}
+function removetopplatesfunc() {
+    document.getElementById("removetopplates").value = getTimeStamp();
+}
+function removemountingfunc() {
+    document.getElementById("removemounting").value = getTimeStamp();
+}
+function installmountingfunc() {
+    document.getElementById("installmounting").value = getTimeStamp();
+}
+function mountsidebracketsfunc() {
+    document.getElementById("mountsidebrackets").value = getTimeStamp();
+}
+function prewiredockingfunc() {
+    document.getElementById("prewiredocking").value = getTimeStamp();
+}
+function mountdockingfunc() {
+    document.getElementById("mountdocking").value = getTimeStamp();
+}
+function mountpowerfunc() {
+    document.getElementById("mountpower").value = getTimeStamp();
+}
+function mountmicfunc() {
+    document.getElementById("mountmic").value = getTimeStamp();
+}
+function predrillholefunc() {
+    document.getElementById("predrillhole").value = getTimeStamp();
+}
+function installcenterconsolefunc() {
+    document.getElementById("installcenterconsole").value = getTimeStamp();
+}
+function dockingstationwirefunc() {
+    document.getElementById("dockingstationwire").value = getTimeStamp();
+}
+function dockingstationtestfunc() {
+    document.getElementById("dockingstationtest").value = getTimeStamp();
+}
+function mountcenterconsolefunc() {
+    document.getElementById("mountcenterconsole").value = getTimeStamp();
+}
+function removearmrestfunc() {
+    document.getElementById("removearmrest").value = getTimeStamp();
+}
+function prebuildarmrestfunc() {
+    document.getElementById("prebuildarmrest").value = getTimeStamp();
+}
+function printermountcenterconsolefunc() {
+    document.getElementById("printermountcenterconsole").value = getTimeStamp();
+}
+function printerwirefunc() {
+    document.getElementById("printerwire").value = getTimeStamp();
+}
+function printertestfunc() {
+    document.getElementById("printertest").value = getTimeStamp();
+}
+function armrestandcomputerswivelfunc() {
+    document.getElementById("armrestandcomputerswivel").value = getTimeStamp();
+}
+function prisonershieldinstallfunc() {
+    document.getElementById("prisonershieldinstall").value = getTimeStamp();
+}
+function foamandsealedfunc() {
+    document.getElementById("foamandsealed").value = getTimeStamp();
+}
+function panelsceilingfunc() {
+    document.getElementById("panelsceiling").value = getTimeStamp();
+}
+function nutsboltsfunc() {
+    document.getElementById("nutsbolts").value = getTimeStamp();
+}
+function adjustdualracksfunc() {
+    document.getElementById("adjustdualracks").value = getTimeStamp();
+}
+function radiospeakerfunc() {
+    document.getElementById("radiospeaker").value = getTimeStamp();
+}
+function shotgunwiringfunc() {
+    document.getElementById("shotgunwiring").value = getTimeStamp();
+}
+function shotguntestfunc() {
+    document.getElementById("shotguntest").value = getTimeStamp();
+}
+function platetolightbarfunc() {
+    document.getElementById("platetolightbar").value = getTimeStamp();
+}
+function mountcamerasfunc() {
+    document.getElementById("mountcameras").value = getTimeStamp();
+}
+function drillholesfunc() {
+    document.getElementById("drillholes").value = getTimeStamp();
+}
+function feedlinesfunc() {
+    document.getElementById("feedlines").value = getTimeStamp();
+}
+function mountdvrfunc() {
+    document.getElementById("mountdvr").value = getTimeStamp();
+}
+function sealholesfunc() {
+    document.getElementById("sealholes").value = getTimeStamp();
+}
+function alprtestfunc() {
+    document.getElementById("alprtest").value = getTimeStamp();
+}
+function mounttarearfunc() {
+    document.getElementById("mounttarear").value = getTimeStamp();
+}
+function onetwomountingbracketsfunc() {
+    document.getElementById("onetwomountingbrackets").value = getTimeStamp();
+}
+function whelenwiringfunc() {
+    document.getElementById("whelenwiring").value = getTimeStamp();
+}
+function whelentestingfunc() {
+    document.getElementById("whelentesting").value = getTimeStamp();
+}
+function trunktrayfunc() {
+    document.getElementById("trunktray").value = getTimeStamp();
+}
+function mountcomponentsfunc() {
+    document.getElementById("mountcomponents").value = getTimeStamp();
+}
+function cleanandstorefunc() {
+    document.getElementById("cleanandstore").value = getTimeStamp();
+}
+function loomtapefunc() {
+    document.getElementById("loomtape").value = getTimeStamp();
+}
+function trunktraywirefunc() {
+    document.getElementById("trunktraywire").value = getTimeStamp();
+}
+function trunktraytestfunc() {
+    document.getElementById("trunktraytest").value = getTimeStamp();
+}
+function radiorepeaterfunc() {
+    document.getElementById("radiorepeater").value = getTimeStamp();
+}
+
+function otherdashpassfunc() {
+    document.getElementById("otherdashpass").value = getTimeStamp();
+}
+function otherdashfailfunc() {
+    document.getElementById("otherdashfail").value = getTimeStamp();
+}
+function mirrorspassotherfunc() {
+    document.getElementById("mirrorspassother").value = getTimeStamp();
+}
+function mirrorsfailotherfunc() {
+    document.getElementById("mirrorsfailother").value = getTimeStamp();
+}
+
+
+
+function wiperspassotherfunc() {
+    document.getElementById("wiperspassother").value = getTimeStamp();
+}
+function wipersfailotherfunc() {
+    document.getElementById("wipersfailother").value = getTimeStamp();
+}
+function tireconditionpassotherfunc() {
+    document.getElementById("tireconditionpassother").value = getTimeStamp();
+}
+function tireconditionfailotherfunc() {
+    document.getElementById("tireconditionfailother").value = getTimeStamp();
+}
+function glassconditionpassotherfunc() {
+    document.getElementById("glassconditionpassother").value = getTimeStamp();
+}
+function glassconditionfailotherfunc() {
+    document.getElementById("glassconditionfailother").value = getTimeStamp();
+}
+function batteryconditionpassotherfunc() {
+    document.getElementById("batteryconditionpassother").value = getTimeStamp();
+}
+function batteryconditionfailotherfunc() {
+    document.getElementById("batteryconditionfailother").value = getTimeStamp();
+}
+
+</script>
+
+<center>
+<div id="overlay" style="background-color:white" class="modal"><center><img src="https://drive.google.com/uc?id=14b58YMTShxQ2Eb8g_EwSnLJn2P2pyGbe"  top=35px right=125px height=70 width=120/></center>
+  <div class="container">
+      <label style="color:black" for="uname"><b>Username:</b></label>
+      <input style="font-size:23px;color:black;" class="username" type="text" placeholder="Enter Username" name="uname" id="uname" required>
+<br>
+      <label style="color:black;" for="psw"><b>Password:</b></label>
+      <input style="font-size:23px;" type="password" placeholder="Enter Password" id="psw" name="psw" required>
+        <br><br>
+      <button style="background-color:red" class="submitbutton" onclick="authentication();homescreen();loadData();">Login</button>
+    </div>
+</div></center>
+
+<div id="mySidepanel" class="sidepanel">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="https://lt47.github.io/AAG/home.htm">Home</a>
+  <a href="https://lt47.github.io/AAG/stripform.htm">Strip</a>
+  <a href="https://lt47.github.io/AAG/build.htm">Build</a>
+  <a href="https://lt47.github.io/AAG/other.htm">"Other"</a>
+</div>
+
+<button class="openbtn" onclick="openNav()">☰</button>  
+<script>
+function openNav() {
+  document.getElementById("mySidepanel").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidepanel").style.width = "0";
+}
+</script>
+
+<center>
+  <div id="overlay2" style="display:none;background-color:white">
+<img src="https://drive.google.com/uc?id=1T2TM9M4LCFyk0cl-Y8rEtI0mt6ugVGQT"  top=35px right=125px height=60 width=170/><br>
+<h1 style="color:black">
+Home
+</h1>
+    <div class="container">
+    <label style="color:black;"><font size="6">Click to proceed to Intake Form</font></label>&nbsp;&nbsp;&nbsp;&nbsp;<br><br><input id="gotointakebutton" type="button" class="bigbutton" value="Intake" onclick="gotointake();clickcontinue();"><br><br><br>
+    
+
+
+<div id=timespent style="display:none;" class="Fixed">
+<p>
+Time Spent
+</p>
+<div>HH:mm <span id="hour" style="color:green;"></span></div>
+<div style="display:none;"><p id="seconds"></p></div>
+
+<button id="start-btn">Continue</button>
+<button id="stop-btn">Pause Job</button>
+
+</div>
+<br><br>
+
+
+<center>
+  <form id="saskrcmpintake" style="display:none;">
+  <div>
+<img src="https://drive.google.com/uc?id=1T2TM9M4LCFyk0cl-Y8rEtI0mt6ugVGQT" onclick="homescreen();" top=35px left=65px height=60 width=170/><br>
+</div>
+
+  <h1>
+  Saskatchewan RCMP Intake
+  </h1>
+<br><br>
+
+  <b><label style="color:blue"><font size ="5">Job Type</font></label></b><br><br>
+   <label><font size="5"><input id="stripcheckbox" class=largerCheckbox type="checkbox" onclick="jobtypeinputtest();"> Strip</font></label><br>
+    <label><font size="5"><input id="buildcheckbox" class=largerCheckbox type="checkbox" onclick="jobtypeinputtest();" > Build</font></label><br>
+    <label><font size="5"><input id="othercheckbox" class=largerCheckbox type="checkbox" onclick="otherinput();jobtypeinputtest();" > Other</font></label><br>
+    <input type="text" id="othertextinput" name="othertextinput" style="display:none;font-size:23px;"><br><br>
+   <input type="text" id="jobtypeinput" name="jobtypeinput" style="display:none;"> 
+    <label style="color:blue"><font size="5">Work Required:&nbsp;&nbsp;<input style="font-size:23px;" id="workrequiredintake" name="workrequiredintake" type="text"></font></label>
+    
+    <br><br><br>
+
+<label style="color:blue"><font size="5">Receiver's Name:&nbsp;&nbsp;<input style="color:blue;font-size:23px;" id="receiversname" name="receiversname" type="text" list=receiverslist></font><datalist id="receiverslist" name="receiverslist" style="font-size:23px;">
+<select>
+</select> 
+</datalist></label>
+<br><br><br>
+
+<table>
+<tr>
+  <td><label style="color:blue"><font size="5">Unit Number:&nbsp;&nbsp;<input style="font-size:23px;" id="unitnumberintake" name="unitnumberintake" type="text"></font></label></td>
+  
+  <td><input class="button" id="img1" type="file" accept="image/*"/><input id ="imgtext1" name="unitnumber-imagelink" type="hidden"/></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">Call Sign:&nbsp;&nbsp;<input style="font-size:23px;" id="callsignintake" name="callsignintake" type="text"></font></label></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">Call Up #:&nbsp;&nbsp;<input style="font-size:23px;" id="callupintake" name="callupintake" type="text"></font></label></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">Odometer Reading:&nbsp;&nbsp;<input style="font-size:23px;" id="odometerintake" name="odometerintake" type="number"></font></label></td>
+  <td><input class="button" id="img2" name="img2" type="file" accept="image/*"/><input id ="imgtext2" name="" type="hidden"/></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">VIN:&nbsp;&nbsp;&nbsp;<input style="font-size:23px;" id="vinintake" type="text"></font></label></td>
+  <td><input class="button" id="img3" name="img3" type="file" accept="image/*"/><input id ="imgtext3" name="" type="hidden"/></td>
+</tr>
+
+</table>
+
+
+<br><br><br><br>
+ 
+ <table>
+ <tr>
+   <td style="color:black"><font size="5"><b>Driver-side view of vehicle</b><br><input class="button" id="img4" name="img4" type="file" accept="image/*"/><input id ="imgtext4" name="" type="hidden"/></font>
+   </td>
+   <td style="color:black">
+     <font size="5"><b>Front view of vehicle</b><br><input class="button" id="img5" name="img5" type="file" accept="image/*"/><input id ="imgtext5" name="" type="hidden"/></font>
+   </td>
+ </tr>
+ <tr><td></td><td></td></tr>
+ <tr>
+   <td style="color:black"><font size="5"><b>Passenger-side view of vehicle</b><br><input class="button" id="img6" name="img6" type="file" accept="image/*"/><input id ="imgtext6" name="" type="hidden"/></font>
+   </td>
+   <td style="color:black">
+     <font size="5"><b>Rear view of vehicle</b><br><input class="button" id="img7" name="img7" type="file" accept="image/*"/><input id ="imgtext7" name="" type="hidden"/></font>
+   </td>
+ </tr>
+ 
+ </table>
+ <br><br><br>
+
+<label style="color:blue"><font size="5">Notes/Comments:&nbsp;&nbsp;&nbsp;<input style="font-size:23px;" id="notesintake" name="notesintake" type="text"></font></label><br><br><br>
+<p id="intaketime" name="intaketime" style="color:green;display:none;" type="text"></p>
+<input class="submitbutton" value="Submit" id="submit-form"> 
+
+  
+<script>
+document.getElementById("submit-form").addEventListener("click", function(){
+  document.getElementById("overlay1").style.display = "block";
+});
+</script>
+ 
+ 
+<script>
+var fileInput = document.getElementById('img1');
+//var preview = document.getElementById('preview');
+fileInput.addEventListener('change', function(e) {
+  
+    var imgurl = URL.createObjectURL(e.target.files[0]);
+    document.getElementById("imgtext1").value = imgurl;
+}, false);
+</script>
+
+<script>
+var fileInput = document.getElementById('img2');
+//var preview = document.getElementById('preview');
+fileInput.addEventListener('change', function(e) {
+  
+    var imgurl = URL.createObjectURL(e.target.files[0]);
+    document.getElementById("imgtext2").value = imgurl;
+}, false);
+</script>
+
+<script>
+var fileInput = document.getElementById('img3');
+//var preview = document.getElementById('preview');
+fileInput.addEventListener('change', function(e) {
+  
+    var imgurl = URL.createObjectURL(e.target.files[0]);
+    document.getElementById("imgtext3").value = imgurl;
+}, false);
+</script>
+
+<script>
+var fileInput = document.getElementById('img4');
+//var preview = document.getElementById('preview');
+fileInput.addEventListener('change', function(e) {
+  
+    var imgurl = URL.createObjectURL(e.target.files[0]);
+    document.getElementById("imgtext4").value = imgurl;
+}, false);
+</script>
+
+<script>
+var fileInput = document.getElementById('img5');
+//var preview = document.getElementById('preview');
+fileInput.addEventListener('change', function(e) {
+  
+    var imgurl = URL.createObjectURL(e.target.files[0]);
+    document.getElementById("imgtext5").value = imgurl;
+}, false);
+</script>
+
+<script>
+var fileInput = document.getElementById('img6');
+//var preview = document.getElementById('preview');
+fileInput.addEventListener('change', function(e) {
+  
+    var imgurl = URL.createObjectURL(e.target.files[0]);
+    document.getElementById("imgtext6").value = imgurl;
+}, false);
+</script>
+
+<script>
+var fileInput = document.getElementById('img7');
+//var preview = document.getElementById('preview');
+fileInput.addEventListener('change', function(e) {
+  
+    var imgurl = URL.createObjectURL(e.target.files[0]);
+    document.getElementById("imgtext7").value = imgurl;
+}, false);
+</script>
+
+  </form>
+  
+  <div id="overlay1" style="display:none" class="modal">
+    <img src="https://drive.google.com/uc?id=1T2TM9M4LCFyk0cl-Y8rEtI0mt6ugVGQT"  top=35px left=65px height=60 width=170/>
+    
+    <h2 style="color:black;">
+    Thank you.<br><br> Please click 'Home' to return to the homepage or select an option from the left-side panel. 
+    </h2>
+    
+    <button class="button" id="homepage" onclick="homepage();">Home</button>
+    
+    
+</div> 
+</center>
+
+
+<script>
+function clickcontinue() {
+  document.getElementById("start-btn").click();
+}
+</script>
+
+</body>
+
+<script>
+var select = document.getElementById("receiverslist");
+var receivers = ["Alex","Ashley","Chase","Connor", "Dave", "Keith", "Kevin", "Mike", "Shawn", "Tanner", "Tony"];
+for(var i = 0; i < receivers.length; i++) {
+    var opt = receivers[i];
+    var el = document.createElement("option");
+    el.textContent = opt;
+    el.value = opt;
+    select.appendChild(el);
+}
+</script>
+
+<script>
+function jobtypeinputtest() {
+var strip1 = document.getElementById("stripcheckbox");
+if (strip1.checked == true)
+{
+document.getElementById("jobtypeinput").value = "Strip";
+}
+
+var build1 = document.getElementById("buildcheckbox");
+if (build1.checked == true)
+{
+document.getElementById("jobtypeinput").value = "Build";
+} 
+
+var other1 = document.getElementById("othercheckbox");
+if (other1.checked == true)
+{
+document.getElementById("jobtypeinput").value = "Other";
+} 
+
+}
+</script>
+
+<script>
+function otherinput(){
+var other = document.getElementById("othercheckbox");
+var otherinput = document.getElementById("othertextinput");
+if (other.checked == true)
+{
+otherinput.style.display = "block";
+} else {
+otherinput.style.display = "none";
+  }
+}
+</script>
+
+
+</html>
