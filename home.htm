@@ -828,7 +828,12 @@ function batteryconditionpassotherfunc() {
 function batteryconditionfailotherfunc() {
     document.getElementById("batteryconditionfailother").value = getTimeStamp();
 }
-
+function intaketimestartfunc() {
+    document.getElementById("intaketimestart").value = getTimeStamp();
+}
+function intaketimeendfunc() {
+    document.getElementById("intaketimeend").value = getTimeStamp();
+}
 </script>
 
 <center>
@@ -870,7 +875,7 @@ function closeNav() {
 Home
 </h1>
     <div class="container">
-    <label style="color:black;"><font size="6">Click to proceed to Intake Form</font></label>&nbsp;&nbsp;&nbsp;&nbsp;<br><br><input id="gotointakebutton" type="button" class="bigbutton" value="Intake" onclick="gotointake();clickcontinue();"><br><br><br>
+    <label style="color:black;"><font size="6">Click to proceed to Intake Form</font></label>&nbsp;&nbsp;&nbsp;&nbsp;<br><br><input id="gotointakebutton" type="button" class="bigbutton" value="Intake" onclick="gotointake();clickcontinue();clickintakestart();"><br><br><br>
     
 
 
@@ -932,12 +937,12 @@ Time Spent
 
 <tr>
   <td><label style="color:blue"><font size="5">Odometer Reading:&nbsp;&nbsp;<input style="font-size:23px;" id="odometerintake" name="odometerintake" type="number"></font></label></td>
-  <td><input class="button" id="img2" name="img2" type="file" accept="image/*"/><input id ="imgtext2" name="" type="hidden"/></td>
+  <td><input class="button" id="img2" name="img2" type="file" accept="image/*"/><input id ="imgtext2" name="odometerimg" type="hidden"/></td>
 </tr>
 
 <tr>
-  <td><label style="color:blue"><font size="5">VIN:&nbsp;&nbsp;&nbsp;<input style="font-size:23px;" id="vinintake" type="text"></font></label></td>
-  <td><input class="button" id="img3" name="img3" type="file" accept="image/*"/><input id ="imgtext3" name="" type="hidden"/></td>
+  <td><label style="color:blue"><font size="5">VIN:&nbsp;&nbsp;&nbsp;<input style="font-size:23px;" id="vinintake" name="vinintake" type="text"></font></label></td>
+  <td><input class="button" id="img3" name="img3" type="file" accept="image/*"/><input id ="imgtext3" name="vinimg" type="hidden"/></td>
 </tr>
 
 </table>
@@ -947,31 +952,32 @@ Time Spent
  
  <table>
  <tr>
-   <td style="color:black"><font size="5"><b>Driver-side view of vehicle</b><br><input class="button" id="img4" name="img4" type="file" accept="image/*"/><input id ="imgtext4" name="" type="hidden"/></font>
+   <td style="color:black"><font size="5"><b>Driver-side view of vehicle</b><br><input class="button" id="img4" name="img4" type="file" accept="image/*"/><input id ="imgtext4" name="driversideimg" type="hidden"/></font>
    </td>
    <td style="color:black">
-     <font size="5"><b>Front view of vehicle</b><br><input class="button" id="img5" name="img5" type="file" accept="image/*"/><input id ="imgtext5" name="" type="hidden"/></font>
+     <font size="5"><b>Front view of vehicle</b><br><input class="button" id="img5" name="img5" type="file" accept="image/*"/><input id ="imgtext5" name="frontimg" type="hidden"/></font>
    </td>
  </tr>
  <tr><td></td><td></td></tr>
  <tr>
-   <td style="color:black"><font size="5"><b>Passenger-side view of vehicle</b><br><input class="button" id="img6" name="img6" type="file" accept="image/*"/><input id ="imgtext6" name="" type="hidden"/></font>
+   <td style="color:black"><font size="5"><b>Passenger-side view of vehicle</b><br><input class="button" id="img6" name="img6" type="file" accept="image/*"/><input id ="imgtext6" name="passengersideimg" type="hidden"/></font>
    </td>
    <td style="color:black">
-     <font size="5"><b>Rear view of vehicle</b><br><input class="button" id="img7" name="img7" type="file" accept="image/*"/><input id ="imgtext7" name="" type="hidden"/></font>
+     <font size="5"><b>Rear view of vehicle</b><br><input class="button" id="img7" name="img7" type="file" accept="image/*"/><input id ="imgtext7" name="rearimg" type="hidden"/></font>
    </td>
  </tr>
- 
  </table>
  <br><br><br>
 
 <label style="color:blue"><font size="5">Notes/Comments:&nbsp;&nbsp;&nbsp;<input style="font-size:23px;" id="notesintake" name="notesintake" type="text"></font></label><br><br><br>
-<p id="intaketime" name="intaketime" style="color:green;display:none;" type="text"></p>
-<input class="submitbutton" value="Submit" id="submit-form"> 
+<input id="intaketimestart" name="intaketimestart" style="color:green;display:none;" type="text">
+<input id="intaketimeend" name="intaketimeend" style="color:green;display:none;" type="text">
 
+<input class="submitbutton" value="Submit" id="submit-form" onclick="intaketimeendfunc();"> 
+<button style="display:none" class="submitbutton" id="intakestartbutton" type="submit" onclick="intaketimestartfunc();"></button>
   
 <script>
-document.getElementById("submit-form").addEventListener("click", function(){
+document.getElementById("submit-intakeform").addEventListener("click", function(){
   document.getElementById("overlay1").style.display = "block";
 });
 </script>
@@ -1047,6 +1053,25 @@ fileInput.addEventListener('change', function(e) {
 }, false);
 </script>
 
+
+<script>
+var $form = $('form#intakeform'),
+    url4 = 'https://script.google.com/macros/s/AKfycbyBrfeu7jJkNar4r-V7toKozX5QsOeqt5K3UDsmDQ/exec',
+
+$submit = $('#submit-intakeform').on('click', function(i) {
+  i.preventDefault();
+  var jqxhr = $.ajax({
+    url: url4,
+    method: "GET",
+    dataType: "json",
+    data: $form.serializeObject()
+  }).done(
+    // do something
+  );
+   $('#intakeform')[0].reset();
+})
+</script>
+
   </form>
   
   <div id="overlay1" style="display:none" class="modal">
@@ -1062,6 +1087,11 @@ fileInput.addEventListener('change', function(e) {
 </div> 
 </center>
 
+<script>
+function clickintakestart() {
+  document.getElementById("intakestartbutton").click();
+}
+</script>
 
 <script>
 function clickcontinue() {
@@ -1119,5 +1149,50 @@ otherinput.style.display = "none";
 }
 </script>
 
+<script>
+ $("#unitnumberintake").change(function(){
+    update();
+});
+function update() {
+  $("#unitnumberstrip").val($('#unitnumberintake').val());
+  
+   $("#unitnumbercleaning").val($('#unitnumberintake').val());
+   
+    $("#unitnumberbuild").val($('#unitnumberintake').val());
+    
+     $("#unitnumberother").val($('#unitnumberintake').val());
+  //you have to update the unit number text field in all job types. As well as all other relevant data entry fields
+}
+</script>
+
+<script>
+ $("#odometerintake").change(function(){
+    update1();
+});
+function update1() {
+  $("#odometerstrip").val($('#odometerintake').val());
+  
+   $("#odometercleaning").val($('#odometerintake').val());
+   
+    $("#odometerbuild").val($('#odometerintake').val());
+    
+     $("#odometerother").val($('#odometerintake').val());
+}
+</script>
+
+<script>
+ $("#vinintake").change(function(){
+    update2();
+});
+function update2() {
+  $("#vinstrip").val($('#vinintake').val());
+  
+   $("#vincleaning").val($('#vinintake').val());
+   
+    $("#vinbuild").val($('#vinintake').val());
+    
+     $("#vinother").val($('#vinintake').val());
+}
+</script>
 
 </html>
