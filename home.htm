@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   
-<style>             
+<style>  
 <!-- body {font-family: Arial, Helvetica, sans-serif;} --> body {font-family: "Lato", sans-serif;} .sidenav {
   height: 100%;
   width: 125px;
@@ -252,93 +252,7 @@ function homepage() {
 }
 </script>
 
-<script>
-function intakeform() {
-  document.getElementById("overlay1").style.display = "none";
-  document.getElementById("saskrcmpintake").style.display = "none";
-  document.getElementById("timespent").style.display = "block";
-  
-var strip = document.getElementById("stripcheckbox");
-var stripformbutton = document.getElementById("stripformbutton");
-if (strip.checked == true)
-{
-stripformbutton.style.display = "block";
-} else {
-stripformbutton.style.display = "none";
-  }
-var build = document.getElementById("buildcheckbox");
-var buildformbutton = document.getElementById("buildformbutton");
-if (build.checked == true)
-{
-buildformbutton.style.display = "block";
-} else {
-buildformbutton.style.display = "none";
-  }
-  
-var other = document.getElementById("othercheckbox");
-var otherformbutton = document.getElementById("otherformbutton");
-if (other.checked == true)
-{
-otherformbutton.style.display = "block";
-} else {
-otherformbutton.style.display = "none";
-  }
-}
-</script>
 
-<script>
-function showstripform() {
-  document.getElementById("stripformbutton").style.display = "none";
-  document.getElementById("stripform").style.display = "block";
-}
-</script>
-
-
-<script>
-function showbuildform() {
-  document.getElementById("buildformbutton").style.display = "none";
-  document.getElementById("buildform").style.display = "block";
-}
-</script>
-
-<script>
-function showotherform() {
-  document.getElementById("otherformbutton").style.display = "none";
-  document.getElementById("otherform").style.display = "block";
-}
-</script>
-
-
-<script>
-window.onload = () => {
-  let hour = 0;
-  let minute = 0;
-  let seconds = 0;
-  let totalSeconds = 0;
-  
-  let intervalId = null;
-  
-  function startTimer() {
-    ++totalSeconds;
-    hour = Math.floor(totalSeconds /3600);
-    minute = Math.floor((totalSeconds - hour*3600)/60);
-    seconds = totalSeconds - (hour*3600 + minute*60);
-    document.getElementById("hour").innerHTML =hour+":"+ minute;
-    document.getElementById("intaketime").innerHTML =hour+":"+ minute;
-    //document.getElementById("minute").innerHTML =minute;
-    document.getElementById("seconds").innerHTML =totalSeconds;
-  }
-  document.getElementById('start-btn').addEventListener('click', () => {
-    intervalId = setInterval(startTimer, 1000);
-  })
-  
-  document.getElementById('stop-btn').addEventListener('click', () => {
-    if (intervalId)
-      clearInterval(intervalId);
-  });
-  
-}
-</script>
 
 <script>
 function authentication(){
@@ -351,18 +265,6 @@ if ((document.getElementById("uname").value == "waldner") &&
 
 }
 
-function loadData() {
-          var url = "https://docs.google.com/spreadsheet/pub?key=1Nj5Q6P-0XD2Bh3sf_namtabB2jtoTYANDC84IMvE5XQ&single=true&gid=0&range=A1&output=csv";
-          xmlhttp = new XMLHttpRequest();
-          xmlhttp.onreadystatechange = function () {
-              if (xmlhttp.readyState == 4) {
-                  document.getElementById("hold1").value = xmlhttp.responseText;
-                  //alert(xmlhttp.responseText);
-              }
-          };
-          xmlhttp.open("GET", url, true);
-          xmlhttp.send(null);
-      }
 </script>
 
 <script>
@@ -372,7 +274,7 @@ document.getElementById("overlay2").style.display ="block";
 </script>
 
 <script>
-function gotointake() {
+function gotointake(){
 document.getElementById("overlay2").style.display ="none";
 document.getElementById("saskrcmpintake").style.display ="block";
 }
@@ -382,6 +284,7 @@ document.getElementById("saskrcmpintake").style.display ="block";
 </head>
 
 <body>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
 $.fn.serializeObject = function()
@@ -409,425 +312,7 @@ function getTimeStamp() {
                      + ((now.getMinutes() < 10) ? ("0" + now.getMinutes()) : (now.getMinutes())) + ':' + ((now.getSeconds() < 10) ? ("0" + now
                      .getSeconds()) : (now.getSeconds())));
 }
-function stripdashpassfunc() {
-   document.getElementById("stripdashpass").value = getTimeStamp();
-}
-function stripdashfailfunc() {
-     document.getElementById("stripdashfail").value = getTimeStamp();
-}
-function mirrorspassstripfunc() {
-    document.getElementById("mirrorspassstrip").value = getTimeStamp();
-}
-function mirrorsfailstripfunc() {
-  document.getElementById("mirrorsfailstrip").value = getTimeStamp();
-}
 
-
-
-function wiperspassstripfunc() {
-   document.getElementById("wiperspassstrip").value = getTimeStamp();
-}
-function wipersfailstripfunc() {
-   document.getElementById("wipersfailstrip").value = getTimeStamp();
-}
-function tireconditionpassstripfunc() {
-   document.getElementById("tireconditionpassstrip").value = getTimeStamp();
-}
-function tireconditionfailstripfunc() {
-    document.getElementById("tireconditionfailstrip").value = getTimeStamp();
-}
-function glassconditionpassstripfunc() {
-   document.getElementById("glassconditionpassstrip").value = getTimeStamp();
-}
-function glassconditionfailstripfunc() {
-    document.getElementById("glassconditionfailstrip").value = getTimeStamp();
-}
-function batteryconditionpassstripfunc() {
-   document.getElementById("batteryconditionpassstrip").value = getTimeStamp();
-}
-function batteryconditionfailstripfunc() {
-   document.getElementById("batteryconditionfailstrip").value = getTimeStamp();
-}
-function sirenstripfunc() {
-    document.getElementById("sirenstripfunc").value = getTimeStamp();
-}
-function lightbarstripfunc() {
-  document.getElementById("lightbarstrip").value = getTimeStamp();
-}
-function headlightflasherstripfunc() {
-   document.getElementById("headlightflasherstrip").value = getTimeStamp();
-}
-function cornerstrobestripfunc() {
-   document.getElementById("cornerstrobestrip").value = getTimeStamp();
-}
-function reartrafficstripfunc() {
-   document.getElementById("reartrafficstrip").value = getTimeStamp();
-}
-function additionallightingstripfunc() {
-   document.getElementById("additionallightingstrip").value = getTimeStamp();
-}
-function horntransferstripfunc() {
-    document.getElementById("horntransferstrip").value = getTimeStamp();
-}
-function powerdistributionunitstripfunc() {
-  document.getElementById("powerdistributionunitstrip").value = getTimeStamp();
-}
-function interiorlightingstripfunc() {
-   document.getElementById("interiorlightingstrip").value = getTimeStamp();
-}
-function basewiringstripfunc() {
-   document.getElementById("basewiringstrip").value = getTimeStamp();
-}
-function policeradiostripfunc() {
-   document.getElementById("policeradiostrip").value = getTimeStamp();
-}
-function antennascablingstripfunc() {
-   document.getElementById("antennascablingstrip").value = getTimeStamp();
-}
-function centerconsolestripfunc() {
-   document.getElementById("centerconsolestrip").value = getTimeStamp();
-}
-function dashmountstripfunc() {
- document.getElementById("dashmountstrip").value = getTimeStamp();
-}
-function laptopdockingstripfunc() {
-   document.getElementById("laptopdockingstrip").value = getTimeStamp();
-}
-function icdvsstripfunc() {
-  document.getElementById("icdvsstrip").value = getTimeStamp();
-}
-function prisonerpartitionstripfunc() {
-   document.getElementById("prisonerpartitionstrip").value = getTimeStamp();
-}
-function rearequipmentstripfunc() {
-   document.getElementById("rearequipmentstrip").value = getTimeStamp();
-}
-function shotgunrackstripfunc() {
-   document.getElementById("shotgunrackstrip").value = getTimeStamp();
-}
-function rearsidewindowbarsstripfunc() {
-  document.getElementById("rearsidewindowbarsstrip").value = getTimeStamp();
-}
-function radarsystemstripfunc() {
-   document.getElementById("radarsystemstrip").value = getTimeStamp();
-}
-function secureidlestripfunc() {
- document.getElementById("secureidlestrip").value = getTimeStamp();
-} 
-function allipvequipmentstripfunc() {
-  document.getElementById("allipvequipmentstrip").value = getTimeStamp();
-}
-function otherstripfunc() {
-  document.getElementById("otherstrip").value = getTimeStamp();
-}
-
-function builddashpassfunc() {
-  document.getElementById("builddashpass").value = getTimeStamp();
-}
-function builddashfailfunc() {
-   document.getElementById("builddashfail").value = getTimeStamp();
-}
-function mirrorspassbuildfunc() {
-  document.getElementById("mirrorspassbuild").value = getTimeStamp();
-}
-function mirrorsfailbuildfunc() {
-document.getElementById("mirrorsfailbuild").value = getTimeStamp();
-}
-
-
-
-function wiperspassbuildfunc() {
-    document.getElementById("wiperspassbuild").value = getTimeStamp();
-}
-function wipersfailbuildfunc() {
-    document.getElementById("wipersfailbuild").value = getTimeStamp();
-}
-function tireconditionpassbuildfunc() {
-   document.getElementById("tireconditionpassbuild").value = getTimeStamp();
-}
-function tireconditionfailbuildfunc() {
-    document.getElementById("tireconditionfailbuild").value = getTimeStamp();
-}
-function glassconditionpassbuildfunc() {
-    document.getElementById("glassconditionpassbuild").value = getTimeStamp();
-}
-function glassconditionfailbuildfunc() {
-    document.getElementById("glassconditionfailbuild").value = getTimeStamp();
-}
-function batteryconditionpassbuildfunc() {
-    document.getElementById("batteryconditionpassbuild").value = getTimeStamp();
-}
-function batteryconditionfailbuildfunc() {
-    document.getElementById("batteryconditionfailbuild").value = getTimeStamp();
-}
-function headlinerfunc() {
-    document.getElementById("headliner").value = getTimeStamp();
-}
-function frontseatsfunc() {
-document.getElementById("frontseats").value = getTimeStamp();
-}
-function rearseatsfunc() {
-    document.getElementById("rearseats").value = getTimeStamp();
-}
-function lightbarfunc() {
-    document.getElementById("lightbar").value = getTimeStamp();
-}
-function antennasfunc() {
-    document.getElementById("antennas").value = getTimeStamp();
-}
-function mountfrontandrearfunc() {
-    document.getElementById("mountfrontandrear").value = getTimeStamp();
-}
-function mountantennafunc() {
-    document.getElementById("mountantenna").value = getTimeStamp();
-}
-function layradarfunc() {
-    document.getElementById("layradar").value = getTimeStamp();
-}
-function radarwiringfunc() {
-    document.getElementById("radarwiring").value = getTimeStamp();
-}
-function radartestfunc() {
-    document.getElementById("radartest").value = getTimeStamp();
-}
-function watchguardfunc() {
-    document.getElementById("watchguard").value = getTimeStamp();
-}
-function wiringdetailsfunc() {
-    document.getElementById("wiringdetails").value = getTimeStamp();
-}
-function videomountingfunc() {
-    document.getElementById("videomounting").value = getTimeStamp();
-}
-function displayoverheadfunc() {
-    document.getElementById("displayoverhead").value = getTimeStamp();
-}
-function frontcamerafunc() {
-    document.getElementById("frontcamera").value = getTimeStamp();
-}
-function wirelessmicfunc() {
-    document.getElementById("wirelessmic").value = getTimeStamp();
-}
-function rearcammicfunc() {
-    document.getElementById("rearcammic").value = getTimeStamp();
-}
-function watchguardwiringfunc() {
-    document.getElementById("watchguardwiring").value = getTimeStamp();
-}
-function watchguardtestingfunc() {
-    document.getElementById("watchguardtesting").value = getTimeStamp();
-}
-function shutsofffunc() {
-    document.getElementById("shutsoff").value = getTimeStamp();
-}
-function testtimerfunc() {
-    document.getElementById("testtimer").value = getTimeStamp();
-}
-function motorolafunc() {
-    document.getElementById("motorola").value = getTimeStamp();
-}
-function radiomicfunc() {
-    document.getElementById("radiomic").value = getTimeStamp();
-}
-function papositionfunc() {
-    document.getElementById("paposition").value = getTimeStamp();
-}
-function radiocablefunc() {
-    document.getElementById("radiocable").value = getTimeStamp();
-}
-function cencomfunc() {
-    document.getElementById("cencom").value = getTimeStamp();
-}
-function wiringharnessfunc() {
-    document.getElementById("wiringharness").value = getTimeStamp();
-}
-function hardwareinstallationfunc() {
-    document.getElementById("hardwareinstallation").value = getTimeStamp();
-}
-function dashradiowiringfunc() {
-    document.getElementById("dashradiowiring").value = getTimeStamp();
-}
-function dashtestingfunc() {
-    document.getElementById("dashtesting").value = getTimeStamp();
-}
-function disassemblepmtfunc() {
-    document.getElementById("disassemblepmt").value = getTimeStamp();
-}
-function removetopplatesfunc() {
-    document.getElementById("removetopplates").value = getTimeStamp();
-}
-function removemountingfunc() {
-    document.getElementById("removemounting").value = getTimeStamp();
-}
-function installmountingfunc() {
-    document.getElementById("installmounting").value = getTimeStamp();
-}
-function mountsidebracketsfunc() {
-    document.getElementById("mountsidebrackets").value = getTimeStamp();
-}
-function prewiredockingfunc() {
-    document.getElementById("prewiredocking").value = getTimeStamp();
-}
-function mountdockingfunc() {
-    document.getElementById("mountdocking").value = getTimeStamp();
-}
-function mountpowerfunc() {
-    document.getElementById("mountpower").value = getTimeStamp();
-}
-function mountmicfunc() {
-    document.getElementById("mountmic").value = getTimeStamp();
-}
-function predrillholefunc() {
-    document.getElementById("predrillhole").value = getTimeStamp();
-}
-function installcenterconsolefunc() {
-    document.getElementById("installcenterconsole").value = getTimeStamp();
-}
-function dockingstationwirefunc() {
-    document.getElementById("dockingstationwire").value = getTimeStamp();
-}
-function dockingstationtestfunc() {
-    document.getElementById("dockingstationtest").value = getTimeStamp();
-}
-function mountcenterconsolefunc() {
-    document.getElementById("mountcenterconsole").value = getTimeStamp();
-}
-function removearmrestfunc() {
-    document.getElementById("removearmrest").value = getTimeStamp();
-}
-function prebuildarmrestfunc() {
-    document.getElementById("prebuildarmrest").value = getTimeStamp();
-}
-function printermountcenterconsolefunc() {
-    document.getElementById("printermountcenterconsole").value = getTimeStamp();
-}
-function printerwirefunc() {
-    document.getElementById("printerwire").value = getTimeStamp();
-}
-function printertestfunc() {
-    document.getElementById("printertest").value = getTimeStamp();
-}
-function armrestandcomputerswivelfunc() {
-    document.getElementById("armrestandcomputerswivel").value = getTimeStamp();
-}
-function prisonershieldinstallfunc() {
-    document.getElementById("prisonershieldinstall").value = getTimeStamp();
-}
-function foamandsealedfunc() {
-    document.getElementById("foamandsealed").value = getTimeStamp();
-}
-function panelsceilingfunc() {
-    document.getElementById("panelsceiling").value = getTimeStamp();
-}
-function nutsboltsfunc() {
-    document.getElementById("nutsbolts").value = getTimeStamp();
-}
-function adjustdualracksfunc() {
-    document.getElementById("adjustdualracks").value = getTimeStamp();
-}
-function radiospeakerfunc() {
-    document.getElementById("radiospeaker").value = getTimeStamp();
-}
-function shotgunwiringfunc() {
-    document.getElementById("shotgunwiring").value = getTimeStamp();
-}
-function shotguntestfunc() {
-    document.getElementById("shotguntest").value = getTimeStamp();
-}
-function platetolightbarfunc() {
-    document.getElementById("platetolightbar").value = getTimeStamp();
-}
-function mountcamerasfunc() {
-    document.getElementById("mountcameras").value = getTimeStamp();
-}
-function drillholesfunc() {
-    document.getElementById("drillholes").value = getTimeStamp();
-}
-function feedlinesfunc() {
-    document.getElementById("feedlines").value = getTimeStamp();
-}
-function mountdvrfunc() {
-    document.getElementById("mountdvr").value = getTimeStamp();
-}
-function sealholesfunc() {
-    document.getElementById("sealholes").value = getTimeStamp();
-}
-function alprtestfunc() {
-    document.getElementById("alprtest").value = getTimeStamp();
-}
-function mounttarearfunc() {
-    document.getElementById("mounttarear").value = getTimeStamp();
-}
-function onetwomountingbracketsfunc() {
-    document.getElementById("onetwomountingbrackets").value = getTimeStamp();
-}
-function whelenwiringfunc() {
-    document.getElementById("whelenwiring").value = getTimeStamp();
-}
-function whelentestingfunc() {
-    document.getElementById("whelentesting").value = getTimeStamp();
-}
-function trunktrayfunc() {
-    document.getElementById("trunktray").value = getTimeStamp();
-}
-function mountcomponentsfunc() {
-    document.getElementById("mountcomponents").value = getTimeStamp();
-}
-function cleanandstorefunc() {
-    document.getElementById("cleanandstore").value = getTimeStamp();
-}
-function loomtapefunc() {
-    document.getElementById("loomtape").value = getTimeStamp();
-}
-function trunktraywirefunc() {
-    document.getElementById("trunktraywire").value = getTimeStamp();
-}
-function trunktraytestfunc() {
-    document.getElementById("trunktraytest").value = getTimeStamp();
-}
-function radiorepeaterfunc() {
-    document.getElementById("radiorepeater").value = getTimeStamp();
-}
-
-function otherdashpassfunc() {
-    document.getElementById("otherdashpass").value = getTimeStamp();
-}
-function otherdashfailfunc() {
-    document.getElementById("otherdashfail").value = getTimeStamp();
-}
-function mirrorspassotherfunc() {
-    document.getElementById("mirrorspassother").value = getTimeStamp();
-}
-function mirrorsfailotherfunc() {
-    document.getElementById("mirrorsfailother").value = getTimeStamp();
-}
-
-
-
-function wiperspassotherfunc() {
-    document.getElementById("wiperspassother").value = getTimeStamp();
-}
-function wipersfailotherfunc() {
-    document.getElementById("wipersfailother").value = getTimeStamp();
-}
-function tireconditionpassotherfunc() {
-    document.getElementById("tireconditionpassother").value = getTimeStamp();
-}
-function tireconditionfailotherfunc() {
-    document.getElementById("tireconditionfailother").value = getTimeStamp();
-}
-function glassconditionpassotherfunc() {
-    document.getElementById("glassconditionpassother").value = getTimeStamp();
-}
-function glassconditionfailotherfunc() {
-    document.getElementById("glassconditionfailother").value = getTimeStamp();
-}
-function batteryconditionpassotherfunc() {
-    document.getElementById("batteryconditionpassother").value = getTimeStamp();
-}
-function batteryconditionfailotherfunc() {
-    document.getElementById("batteryconditionfailother").value = getTimeStamp();
-}
 function intaketimestartfunc() {
     document.getElementById("intaketimestart").value = getTimeStamp();
 }
@@ -845,7 +330,7 @@ function intaketimeendfunc() {
       <label style="color:black;" for="psw"><b>Password:</b></label>
       <input style="font-size:23px;" type="password" placeholder="Enter Password" id="psw" name="psw" required>
         <br><br>
-      <button style="background-color:red" class="submitbutton" onclick="authentication();homescreen();loadData();">Login</button>
+      <button style="background-color:red" class="submitbutton" onclick="authentication();homescreen();">Login</button>
     </div>
 </div></center>
 
@@ -868,30 +353,20 @@ function closeNav() {
 }
 </script>
 
-<center>
+<center>   
   <div id="overlay2" style="display:none;background-color:white">
 <img src="https://drive.google.com/uc?id=1T2TM9M4LCFyk0cl-Y8rEtI0mt6ugVGQT"  top=35px right=125px height=60 width=170/><br>
 <h1 style="color:black">
 Home
 </h1>
     <div class="container">
-    <label style="color:black;"><font size="6">Click to proceed to Intake Form</font></label>&nbsp;&nbsp;&nbsp;&nbsp;<br><br><input id="gotointakebutton" type="button" class="bigbutton" value="Intake" onclick="gotointake();clickcontinue();clickintakestart();"><br><br><br>
+    <label style="color:black;"><font size="6">Click to proceed to Intake Form</font></label>&nbsp;&nbsp;&nbsp;&nbsp;<br><br><input id="gotointakebutton" type="button" class="bigbutton" value="Intake" onclick="gotointake();clickintakestart();"><br><br><br>
+    </div>
     
-
-
-<div id=timespent style="display:none;" class="Fixed">
-<p>
-Time Spent
-</p>
-<div>HH:mm <span id="hour" style="color:green;"></span></div>
-<div style="display:none;"><p id="seconds"></p></div>
-
-<button id="start-btn">Continue</button>
-<button id="stop-btn">Pause Job</button>
-
 </div>
-<br><br>
 
+<br><br>
+</center>
 
 <center>
   <form id="saskrcmpintake" style="display:none;">
@@ -977,6 +452,7 @@ Time Spent
 <button style="display:none" class="submitbutton" id="intakestartbutton" type="submit" onclick="intaketimestartfunc();"></button>
   
 
+ 
  
 <script>
 var fileInput = document.getElementById('img1');
@@ -1069,7 +545,9 @@ $submit = $('#submit-intakeform').on('click', function(i) {
 
   </form>
   
-  <div id="overlay1" style="display:none" class="modal">
+</center>
+
+<div id="overlay1" style="display:none" class="modal">
     <img src="https://drive.google.com/uc?id=1T2TM9M4LCFyk0cl-Y8rEtI0mt6ugVGQT"  top=35px left=65px height=60 width=170/>
     
     <h2 style="color:black;">
@@ -1080,19 +558,13 @@ $submit = $('#submit-intakeform').on('click', function(i) {
     
     
 </div> 
-</center>
-
+    
 <script>
 function clickintakestart() {
   document.getElementById("intakestartbutton").click();
 }
 </script>
 
-<script>
-function clickcontinue() {
-  document.getElementById("start-btn").click();
-}
-</script>
 
 </body>
 
@@ -1144,50 +616,5 @@ otherinput.style.display = "none";
 }
 </script>
 
-<script>
- $("#unitnumberintake").change(function(){
-    update();
-});
-function update() {
-  $("#unitnumberstrip").val($('#unitnumberintake').val());
-  
-   $("#unitnumbercleaning").val($('#unitnumberintake').val());
-   
-    $("#unitnumberbuild").val($('#unitnumberintake').val());
-    
-     $("#unitnumberother").val($('#unitnumberintake').val());
-  //you have to update the unit number text field in all job types. As well as all other relevant data entry fields
-}
-</script>
-
-<script>
- $("#odometerintake").change(function(){
-    update1();
-});
-function update1() {
-  $("#odometerstrip").val($('#odometerintake').val());
-  
-   $("#odometercleaning").val($('#odometerintake').val());
-   
-    $("#odometerbuild").val($('#odometerintake').val());
-    
-     $("#odometerother").val($('#odometerintake').val());
-}
-</script>
-
-<script>
- $("#vinintake").change(function(){
-    update2();
-});
-function update2() {
-  $("#vinstrip").val($('#vinintake').val());
-  
-   $("#vincleaning").val($('#vinintake').val());
-   
-    $("#vinbuild").val($('#vinintake').val());
-    
-     $("#vinother").val($('#vinintake').val());
-}
-</script>
 
 </html>
