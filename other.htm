@@ -267,7 +267,7 @@ window.onload = () => {
     minute = Math.floor((totalSeconds - hour*3600)/60);
     seconds = totalSeconds - (hour*3600 + minute*60);
     document.getElementById("hour").innerHTML =hour+":"+ minute;
-    document.getElementById("striptime").innerHTML =hour+":"+ minute;
+    document.getElementById("othertime").innerHTML =hour+":"+ minute;
     //document.getElementById("minute").innerHTML =minute;
     document.getElementById("seconds").innerHTML =totalSeconds;
   }
