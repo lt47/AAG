@@ -614,6 +614,25 @@ function radiorepeaterfunc() {
 
 </script>
 
+<div id="mySidepanel" class="sidepanel">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="https://lt47.github.io/AAG/home.htm">Home</a>
+  <a href="https://lt47.github.io/AAG/stripform.htm">Strip</a>
+  <a href="https://lt47.github.io/AAG/build.htm">Build</a>
+  <a href="https://lt47.github.io/AAG/other.htm">"Other"</a>
+</div>
+
+<button class="openbtn" onclick="openNav()">☰</button>  
+<script>
+function openNav() {
+  document.getElementById("mySidepanel").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidepanel").style.width = "0";
+}
+</script>
+
 <center>
   <div id="overlay2" style="background-color:white">
 <img src="https://drive.google.com/uc?id=1T2TM9M4LCFyk0cl-Y8rEtI0mt6ugVGQT"  top=35px right=125px height=60 width=170/><br>
@@ -623,12 +642,8 @@ Sask. RCMP Build
     <div class="container">
     <label style="color:black;"><font size="6">Click to proceed to Build form</font></label>&nbsp;&nbsp;&nbsp;&nbsp;<br><br><input id="gotobuildbutton" type="button" class="bigbutton" value="Build" onclick="gotobuild();clickcontinue();"><br><br><br>
     <label style="color:black;"><font size="6">Click to receive the most recent dispatch information</font></label>&nbsp;&nbsp;&nbsp;&nbsp;<br><br><input id="receivedispatchbutton" type="button" class="bigbutton" value="Receive Dispatch"><br><br><br>
-    <label style="color:black;"><font size="6">Retrieve an intake submission:</font></label><br><br>
-    <input id="hold1" style="font-size:23px;" type="text" disabled>&nbsp;&nbsp;&nbsp;&nbsp;<input id="hold1btn" type="button" class="bigbutton" value="Retrieve"><br><br>
-    <input id="hold2" style="font-size:23px;" type="text" disabled>&nbsp;&nbsp;&nbsp;&nbsp;<input id="hold2btn" type="button" class="bigbutton" value="Retrieve"><br><br>
-    <input id="hold3" style="font-size:23px;" type="text" disabled>&nbsp;&nbsp;&nbsp;&nbsp;<input id="hold3btn" type="button" class="bigbutton" value="Retrieve"><br><br>
-    <input id="hold4" style="font-size:23px;" type="text" disabled>&nbsp;&nbsp;&nbsp;&nbsp;<input id="hold4btn" type="button" class="bigbutton" value="Retrieve"><br><br>
-    <input id="hold5" style="font-size:23px;" type="text" disabled>&nbsp;&nbsp;&nbsp;&nbsp;<input id="hold5btn" type="button" class="bigbutton" value="Retrieve"><br><br>
+    <label style="color:black;"><font size="6">Enter a unit number to retrieve details from an intake form or to continue a job on hold:</font></label><br><br>
+    <input id="hold1" style="font-size:23px;" type="text">&nbsp;&nbsp;&nbsp;&nbsp;<input id="hold1btn" type="button" class="bigbutton" value="Get Job Details"><br><br>
     </div>   
 </div>
   
