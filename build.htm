@@ -284,6 +284,19 @@ window.onload = () => {
 </script>
 
 <script>
+var myVar;
+function syncque() {
+  myVar = setInterval(sync, 3000);
+}
+
+function sync() {
+  var n1 = document.getElementById('buildtime');
+  var n2 = document.getElementById('buildtime1');
+  n2.value = n1.value;
+}
+</script>
+
+<script>
 
 function loadData() {
           var url = "https://docs.google.com/spreadsheet/pub?key=1Nj5Q6P-0XD2Bh3sf_namtabB2jtoTYANDC84IMvE5XQ&single=true&gid=0&range=A1&output=csv";
@@ -344,7 +357,7 @@ function getTimeStamp() {
                      + ((now.getMinutes() < 10) ? ("0" + now.getMinutes()) : (now.getMinutes())) + ':' + ((now.getSeconds() < 10) ? ("0" + now
                      .getSeconds()) : (now.getSeconds())));
 }
-ffunction builddashpassfunc() {
+function builddashpassfunc() {
   document.getElementById("builddashpass").value = getTimeStamp();
 }
 function builddashfailfunc() {
@@ -611,7 +624,12 @@ function trunktraytestfunc() {
 function radiorepeaterfunc() {
     document.getElementById("radiorepeater").value = getTimeStamp();
 }
-
+function buildtimestartfunc() {
+    document.getElementById("buildtimestart").value = getTimeStamp();
+}
+function buildtimeendfunc() {
+    document.getElementById("buildtimeend").value = getTimeStamp();
+}
 </script>
 
 <div id="mySidepanel" class="sidepanel">
@@ -640,7 +658,7 @@ function closeNav() {
 Sask. RCMP Build
 </h1>
     <div class="container">
-    <label style="color:black;"><font size="6">Click to proceed to Build form</font></label>&nbsp;&nbsp;&nbsp;&nbsp;<br><br><input id="gotobuildbutton" type="button" class="bigbutton" value="Build" onclick="gotobuild();clickcontinue();"><br><br><br>
+    <label style="color:black;"><font size="6">Click to proceed to Build form</font></label>&nbsp;&nbsp;&nbsp;&nbsp;<br><br><input id="gotobuildbutton" type="button" class="bigbutton" value="Build" onclick="gotobuild();clickcontinue();clickbuildstart();"><br><br><br>
     <label style="color:black;"><font size="6">Click to receive the most recent dispatch information</font></label>&nbsp;&nbsp;&nbsp;&nbsp;<br><br><input id="receivedispatchbutton" type="button" class="bigbutton" value="Receive Dispatch"><br><br><br>
     <label style="color:black;"><font size="6">Enter a unit number to retrieve details from an intake form or to continue a job on hold:</font></label><br><br>
     <input id="hold1" style="font-size:23px;" type="text">&nbsp;&nbsp;&nbsp;&nbsp;<input id="hold1btn" type="button" class="bigbutton" value="Get Job Details"><br><br>
@@ -1632,13 +1650,16 @@ Trunk Tray
   </td>
 </tr>
 <input style="display:none;" id="radiorepeater" name="radiorepeater" type="text">
-<p id="buildtime" name="buildtime" style="color:green;display:none;" type="text"></p>
+<input id="buildtimestart" name="buildtimestart" style="color:green;display:none;" type="text">
+<input id="buildtimeend" name="buildtimeend" style="color:green;display:none;" type="text">
 
 </table>
 <br>
-<center><button class="submitbutton" id="submit-buildform" type="submit">Submit</button></center>
+<center><button class="submitbutton" id="submit-buildform" type="submit" onclick="buildtimeendfunc();">Submit</button></center>
 
-<button style="display:none" class="submitbutton" id="pause-buildform" type="submit">Pause</button>
+<button style="display:none" class="submitbutton" id="pause-buildform" type="submit" >Pause</button>
+
+<button style="display:none" class="submitbutton" id="buildstartbutton" type="submit" onclick="buildtimestartfunc();"></button>
 
 <script>
 var $form = $('form#buildform'),
@@ -1681,7 +1702,11 @@ $submit = $('#pause-buildform').on('click', function(h) {
 
 
 </center>
-
+<script>
+function clickbuildstart() {
+  document.getElementById("buildstartbutton").click();
+}
+</script>
 
 
 <script>
@@ -1708,5 +1733,6 @@ for(var i = 0; i < techs.length; i++) {
     select.appendChild(el);
 }
 </script>
+
 
 </html>
