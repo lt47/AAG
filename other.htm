@@ -383,6 +383,12 @@ function batteryconditionpassotherfunc() {
 function batteryconditionfailotherfunc() {
     document.getElementById("batteryconditionfailother").value = getTimeStamp();
 }
+function othertimestartfunc() {
+    document.getElementById("othertimestart").value = getTimeStamp();
+}
+function othertimeendfunc() {
+    document.getElementById("othertimeend").value = getTimeStamp();
+}
 </script>
 
 <div id="mySidepanel" class="sidepanel">
@@ -411,7 +417,7 @@ function closeNav() {
 Sask. RCMP (Other)
 </h1>
     <div class="container">
-    <label style="color:black;"><font size="6">Click to proceed to "Other" form</font></label>&nbsp;&nbsp;&nbsp;&nbsp;<br><br><input id="gotootherbutton" type="button" class="bigbutton" value="Other" onclick="gotoother();clickcontinue();"><br><br><br>
+    <label style="color:black;"><font size="6">Click to proceed to "Other" form</font></label>&nbsp;&nbsp;&nbsp;&nbsp;<br><br><input id="gotootherbutton" type="button" class="bigbutton" value="Other" onclick="gotoother();clickcontinue();clickotherstart();"><br><br><br>
     <label style="color:black;"><font size="6">Click to receive the most recent dispatch information</font></label>&nbsp;&nbsp;&nbsp;&nbsp;<br><br><input id="receivedispatchbutton" type="button" class="bigbutton" value="Receive Dispatch"><br><br><br>
     <label style="color:black;"><font size="6">Enter a unit number to retrieve details from an intake form or to continue a job on hold:</font></label><br><br>
     <input id="hold1" style="font-size:23px;" type="text">&nbsp;&nbsp;&nbsp;&nbsp;<input id="hold1btn" type="button" class="bigbutton" value="Get Job Details"><br><br>
@@ -539,12 +545,15 @@ RCMP Vehicle Inspection Guide
 </tr>
 <input style="display:none;" id="batteryconditionpassother" name="batteryconditionpassother" type="text">
 <input style="display:none;" id="batteryconditionfailother" name="batteryconditionfailother" type="text">
-<p id="othertime" name="othertime" style="color:green;display:none;" type="text"></p>
+<input id="othertimestart" name="othertimestart" style="color:green;display:none;" type="text">
+<input id="othertimeend" name="othertimeend" style="color:green;display:none;" type="text">
 </table><br>
 
-<center><button class="submitbutton" id="submit-otherform" type="submit">Submit</button></center>
+<center><button class="submitbutton" id="submit-otherform" type="submit" onclick="othertimeendfunc();">Submit</button></center>
 
 <button style="display:none" class="submitbutton" id="pause-otherform" type="submit">Pause</button>
+
+<button style="display:none" class="submitbutton" id="otherstartbutton" type="submit" onclick="othertimestartfunc();"></button>
 
 <script>
 var $form = $('form#otherform'),
@@ -587,7 +596,11 @@ $submit = $('#pause-otherform').on('click', function(j) {
 
 </center>
 
-
+<script>
+function clickotherstart() {
+  document.getElementById("otherstartbutton").click();
+}
+</script>
 
 
 <script>
