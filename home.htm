@@ -1166,7 +1166,7 @@
           <label style="color:black;" for="psw"><b>Password:</b></label>
           <input style="font-size:23px;" type="password" placeholder="Enter Password" id="psw" name="psw" required>
           <br><br>
-          <button style="background-color:red" class="bigbutton" onclick="authentication();homescreen();">Login</button>
+          <button style="background-color:red" type="button" class="bigbutton" onclick="authentication();homescreen();">Login</button>
         </div>
       </div>
     </center>
@@ -1209,7 +1209,7 @@
     </center>
 
     <center>
-      <form id="saskrcmpintake" style="display:none;">
+      <form id="saskrcmpintake" style="display:none;" method="POST">
         <div>
           <img src="https://drive.google.com/uc?id=1T2TM9M4LCFyk0cl-Y8rEtI0mt6ugVGQT" onclick="homescreen();" top=35px left=65px height=60 width=170 /><br>
         </div>
@@ -1317,8 +1317,8 @@
         <input id="intaketimestart" name="intaketimestart" style="color:green;display:none;" type="text">
         <input id="intaketimeend" name="intaketimeend" style="color:green;display:none;" type="text">
 
-        <input class="submitbutton" value="Submit" id="submit-saskrcmpintake" onclick="intaketimeendfunc();">
-        <button style="display:none" id="intakestartbutton"  onclick="intaketimestartfunc();"></button>
+        <input type="button" class="submitbutton" value="Submit" id="submit-saskrcmpintake" onclick="intaketimeendfunc();">
+        <button type="button" style="display:none" id="intakestartbutton"  onclick="intaketimestartfunc();"></button>
 
 
 
