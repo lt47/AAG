@@ -455,6 +455,12 @@ function allipvequipmentstripfunc() {
 function otherstripfunc() {
   document.getElementById("otherstrip").value = getTimeStamp();
 }
+function striptimestartfunc() {
+    document.getElementById("striptimestart").value = getTimeStamp();
+}
+function striptimeendfunc() {
+    document.getElementById("striptimeend").value = getTimeStamp();
+}
 </script>
 
 <div id="mySidepanel" class="sidepanel">
@@ -484,7 +490,7 @@ function closeNav() {
 Sask. RCMP Strip
 </h1>
     <div class="container">
-    <label style="color:black;"><font size="6">Click to proceed to Strip form</font></label>&nbsp;&nbsp;&nbsp;&nbsp;<br><br><input id="gotostripbutton" type="button" class="bigbutton" value="Strip" onclick="gotostrip();clickcontinue();"><br><br><br>
+    <label style="color:black;"><font size="6">Click to proceed to Strip form</font></label>&nbsp;&nbsp;&nbsp;&nbsp;<br><br><input id="gotostripbutton" type="button" class="bigbutton" value="Strip" onclick="gotostrip();clickcontinue();clickstripstart();"><br><br><br>
     <label style="color:black;"><font size="6">Click to receive the most recent dispatch information</font></label>&nbsp;&nbsp;&nbsp;&nbsp;<br><br><input id="receivedispatchbutton" type="button" class="bigbutton" value="Receive Dispatch"><br><br><br>
     <label style="color:black;"><font size="6">Enter a unit number to retrieve details from an intake form or to continue a job on hold:</font></label><br><br>
     <input id="hold1" style="font-size:23px;" type="text">&nbsp;&nbsp;&nbsp;&nbsp;<input id="hold1btn" type="button" class="bigbutton" value="Get Job Details"><br><br>
@@ -768,7 +774,8 @@ RCMP Standing Offer No. M5000-160786/001/WNP<br><br>SUMMARY OF REMOVAL OF EQUIPM
   <td><label><font size="5"><input id="otherstripcheckbox" class=largerCheckbox type="checkbox" onclick="otherstripfunc();"  > Other - (e.g. hidden lighting, lock boxes)</font></label></td>
 </tr>
 <input style="display:none;" id="otherstrip" name="otherstrip" type="text">
-<p id="striptime" name="striptime" style="color:green;display:none;" type="text"></p>
+<input id="striptimestart" name="striptimestart" style="color:green;display:none;" type="text">
+<input id="striptimeend" name="striptimeend" style="color:green;display:none;" type="text">
 
 
 <tr>
@@ -796,9 +803,11 @@ RCMP Standing Offer No. M5000-160786/001/WNP<br><br>SUMMARY OF REMOVAL OF EQUIPM
 
 </table><br>
 
-<center><button class="submitbutton" id="submit-stripform" type="submit">Submit</button></center>
+<center><button class="submitbutton" id="submit-stripform" type="submit" onclick="striptimeendfunc();">Submit</button></center>
 
 <button style="display:none" class="submitbutton" id="pause-stripform" type="submit">Pause</button>
+
+<button style="display:none" class="submitbutton" id="stripstartbutton" type="submit" onclick="striptimestartfunc();"></button>
 
 <script>
 var $form = $('form#stripform'),
@@ -841,7 +850,11 @@ $submit = $('#pause-stripform').on('click', function(f) {
 
 </center>
 
-
+<script>
+function clickstripstart() {
+  document.getElementById("stripstartbutton").click();
+}
+</script>
 
 <script>
 function clickcontinue() {
