@@ -973,15 +973,10 @@ Time Spent
 <input id="intaketimestart" name="intaketimestart" style="color:green;display:none;" type="text">
 <input id="intaketimeend" name="intaketimeend" style="color:green;display:none;" type="text">
 
-<input class="submitbutton" value="Submit" id="submit-form" onclick="intaketimeendfunc();"> 
+<input class="submitbutton" value="Submit" id="submit-intakeform" onclick="intaketimeendfunc();"> 
 <button style="display:none" class="submitbutton" id="intakestartbutton" type="submit" onclick="intaketimestartfunc();"></button>
   
-<script>
-document.getElementById("submit-intakeform").addEventListener("click", function(){
-  document.getElementById("overlay1").style.display = "block";
-});
-</script>
- 
+
  
 <script>
 var fileInput = document.getElementById('img1');
