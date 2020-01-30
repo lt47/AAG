@@ -310,17 +310,17 @@ Manitoba RCMP Build Job Retrieval
   
 </center>
 
-<center><button class="submitbutton" id="submit-manrcmpretrieval" type="submit" onclick="window.location.href = 'https://lt47.github.io/AAG/manbuildonhold.htm';" >Retrieve Job Details</button></center>
+<center><button class="submitbutton" id="submit-manrcmpretrieval" type="submit"  >Retrieve Job Details</button></center>
 
 
 <script>
 var $form = $('form#manrcmpbuildretrieval'),
-    url4 = 'https://script.google.com/macros/s/AKfycbw_KpRONE3kjEobrlzmjei1vGkeK_De5Yxi79-mrQ/exec',
+    url5 = 'https://script.google.com/macros/s/AKfycbwEyyxkPgDAn6GUUVhMy2_DVEZPEo3QfULlA7xM3e34MHh7YSpE/exec',
 
 $submit = $('#submit-manrcmpretrieval').on('click', function(i) {
   i.preventDefault();
   var jqxhr = $.ajax({
-    url: url4,
+    url: url5,
     method: "GET",
     dataType: "json",
     data: $form.serializeObject()
