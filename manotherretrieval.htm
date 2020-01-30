@@ -310,17 +310,17 @@ Manitoba RCMP Other Job Retrieval
   
 </center>
 
-<center><button class="submitbutton" id="submit-manrcmpretrieval" type="submit"  >Retrieve Job Details</button></center>
+<center><button class="submitbutton" id="submit-manrcmpretrieval" type="submit" onclick="window.location.href = 'https://lt47.github.io/AAG/manstriponhold.htm';" >Retrieve Job Details</button></center>
 
 
 <script>
 var $form = $('form#manrcmpotherretrieval'),
-    url6 = 'https://script.google.com/macros/s/AKfycbwEyyxkPgDAn6GUUVhMy2_DVEZPEo3QfULlA7xM3e34MHh7YSpE/exec',
+    url7 = 'https://script.google.com/macros/s/AKfycbwMlLhcIuAT3ankb5a1U-hlnjuf0rVV9PGlQMRT/exec',
 
 $submit = $('#submit-manrcmpretrieval').on('click', function(i) {
   i.preventDefault();
   var jqxhr = $.ajax({
-    url: url6,
+    url: url7,
     method: "GET",
     dataType: "json",
     data: $form.serializeObject()
