@@ -298,7 +298,7 @@ function closeNav() {
 
 
 <center>
-<form id="manrcmpretrieval" method="POST">
+<form id="manrcmpstripretrieval" method="POST">
 <img src="https://drive.google.com/uc?id=1T2TM9M4LCFyk0cl-Y8rEtI0mt6ugVGQT"  top=35px right=125px height=60 width=170/>
 <h2>
 Manitoba RCMP Strip Job Retrieval
@@ -310,11 +310,11 @@ Manitoba RCMP Strip Job Retrieval
   
 </center>
 
-<center><button class="submitbutton" id="submit-manrcmpretrieval" type="submit" onclick="window.location='https://lt47.github.io/AAG/manstriponhold.htm';">Retrieve Job Details</button></center>
+<center><button class="submitbutton" id="submit-manrcmpretrieval" type="submit" onclick="window.location.href = 'https://lt47.github.io/AAG/manstriponhold.htm';" >Retrieve Job Details</button></center>
 
 
 <script>
-var $form = $('form#manotherform'),
+var $form = $('form#manrcmpstripretrieval'),
     url4 = 'https://script.google.com/macros/s/AKfycbyKfqhG4_0T5Ogy3W6Hz1GBFHoVmtW5eU21QzXKVWvuEHMICZbj/exec',
 
 $submit = $('#submit-manrcmpretrieval').on('click', function(i) {
@@ -327,7 +327,7 @@ $submit = $('#submit-manrcmpretrieval').on('click', function(i) {
   }).done(
     // do something
   );
-   $('#manrcmpretrieval')[0].reset();
+   $('#manrcmpstripretrieval')[0].reset();
 })
 </script>
 
@@ -341,15 +341,5 @@ $submit = $('#submit-manrcmpretrieval').on('click', function(i) {
 
 
 </body>
-<script>
-var select = document.getElementById("techlist");
-var techs = ["Alex","Charles","Chase","Connor", "Dave", "Keith", "Kevin", "Mike", "Shawn", "Tanner", "Tony"];
-for(var i = 0; i < techs.length; i++) {
-    var opt = techs[i];
-    var el = document.createElement("option");
-    el.textContent = opt;
-    el.value = opt;
-    select.appendChild(el);
-}
-</script>
+
 </html>
