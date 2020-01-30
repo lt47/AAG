@@ -1,0 +1,914 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+   
+<style> 
+<!-- body {font-family: Arial, Helvetica, sans-serif;} --> body {font-family: "Lato", sans-serif;} .sidenav {
+  height: 100%;
+  width: 125px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #4a4a4a;
+  overflow-x: hidden;
+  padding-top: 20px;
+  font-size: 1.3em;
+}
+.main {font-size: 1.2em;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  font-size: 1.1em;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+  font-size: 1.6em;
+}
+.modal { 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+  padding-top: 60px;
+  font-size: 1.1em;
+}
+.Fixed
+{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color:#000000;
+    color:#dddddd;
+}
+input[type="text"]
+{
+    font-size:15px;
+}
+select
+{
+    font-size:13px;
+}
+table tr#divider  {background-color:#000000;}
+table tr#ROW1  {background-color:#dddddd;}
+table tr#ROW2  {background-color:#dddddd;}
+table tr#ROW3  {background-color:#dddddd;}
+table tr#ROW4  {background-color:#dddddd;}
+table tr#ROW5  {background-color:#dddddd;}
+table tr#ROW6  {background-color:#dddddd;}
+table tr#ROW7  {background-color:#F7A33B;}
+table tr#des  {font-size:0.7em;}
+div#info1  {background-color:#F2EE79;}
+div#info2  {background-color:#F2EE79;}
+div#info3  {background-color:#F2EE79;}
+div#info4  {background-color:#F2EE79;}
+#overlay {
+  position: fixed;
+  width: 100%; 
+  height: 100%; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:#000000; 
+  z-index: 2; 
+  cursor: pointer; 
+  font-size: 1.7em;
+  color:#dddddd;
+}
+#overlay1 {
+  position: fixed;
+  width: 100%; 
+  height: 100%; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:#ffffff; 
+  z-index: 2; 
+  cursor: pointer; 
+  font-size: 1.7em;
+  color:#dddddd;
+}
+#overlay2 {
+  
+  width: 100%; 
+  height: 100%; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:#000000; 
+  z-index: 2; 
+  cursor: pointer; 
+  font-size: 1.7em;
+  color:#dddddd;
+}
+input[type=password] {
+  width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size:15px;
+}
+.username{width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;}
+.greenfield {background-color: #00A146;}
+.yellowfield {background-color: #EEF52C;}
+.redfield {background-color: #F71302;}
+.grayfield {background-color:#dddddd;}
+.orangefield {background-color:#fc7f03;}
+.bluefield {background-color:#0202fa;}
+.purplefield {background-color:#e605ff;}
+.torqfield {background-color:#05ffd1;}
+.limegreenfield {background-color:#82ff05;}
+.pinkfield {background-color:#ff8cea;}
+.peachfield {background-color:#f0c3a3;}
+.button {font-size: 16px;}
+.submitbutton {font-size: 16px;
+padding: 15px 32px;
+background-color: #00A146;
+}
+.bigbutton {font-size: 16px;
+padding: 15px 32px;
+background-color: #dddddd;
+}
+.buttontext {font-size:0.4em;}
+input.largerCheckbox
+{
+width: 30px;
+height: 30px;
+}
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+#frame {
+ width: 420px;
+ height: 150px; 
+ overflow:hidden;
+ position:relative;
+}
+#bottomframe {
+ width: 400px;
+ height: 100px;
+ position:absolute;
+ top:53px;
+ left:11px;
+ background-color:#F2EE79;
+}
+#leftframe {
+ width: 45px;
+ height: 150px;
+ position:absolute;
+ top:3px;
+ left:10px;
+ background-color:#F2EE79;
+}
+#rightframe {
+ width: 14px;
+ height: 150px;
+ position:absolute;
+ top:3px;
+ right:10px;
+ background-color:#F2EE79;
+}
+#topframe {
+ width: 420px;
+ height: 26px;
+ position:absolute;
+ top:0px;
+ background-color:#F2EE79;
+}
+.sidepanel  {
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  height: 250px;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.sidepanel a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.sidepanel a:hover {
+  color: #f1f1f1;
+}
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+.openbtn:hover {
+  background-color:#444;
+}
+</style>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-56318310-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <base target="_top"/>
+<script>
+function homepage() {
+  document.getElementById("overlay1").style.display = "none";
+  //eventually i want to change this so that it navigates to the Home page 
+}
+</script>
+
+
+
+<script>
+window.onload = () => {
+  let hour = 0;
+  let minute = 0;
+  let seconds = 0;
+  let totalSeconds = 0;
+  
+  let intervalId = null;
+  
+  function startTimer() {
+    ++totalSeconds;
+    hour = Math.floor(totalSeconds /3600);
+    minute = Math.floor((totalSeconds - hour*3600)/60);
+    seconds = totalSeconds - (hour*3600 + minute*60);
+    document.getElementById("hour").innerHTML =hour+":"+ minute;
+    //document.getElementById("minute").innerHTML =minute;
+    document.getElementById("seconds").innerHTML =totalSeconds;
+  }
+  document.getElementById('start-btn').addEventListener('click', () => {
+    intervalId = setInterval(startTimer, 1000);
+  })
+  
+  document.getElementById('stop-btn').addEventListener('click', () => {
+    if (intervalId)
+      clearInterval(intervalId);
+  });
+  
+}
+</script>
+
+
+
+
+</head>
+
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$.fn.serializeObject = function()
+{
+var o = {};
+var a = this.serializeArray();
+$.each(a, function() {
+if (o[this.name]) {
+if (!o[this.name].push) {
+o[this.name] = [o[this.name]];
+}
+o[this.name].push(this.value || '');
+} else {
+o[this.name] = this.value || '';
+}
+});
+return o;
+};
+</script>
+
+<script>  
+function getTimeStamp() {
+       var now = new Date();
+       return ((now.getMonth() + 1) + '/' + (now.getDate()) + '/' + now.getFullYear() + " " + now.getHours() + ':'
+                     + ((now.getMinutes() < 10) ? ("0" + now.getMinutes()) : (now.getMinutes())) + ':' + ((now.getSeconds() < 10) ? ("0" + now
+                     .getSeconds()) : (now.getSeconds())));
+}
+function stripdashpassfunc() {
+   document.getElementById("stripdashpass").value = getTimeStamp();
+}
+function stripdashfailfunc() {
+     document.getElementById("stripdashfail").value = getTimeStamp();
+}
+function mirrorspassstripfunc() {
+    document.getElementById("mirrorspassstrip").value = getTimeStamp();
+}
+function mirrorsfailstripfunc() {
+  document.getElementById("mirrorsfailstrip").value = getTimeStamp();
+}
+
+
+
+function wiperspassstripfunc() {
+   document.getElementById("wiperspassstrip").value = getTimeStamp();
+}
+function wipersfailstripfunc() {
+   document.getElementById("wipersfailstrip").value = getTimeStamp();
+}
+function tireconditionpassstripfunc() {
+   document.getElementById("tireconditionpassstrip").value = getTimeStamp();
+}
+function tireconditionfailstripfunc() {
+    document.getElementById("tireconditionfailstrip").value = getTimeStamp();
+}
+function glassconditionpassstripfunc() {
+   document.getElementById("glassconditionpassstrip").value = getTimeStamp();
+}
+function glassconditionfailstripfunc() {
+    document.getElementById("glassconditionfailstrip").value = getTimeStamp();
+}
+function batteryconditionpassstripfunc() {
+   document.getElementById("batteryconditionpassstrip").value = getTimeStamp();
+}
+function batteryconditionfailstripfunc() {
+   document.getElementById("batteryconditionfailstrip").value = getTimeStamp();
+}
+function sirenstripfunc() {
+    document.getElementById("sirenstripfunc").value = getTimeStamp();
+}
+function lightbarstripfunc() {
+  document.getElementById("lightbarstrip").value = getTimeStamp();
+}
+function headlightflasherstripfunc() {
+   document.getElementById("headlightflasherstrip").value = getTimeStamp();
+}
+function cornerstrobestripfunc() {
+   document.getElementById("cornerstrobestrip").value = getTimeStamp();
+}
+function reartrafficstripfunc() {
+   document.getElementById("reartrafficstrip").value = getTimeStamp();
+}
+function additionallightingstripfunc() {
+   document.getElementById("additionallightingstrip").value = getTimeStamp();
+}
+function horntransferstripfunc() {
+    document.getElementById("horntransferstrip").value = getTimeStamp();
+}
+function powerdistributionunitstripfunc() {
+  document.getElementById("powerdistributionunitstrip").value = getTimeStamp();
+}
+function interiorlightingstripfunc() {
+   document.getElementById("interiorlightingstrip").value = getTimeStamp();
+}
+function basewiringstripfunc() {
+   document.getElementById("basewiringstrip").value = getTimeStamp();
+}
+function policeradiostripfunc() {
+   document.getElementById("policeradiostrip").value = getTimeStamp();
+}
+function antennascablingstripfunc() {
+   document.getElementById("antennascablingstrip").value = getTimeStamp();
+}
+function centerconsolestripfunc() {
+   document.getElementById("centerconsolestrip").value = getTimeStamp();
+}
+function dashmountstripfunc() {
+ document.getElementById("dashmountstrip").value = getTimeStamp();
+}
+function laptopdockingstripfunc() {
+   document.getElementById("laptopdockingstrip").value = getTimeStamp();
+}
+function icdvsstripfunc() {
+  document.getElementById("icdvsstrip").value = getTimeStamp();
+}
+function prisonerpartitionstripfunc() {
+   document.getElementById("prisonerpartitionstrip").value = getTimeStamp();
+}
+function rearequipmentstripfunc() {
+   document.getElementById("rearequipmentstrip").value = getTimeStamp();
+}
+function shotgunrackstripfunc() {
+   document.getElementById("shotgunrackstrip").value = getTimeStamp();
+}
+function rearsidewindowbarsstripfunc() {
+  document.getElementById("rearsidewindowbarsstrip").value = getTimeStamp();
+}
+function radarsystemstripfunc() {
+   document.getElementById("radarsystemstrip").value = getTimeStamp();
+}
+function secureidlestripfunc() {
+ document.getElementById("secureidlestrip").value = getTimeStamp();
+} 
+function allipvequipmentstripfunc() {
+  document.getElementById("allipvequipmentstrip").value = getTimeStamp();
+}
+function otherstripfunc() {
+  document.getElementById("otherstrip").value = getTimeStamp();
+}
+function striptimestartfunc() {
+    document.getElementById("striptimestart").value = getTimeStamp();
+}
+function striptimeendfunc() {
+    document.getElementById("striptimeend").value = getTimeStamp();
+}
+</script>
+
+<div id="mySidepanel" class="sidepanel">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="https://lt47.github.io/AAG/manhome.htm">Home</a>
+  <a href="https://lt47.github.io/AAG/manstripform.htm">Strip</a>
+  <a href="https://lt47.github.io/AAG/manbuild.htm">Build</a>
+  <a href="https://lt47.github.io/AAG/manother.htm">"Other"</a>
+</div>
+
+<button class="openbtn" onclick="openNav()">☰</button>  
+<script>
+function openNav() {
+  document.getElementById("mySidepanel").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidepanel").style.width = "0";
+}
+</script>
+
+
+
+
+<div id=timespent class="Fixed">
+<p style="font-size:20px;">
+Time Spent
+</p>
+<div style="font-size:18px;">HH:mm <p id="hour" style="color:white;font-size:23px;" type="text"></p></div>
+<div style="display:none;"><p id="seconds"></p></div>
+
+<button id="start-btn" style="font-size:20px;">Continue</button>
+<button id="stop-btn" style="font-size:20px;" onclick="clickpause();">Pause Job</button>
+
+</div>
+<br><br>
+
+
+<center>
+<form id="manstripform" method="POST">
+<img src="https://drive.google.com/uc?id=1T2TM9M4LCFyk0cl-Y8rEtI0mt6ugVGQT"  top=35px left=65px height=60 width=170/>
+<h2>
+Manitoba RCMP Strip
+</h2>
+<br><br><br>
+<label style="font-size:23px">Last filled item:<input type="text" style="font-size:23px;color:red" id="lastfilled" name="lastfilled" disabled></label>
+<table>
+<tr> 
+  <td><label style="color:blue"><font size="5">Technician:&nbsp;&nbsp;<input style="color:blue;font-size:23px;" id="techname" name="techname" type="text" list=techlist></font><datalist id="techlist" name="techlist" style="font-size:23px;">
+<select>
+</select> 
+</datalist></label></td>
+</tr>
+
+<tr> 
+  <td><label style="color:blue"><font size="5">Unit Number:&nbsp;&nbsp;<input style="font-size:23px;" id="unitnumberstrip" name="unitnumberstrip" type="text"></font></label></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">Odometer Reading:&nbsp;&nbsp;<input style="font-size:23px;" id="odometerstrip" name="odometerstrip" type="number"></font></label></td>
+</tr>
+
+<tr>
+  <td><label style="color:blue"><font size="5">VIN:&nbsp;&nbsp;&nbsp;<input style="font-size:23px;" id="vinstrip" name="vinstrip" type="text"></font></label></td>
+</tr>
+
+</table>
+<br><br>
+<h3>
+RCMP Vehicle Inspection Guide
+</h3>
+<br><br>
+
+<canvas style="background: url('https://drive.google.com/uc?id=1mqYqIfOuhDo90zlmHaHo2Qu3Kh6qoIW2');" width="392" height="500">
+</canvas>
+
+<br><br><br>
+<table>
+<tr>
+  <td>Item</td>
+  <td>Pass</td>
+  <td>Fail</td>
+  <td>Description</td>
+</tr>
+<tr>
+<td><label><font size="5"> Dash Indicator Lights&nbsp;&nbsp;</font></label></td>
+<td><input id="stripdashpasscheckbox" class=largerCheckbox type="checkbox" onclick=" stripdashpassfunc();" ></td>
+<td><input id="stripdashfailcheckbox" class=largerCheckbox type="checkbox" onclick="stripdashfailfunc();" ></td>
+  <td><input style="font-size:23px;" id="stripdashtext" name="stripdashtext" type="text"></td>
+</tr>
+<input style="display:none;" id="stripdashpass" name="stripdashpass" type="text">
+<input style="display:none;" id="stripdashfail" name="stripdashfail" type="text">
+
+<tr>
+<td><label><font size="5"> Mirrors&nbsp;&nbsp;</font></label></td>
+<td><input id="mirrorspassstripcheckbox" class=largerCheckbox type="checkbox" onclick=" mirrorspassstripfunc();" ></td>
+<td><input id="mirrorsfailstripcheckbox" class=largerCheckbox type="checkbox" onclick=" mirrorsfailstripfunc();" ></td>
+  <td><input style="font-size:23px;" id="mirrorsstriptext" name="mirrorsstriptext" type="text"></td>
+</tr>
+<input style="display:none;" id="mirrorspassstrip" name="mirrorspassstrip" type="text">
+<input style="display:none;" id="mirrorsfailstrip" name="mirrorsfailstrip" type="text">
+
+
+<tr>
+<td><label><font size="5"> Wipers&nbsp;&nbsp;</font></label></td>
+<td><input id="wiperspassstripcheckbox" class=largerCheckbox type="checkbox" onclick=" wiperspassstripfunc();"></td>
+<td><input id="wipersfailstripcheckbox" class=largerCheckbox type="checkbox" onclick=" wipersfailstripfunc();"></td>
+  <td><input style="font-size:23px;" id="wipersstriptext" name="wipersstriptext" type="text"></td>
+</tr>
+<input style="display:none;" id="wiperspassstrip" name="wiperspassstrip" type="text">
+<input style="display:none;" id="wipersfailstrip" name="wipersfailstrip" type="text">
+
+
+
+<tr>
+<td><label><font size="5"> Tire condition&nbsp;&nbsp;</font></label></td>
+<td><input id="tireconditionpassstripcheckbox" class=largerCheckbox type="checkbox" onclick="tireconditionpassstripfunc();"></td>
+<td><input id="tireconditionfailstripcheckbox" class=largerCheckbox type="checkbox" onclick="tireconditionfailstripfunc();"></td>
+  <td><input style="font-size:23px;" id="tireconditionfailstriptext" name="tireconditionfailstriptext" type="text"></td>
+</tr>
+<input style="display:none;" id="tireconditionpassstrip" name="tireconditionpassstrip" type="text">
+<input style="display:none;" id="tireconditionfailstrip" name="tireconditionfailstrip" type="text">
+
+
+<tr>
+<td><label><font size="5"> Glass condition&nbsp;&nbsp;</font></label></td>
+<td><input id="glassconditionpassstripcheckbox" class=largerCheckbox type="checkbox" onclick="glassconditionpassstripfunc();"></td>
+<td><input id="glassconditionfailstripcheckbox" class=largerCheckbox type="checkbox" onclick="glassconditionfailstripfunc();" ></td>
+  <td><input style="font-size:23px;" id="glassconditionstriptext" name="glassconditionfailstriptext" type="text"></td>
+</tr>
+<input style="display:none;" id="glassconditionpassstrip" name="glassconditionpassstrip" type="text">
+<input style="display:none;" id="glassconditionfailstrip" name="glassconditionfailstrip" type="text">
+
+
+
+<tr>
+<td><label><font size="5"> Battery condition&nbsp;&nbsp;</font></label></td>
+<td><input id="batteryconditionpassstripcheckbox" class=largerCheckbox type="checkbox" onclick="batteryconditionpassstripfunc();"></td>
+<td><input id="batteryconditionfailstripcheckbox" class=largerCheckbox type="checkbox" onclick="batteryconditionfailstripfunc();"></td>
+  <td><input style="font-size:23px;" id="batteryconditionstriptext" name="batteryconditionstriptext" type="text"></td>
+</tr>
+<input style="display:none;" id="batteryconditionpassstrip" name="batteryconditionpassstrip" type="text">
+<input style="display:none;" id="batteryconditionfailstrip" name="batteryconditionfailstrip" type="text">
+
+
+</table>
+
+
+<br><br><br>
+<h2>
+RCMP Standing Offer No. M5000-160786/001/WNP<br><br>SUMMARY OF REMOVAL OF EQUIPMENT
+</h2>
+<table>
+<tr>
+  <td>All types - if present, check to indicate removal:</td>
+</tr>
+<tr>
+  <td><label><font size="5"><input id="siren" class=largerCheckbox type="checkbox" onclick="sirenstripfunc();"> Siren controller unit, keypad and siren speaker</font></label></td>
+</tr>
+<input style="display:none;" id="sirenstrip" name="sirenstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="lightbarcheck" class=largerCheckbox type="checkbox" onclick="lightbarstripfunc();" > Light bar assembly</font></label></td>
+</tr>
+<input style="display:none;" id="lightbarstrip" name="lightbarstrip" type="text">
+
+
+
+<tr>
+  <td><label><font size="5"><input id="headlightflasher" class=largerCheckbox type="checkbox" onclick="headlightflasherstripfunc();"  > Headlight flasher</font></label></td>
+</tr>
+<input style="display:none;" id="headlightflasherstrip" name="headlightflasherstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="cornerstrobe" class=largerCheckbox type="checkbox" onclick="cornerstrobestripfunc();" > Corner strobes/Power supply and/or LED lights</font></label></td>
+</tr>
+<input style="display:none;" id="cornerstrobestrip" name="cornerstrobestrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="reartraffic" class=largerCheckbox type="checkbox" onclick="reartrafficstripfunc();"> Rear traffic advisor</font></label></td>
+</tr>
+<input style="display:none;" id="reartrafficstrip" name="reartrafficstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="additionallighting" class=largerCheckbox type="checkbox" onclick="additionallightingstripfunc();" > Any additional lighting</font></label></td>
+</tr>
+<input style="display:none;" id="additionallightingstrip" name="additionallightingstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="horntransfer" class=largerCheckbox type="checkbox" onclick="horntransferstripfunc();"  > Horn transfer and vehicle lighting enable (returned to OEM status)</font></label></td>
+</tr>
+<input style="display:none;" id="horntransferstrip" name="horntransferstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="powerdistributionunit" class=largerCheckbox type="checkbox" onclick="powerdistributionunitstripfunc();"  > Power distribution unit</font></label></td>
+</tr>
+<input style="display:none;" id="powerdistributionunitstrip" name="powerdistributionunitstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="interiorlighting" class=largerCheckbox type="checkbox" onclick="interiorlightingstripfunc();"  > Added interior lighting (partition and additional roof lighting)</font></label></td>
+</tr>
+<input style="display:none;" id="interiorlightingstrip" name="interiorlightingstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="basewiring" class=largerCheckbox type="checkbox" onclick="basewiringstripfunc();" > Base wiring harness</font></label></td>
+</tr>
+<input style="display:none;" id="basewiringstrip" name="basewiringstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="policeradio" class=largerCheckbox type="checkbox" onclick="policeradiostripfunc();" > Police radio/s system</font></label></td>
+</tr>
+<input style="display:none;" id="policeradiostrip" name="policeradiostrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="antennascabling" class=largerCheckbox type="checkbox" onclick="antennascablingstripfunc();"  > Antennas and cabling</font></label></td>
+</tr>
+<input style="display:none;" id="antennascablingstrip" name="antennascablingstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="centerconsole" class=largerCheckbox type="checkbox" onclick="centerconsolestripfunc();" > Center console assembly</font></label></td>
+</tr>
+<input style="display:none;" id="centerconsolestrip" name="centerconsolestrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="dashmount" class=largerCheckbox type="checkbox" onclick="dashmountstripfunc();" > Dash mount system</font></label></td>
+</tr>
+<input style="display:none;" id="dashmountstrip" name="dashmountstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="laptopdocking" class=largerCheckbox type="checkbox" onclick="laptopdockingstripfunc();"  > Laptop docking station</font></label></td>
+</tr>
+<input style="display:none;" id="laptopdockingstrip" name="laptopdockingstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="icdvs" class=largerCheckbox type="checkbox" onclick="icdvsstripfunc();"  > In-car Digital Video System (ICDVS)</font></label></td>
+</tr>
+<input style="display:none;" id="icdvsstrip" name="icdvsstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="prisonerpartition" class=largerCheckbox type="checkbox" onclick="prisonerpartitionstripfunc();"  > Prisoner partition shield (potentially two in the SUV)</font></label></td>
+</tr>
+<input style="display:none;" id="prisonerpartitionstrip" name="prisonerpartitionstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="rearequipment" class=largerCheckbox type="checkbox" onclick="rearequipmentstripfunc();"  > Rear equipment/Storage box or Equipment tray and toll box</font></label></td>
+</tr>
+<input style="display:none;" id="rearequipmentstrip" name="rearequipmentstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="shotgunrack" class=largerCheckbox type="checkbox" onclick="shotgunrackstripfunc();" > Shotgun rack/Carbine rack</font></label></td>
+</tr>
+<input style="display:none;" id="shotgunrackstrip" name="shotgunrackstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="rearsidewindowbars" class=largerCheckbox type="checkbox" onclick="rearsidewindowbarsstripfunc();" > Rear and/or Side window bars</font></label></td>
+</tr>
+<input style="display:none;" id="rearsidewindowbarsstrip" name="rearsidewindowbarsstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="radarsystem" class=largerCheckbox type="checkbox" onclick="radarsystemstripfunc();"  > Radar system including VSS cable installation and video interface cable</font></label></td>
+</tr>
+<input style="display:none;" id="radarsystemstrip" name="radarsystemstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="secureidle" class=largerCheckbox type="checkbox" onclick="secureidlestripfunc();" > Secure idle (returned to OEM status)</font></label></td>
+</tr>
+<input style="display:none;" id="secureidlestrip" name="secureidlestrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="allipvequipment" class=largerCheckbox type="checkbox" onclick="allipvequipmentstripfunc();"  > All Integrated Police Vehicle (IPV) Equipment</font></label></td>
+</tr>
+<input style="display:none;" id="allipvequipmentstrip" name="allipvequipmentstrip" type="text">
+
+
+<tr>
+  <td><label><font size="5"><input id="otherstripcheckbox" class=largerCheckbox type="checkbox" onclick="otherstripfunc();"  > Other - (e.g. hidden lighting, lock boxes)</font></label></td>
+</tr>
+<input style="display:none;" id="otherstrip" name="otherstrip" type="text">
+<input id="striptimestart" name="striptimestart" style="color:green;display:none;" type="text">
+<input id="striptimeend" name="striptimeend" style="color:green;display:none;" type="text">
+
+
+<tr>
+  <td style="background-color:black"></td>
+</tr>
+<tr>
+  <td style="background-color:black"></td>
+</tr>
+<tr>
+  <td style="background-color:black"></td>
+</tr>
+<tr>
+  <td style="background-color:black"></td>
+</tr>
+<tr>
+  <td>
+    DETAILS OF EQUIPMENT REMOVAL
+  </td>
+</tr>
+<tr>
+  <td>
+    The contractor will be contacted by the identified user, as per Contract Part 7A, 7.7 "as when required" to remove all or requested police/safety/additional equipment without damage to the equipment, vehicle and manufacturers wiring in various vehicle platforms. In addition to the removal of the police/safety equipment platform specific factory equipment will need to be re-enabled (e.g. daytime running lights, lighting, horn, secure idle removal).A pre-inspection check sheet will be provided by the RCMP to assist with the location of all police/safety equipment for removal. All equipment must be returned to the identified user, as per Contract Part 7 A 7.7, in an organized fashion.
+  </td>
+</tr>
+
+</table><br>
+
+<center><button class="submitbutton" id="submit-manstripform" type="submit" onclick="striptimeendfunc();">Submit</button></center>
+
+<button style="display:none" class="submitbutton" id="pause-manstripform" type="submit">Pause</button>
+
+<button style="display:none" id="stripstartbutton" type="button" onclick="striptimestartfunc();"></button>
+
+<script>
+var $form = $('form#manstripform'),
+    url = 'https://script.google.com/macros/s/AKfycbyAb2efmFk0eCXcDZHMDx0MUdBFsZxqPErNtPFhWw/exec',
+
+$submit = $('#submit-manstripform').on('click', function(e) {
+  e.preventDefault();
+  var jqxhr = $.ajax({
+    url: url,
+    method: "GET",
+    dataType: "json",
+    data: $form.serializeObject()
+  }).done(
+    // do something
+  );
+   $('#manstripform')[0].reset();
+})
+</script>
+
+<script>
+var $form = $('form#manstripform'),
+    url1 = 'https://script.google.com/macros/s/AKfycbwWeU9c5upmnVQtqntaX6MfWEvOHqIOt1sUAD4y/exec',
+
+$submit = $('#pause-manstripform').on('click', function(f) {
+  f.preventDefault();
+  var jqxhr = $.ajax({
+    url: url1,
+    method: "GET",
+    dataType: "json",
+    data: $form.serializeObject()
+  }).done(
+    // do something
+  );
+   //$('#stripform')[0].reset();
+})
+</script>
+
+
+</form>
+
+</center>
+
+<script>
+function clickstripstart() {
+  document.getElementById("stripstartbutton").click();
+}
+</script>
+
+<script>
+function clickpause() {
+  document.getElementById("pause-manstripform").click();
+}
+</script>
+
+</body>
+
+<script>
+var select = document.getElementById("techlist");
+var techs = ["Alex","Chase","Charles","Connor", "Dave", "Eddie", "Keith", "Kevin", "Mike", "Shawn", "Tanner", "Tony"];
+for(var i = 0; i < techs.length; i++) {
+    var opt = techs[i];
+    var el = document.createElement("option");
+    el.textContent = opt;
+    el.value = opt;
+    select.appendChild(el);
+}
+</script>
+
+<script>
+window.addEventListener('load', function clickcontinue() {
+  document.getElementById("start-btn").click();
+})
+</script>
+
+<script>
+window.addEventListener('load',function loadData() {
+          var url = "https://docs.google.com/spreadsheet/pub?key=1v183WHLzm_GgreV2lRTtEm31druC6Hz1TtSP4CkiAmM&single=true&gid=1809548351&range=A4&output=csv";
+          xmlhttp = new XMLHttpRequest();
+          xmlhttp.onreadystatechange = function () {
+              if (xmlhttp.readyState == 4 && xmlhttp.status==200) {
+                  document.getElementById("unitnumberstrip").value = xmlhttp.responseText;
+                  //alert(xmlhttp.responseText);
+              }
+          };
+          xmlhttp.open("GET", url, true);
+          xmlhttp.send(null);
+      }
+      );
+     window.addEventListener('load', function loadData1() {
+          var url1 = "https://docs.google.com/spreadsheet/pub?key=1v183WHLzm_GgreV2lRTtEm31druC6Hz1TtSP4CkiAmM&single=true&gid=1809548351&range=B4&output=csv";
+          xmlhttp1 = new XMLHttpRequest();
+          xmlhttp1.onreadystatechange = function () {
+              if (xmlhttp1.readyState == 4 && xmlhttp.status==200) {
+                  document.getElementById("techname").value = xmlhttp1.responseText;
+                  //alert(xmlhttp.responseText);
+              }
+          };
+          xmlhttp1.open("GET", url1, true);
+          xmlhttp1.send(null);
+      }
+      );
+     window.addEventListener('load', function loadData2() {
+          var url2 = "https://docs.google.com/spreadsheet/pub?key=1v183WHLzm_GgreV2lRTtEm31druC6Hz1TtSP4CkiAmM&single=true&gid=1809548351&range=C4&output=csv";
+          xmlhttp2 = new XMLHttpRequest();
+          xmlhttp2.onreadystatechange = function () {
+              if (xmlhttp2.readyState == 4 && xmlhttp.status==200) {
+                  document.getElementById("odometerstrip").value = xmlhttp2.responseText;
+                  //alert(xmlhttp.responseText);
+              }
+          };
+          xmlhttp2.open("GET", url2, true);
+          xmlhttp2.send(null);
+      }
+      );
+     window.addEventListener('load', function loadData3() {
+          var url3 = "https://docs.google.com/spreadsheet/pub?key=1v183WHLzm_GgreV2lRTtEm31druC6Hz1TtSP4CkiAmM&single=true&gid=1809548351&range=D4&output=csv";
+          xmlhttp3 = new XMLHttpRequest();
+          xmlhttp3.onreadystatechange = function () {
+              if (xmlhttp3.readyState == 4 && xmlhttp.status==200) {
+                  document.getElementById("vinstrip").value = xmlhttp3.responseText;
+                  //alert(xmlhttp.responseText);
+              }
+          };
+          xmlhttp3.open("GET", url3, true);
+          xmlhttp3.send(null);
+      }
+      );
+       window.addEventListener('load', function loadData4() {
+          var url4 = "https://docs.google.com/spreadsheet/pub?key=1v183WHLzm_GgreV2lRTtEm31druC6Hz1TtSP4CkiAmM&single=true&gid=1809548351&range=D2&output=csv";
+          xmlhttp4 = new XMLHttpRequest();
+          xmlhttp4.onreadystatechange = function () {
+              if (xmlhttp4.readyState == 4 && xmlhttp.status==200) {
+                  document.getElementById("lastfilled").value = xmlhttp4.responseText;
+                  //alert(xmlhttp.responseText);
+              }
+          };
+          xmlhttp4.open("GET", url4, true);
+          xmlhttp4.send(null);
+      }
+      )
+      </script>
+
+
+
+</html>
