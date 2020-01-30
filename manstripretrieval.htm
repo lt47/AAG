@@ -298,10 +298,10 @@ function closeNav() {
 
 
 <center>
-<form id="manrcmpstripretrieval" method="POST">
+<form id="manrcmpbuildretrieval" method="POST">
 <img src="https://drive.google.com/uc?id=1T2TM9M4LCFyk0cl-Y8rEtI0mt6ugVGQT"  top=35px right=125px height=60 width=170/>
 <h2>
-Manitoba RCMP Strip Job Retrieval
+Manitoba RCMP Build Job Retrieval
 </h2>
 
 <center>
@@ -310,24 +310,24 @@ Manitoba RCMP Strip Job Retrieval
   
 </center>
 
-<center><button class="submitbutton" id="submit-manrcmpretrieval" type="submit" onclick="window.location.href = 'https://lt47.github.io/AAG/manstriponhold.htm';" >Retrieve Job Details</button></center>
+<center><button class="submitbutton" id="submit-manrcmpretrieval" type="submit"  >Retrieve Job Details</button></center>
 
 
 <script>
-var $form = $('form#manrcmpstripretrieval'),
-    url4 = 'https://script.google.com/macros/s/AKfycbyKfqhG4_0T5Ogy3W6Hz1GBFHoVmtW5eU21QzXKVWvuEHMICZbj/exec',
+var $form = $('form#manrcmpbuildretrieval'),
+    url5 = 'https://script.google.com/macros/s/AKfycbwEyyxkPgDAn6GUUVhMy2_DVEZPEo3QfULlA7xM3e34MHh7YSpE/exec',
 
 $submit = $('#submit-manrcmpretrieval').on('click', function(i) {
   i.preventDefault();
   var jqxhr = $.ajax({
-    url: url4,
+    url: url5,
     method: "GET",
     dataType: "json",
     data: $form.serializeObject()
   }).done(
     // do something
   );
-   $('#manrcmpstripretrieval')[0].reset();
+   $('#manrcmpbuildretrieval')[0].reset();
 })
 </script>
 
