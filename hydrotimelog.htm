@@ -1,0 +1,469 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+  <head>  
+   
+  <style>                         
+<!-- body {font-family: Gill Sans, Helvetica, sans-serif;} --> body {font-family: "Lucida Console", monospace;} .sidenav {
+  height: 100%;
+  width: 125px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #4a4a4a;
+  overflow-x: hidden;
+  padding-top: 20px;
+  font-size: 1.3em;
+}
+.main {font-size: 1.2em;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  font-size: 1.1em;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+  font-size: 1.6em;
+}
+.modal { 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+  padding-top: 60px;
+  font-size: 1.1em;
+}
+.Fixed
+{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color:#000000;
+    color:#dddddd;
+}
+input[type="text"]
+{
+    font-size:23px;
+    font-family: Lucida Console, Courier, monospace;
+}
+input[type="number"]
+{
+    font-size:23px;
+    font-family: Lucida Console, Courier, monospace;
+}
+select
+{
+    font-size:23px;
+}
+table tr#divider  {background-color:#000000;}
+table tr#ROW1  {background-color:#dddddd;}
+table tr#ROW2  {background-color:#dddddd;}
+table tr#ROW3  {background-color:#dddddd;}
+table tr#ROW4  {background-color:#dddddd;}
+table tr#ROW5  {background-color:#dddddd;}
+table tr#ROW6  {background-color:#dddddd;}
+table tr#ROW7  {background-color:#F7A33B;}
+table tr#des  {font-size:0.7em;}
+div#info1  {background-color:#F2EE79;}
+div#info2  {background-color:#F2EE79;}
+div#info3  {background-color:#F2EE79;}
+div#info4  {background-color:#F2EE79;}
+#overlay {
+  position: fixed;
+  width: 100%; 
+  height: 100%; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:#000000; 
+  z-index: 2; 
+  cursor: pointer; 
+  font-size: 1.7em;
+  color:#dddddd;
+}
+#overlay1 {
+  position: fixed;
+  width: 100%; 
+  height: 100%; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:#ffffff; 
+  z-index: 2; 
+  cursor: pointer; 
+  font-size: 1.7em;
+  color:#dddddd;
+}
+#overlay2 {
+  
+  width: 100%; 
+  height: 100%; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:#000000; 
+  z-index: 2; 
+  cursor: pointer; 
+  font-size: 1.7em;
+  color:#dddddd;
+}
+input[type=password] {
+  width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size:15px;
+}
+.username{width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;}
+.greenfield {background-color: #00A146;}
+.yellowfield {background-color: #EEF52C;}
+.redfield {background-color: #F71302;}
+.grayfield {background-color:#dddddd;}
+.orangefield {background-color:#fc7f03;}
+.bluefield {background-color:#0202fa;}
+.purplefield {background-color:#e605ff;}
+.torqfield {background-color:#05ffd1;}
+.limegreenfield {background-color:#82ff05;}
+.pinkfield {background-color:#ff8cea;}
+.peachfield {background-color:#f0c3a3;}
+.button {font-size: 16px;}
+.submitbutton {font-size: 16px;
+padding: 15px 32px;
+background-color: #00A146;
+}
+.bigbutton {font-size: 20px;
+padding: 15px 32px;
+background-color: #dddddd;
+}
+.biggerbutton {font-size: 20px;
+padding: 25px 80px;
+background-color: #dddddd;
+}
+.buttontext {font-size:0.4em;}
+input.largerCheckbox
+{
+width: 30px;
+height: 30px;
+}
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+#frame {
+ width: 420px;
+ height: 150px; 
+ overflow:hidden;
+ position:relative;
+}
+#bottomframe {
+ width: 400px;
+ height: 100px;
+ position:absolute;
+ top:53px;
+ left:11px;
+ background-color:#F2EE79;
+}
+#leftframe {
+ width: 45px;
+ height: 150px;
+ position:absolute;
+ top:3px;
+ left:10px;
+ background-color:#F2EE79;
+}
+#rightframe {
+ width: 14px;
+ height: 150px;
+ position:absolute;
+ top:3px;
+ right:10px;
+ background-color:#F2EE79;
+}
+#topframe {
+ width: 420px;
+ height: 26px;
+ position:absolute;
+ top:0px;
+ background-color:#F2EE79;
+}
+.sidepanel  {
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  height: 250px;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.sidepanel a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.sidepanel a:hover {
+  color: #f1f1f1;
+}
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+.openbtn:hover {
+  background-color:#444;
+}
+</style>
+    <script>
+      (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-56318310-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    <base target="_top" />
+
+<script>
+function showload(){
+document.getElementById("loadstartbutton").style.display ="block";
+document.getElementById("loadstopbutton").style.display ="block";
+document.getElementById("commentsload").style.display ="block";
+}
+</script>
+
+<script>
+function showunload(){
+document.getElementById("unloadstartbutton").style.display ="block";
+document.getElementById("unloadstopbutton").style.display ="block";
+document.getElementById("commentsunload").style.display ="block";
+}
+</script>
+
+<script>
+function hideload(){
+document.getElementById("loadstartbutton").style.display ="none";
+document.getElementById("loadstopbutton").style.display ="none";
+document.getElementById("commentsload").style.display ="none";
+}
+</script>
+
+<script>
+function hideunload(){
+document.getElementById("unloadstartbutton").style.display ="none";
+document.getElementById("unloadstopbutton").style.display ="none";
+document.getElementById("commentsunload").style.display ="none";
+}
+</script>
+
+<script>
+function showbreak(){
+document.getElementById("breakstartbutton").style.display ="block";
+document.getElementById("breakstopbutton").style.display ="block";
+document.getElementById("commentsbreak").style.display ="block";
+}
+</script>
+
+<script>
+function hidebreak(){
+document.getElementById("breakstartbutton").style.display ="none";
+document.getElementById("breakstopbutton").style.display ="none";
+document.getElementById("commentsbreak").style.display ="none";
+}
+</script>
+
+<script>
+function showother(){
+document.getElementById("otherstartbutton").style.display ="block";
+document.getElementById("otherstopbutton").style.display ="block";
+document.getElementById("commentsother").style.display ="block";
+}
+</script>
+
+<script>
+function hideother(){
+document.getElementById("otherstartbutton").style.display ="none";
+document.getElementById("otherstopbutton").style.display ="none";
+document.getElementById("commentsother").style.display ="none";
+}
+</script>
+
+
+
+  </head>
+
+  <body>  
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      $.fn.serializeObject = function() {
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function() {
+          if (o[this.name]) {
+            if (!o[this.name].push) {
+              o[this.name] = [o[this.name]];
+            }
+            o[this.name].push(this.value || '');
+          } else {
+            o[this.name] = this.value || '';
+          }
+        });
+        return o;
+      };
+
+    </script>
+
+
+<script>  
+function getTimeStamp() {
+       var now = new Date();
+       return ((now.getMonth() + 1) + '/' + (now.getDate()) + '/' + now.getFullYear() + " " + now.getHours() + ':'
+                     + ((now.getMinutes() < 10) ? ("0" + now.getMinutes()) : (now.getMinutes())) + ':' + ((now.getSeconds() < 10) ? ("0" + now
+                     .getSeconds()) : (now.getSeconds())));
+}
+function loadstartfunc() {
+   document.getElementById("loadstart").value = getTimeStamp();
+}
+function loadstopfunc() {
+     document.getElementById("loadstop").value = getTimeStamp();
+}
+function unloadstartfunc() {
+    document.getElementById("unloadstart").value = getTimeStamp();
+}
+function unloadstopfunc() {
+  document.getElementById("unloadstop").value = getTimeStamp();
+}
+function breakstartfunc() {
+   document.getElementById("breakstart").value = getTimeStamp();
+}
+function breakstopfunc() {
+   document.getElementById("breakstop").value = getTimeStamp();
+}
+function otherstartfunc() {
+   document.getElementById("otherstart").value = getTimeStamp();
+}
+function otherstopfunc() {
+    document.getElementById("otherstop").value = getTimeStamp();
+}
+</script>
+ 
+
+    <center>
+      <form id="mbhydrohaulage" method="POST">
+        <div>
+          <img src="https://drive.google.com/uc?id=1XBfvN90w_QkVJrdgf3CGDlp_kUQfJtRn" top=35px left=65px height=80 width=130 /><br>
+        </div>
+        <center>
+          <input type="text" id="user" name="user" value="Laye" style="display:none">
+          <br><br><br>
+          <font size="6">Task Number:  </font>
+          <input type="number" id="tasknumber" name="tasknumber" style="font-size:23px;"><br><br><br>
+          <font size="6">Task Name:  </font>
+          <input type="text" id="taskname" name="taskname" style="font-size:23px;" ><br><br><br>
+          <input id="loadbutton" type="button" class="biggerbutton" value="Load" style="font-size:23px" onclick="showload();"><br><br>
+          <input id="loadstartbutton" type="button" class="bigbutton" value="Start" style="font-size:23px;background-color:green;display:none;" onclick="loadstartfunc();"> <br><br>
+          <textarea rows="4" cols="50" style="display:none;font-size:23px;" id="commentsload" name="commentsload" >Comments:&nbsp;&nbsp;&nbsp;&nbsp;</textarea><br><br>
+          <input id="loadstopbutton" type="button" class="bigbutton" value="Stop" style="font-size:23px;background-color:red;display:none;" onclick="hideload();loadstopfunc();"><br>
+          
+           <input id="unloadbutton" type="button" class="biggerbutton" value="Unload" style="font-size:23px" onclick="showunload();"><br><br>
+          <input id="unloadstartbutton" type="button" class="bigbutton" value="Start" style="font-size:23px;background-color:green;display:none;" onclick="unloadstartfunc();"> <br><br>
+          <textarea rows="4" cols="50" style="display:none;font-size:23px;" id="commentsunload" name="commentsunload" >Comments:&nbsp;&nbsp;&nbsp;&nbsp;</textarea><br><br>
+          <input id="unloadstopbutton" type="button" class="bigbutton" value="Stop" style="font-size:23px;background-color:red;display:none;" onclick="hideunload();unloadstopfunc();"><br>
+          
+          <input id="breakbutton" type="button" class="biggerbutton" value="Break" style="font-size:23px" onclick="showbreak();"><br><br>
+          <input id="breakstartbutton" type="button" class="bigbutton" value="Start" style="font-size:23px;background-color:green;display:none;" onclick="breakstartfunc();"> <br><br>
+          <textarea rows="4" cols="50" style="display:none;font-size:23px;" id="commentsbreak" name="commentsbreak" >Comments:&nbsp;&nbsp;&nbsp;&nbsp;</textarea><br><br>
+          <input id="breakstopbutton" type="button" class="bigbutton" value="Stop" style="font-size:23px;background-color:red;display:none;" onclick="hidebreak();breakstopfunc();"><br>
+          
+          <input id="otherbutton" type="button" class="biggerbutton" value="Other" style="font-size:23px" onclick="showother();"><br><br>
+          <input id="otherstartbutton" type="button" class="bigbutton" value="Start" style="font-size:23px;background-color:green;display:none;" onclick="otherstartfunc();"> <br><br>
+          <textarea rows="4" cols="50" style="display:none;font-size:23px;" id="commentsother" name="commentsother" >Comments:&nbsp;&nbsp;&nbsp;&nbsp;</textarea><br><br>
+          <input id="otherstopbutton" type="button" class="bigbutton" value="Stop" style="font-size:23px;background-color:red;display:none;" onclick="hideother();otherstopfunc();"><br><br>
+          
+          <font size="6">Overtime:  </font>
+          <input type="text" id="overtime" name="overtime" style="font-size:23px;" ><br>
+          
+       
+       
+       <input type="text" id="loadstart" name="loadstart" style="display:none;">
+       <input type="text" id="loadstop" name="loadstop" style="display:none;">
+       <input type="text" id="unloadstart" name="unloadstart" style="display:none;">
+       <input type="text" id="unloadstop" name="unloadstop" style="display:none;">
+       <input type="text" id="breakstart" name="breakstart" style="display:none;">
+       <input type="text" id="breakstop" name="breakstop" style="display:none;">
+       <input type="text" id="otherstart" name="otherstart" style="display:none;">
+       <input type="text" id="otherstop" name="otherstop" style="display:none;"><br><br>
+       
+       
+       <center><button class="submitbutton" id="submit-mbhydrohaulage" type="submit" style="font-size:22px;" onclick="">Submit</button></center>
+       
+       </center>
+
+
+        <script>
+          var $form = $('form#mbhydrohaulage'),
+            url = 'https://script.google.com/macros/s/AKfycbxnq6pZi9vVVgaTz8y4g9Z9X8LtN1koPmeWw3Aizj-NXB2gGpw/exec',
+
+            $submit = $('#submit-mbhydrohaulage').on('click', function(i) {
+              i.preventDefault();
+              var jqxhr = $.ajax({
+                url: url,
+                method: "GET",
+                dataType: "json",
+                data: $form.serializeObject()
+              }).done(
+                // do something
+              );
+              $('#mbhydrohaulage')[0].reset();
+            })
+
+        </script>
+
+      </form>
+      
+      </center>
+      </body>
+
+</html>
