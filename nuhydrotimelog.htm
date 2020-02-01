@@ -377,7 +377,7 @@ height: 30px;
     
    var loadstartbtn = document.getElementById("loadstartbutton");
    if (loadstartbtn) {
-       loadstartbtn.addEventListener("click", function () {
+       loadstartbtn.addEventListener("click", function (api,state) {
        document.getElementById("loadstart").value = api.user;
        });
    }
