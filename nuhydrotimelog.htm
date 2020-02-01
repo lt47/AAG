@@ -291,7 +291,7 @@ height: 30px;
    // Initialize required Add-In variables
    var loaduser = document.getElementById("user");
    if (loaduser) {
-       window.addEventListener("load", function (api,state) {
+       loaduser.addEventListener("load", function (api,state) {
        document.getElementById("user").value = api.user
        });
    }
