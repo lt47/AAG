@@ -375,10 +375,10 @@ height: 30px;
                      .getSeconds()) : (now.getSeconds())));
     }
    
-   var driveuser = api.user; 
    var loadstartbtn = document.getElementById("loadstartbutton");
    if (loadstartbtn) {
        loadstartbtn.addEventListener("click", function (api,state) {
+       var driveuser = api.user;
        document.getElementById("loadstart").value = driveuser;
        });
    }
