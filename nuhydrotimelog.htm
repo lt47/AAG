@@ -423,6 +423,22 @@ height: 30px;
        });
    }
    
+   $.fn.serializeObject = function() {
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function() {
+          if (o[this.name]) {
+            if (!o[this.name].push) {
+              o[this.name] = [o[this.name]];
+            }
+            o[this.name].push(this.value || '');
+          } else {
+            o[this.name] = this.value || '';
+          }
+        });
+        return o;
+      };
+   
    var $form = $('form#mbhydrohaulage'),
             url = 'https://script.google.com/macros/s/AKfycbxnq6pZi9vVVgaTz8y4g9Z9X8LtN1koPmeWw3Aizj-NXB2gGpw/exec',
 
@@ -475,8 +491,6 @@ height: 30px;
           <br><br><br>
           <font size="6">Task Number:  </font>
           <input type="number" id="tasknumber" name="tasknumber" style="font-size:23px;"><br><br><br>
-          <font size="6">Task Name:  </font>
-          <input type="text" id="taskname" name="taskname" style="font-size:23px;" ><br><br><br>
           <input id="loadbutton" type="button" class="biggerbutton" value="Load" style="font-size:23px"><br><br>
           <input id="loadstartbutton" type="button" class="bigbutton" value="Start" style="font-size:23px;background-color:green;display:none;"> <br><br>
           <textarea rows="4" cols="50" style="display:none;font-size:23px;" id="commentsload" name="commentsload" >Comments:&nbsp;&nbsp;&nbsp;&nbsp;</textarea><br><br>
@@ -498,7 +512,7 @@ height: 30px;
           <input id="otherstopbutton" type="button" class="bigbutton" value="Stop" style="font-size:23px;background-color:red;display:none;"><br><br>
           
           <font size="6">Overtime:  </font>
-          <input type="text" id="overtime" name="overtime" style="font-size:23px;" ><br>
+          <input type="number" id="overtime" name="overtime" style="font-size:23px;" ><br>
           
        
        
