@@ -290,9 +290,9 @@ height: 30px;
   geotab.addin.timelog = () => {
    // Initialize required Add-In variables
    var loaduser = document.getElementById("user");
-   if (loaduser) {
-       window.addEventListener("load", function () {
-       document.getElementById("user").value = "Laye"
+   if (loadbtn) {
+       loadbtn.addEventListener("click", function () {
+       document.getElementById("user").value = api.user
        });
    }
    
