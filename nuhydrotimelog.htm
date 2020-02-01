@@ -289,6 +289,14 @@ height: 30px;
 <script>
   geotab.addin.timelog = () => {
    // Initialize required Add-In variables
+   var loaduser = document.getElementById("user");
+   if (loaduser) {
+       window.addEventListener("load", function () {
+       document.getElementById("user").value = api.user
+       });
+   }
+   
+   
    var loadbtn = document.getElementById("loadbutton");
    if (loadbtn) {
        loadbtn.addEventListener("click", function () {
@@ -487,7 +495,7 @@ height: 30px;
           <img src="https://drive.google.com/uc?id=1XBfvN90w_QkVJrdgf3CGDlp_kUQfJtRn" top=35px left=65px height=80 width=130 /><br>
         </div>
         <center>
-          <input type="text" id="user" name="user" value="Laye" style="display:none">
+          <input type="text" id="user" name="user" style="display:none">
           <br><br><br>
           <font size="6">Task Number:  </font>
           <input type="number" id="tasknumber" name="tasknumber" style="font-size:23px;"><br><br><br>
