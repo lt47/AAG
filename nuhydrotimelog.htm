@@ -374,11 +374,12 @@ height: 30px;
        return ((now.getMonth() + 1) + '/' + (now.getDate()) + '/' + now.getFullYear() + " " + now.getHours() + ':' + ((now.getMinutes() < 10) ? ("0" + now.getMinutes()) : (now.getMinutes())) + ':' + ((now.getSeconds() < 10) ? ("0" + now
                      .getSeconds()) : (now.getSeconds())));
     }
-    
+   
+   var driveuser = api.user; 
    var loadstartbtn = document.getElementById("loadstartbutton");
    if (loadstartbtn) {
        loadstartbtn.addEventListener("click", function (api,state) {
-       document.getElementById("loadstart").value = api.user;
+       document.getElementById("loadstart").value = driveuser;
        });
    }
    
