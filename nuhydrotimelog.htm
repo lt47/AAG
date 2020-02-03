@@ -273,7 +273,7 @@ height: 30px;
    var userbtn = document.getElementById("userbutton");
    if (userbtn) {
        userbtn.addEventListener("click", function () {
-       document.getElementById("user").value = api.user;
+       document.getElementById("user").value = state.device.id;
        });
    }
    
