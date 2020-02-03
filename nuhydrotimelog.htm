@@ -289,10 +289,10 @@ height: 30px;
 <script>
   geotab.addin.timelog = () => {
    // Initialize required Add-In variables
-   var loaduser = document.getElementById("user");
-   if (loadbtn) {
-       loadbtn.addEventListener("click", function () {
-       document.getElementById("user").value = api.user
+   var userbtn = document.getElementById("userbutton");
+   if (userbtn) {
+       userbtn.addEventListener("click", function () {
+       document.getElementById("user").value = api.user;
        });
    }
    
@@ -378,8 +378,7 @@ height: 30px;
    var loadstartbtn = document.getElementById("loadstartbutton");
    if (loadstartbtn) {
        loadstartbtn.addEventListener("click", function (api,state) {
-       var driveuser = api.user;
-       document.getElementById("loadstart").value = driveuser;
+       document.getElementById("loadstart").value = getTimeStamp();
        });
    }
    
@@ -500,6 +499,7 @@ height: 30px;
           <br><br><br>
           <font size="6">Task Number:  </font>
           <input type="number" id="tasknumber" name="tasknumber" style="font-size:23px;"><br><br><br>
+          <input id="userbutton" type="button" class="biggerbutton" value="User" style="font-size:23px"><br><br>
           <input id="loadbutton" type="button" class="biggerbutton" value="Load" style="font-size:23px"><br><br>
           <input id="loadstartbutton" type="button" class="bigbutton" value="Start" style="font-size:23px;background-color:green;display:none;"> <br><br>
           <textarea rows="4" cols="50" style="display:none;font-size:23px;" id="commentsload" name="commentsload" >Comments:&nbsp;&nbsp;&nbsp;&nbsp;</textarea><br><br>
