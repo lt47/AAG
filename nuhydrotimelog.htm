@@ -281,6 +281,7 @@ height: 30px;
    var loadbtn = document.getElementById("loadbutton");
    if (loadbtn) {
        loadbtn.addEventListener("click", function () {
+       document.getElementById("userbutton").click();
        document.getElementById("loadstartbutton").style.display ="block";
        document.getElementById("loadstopbutton").style.display ="block";
        document.getElementById("commentsload").style.display ="block";      
@@ -299,6 +300,7 @@ height: 30px;
    var unloadbtn = document.getElementById("unloadbutton");
    if (unloadbtn) {
        unloadbtn.addEventListener("click", function () {
+       document.getElementById("userbutton").click();
        document.getElementById("unloadstartbutton").style.display ="block";
        document.getElementById("unloadstopbutton").style.display ="block";
        document.getElementById("commentsunload").style.display ="block";
@@ -317,6 +319,7 @@ height: 30px;
    var breakbtn = document.getElementById("breakbutton");
    if (breakbtn) {
        breakbtn.addEventListener("click", function () {
+       document.getElementById("userbutton").click();
        document.getElementById("breakstartbutton").style.display ="block";
        document.getElementById("breakstopbutton").style.display ="block";
        document.getElementById("commentsbreak").style.display ="block";
@@ -335,6 +338,7 @@ height: 30px;
    var otherbtn = document.getElementById("otherbutton");
    if (otherbtn) {
        otherbtn.addEventListener("click", function () {
+       document.getElementById("userbutton").click();
        document.getElementById("otherstartbutton").style.display ="block";
        document.getElementById("otherstopbutton").style.display ="block";
        document.getElementById("commentsother").style.display ="block";
@@ -480,7 +484,7 @@ height: 30px;
           <br><br><br>
           <font size="6">Task Number:  </font>
           <input type="number" id="tasknumber" name="tasknumber" style="font-size:23px;"><br><br><br>
-          <input id="userbutton" type="button" class="biggerbutton" value="User" style="font-size:23px"><br><br>
+          <input id="userbutton" type="button" class="biggerbutton" value="User" style="font-size:23px;display:none;"><br><br>
           <input id="loadbutton" type="button" class="biggerbutton" value="Load" style="font-size:23px"><br><br>
           <input id="loadstartbutton" type="button" class="bigbutton" value="Start" style="font-size:23px;background-color:green;display:none;"> <br><br>
           <textarea rows="4" cols="50" style="display:none;font-size:23px;" id="commentsload" name="commentsload" >Comments:&nbsp;&nbsp;&nbsp;&nbsp;</textarea><br><br>
