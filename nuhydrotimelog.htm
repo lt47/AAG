@@ -524,26 +524,6 @@ height: 30px;
        
        </center>
 
-
-        <script>
-          var $form = $('form#mbhydrohaulage'),
-            url = 'https://script.google.com/macros/s/AKfycbxnq6pZi9vVVgaTz8y4g9Z9X8LtN1koPmeWw3Aizj-NXB2gGpw/exec',
-
-            $submit = $('#submit-mbhydrohaulage').on('click', function(i) {
-              i.preventDefault();
-              var jqxhr = $.ajax({
-                url: url,
-                method: "GET",
-                dataType: "json",
-                data: $form.serializeObject()
-              }).done(
-                // do something
-              );
-              $('#mbhydrohaulage')[0].reset();
-            })
-
-        </script>
-
       </form>
   
 </center>
