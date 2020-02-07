@@ -267,7 +267,6 @@ window.onload = () => {
     minute = Math.floor((totalSeconds - hour*3600)/60);
     seconds = totalSeconds - (hour*3600 + minute*60);
     document.getElementById("hour").innerHTML =hour+":"+ minute;
-    document.getElementById("buildtime").innerHTML =hour+":"+ minute;
     //document.getElementById("minute").innerHTML =minute;
     document.getElementById("seconds").innerHTML =totalSeconds;
   }
@@ -282,21 +281,6 @@ window.onload = () => {
   
 }
 </script>
-
-<script>
-var myVar;
-function syncque() {
-  myVar = setInterval(sync, 3000);
-}
-
-function sync() {
-  var n1 = document.getElementById('buildtime');
-  var n2 = document.getElementById('buildtime1');
-  n2.value = n1.value;
-}
-</script>
-
-
 
 
 </head>
