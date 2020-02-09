@@ -33,7 +33,7 @@
     var pubnub = new PubNub({ subscribeKey:SUB_KEY });
     
     function updateFeed(messages){
-    var my_obj_str = JSON.stringify(messages);
+    var my_obj_str = JSON.parse(JSON.stringify(messages));
     document.getElementById("bus1feed").innerHTML = my_obj_str;
     }
     
