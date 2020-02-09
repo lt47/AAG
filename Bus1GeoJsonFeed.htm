@@ -34,7 +34,8 @@
     
     function updateFeed(messages){
     var my_obj_str = JSON.stringify(messages);
-    document.getElementById("bus1feed").innerHTML = my_obj_str;
+    var newstring = my_obj_str.substring(1, my_obj_str.length-1);
+    document.getElementById("bus1feed").innerHTML = newstring;
     }
     
     pubnub.addListener({
