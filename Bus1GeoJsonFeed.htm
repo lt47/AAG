@@ -1,0 +1,52 @@
+<html>
+<head>
+ <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.2.2.min.js"></script>
+    <style type="text/css">
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            padding:0;
+            margin: 0;
+            background-color: white;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td,th {
+            border: 1px solid lightgray;
+            padding: 0.25em 0.5em;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="bus1feed"></div>
+
+<script>
+    var CHANNEL = "Channel1";
+    var SUB_KEY =  'sub-c-76765e0e-4787-11ea-a4fb-16aec0d9ba73';
+
+    var pubnub = new PubNub({ subscribeKey:SUB_KEY });
+    
+    function updateFeed(messages){
+    var my_obj_str = JSON.stringify(messages);
+    document.getElementById("bus1feed").innerHTML = my_obj_str;
+    }
+    
+    pubnub.addListener({
+        message: function(msg) {
+            updateFeed([msg.message]);
+        }
+    });
+    pubnub.subscribe({ channels:[CHANNEL]});
+
+</script>
+
+
+</body>
+
+</html>
