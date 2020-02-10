@@ -8,7 +8,7 @@ import mapbox
 
 while True:
     features = []
-    with open('bus2_datafeed.csv', newline='') as csvfile:
+    with open('bus2_sampledatafeed.csv', newline='') as csvfile:
         reader = csv.reader(csvfile, delimiter=',')
         for datetime, name, longitude, latitude in reader:
             longitude, latitude = map(float, (longitude, latitude))
