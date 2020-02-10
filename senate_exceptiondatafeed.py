@@ -7,7 +7,7 @@ import pandas
 import csv
 
 
-class DataFeedListener(feed.DataFeedListener):
+class ExceptionDataFeedListener(feed.DataFeedListener):
     def __init__(self, api):
         self.api = api
         self._cache = defaultdict(dict)
@@ -34,17 +34,17 @@ class DataFeedListener(feed.DataFeedListener):
     def on_data(self, data):
         for d in data:
             self._populate_sub_entity(d, "Device")
+            self._populate_sub_entity(d, "Rule")
             date = datetime.datetime.now()
-            result = "{date},{device},{longitude},{latitude}".format(
+            result = "{date},{device},{rule}".format(
                     date=date,
                     device=d["device"].get("name", "**Unknown Vehicle"),
-                    longitude=d.get("longitude", "**Unknown Longitude"),
-                    latitude=d.get("latitude", "**Unknown Latitude")
+                    rule=d["rule"].get("name", "**Unknown Rule")
                     )
             mylist = result.split(",")
             print(mylist)
             df = pandas.DataFrame([mylist])
-            df.to_csv('senate_sampledatafeed.csv', index=False, header=None, mode='a')
+            df.to_csv('senate_exceptiondatafeed.csv', index=False, header=None, mode='a')
 
     def on_error(self, error):
         print(error)
@@ -54,7 +54,7 @@ class DataFeedListener(feed.DataFeedListener):
 def main(database='senate', user='datafeed', password='siriustech', server=None, interval=60):
     api = API(database=database, username=user, password=password, server=server)
     api.authenticate()
-    feed.DataFeed(api, DataFeedListener(api), "LogRecord", interval=interval).start()
+    feed.DataFeed(api, ExceptionDataFeedListener(api), "ExceptionEvent", interval=interval).start()
 
 
 if __name__ == "__main__":
