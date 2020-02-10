@@ -6,6 +6,8 @@ while True:
     # Filter the data accordingly.
     data = data[data['name'] == 'Bus 4']
     data.to_csv('bus4_datafeed.csv', index=False, header=None, mode='w')
+    lastrow = data.tail(1)
+    lastrow.to_csv('bus4_location.csv', index=False, header=None, mode='w')
     print(data)
     time.sleep(1)
 
