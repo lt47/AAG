@@ -1,2 +1,3 @@
-2020-02-10 11:35:59.380894,Van 3,Speeding
-2020-02-10 11:37:00.090503,Van 3,Speeding
+datetime,name,rule
+35:59.4,Van 3,Speeding
+37:00.1,Van 3,Speeding
