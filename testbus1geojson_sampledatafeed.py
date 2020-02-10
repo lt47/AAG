@@ -8,11 +8,11 @@ import mapbox
 
 while True:
     features = []
-    with open('bus1_sampledatafeed.csv', newline='') as csvfile:
+    with open('bus1_location.csv', newline='') as csvfile:
         reader = csv.reader(csvfile, delimiter=',')
         for datetime, name, longitude, latitude in reader:
             longitude, latitude = map(float, (longitude, latitude))
-            features.write(
+            features.append(
                 Feature(
                     geometry = Point((longitude, latitude)),
                     properties = {
