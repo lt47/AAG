@@ -12,7 +12,7 @@ while True:
         reader = csv.reader(csvfile, delimiter=',')
         for datetime, name, longitude, latitude in reader:
             longitude, latitude = map(float, (longitude, latitude))
-            features.append(
+            features.write(
                 Feature(
                     geometry = Point((longitude, latitude)),
                     properties = {
