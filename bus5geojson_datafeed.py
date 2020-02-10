@@ -8,7 +8,7 @@ import mapbox
 
 while True:
     features = []
-    with open('bus1_sampledatafeed.csv', newline='') as csvfile:
+    with open('bus5_datafeed.csv', newline='') as csvfile:
         reader = csv.reader(csvfile, delimiter=',')
         for datetime, name, longitude, latitude in reader:
             longitude, latitude = map(float, (longitude, latitude))
@@ -22,7 +22,7 @@ while True:
             )
 
     collection = FeatureCollection(features)
-    with open("bus1.geojson", "w") as f:
+    with open("bus5.geojson", "w") as f:
         f.write('%s' % collection)
 
    
