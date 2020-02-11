@@ -148,6 +148,8 @@ input[type=password] {
 .submitbutton {font-size: 16px;
 padding: 15px 32px;
 background-color: #00A146;
+position: fixed;
+bottom: 0;
 }
 .bigbutton {font-size: 20px;
 padding: 15px 32px;
