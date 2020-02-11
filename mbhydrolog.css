@@ -17,6 +17,7 @@ div.b {
   left: 2px;
   width: 320px;
   height: 100%;
+  overflow: scroll;
 } 
 div.c {
     position: fixed;
