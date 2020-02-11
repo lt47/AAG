@@ -17,6 +17,11 @@ div.b {
   left: 2px;
   width: 320px;
 } 
+div.c {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
