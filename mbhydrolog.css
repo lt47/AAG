@@ -13,8 +13,8 @@
 .main {font-size: 1.2em;
 }
 div.b {
-  position: relative;
-  left: 0px;
+  position: fixed;
+  left: 2px;
   width: 320px;
 } 
 table {
