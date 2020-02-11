@@ -1,0 +1,296 @@
+<html>
+
+<head>
+	
+<link rel="stylesheet" type="text/css" href="https://lt47.github.io/AAG/mbhydrolog.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+      (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-56318310-1', 'auto');
+      ga('send', 'pageview');
+
+</script>
+<base target="_top" />
+
+<script>
+  geotab.addin.timelog = function (api,state){
+   // Initialize required Add-In variables
+   var userbtn = document.getElementById("userbutton");
+   if (userbtn) {
+       userbtn.addEventListener("click", function () {
+       document.getElementById("user").value = state.device.id;
+       });
+   }
+   
+   var tripdesc = document.getElementById("tripdescription");
+   if (tripdesc) {
+       tripdesc.addEventListener("onkeypress", function() {
+       document.getElementById("tripdescription").onkeypress();
+       document.getElementById("loadbutton").style.display ="block";
+       document.getElementById("unloadbutton").style.display ="block";
+       document.getElementById("breakbutton").style.display ="block";
+       document.getElementById("otherbutton").style.display ="block";
+       });
+   }
+   
+   
+   var loadbtn = document.getElementById("loadbutton");
+   if (loadbtn) {
+       loadbtn.addEventListener("click", function () {
+       document.getElementById("userbutton").click();
+       document.getElementById("loadstartbutton").style.display ="block";
+       document.getElementById("loadstopbutton").style.display ="block";
+       document.getElementById("commentsload").style.display ="block";      
+       });
+   }
+   
+   var hideload = document.getElementById("loadstopbutton");
+   if (hideload) {
+       hideload.addEventListener("click", function () {
+       document.getElementById("loadstartbutton").style.display ="none";
+       document.getElementById("loadstopbutton").style.display ="none";
+       document.getElementById("commentsload").style.display ="none";
+       });
+   }
+   
+   var unloadbtn = document.getElementById("unloadbutton");
+   if (unloadbtn) {
+       unloadbtn.addEventListener("click", function () {
+       document.getElementById("userbutton").click();
+       document.getElementById("unloadstartbutton").style.display ="block";
+       document.getElementById("unloadstopbutton").style.display ="block";
+       document.getElementById("commentsunload").style.display ="block";
+       });
+   }
+   
+   var hideunload = document.getElementById("unloadstopbutton");
+   if (hideunload) {
+       hideunload.addEventListener("click", function () {
+       document.getElementById("unloadstartbutton").style.display ="none";
+       document.getElementById("unloadstopbutton").style.display ="none";
+       document.getElementById("commentsunload").style.display ="none";
+       });   
+   }
+   
+   var breakbtn = document.getElementById("breakbutton");
+   if (breakbtn) {
+       breakbtn.addEventListener("click", function () {
+       document.getElementById("userbutton").click();
+       document.getElementById("breakstartbutton").style.display ="block";
+       document.getElementById("breakstopbutton").style.display ="block";
+       document.getElementById("commentsbreak").style.display ="block";
+       });
+   }
+   
+   var hidebreak = document.getElementById("breakstopbutton");
+   if (hidebreak) {
+       hidebreak.addEventListener("click", function () {
+       document.getElementById("breakstartbutton").style.display ="none";
+       document.getElementById("breakstopbutton").style.display ="none";
+       document.getElementById("commentsbreak").style.display ="none";
+       });
+   }
+   
+   var otherbtn = document.getElementById("otherbutton");
+   if (otherbtn) {
+       otherbtn.addEventListener("click", function () {
+       document.getElementById("userbutton").click();
+       document.getElementById("otherstartbutton").style.display ="block";
+       document.getElementById("otherstopbutton").style.display ="block";
+       document.getElementById("commentsother").style.display ="block";
+       });
+   }
+   
+   var hideother = document.getElementById("otherstopbutton");
+   if (hideother) {
+       hideother.addEventListener("click", function () {
+       document.getElementById("otherstartbutton").style.display ="none";
+       document.getElementById("otherstopbutton").style.display ="none";
+       document.getElementById("commentsother").style.display ="none";
+       });
+   }
+   
+   function getTimeStamp() {
+       var now = new Date();
+       return ((now.getMonth() + 1) + '/' + (now.getDate()) + '/' + now.getFullYear() + " " + now.getHours() + ':' + ((now.getMinutes() < 10) ? ("0" + now.getMinutes()) : (now.getMinutes())) + ':' + ((now.getSeconds() < 10) ? ("0" + now
+                     .getSeconds()) : (now.getSeconds())));
+    }
+   
+   var loadstartbtn = document.getElementById("loadstartbutton");
+   if (loadstartbtn) {
+       loadstartbtn.addEventListener("click", function (api,state) {
+       document.getElementById("loadstart").value = getTimeStamp();
+       });
+   }
+   
+   var loadstopbtn = document.getElementById("loadstopbutton");
+   if (loadstopbtn) {
+       loadstopbtn.addEventListener("click", function () {
+       document.getElementById("loadstop").value = getTimeStamp();
+       });
+   }
+   
+   var unloadstartbtn = document.getElementById("unloadstartbutton");
+   if (unloadstartbtn) {
+       unloadstartbtn.addEventListener("click", function () {
+       document.getElementById("unloadstart").value = getTimeStamp();
+       });
+   }
+   
+   var unloadstopbtn = document.getElementById("unloadstopbutton");
+   if (unloadstopbtn) {
+       unloadstopbtn.addEventListener("click", function () {
+       document.getElementById("unloadstop").value = getTimeStamp();
+       });
+   }
+   
+   var breakstartbtn = document.getElementById("breakstartbutton");
+   if (breakstartbtn) {
+       breakstartbtn.addEventListener("click", function () {
+       document.getElementById("breakstart").value = getTimeStamp();
+       });
+   }
+   
+   var breakstopbtn = document.getElementById("breakstopbutton");
+   if (breakstopbtn) {
+       breakstopbtn.addEventListener("click", function () {
+       document.getElementById("breakstop").value = getTimeStamp();
+       });
+   }
+   
+    var otherstartbtn = document.getElementById("otherstartbutton");
+   if (otherstartbtn) {
+       otherstartbtn.addEventListener("click", function () {
+       document.getElementById("otherstart").value = getTimeStamp();
+       });
+   }
+   
+   var otherstopbtn = document.getElementById("otherstopbutton");
+   if (otherstopbtn) {
+       otherstopbtn.addEventListener("click", function () {
+       document.getElementById("otherstop").value = getTimeStamp();
+       });
+   }
+   
+   $.fn.serializeObject = function() {
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function() {
+          if (o[this.name]) {
+            if (!o[this.name].push) {
+              o[this.name] = [o[this.name]];
+            }
+            o[this.name].push(this.value || '');
+          } else {
+            o[this.name] = this.value || '';
+          }
+        });
+        return o;
+      };
+   
+   var $form = $('form#mbhydrohaulage'),
+            url = 'https://script.google.com/macros/s/AKfycbxnq6pZi9vVVgaTz8y4g9Z9X8LtN1koPmeWw3Aizj-NXB2gGpw/exec',
+
+            $submit = $('#submit-mbhydrohaulage').on('click', function(i) {
+              i.preventDefault();
+              var jqxhr = $.ajax({
+                url: url,
+                method: "GET",
+                dataType: "json",
+                data: $form.serializeObject()
+              }).done(
+                // do something
+              );
+              $('#mbhydrohaulage')[0].reset();
+            })
+
+   
+   
+   
+   
+   
+   return {
+    initialize(api, state, callback) {
+     callback();
+    },
+    focus(api, state) {
+     // User interface is available
+    },
+    blur(api, state) {
+     // Save any Add-In state
+    }
+   };
+  };
+ </script>
+
+ 
+</head>
+
+<body>
+<center>
+
+<form id="mbhydrohaulage" method="POST">
+        <div>
+          <img src="https://drive.google.com/uc?id=1XBfvN90w_QkVJrdgf3CGDlp_kUQfJtRn" top=35px left=65px height=80 width=130 /><br>
+        </div>
+          <center>
+            <input type="text" id="user" name="user" style="display:none">
+          <br><br><br>
+          <input id="userbutton" type="button" class="biggerbutton" value="User" style="font-size:23px;display:none;"><br>
+          <textarea id="tripdescription" name="tripdescription" style="font-size:23px;" rows="4" cols="50"></textarea><br><br>
+          <input id="loadbutton" type="button" class="biggerbutton" value="Load" style="font-size:23px;display:none;"><br><br>
+          <input id="loadstartbutton" type="button" class="bigbutton" value="Start" style="font-size:23px;background-color:green;display:none;"><br><br>
+          <textarea rows="4" cols="50" style="display:none;font-size:23px;" id="commentsload" name="commentsload" >Comments:&nbsp;&nbsp;&nbsp;&nbsp;</textarea><br><br>
+          <input id="loadstopbutton" type="button" class="bigbutton" value="Stop" style="font-size:23px;background-color:red;display:none;"><br>
+           <input id="unloadbutton" type="button" class="biggerbutton" value="Unload" style="font-size:23px;display:none;"><br><br>
+          <input id="unloadstartbutton" type="button" class="bigbutton" value="Start" style="font-size:23px;background-color:green;display:none;"> <br><br>
+          <textarea rows="4" cols="50" style="display:none;font-size:23px;" id="commentsunload" name="commentsunload" >Comments:&nbsp;&nbsp;&nbsp;&nbsp;</textarea><br><br>
+          <input id="unloadstopbutton" type="button" class="bigbutton" value="Stop" style="font-size:23px;background-color:red;display:none;"><br>
+          
+          <input id="breakbutton" type="button" class="biggerbutton" value="Break" style="font-size:23px;display:none;"><br><br>
+          <input id="breakstartbutton" type="button" class="bigbutton" value="Start" style="font-size:23px;background-color:green;display:none;"> <br><br>
+          <textarea rows="4" cols="50" style="display:none;font-size:23px;" id="commentsbreak" name="commentsbreak" >Comments:&nbsp;&nbsp;&nbsp;&nbsp;</textarea><br><br>
+          <input id="breakstopbutton" type="button" class="bigbutton" value="Stop" style="font-size:23px;background-color:red;display:none;"><br>
+          
+          <input id="otherbutton" type="button" class="biggerbutton" value="Other" style="font-size:23px;display:none;"><br><br>
+          <input id="otherstartbutton" type="button" class="bigbutton" value="Start" style="font-size:23px;background-color:green;display:none;"> <br><br>
+          <textarea rows="4" cols="50" style="display:none;font-size:23px;" id="commentsother" name="commentsother" >Comments:&nbsp;&nbsp;&nbsp;&nbsp;</textarea><br><br>
+          <input id="otherstopbutton" type="button" class="bigbutton" value="Stop" style="font-size:23px;background-color:red;display:none;"><br><br>
+          
+      
+          
+       
+       
+       <input type="text" id="loadstart" name="loadstart" style="display:none;">
+       <input type="text" id="loadstop" name="loadstop" style="display:none;">
+       <input type="text" id="unloadstart" name="unloadstart" style="display:none;">
+       <input type="text" id="unloadstop" name="unloadstop" style="display:none;">
+       <input type="text" id="breakstart" name="breakstart" style="display:none;">
+       <input type="text" id="breakstop" name="breakstop" style="display:none;">
+       <input type="text" id="otherstart" name="otherstart" style="display:none;">
+       <input type="text" id="otherstop" name="otherstop" style="display:none;"><br><br>
+       
+       
+       <center><button class="submitbutton" id="submit-mbhydrohaulage" type="submit" style="font-size:22px;">Submit</button></center>
+       
+          </center>
+       
+
+      </form>
+  
+</center>
+
+</body>
+
+</html>
