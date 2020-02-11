@@ -13,7 +13,7 @@
 .main {font-size: 1.2em;
 }
 div.b {
-  position: absolute;
+  position: relative;
   left: auto;
   width: 320px;
 } 
