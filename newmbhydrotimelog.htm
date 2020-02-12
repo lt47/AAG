@@ -33,11 +33,9 @@
        });
    }
    
-   var copytripdesc = document.getElementById("copytripdescription");
    var tripdesc = document.getElementById("tripdescription");
    if (tripdesc) {
        tripdesc.addEventListener("keypress", function() {
-       tripdesc.value = copytripdesc.value;
        document.getElementById("copytripdescription").style.display ="block";
        document.getElementById("loadbutton").style.display ="block";
        document.getElementById("unloadbutton").style.display ="block";
@@ -208,7 +206,14 @@
        document.getElementById("otherstop").value = getTimeStamp();
        });
    }
-   
+	  
+   $(function() {
+    $('input[id$=tripdescription]').keyup(function() {
+        var txtClone = $(this).val();
+        $('input[id$=copytripdescription]').val(txtClone);
+    });
+});
+	  
    $.fn.serializeObject = function() {
         var o = {};
         var a = this.serializeArray();
