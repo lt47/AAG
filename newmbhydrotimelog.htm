@@ -58,6 +58,7 @@
    if (hideload) {
        hideload.addEventListener("click", function () {
        document.getElementById("loadstop").value = getTimeStamp();
+       document.getElementById("loadstartbutton").disabled = false;
        document.getElementById("loadstartbutton").style.display ="none";
        document.getElementById("loadstopbutton").style.display ="none";
        document.getElementById("comments").style.display ="none";
@@ -79,6 +80,7 @@
    if (hideunload) {
        hideunload.addEventListener("click", function () {
        document.getElementById("unloadstop").value = getTimeStamp();
+       document.getElementById("unloadstartbutton").disabled = false;
        document.getElementById("unloadstartbutton").style.display ="none";
        document.getElementById("unloadstopbutton").style.display ="none";
        document.getElementById("comments").style.display ="none";
@@ -100,6 +102,7 @@
    if (hidebreak) {
        hidebreak.addEventListener("click", function () {
        document.getElementById("breakstop").value = getTimeStamp();
+       document.getElementById("breakstartbutton").disabled = false;
        document.getElementById("breakstartbutton").style.display ="none";
        document.getElementById("breakstopbutton").style.display ="none";
        document.getElementById("comments").style.display ="none";
@@ -121,6 +124,7 @@
    if (hideother) {
        hideother.addEventListener("click", function () {
        document.getElementById("otherstop").value = getTimeStamp();
+       document.getElementById("otherstartbutton").disabled = false;
        document.getElementById("otherstartbutton").style.display ="none";
        document.getElementById("otherstopbutton").style.display ="none";
        document.getElementById("comments").style.display ="none";
