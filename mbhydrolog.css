@@ -13,12 +13,12 @@
 .main {font-size: 1.2em;
 }
 div.a {
-  position: fixed;
+  position: sticky;
   right: 220px;
   top: 200px;
   bottom: 70px;
   width: 600px;
-  height: 100%;
+  height: 60%;
 } 
 div.b {
   position: fixed;
