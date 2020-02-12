@@ -12,12 +12,21 @@
 }
 .main {font-size: 1.2em;
 }
+div.a {
+  position: fixed;
+  right: 2px;
+  top: 65px;
+  bottom: 70px;
+  width: 600px;
+  height: 100%;
+  overflow: scroll;
+} 
 div.b {
   position: fixed;
   left: 2px;
   top: 65px;
   bottom: 70px;
-  width: 400px;
+  width: 230px;
   height: 100%;
   overflow: scroll;
 } 
