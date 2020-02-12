@@ -50,7 +50,9 @@
        document.getElementById("userbutton").click();
        document.getElementById("loadstartbutton").style.display ="block";
        document.getElementById("loadstopbutton").style.display ="block";
-       document.getElementById("comments").style.display ="block";      
+       document.getElementById("comments").style.display ="block";
+       document.getElementById("tripdescription").style.display ="none";
+       document.getElementById("tripdescriptionlabel").style.display ="none";
        });
    }
    
@@ -73,6 +75,8 @@
        document.getElementById("unloadstartbutton").style.display ="block";
        document.getElementById("unloadstopbutton").style.display ="block";
        document.getElementById("comments").style.display ="block";
+       document.getElementById("tripdescription").style.display ="none";
+       document.getElementById("tripdescriptionlabel").style.display ="none";
        });
    }
    
@@ -95,6 +99,8 @@
        document.getElementById("breakstartbutton").style.display ="block";
        document.getElementById("breakstopbutton").style.display ="block";
        document.getElementById("comments").style.display ="block";
+       document.getElementById("tripdescription").style.display ="none";
+       document.getElementById("tripdescriptionlabel").style.display ="none";
        });
    }
    
@@ -117,6 +123,8 @@
        document.getElementById("otherstartbutton").style.display ="block";
        document.getElementById("otherstopbutton").style.display ="block";
        document.getElementById("comments").style.display ="block";
+       document.getElementById("tripdescription").style.display ="none";
+       document.getElementById("tripdescriptionlabel").style.display ="none";
        });
    }
    
@@ -261,7 +269,7 @@
         </div>
 	<br>
 	<div class="a">
-        <label size="6">Trip description:</label><br><br>
+        <label id="tripdescriptionlabel" size="6">Trip description:</label><br><br>
 	<textarea id="tripdescription" name="tripdescription" style="font-size:23px;" rows="4" cols="40" placeholder="Start typing to reveal trip actions"></textarea><br><br>
 	<textarea id="comments" name="comments" style="font-size:23px;display:none;" rows="4" cols="50">Comments:&nbsp;&nbsp;&nbsp;</textarea><br><br>
 	</div>
