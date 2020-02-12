@@ -38,6 +38,15 @@ div.c {
     bottom: 0;
     width: 100%;
 }
+div.d {
+  position: fixed;
+  right: 2px;
+  top: 65px;
+  bottom: 70px;
+  width: 180px;
+  height: 87%;
+  overflow: scroll;
+} 
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
