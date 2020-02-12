@@ -39,13 +39,12 @@ div.c {
     width: 100%;
 }
 div.d {
-  position: fixed;
-  right: 2px;
+  position: sticky;
+  right: 4px;
   top: 330px;
   bottom: 70px;
   width: 180px;
   height: 87%;
-  overflow: scroll;
 } 
 table {
   font-family: arial, sans-serif;
