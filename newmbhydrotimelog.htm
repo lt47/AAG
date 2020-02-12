@@ -57,6 +57,7 @@
    var hideload = document.getElementById("loadstopbutton");
    if (hideload) {
        hideload.addEventListener("click", function () {
+       document.getElementById("loadstop").value = getTimeStamp();
        document.getElementById("loadstartbutton").style.display ="none";
        document.getElementById("loadstopbutton").style.display ="none";
        document.getElementById("comments").style.display ="none";
