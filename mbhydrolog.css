@@ -29,6 +29,10 @@ div.b {
   height: 87%;
   overflow: scroll;
 } 
+div.b::-webkit-scrollbar {
+    display: none;
+}
+
 div.c {
     position: fixed;
     bottom: 0;
