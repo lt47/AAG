@@ -33,9 +33,12 @@
        });
    }
    
+   var copytripdesc = document.getElementById("copytripdescription");
    var tripdesc = document.getElementById("tripdescription");
    if (tripdesc) {
        tripdesc.addEventListener("keypress", function() {
+       tripdesc.value = copytripdesc.value;
+       document.getElementById("copytripdescription").style.display ="block";
        document.getElementById("loadbutton").style.display ="block";
        document.getElementById("unloadbutton").style.display ="block";
        document.getElementById("breakbutton").style.display ="block";
@@ -267,7 +270,9 @@
         <div>
           <img src="https://drive.google.com/uc?id=1XBfvN90w_QkVJrdgf3CGDlp_kUQfJtRn" top=35px left=65px height=80 width=130 /><br>
         </div>
-	<br>
+	<br><br>
+	<textarea id="copytripdescription" name="copytripdescription" style="font-size:23px;display:none;" rows="4" cols="30" disabled></textarea>
+	<br><br>
 	<div class="a">
         <label id="tripdescriptionlabel" size="6">Trip description:</label><br><br>
 	<textarea id="tripdescription" name="tripdescription" style="font-size:23px;" rows="4" cols="30" placeholder="Start typing to reveal trip actions"></textarea><br><br>
