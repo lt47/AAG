@@ -34,7 +34,7 @@ div.b::-webkit-scrollbar {
 }
 
 div.c {
-    position: relative;
+    position: fixed;
     bottom: 0;
     width: 100%;
 }
