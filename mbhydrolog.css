@@ -15,9 +15,9 @@
 div.b {
   position: fixed;
   left: 2px;
-  top: 60px;
+  top: 65px;
   bottom: 7px;
-  width: 320px;
+  width: 400px;
   height: 100%;
   overflow: scroll;
 } 
