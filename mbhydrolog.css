@@ -36,7 +36,7 @@ div.b::-webkit-scrollbar {
 div.c {
     position: fixed;
     bottom: 0;
-    width: 100%;
+    width: 30%;
 }
 table {
   font-family: arial, sans-serif;
