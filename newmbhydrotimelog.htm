@@ -137,6 +137,7 @@
    var loadstartbtn = document.getElementById("loadstartbutton");
    if (loadstartbtn) {
        loadstartbtn.addEventListener("click", function (api,state) {
+       document.getElementById("loadstartbutton").disabled = true;
        document.getElementById("loadstart").value = getTimeStamp();
        });
    }
@@ -151,6 +152,7 @@
    var unloadstartbtn = document.getElementById("unloadstartbutton");
    if (unloadstartbtn) {
        unloadstartbtn.addEventListener("click", function () {
+       document.getElementById("unloadstartbutton").disabled = true;
        document.getElementById("unloadstart").value = getTimeStamp();
        });
    }
@@ -165,6 +167,7 @@
    var breakstartbtn = document.getElementById("breakstartbutton");
    if (breakstartbtn) {
        breakstartbtn.addEventListener("click", function () {
+       document.getElementById("breakstartbutton").disabled = true;
        document.getElementById("breakstart").value = getTimeStamp();
        });
    }
@@ -179,6 +182,7 @@
     var otherstartbtn = document.getElementById("otherstartbutton");
    if (otherstartbtn) {
        otherstartbtn.addEventListener("click", function () {
+       document.getElementById("otherstartbutton").disabled = true;
        document.getElementById("otherstart").value = getTimeStamp();
        });
    }
@@ -252,8 +256,8 @@
           <img src="https://drive.google.com/uc?id=1XBfvN90w_QkVJrdgf3CGDlp_kUQfJtRn" top=35px left=65px height=80 width=130 /><br>
         </div>
 	<br>
-	<label size="6">Trip description:</label><br>
 	<div class="a">
+        <label size="6">Trip description:</label><br><br>
 	<textarea id="tripdescription" name="tripdescription" style="font-size:23px;" rows="4" cols="40" placeholder="Start typing to reveal trip actions"></textarea><br><br>
 	<textarea id="comments" name="comments" style="font-size:23px;display:none;" rows="4" cols="50">Comments:&nbsp;&nbsp;&nbsp;</textarea><br><br>
 	</div>
