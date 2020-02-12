@@ -50,7 +50,7 @@
        document.getElementById("userbutton").click();
        document.getElementById("loadstartbutton").style.display ="block";
        document.getElementById("loadstopbutton").style.display ="block";
-       document.getElementById("commentsload").style.display ="block";      
+       document.getElementById("comments").style.display ="block";      
        });
    }
    
@@ -59,7 +59,8 @@
        hideload.addEventListener("click", function () {
        document.getElementById("loadstartbutton").style.display ="none";
        document.getElementById("loadstopbutton").style.display ="none";
-       document.getElementById("commentsload").style.display ="none";
+       document.getElementById("comments").style.display ="none";
+       document.getElementById("submit-mbhydrohaulage").click();
        });
    }
    
@@ -69,7 +70,7 @@
        document.getElementById("userbutton").click();
        document.getElementById("unloadstartbutton").style.display ="block";
        document.getElementById("unloadstopbutton").style.display ="block";
-       document.getElementById("commentsunload").style.display ="block";
+       document.getElementById("comments").style.display ="block";
        });
    }
    
@@ -78,7 +79,8 @@
        hideunload.addEventListener("click", function () {
        document.getElementById("unloadstartbutton").style.display ="none";
        document.getElementById("unloadstopbutton").style.display ="none";
-       document.getElementById("commentsunload").style.display ="none";
+       document.getElementById("comments").style.display ="none";
+       document.getElementById("submit-mbhydrohaulage").click();
        });   
    }
    
@@ -88,7 +90,7 @@
        document.getElementById("userbutton").click();
        document.getElementById("breakstartbutton").style.display ="block";
        document.getElementById("breakstopbutton").style.display ="block";
-       document.getElementById("commentsbreak").style.display ="block";
+       document.getElementById("comments").style.display ="block";
        });
    }
    
@@ -97,7 +99,8 @@
        hidebreak.addEventListener("click", function () {
        document.getElementById("breakstartbutton").style.display ="none";
        document.getElementById("breakstopbutton").style.display ="none";
-       document.getElementById("commentsbreak").style.display ="none";
+       document.getElementById("comments").style.display ="none";
+       document.getElementById("submit-mbhydrohaulage").click();
        });
    }
    
@@ -107,7 +110,7 @@
        document.getElementById("userbutton").click();
        document.getElementById("otherstartbutton").style.display ="block";
        document.getElementById("otherstopbutton").style.display ="block";
-       document.getElementById("commentsother").style.display ="block";
+       document.getElementById("comments").style.display ="block";
        });
    }
    
@@ -116,7 +119,8 @@
        hideother.addEventListener("click", function () {
        document.getElementById("otherstartbutton").style.display ="none";
        document.getElementById("otherstopbutton").style.display ="none";
-       document.getElementById("commentsother").style.display ="none";
+       document.getElementById("comments").style.display ="none";
+       document.getElementById("submit-mbhydrohaulage").click();
        });
    }
    
@@ -244,7 +248,8 @@
           <img src="https://drive.google.com/uc?id=1XBfvN90w_QkVJrdgf3CGDlp_kUQfJtRn" top=35px left=65px height=80 width=130 /><br>
         </div>
 	<br>
-	<textarea id="tripdescription" name="tripdescription" style="font-size:23px;" rows="4" cols="50"></textarea><br><br>
+	<label size="5">Trip description:<textarea id="tripdescription" name="tripdescription" style="font-size:23px;" rows="4" cols="40" placeholder="Start typing to reveal trip actions"></textarea></label><br><br>
+	<textarea id="comments" name="comments" style="font-size:23px;display:none;" rows="4" cols="50">Comments:&nbsp;&nbsp;&nbsp;</textarea><br><br>
         <div class="b">
 		  <center>
             <input type="text" id="user" name="user" style="display:none">
@@ -252,21 +257,17 @@
           <input id="userbutton" type="button" class="biggerbutton" value="User" style="font-size:23px;display:none;"><br>
           <input id="loadbutton" type="button" class="biggerbutton" value="Load" style="font-size:23px;display:none;"><br><br>
           <input id="loadstartbutton" type="button" class="bigbutton" value="Start" style="font-size:23px;background-color:green;display:none;"><br><br>
-          <textarea rows="4" cols="50" style="display:none;font-size:23px;" id="commentsload" name="commentsload" >Comments:&nbsp;&nbsp;&nbsp;&nbsp;</textarea><br><br>
           <input id="loadstopbutton" type="button" class="bigbutton" value="Stop" style="font-size:23px;background-color:red;display:none;"><br>
            <input id="unloadbutton" type="button" class="biggerbutton" value="Unload" style="font-size:23px;display:none;"><br><br>
           <input id="unloadstartbutton" type="button" class="bigbutton" value="Start" style="font-size:23px;background-color:green;display:none;"> <br><br>
-          <textarea rows="4" cols="50" style="display:none;font-size:23px;" id="commentsunload" name="commentsunload" >Comments:&nbsp;&nbsp;&nbsp;&nbsp;</textarea><br><br>
           <input id="unloadstopbutton" type="button" class="bigbutton" value="Stop" style="font-size:23px;background-color:red;display:none;"><br>
           
           <input id="breakbutton" type="button" class="biggerbutton" value="Break" style="font-size:23px;display:none;"><br><br>
           <input id="breakstartbutton" type="button" class="bigbutton" value="Start" style="font-size:23px;background-color:green;display:none;"> <br><br>
-          <textarea rows="4" cols="50" style="display:none;font-size:23px;" id="commentsbreak" name="commentsbreak" >Comments:&nbsp;&nbsp;&nbsp;&nbsp;</textarea><br><br>
           <input id="breakstopbutton" type="button" class="bigbutton" value="Stop" style="font-size:23px;background-color:red;display:none;"><br>
           
           <input id="otherbutton" type="button" class="biggerbutton" value="Other" style="font-size:23px;display:none;"><br><br>
           <input id="otherstartbutton" type="button" class="bigbutton" value="Start" style="font-size:23px;background-color:green;display:none;"> <br><br>
-          <textarea rows="4" cols="50" style="display:none;font-size:23px;" id="commentsother" name="commentsother" >Comments:&nbsp;&nbsp;&nbsp;&nbsp;</textarea><br><br>
           <input id="otherstopbutton" type="button" class="bigbutton" value="Stop" style="font-size:23px;background-color:red;display:none;"><br><br>
 		  </center>
 	</div>
