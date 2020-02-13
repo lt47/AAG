@@ -282,3 +282,22 @@ height: 30px;
 .openbtn:hover {
   background-color:#444;
 }
+.input-container{
+    width: 250px;
+    border: 1px solid #a9a9a9;
+    display: inline-block;
+}
+.input-container input:focus, .input-container input:active {
+    outline: none;
+}
+.input-container input {
+    width: 80%;
+    border: none;
+}
+
+.input-container button {
+    float: right;
+    font-size: 20px;
+    padding: 15px 32px;
+    background-color: #dddddd;
+}
