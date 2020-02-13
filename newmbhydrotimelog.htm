@@ -32,9 +32,11 @@
        });
    }
    
-   var tripdesc = document.getElementById("tripdescription");
-   if (tripdesc) {
-       tripdesc.addEventListener("keypress", function() {
+   var tripstart = document.getElementById("starttrip");
+   if (tripstart) {
+       tripstart.addEventListener("click", function() {
+       document.getElementById("tripdescription").value=document.getElementById("copytripdescription").value;
+       document.getElementById("tripdescription").style.display ="none";
        document.getElementById("copytripdescription").style.display ="block";
        document.getElementById("loadbutton").style.display ="block";
        document.getElementById("unloadbutton").style.display ="block";
@@ -244,7 +246,23 @@
               $('#mbhydrohaulage')[0].reset();
             })
 
-   
+   var $form = $('form#mbhydrohaulage'),
+            url1 = 'https://script.google.com/macros/s/AKfycbxnq6pZi9vVVgaTz8y4g9Z9X8LtN1koPmeWw3Aizj-NXB2gGpw/exec',
+
+            $submit = $('#noreset-mbhydrohaulage').on('click', function(j) {
+              j.preventDefault();
+              var jqxhr = $.ajax({
+                url: url1,
+                method: "GET",
+                dataType: "json",
+                data: $form.serializeObject()
+              }).done(
+                // do something
+              );
+	       //submit without resetting the form
+              //$('#mbhydrohaulage')[0].reset();
+            })
+
    
    
    
@@ -269,7 +287,7 @@
 <body>
 
 <center>
-
+<textarea id="copytripdescription" name="copytripdescription" style="font-size:23px;background-color:gray;display:none;" rows="4" cols="30" placeholder="Start typing to reveal trip actions" disabled></textarea><br>
 <form id="mbhydrohaulage" method="POST">
         <div>
           <img src="https://drive.google.com/uc?id=1XBfvN90w_QkVJrdgf3CGDlp_kUQfJtRn" top=35px left=65px height=80 width=130 /><br>
@@ -279,11 +297,11 @@
 	
 	<div class="a">
 	<label id="tripdescriptionlabel" size="6">Trip description:</label><br><br>
-	<textarea id="tripdescription" name="tripdescription" style="font-size:23px;" rows="4" cols="30" placeholder="Start typing to reveal trip actions"></textarea>
-	<textarea id="copytripdescription" name="copytripdescription" style="font-size:23px;background-color:gray;" rows="4" cols="30" placeholder="Start typing to reveal trip actions" disabled></textarea>
-	<button class="bigbutton">Ok</button><br><br>
+	<textarea id="tripdescription" name="tripdescription" style="font-size:23px;" rows="4" cols="30" placeholder="Start typing to reveal trip actions"></textarea><br>
+	<button id="starttrip" class="bigbutton">Start Trip</button><br><br>
 	<textarea id="comments" name="comments" style="font-size:23px;display:none;" rows="4" cols="50">Comments:&nbsp;&nbsp;&nbsp;</textarea><br>
-	<button class="submitbutton" id="submit-mbhydrohaulage" type="submit" style="font-size:22px;">Submit</button>
+	<button class="submitbutton" id="submit-mbhydrohaulage" type="submit" style="font-size:22px;">End Trip</button>
+	<button class="submitbutton" id="noreset-mbhydrohaulage" type="submit" style="font-size:22px;display:none;">Submit - No Reset</button>
 	</div>
         <div class="b">
 		  <center>
