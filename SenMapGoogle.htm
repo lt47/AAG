@@ -1,3 +1,176 @@
 <html>
-<iframe src="https://www.google.com/maps/d/embed?mid=1a8s7gxT0lUgInU2OW3KtgCekwKrqnkVW" style="border: 0; width: 100%; height: 100%;"></iframe>
+<head>
+<style>
+  body { margin: 0; padding: 0; }
+	#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+.map-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.8);
+  margin-left: 20px;
+  font-family: Arial, sans-serif;
+  overflow: auto;
+  border-radius: 3px;
+}
+#routeupdates {
+  padding: 35px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  line-height: 18px;
+  height: 400px;
+  margin-bottom: 40px;
+  width: 100px;
+}
+  </style>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js"></script>
+  
+  </head>
+  
+  <body>
+    <div id="map"></div>
+<div class='map-overlay' id='routeupdates'>
+<center><h2> Route Updates</h2></center>  
+<div id="test">
+
+</div>
+</div>
+  </body>
+  
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoibHRlbnVtYWgiLCJhIjoiY2s1c2s5N2d5MDJyaTNmbG5jNG1jZHRqdCJ9.buKhkiCOYAkRlzewCL6Qdw';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/ltenumah/ck6fwo3jb37n31itg0yj3d0rj',
+        zoom: 15,
+        center: [-75.700929, 45.4235937],
+    });
+    
+map.loadImage('https://lt47.github.io/AAG/iconmonstr-bus-2-24yellow.png', function(error, image) {
+  if (error) throw error;
+  map.addImage('bus1marker', image);
+});
+
+ var bus1 = 'https://www.fort-seven.com/scriptsanddocs/bus1.geojson';
+    map.on('load', function() {
+        window.setInterval(function() {
+            map.getSource('points').setData(bus1);
+        }, 2000);
+
+        map.addSource('points', { type: 'geojson', data: bus1 });
+        map.addLayer({
+            'id': 'points',
+            'type': 'symbol',
+            'source': 'points',
+            'layout': {
+                'icon-image': 'bus1marker',
+                'icon-size': 0.09
+            }
+        });
+    });
+    
+map.loadImage('https://lt47.github.io/AAG/redbus.png', function(error, image) {
+  if (error) throw error;
+  map.addImage('bus2marker', image);
+});
+
+ var bus2 = 'https://www.fort-seven.com/scriptsanddocs/bus2.geojson';
+    map.on('load', function() {
+        window.setInterval(function() {
+            map.getSource('points1').setData(bus2);
+        }, 2000);
+
+        map.addSource('points1', { type: 'geojson', data: bus2 });
+        map.addLayer({
+            'id': 'points1',
+            'type': 'symbol',
+            'source': 'points1',
+            'layout': {
+                'icon-image': 'bus2marker',
+                'icon-size': 0.09
+            }
+        });
+    });
+    
+map.loadImage('https://lt47.github.io/AAG/redbus.png', function(error, image) {
+  if (error) throw error;
+  map.addImage('bus3marker', image);
+});
+
+ var bus3 = 'https://www.fort-seven.com/scriptsanddocs/bus3.geojson';
+    map.on('load', function() {
+        window.setInterval(function() {
+            map.getSource('points2').setData(bus3);
+        }, 2000);
+
+        map.addSource('points2', { type: 'geojson', data: bus3 });
+        map.addLayer({
+            'id': 'points2',
+            'type': 'symbol',
+            'source': 'points2',
+            'layout': {
+                'icon-image': 'bus3marker',
+                'icon-size': 0.09
+            }
+        });
+    });
+
+map.loadImage('https://lt47.github.io/AAG/blackbus.png', function(error, image) {
+  if (error) throw error;
+  map.addImage('bus4marker', image);
+});
+
+ var bus4 = 'https://www.fort-seven.com/scriptsanddocs/bus4.geojson';
+    map.on('load', function() {
+        window.setInterval(function() {
+            map.getSource('points3').setData(bus4);
+        }, 2000);
+
+        map.addSource('points3', { type: 'geojson', data: bus4 });
+        map.addLayer({
+            'id': 'points3',
+            'type': 'symbol',
+            'source': 'points3',
+            'layout': {
+                'icon-image': 'bus4marker',
+                'icon-size': 0.09
+            }
+        });
+    });
+
+map.loadImage('https://lt47.github.io/AAG/redbus.png', function(error, image) {
+  if (error) throw error;
+  map.addImage('bus5marker', image);
+});
+
+ var bus5 = 'https://www.fort-seven.com/scriptsanddocs/bus5.geojson';
+    map.on('load', function() {
+        window.setInterval(function() {
+            map.getSource('points4').setData(bus5);
+        }, 2000);
+
+        map.addSource('points4', { type: 'geojson', data: bus5 });
+        map.addLayer({
+            'id': 'points4',
+            'type': 'symbol',
+            'source': 'points4',
+            'layout': {
+                'icon-image': 'bus5marker',
+                'icon-size': 0.09
+            }
+        });
+    });
+
+
+ $.getJSON( "https://lt47.github.io/AAG/testsen_exceptiondatafeed.json", function(data) {
+ var text = data[0].name;
+  console.log( "JSON Data: " + JSON.stringify(text));
+  document.getElementById('test').innerHTML = JSON.stringify(text);
+ });                   
+        
+        
+
+  </script>
 </html>
