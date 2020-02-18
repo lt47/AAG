@@ -302,7 +302,7 @@ height: 30px;
     background-color: #dddddd;
 }
 .grid-container {
-  display: grid;
+  display: block;
   margin-right:100px;
   grid-column-gap: 20px;
   grid-row-gap: 30px;
