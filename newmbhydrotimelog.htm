@@ -42,6 +42,7 @@
        document.getElementById("unloadbutton").style.display ="inline-block";
        document.getElementById("breakbutton").style.display ="inline-block";
        document.getElementById("otherbutton").style.display ="inline-block";
+       document.getElementById("divd").style.display ="block";
        document.getElementById("diva").style.display ="none";
        document.getElementById("starttrip").style.display ="none";
        document.getElementById("loadbutton").style.display ="block";
@@ -298,7 +299,6 @@
 	<textarea id="tripdescription" name="tripdescription" style="font-size:23px;" rows="4" cols="30" placeholder="Enter trip summary"></textarea><br>
 	<input type="button" id="starttrip" class="bigbutton" value="Start Trip"><br><br>
 	<textarea id="comments" name="comments" style="font-size:23px;display:none;" rows="4" cols="50">Comments:&nbsp;&nbsp;&nbsp;</textarea><br>
-	<button class="submitbutton" id="submit-mbhydrohaulage" type="submit" style="font-size:22px;">End Trip</button>
 	<button class="submitbutton" id="noreset-mbhydrohaulage" type="submit" style="font-size:22px;display:none;">Submit - No Reset</button>
 	</div>
 	<div class="b">
@@ -308,9 +308,10 @@
 	<div style="display:inline-block"><input id="breakbutton" type="button" class="biggerbutton" value="Break" style="font-size:23px;display:none;"></div>
         <div style="display:inline-block"><input id="otherbutton" type="button" class="biggerbutton" value="Other" style="font-size:23px;display:none;"></div>
 	</div>
-	<div class="d">
+	<div class="d" id="divd" style="display:none;">
+	<label id="activitylabel" size="6">Select your activity to begin</label>
 	<textarea id="comments" name="comments" style="font-size:23px;display:none;" rows="4" cols="50">Comments:&nbsp;&nbsp;&nbsp;</textarea><br>
-	<button class="submitbutton" id="submit-mbhydrohaulage" type="submit" style="font-size:22px;">End Trip</button>
+	<button class="submitbutton" id="submit-mbhydrohaulage" type="submit" style="font-size:22px;display:none;">End Trip</button>
 	</div>
        
        <input type="text" id="loadstart" name="loadstart" style="display:none;">
