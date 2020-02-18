@@ -16,7 +16,7 @@ div.a {
   position: sticky;
   right: 220px;
   top: 200px;
-  bottom: 70px;
+  bottom: 100px;
   width: 600px;
   height: 60%;
 } 
@@ -42,7 +42,7 @@ div.d {
   position: sticky;
   right: 4px;
   top: 310px;
-  bottom: 70px;
+  bottom: 100px;
   width: 180px;
   height: 67%;
 } 
