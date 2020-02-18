@@ -330,3 +330,6 @@ height: 30px;
 #submit-mbhydrohaulage{
 background-image: linear-gradient(to right, #ed98b1 50%, red 5%);
 }
+#endtrip-mbhydrohaulage{
+background-image: linear-gradient(to right, #7293a6 50%, red 50%);
+}
