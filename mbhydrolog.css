@@ -311,6 +311,7 @@ height: 30px;
 .grid-item {
   font-size: 30px;
   text-align: center;
+  padding: 1em;
 }
 #tripdesc{  
     position:relative;
