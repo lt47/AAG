@@ -21,12 +21,13 @@ div.a {
   height: 60%;
 } 
 div.b {
-  position: sticky;
+  position: fixed;
   left: 2px;
   top: 290px;
   bottom: 70px;
   width: 300px;
   height: 67%;
+  overflow: scroll;
 } 
 div.b::-webkit-scrollbar {
     display: none;
