@@ -23,7 +23,7 @@ div.a {
 div.b {
   position: fixed;
   left: 2px;
-  top: 350px;
+  top: 310px;
   bottom: 70px;
   width: 300px;
   height: 67%;
@@ -44,7 +44,7 @@ div.d {
   top: 330px;
   bottom: 70px;
   width: 180px;
-  height: 87%;
+  height: 67%;
 } 
 table {
   font-family: arial, sans-serif;
