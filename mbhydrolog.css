@@ -40,11 +40,14 @@ div.c {
 }
 div.d {
   position: sticky;
-  right: 30px;
   top: 290px;
   bottom: 100px;
   width: 240px;
   height: 67%;
+  margin-left:320px;
+  margin-right:auto;
+  clear:left;
+  text-align:center;
 } 
 table {
   font-family: arial, sans-serif;
