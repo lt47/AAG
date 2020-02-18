@@ -65,6 +65,7 @@
        document.getElementById("otherbutton").style.backgroundImage = "linear-gradient(to right, #6d7173 50%, red 50%)";
        document.getElementById("comments").style.display ="block";
        document.getElementById("submit-mbhydrohaulage").style.display ="block";
+       document.getElementById("endtrip-mbhydrohaulage").style.display ="block";
        });
    }
    
@@ -92,6 +93,7 @@
        document.getElementById("otherbutton").style.backgroundImage = "linear-gradient(to right, #6d7173 50%, red 50%)";
        document.getElementById("comments").style.display ="block";
        document.getElementById("submit-mbhydrohaulage").style.display ="block";
+       document.getElementById("endtrip-mbhydrohaulage").style.display ="block";
        });
    }
    
@@ -119,6 +121,7 @@
        document.getElementById("otherbutton").style.backgroundImage = "linear-gradient(to right, #6d7173 50%, red 50%)";
        document.getElementById("comments").style.display ="block";
        document.getElementById("submit-mbhydrohaulage").style.display ="block";
+       document.getElementById("endtrip-mbhydrohaulage").style.display ="block";
        });
    }
    
@@ -146,6 +149,7 @@
        document.getElementById("loadbutton").style.backgroundImage = "linear-gradient(to right, #6d7173 50%, red 50%)";
        document.getElementById("comments").style.display ="block";
        document.getElementById("submit-mbhydrohaulage").style.display ="block";
+       document.getElementById("endtrip-mbhydrohaulage").style.display ="block";
        });
    }
    
@@ -171,6 +175,28 @@
        document.getElementById("breakbutton").style.backgroundImage = "linear-gradient(to right, #066ea8 50%, red 50%)";
        document.getElementById("loadbutton").style.backgroundImage = "linear-gradient(to right, #066ea8 50%, red 50%)";
        document.getElementById("otherbutton").style.backgroundImage = "linear-gradient(to right, #066ea8 50%, red 50%)";
+       });
+   }
+   var endtrip = document.getElementById("endtrip-mbhydrohaulage");
+   if (endtrip) {
+       endtrip.addEventListener("click", function () {
+       document.getElementById("unloadbutton").disabled = false;
+       document.getElementById("loadbutton").disabled = false;
+       document.getElementById("otherbutton").disabled = false;
+       document.getElementById("loadbutton").disabled = false;
+       document.getElementById("unloadbutton").style.backgroundImage = "linear-gradient(to right, #066ea8 50%, red 50%)";
+       document.getElementById("breakbutton").style.backgroundImage = "linear-gradient(to right, #066ea8 50%, red 50%)";
+       document.getElementById("loadbutton").style.backgroundImage = "linear-gradient(to right, #066ea8 50%, red 50%)";
+       document.getElementById("otherbutton").style.backgroundImage = "linear-gradient(to right, #066ea8 50%, red 50%)";
+       document.getElementById("tripdescription").style.display ="block";
+       document.getElementById("copytripdescription").style.display ="none";
+       document.getElementById("loadbutton").style.display ="none";
+       document.getElementById("unloadbutton").style.display ="none";
+       document.getElementById("breakbutton").style.display ="none";
+       document.getElementById("otherbutton").style.display ="none";
+       document.getElementById("divd").style.display ="none";
+       document.getElementById("diva").style.display ="block";
+       document.getElementById("starttrip").style.display ="block";
        });
    }
    
@@ -281,7 +307,7 @@
    var $form = $('form#mbhydrohaulage'),
             url1 = 'https://script.google.com/macros/s/AKfycbxnq6pZi9vVVgaTz8y4g9Z9X8LtN1koPmeWw3Aizj-NXB2gGpw/exec',
 
-            $submit = $('#noreset-mbhydrohaulage').on('click', function(j) {
+            $submit = $('#endtrip-mbhydrohaulage').on('click', function(j) {
               j.preventDefault();
               var jqxhr = $.ajax({
                 url: url1,
@@ -292,7 +318,7 @@
                 // do something
               );
 	       //submit without resetting the form
-              //$('#mbhydrohaulage')[0].reset();
+              $('#mbhydrohaulage')[0].reset();
             })
 
    
@@ -331,7 +357,6 @@
 	<label id="tripdescriptionlabel" size="6">Trip description:</label><br><br>
 	<textarea id="tripdescription" name="tripdescription" style="font-size:23px;" rows="4" cols="30" placeholder="Enter trip summary"></textarea><br>
 	<input type="button" id="starttrip" class="bigbutton" value="Start Trip"><br><br>
-	<button class="submitbutton" id="noreset-mbhydrohaulage" type="submit" style="font-size:22px;display:none;">Submit - No Reset</button>
 	</div>
 	<div class="b">
 	<div style="display:inline-block"><input id="loadbutton" type="button" class="biggerbutton" value="Load" style="font-size:23px;display:none;"></div>
@@ -343,7 +368,8 @@
 	<div class="d" id="divd" style="display:none;">
 	<label id="activitylabel" size="6">Select your activity to begin</label>
 	<textarea id="comments" name="comments" style="font-size:23px;display:none;" rows="4" cols="30">Comments:&nbsp;&nbsp;&nbsp;</textarea><br>
-	<button class="submitbutton" id="submit-mbhydrohaulage" type="submit" style="font-size:22px;display:none;">End Activity</button>
+	<button class="submitbutton" id="submit-mbhydrohaulage" type="submit" style="font-size:22px;display:none;">End Activity</button><br><br><br>
+	<button class="submitbutton" id="endtrip-mbhydrohaulage" type="submit" style="font-size:22px;display:none;">End Trip</button>
 	</div>
        
        <input type="text" id="loadstart" name="loadstart" style="display:none;">
