@@ -316,3 +316,11 @@ height: 30px;
   font-size: 30px;
   text-align: center;
 }
+#tripdesc{  
+    position:relative;
+    margin:0 auto;
+    clear:left;
+    height:auto;
+    z-index: 0;
+    text-align:center;
+}
