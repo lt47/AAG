@@ -57,6 +57,9 @@
    if (loadbtn) {
        loadbtn.addEventListener("click", function () {
        document.getElementById("userbutton").click();
+       document.getElementById("unloadbutton").disabled = true;
+       document.getElementById("breakbutton").disabled = true;
+       document.getElementById("otherbutton").disabled = true;
        document.getElementById("loadstartbutton").style.display ="block";
        document.getElementById("loadstopbutton").style.display ="block";
        document.getElementById("comments").style.display ="block";
@@ -79,6 +82,9 @@
    if (unloadbtn) {
        unloadbtn.addEventListener("click", function () {
        document.getElementById("userbutton").click();
+       document.getElementById("loadbutton").disabled = true;
+       document.getElementById("breakbutton").disabled = true;
+       document.getElementById("otherbutton").disabled = true;
        document.getElementById("unloadstartbutton").style.display ="block";
        document.getElementById("unloadstopbutton").style.display ="block";
        document.getElementById("comments").style.display ="block";
@@ -101,6 +107,9 @@
    if (breakbtn) {
        breakbtn.addEventListener("click", function () {
        document.getElementById("userbutton").click();
+       document.getElementById("unloadbutton").disabled = true;
+       document.getElementById("loadbutton").disabled = true;
+       document.getElementById("otherbutton").disabled = true;
        document.getElementById("breakstartbutton").style.display ="block";
        document.getElementById("breakstopbutton").style.display ="block";
        document.getElementById("comments").style.display ="block";
@@ -123,6 +132,9 @@
    if (otherbtn) {
        otherbtn.addEventListener("click", function () {
        document.getElementById("userbutton").click();
+       document.getElementById("unloadbutton").disabled = true;
+       document.getElementById("loadbutton").disabled = true;
+       document.getElementById("otherbutton").disabled = true;
        document.getElementById("otherstartbutton").style.display ="block";
        document.getElementById("otherstopbutton").style.display ="block";
        document.getElementById("comments").style.display ="block";
