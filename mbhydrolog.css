@@ -304,7 +304,7 @@ height: 30px;
 .grid-container {
   display: grid;
   grid-column-gap: 20px;
-  grid-column-gap: 30px;
+  grid-row-gap: 30px;
   grid-template-columns: auto auto;
 }
 
