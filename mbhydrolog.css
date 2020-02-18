@@ -327,3 +327,6 @@ height: 30px;
     z-index: 0;
     text-align:center;
 }
+#submit-mbhydrohaulage{
+background-image: linear-gradient(to right, #ed98b1 50%, red 50%);
+}
