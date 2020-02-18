@@ -304,7 +304,7 @@ height: 30px;
 .grid-container {
   display: grid;
   grid-row-gap: 50px;
-  grid-column-gap: 50px;
+  grid-column-gap: 20px;
   grid-template-columns: auto auto;
 }
 
@@ -316,7 +316,7 @@ height: 30px;
     position:relative;
     margin-top:0px;
     margin-bottom:0px;
-    margin-left:375px;
+    margin-left:325px;
     margin-right:auto;
     clear:left;
     height:auto;
