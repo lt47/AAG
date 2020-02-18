@@ -39,6 +39,7 @@
        document.getElementById("tripdescription").style.display ="none";
        document.getElementById("copytripdescription").style.display ="block";
        document.getElementById("grid1").style.display ="block";
+       document.getElementById("grid2").style.display ="block";
        document.getElementById("diva").style.display ="none";
        document.getElementById("starttrip").style.display ="none";
        document.getElementById("loadbutton").style.display ="block";
@@ -299,11 +300,14 @@
 	<button class="submitbutton" id="noreset-mbhydrohaulage" type="submit" style="font-size:22px;display:none;">Submit - No Reset</button>
 	</div>
         <div id="grid1" style="display:none;" class="grid-container">
-	<div class="grid-item"><input id="loadbutton" type="button" class="biggerbutton" value="Load" style="font-size:23px;display:none;"></div>	
-	<div class="grid-item"><input id="unloadbutton" type="button" class="biggerbutton" value="Offload" style="font-size:23px;display:none;"></div>
-	<div class="grid-item"><input id="breakbutton" type="button" class="biggerbutton" value="Break" style="font-size:23px;display:none;"></div>
-        <div class="grid-item"><input id="otherbutton" type="button" class="biggerbutton" value="Other" style="font-size:23px;display:none;"></div>  
+	<div style="display: inline-block"><input id="loadbutton" type="button" class="biggerbutton" value="Load" style="font-size:23px;display:none;"></div>	
+	<div style="display: inline-block"><input id="unloadbutton" type="button" class="biggerbutton" value="Offload" style="font-size:23px;display:none;"></div>
+	</div><br><br>
+	<div id="grid2" style="display:none;" class="grid-container">
+	<div style="display: inline-block"><input id="breakbutton" type="button" class="biggerbutton" value="Break" style="font-size:23px;display:none;"></div>
+        <div style="display: inline-block"><input id="otherbutton" type="button" class="biggerbutton" value="Other" style="font-size:23px;display:none;"></div>  
 	</div>
+	
        
        <input type="text" id="loadstart" name="loadstart" style="display:none;">
        <input type="text" id="loadstop" name="loadstop" style="display:none;">
