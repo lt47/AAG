@@ -314,7 +314,10 @@ height: 30px;
 }
 #tripdesc{  
     position:relative;
-    margin:0 auto;
+    margin-top:0px;
+    margin-bottom:0px;
+    margin-left:50px;
+    margin-right:auto;
     clear:left;
     height:auto;
     z-index: 0;
