@@ -160,6 +160,19 @@
        document.getElementById("noreset-mbhydrohaulage").click();
        });
    }
+   var endact = document.getElementById("submit-mbhydrohaulage");
+   if (endact) {
+       endact.addEventListener("click", function () {
+       document.getElementById("unloadbutton").disabled = false;
+       document.getElementById("loadbutton").disabled = false;
+       document.getElementById("otherbutton").disabled = false;
+       document.getElementById("loadbutton").disabled = false;
+       document.getElementById("unloadbutton").style.backgroundImage = "linear-gradient(to right, #066ea8 50%, red 50%)";
+       document.getElementById("breakbutton").style.backgroundImage = "linear-gradient(to right, #066ea8 50%, red 50%)";
+       document.getElementById("loadbutton").style.backgroundImage = "linear-gradient(to right, #066ea8 50%, red 50%)";
+       document.getElementById("otherbutton").style.backgroundImage = "linear-gradient(to right, #066ea8 50%, red 50%)";
+       });
+   }
    
    function getTimeStamp() {
        var now = new Date();
@@ -262,7 +275,7 @@
               }).done(
                 // do something
               );
-              $('#mbhydrohaulage')[0].reset();
+              $('#comments')[0].reset();
             })
 
    var $form = $('form#mbhydrohaulage'),
