@@ -296,30 +296,12 @@
 	<button class="submitbutton" id="submit-mbhydrohaulage" type="submit" style="font-size:22px;">End Trip</button>
 	<button class="submitbutton" id="noreset-mbhydrohaulage" type="submit" style="font-size:22px;display:none;">Submit - No Reset</button>
 	</div>
-        <div class="b">
-		  <center>
-            <input type="text" id="user" name="user" style="display:none">
-          <br><br><br>
-          <input id="userbutton" type="button" class="biggerbutton" value="User" style="font-size:23px;display:none;"><br>
-          <input id="loadbutton" type="button" class="biggerbutton" value="Load" style="font-size:23px;display:none;"><br><br>
-          <input id="loadstartbutton" type="button" class="bigbutton" value="Start" style="font-size:23px;background-color:green;display:none;"><br><br>
-          <input id="loadstopbutton" type="button" class="bigbutton" value="Stop" style="font-size:23px;background-color:red;display:none;"><br>
-           <input id="unloadbutton" type="button" class="biggerbutton" value="Unload" style="font-size:23px;display:none;"><br><br>
-          <input id="unloadstartbutton" type="button" class="bigbutton" value="Start" style="font-size:23px;background-color:green;display:none;"> <br><br>
-          <input id="unloadstopbutton" type="button" class="bigbutton" value="Stop" style="font-size:23px;background-color:red;display:none;"><br>
-          
-          <input id="breakbutton" type="button" class="biggerbutton" value="Break" style="font-size:23px;display:none;"><br><br>
-          <input id="breakstartbutton" type="button" class="bigbutton" value="Start" style="font-size:23px;background-color:green;display:none;"> <br><br>
-          <input id="breakstopbutton" type="button" class="bigbutton" value="Stop" style="font-size:23px;background-color:red;display:none;"><br>
-          
-          <input id="otherbutton" type="button" class="biggerbutton" value="Other" style="font-size:23px;display:none;"><br><br>
-          <input id="otherstartbutton" type="button" class="bigbutton" value="Start" style="font-size:23px;background-color:green;display:none;"> <br><br>
-          <input id="otherstopbutton" type="button" class="bigbutton" value="Stop" style="font-size:23px;background-color:red;display:none;"><br><br>
-		  </center>
+        <div class="grid-container">
+	<div class="grid-item"><input id="loadbutton" type="button" class="biggerbutton" value="Load" style="font-size:23px;display:none;"></div>	
+	<div class="grid-item"><input id="unloadbutton" type="button" class="biggerbutton" value="Unload" style="font-size:23px;display:none;"></div>
+	<div class="grid-item"><input id="breakbutton" type="button" class="biggerbutton" value="Break" style="font-size:23px;display:none;"></div>
+        <div class="grid-item"><input id="otherbutton" type="button" class="biggerbutton" value="Other" style="font-size:23px;display:none;"></div>  
 	</div>
-      
-          
-       
        
        <input type="text" id="loadstart" name="loadstart" style="display:none;">
        <input type="text" id="loadstop" name="loadstop" style="display:none;">
@@ -329,7 +311,8 @@
        <input type="text" id="breakstop" name="breakstop" style="display:none;">
        <input type="text" id="otherstart" name="otherstart" style="display:none;">
        <input type="text" id="otherstop" name="otherstop" style="display:none;"><br><br>
-       
+       <input type="text" id="user" name="user" style="display:none">
+       <input id="userbutton" type="button" class="biggerbutton" value="User" style="font-size:23px;display:none;">
        
        
 
