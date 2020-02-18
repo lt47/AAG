@@ -21,7 +21,7 @@ div.a {
   height: 60%;
 } 
 div.b {
-  position: fixed;
+  position: sticky;
   left: 2px;
   top: 290px;
   bottom: 70px;
