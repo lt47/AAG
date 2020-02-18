@@ -211,62 +211,82 @@
                      .getSeconds()) : (now.getSeconds())));
     }
    
-   var loadstartbtn = document.getElementById("loadstartbutton");
+   var loadstartbtn = document.getElementById("loadbutton");
    if (loadstartbtn) {
        loadstartbtn.addEventListener("click", function (api,state) {
-       document.getElementById("loadstartbutton").disabled = true;
        document.getElementById("loadstart").value = getTimeStamp();
        });
    }
    
-   var loadstopbtn = document.getElementById("loadstopbutton");
+   var loadstopbtn = document.getElementById("submit-mbhydrohaulage");
    if (loadstopbtn) {
        loadstopbtn.addEventListener("click", function () {
        document.getElementById("loadstop").value = getTimeStamp();
        });
    }
+   var loadstopbtn1 = document.getElementById("endtrip-mbhydrohaulage");
+   if (loadstopbtn1) {
+       loadstopbtn1.addEventListener("click", function () {
+       document.getElementById("loadstop").value = getTimeStamp();
+       });
+   }
    
-   var unloadstartbtn = document.getElementById("unloadstartbutton");
+   var unloadstartbtn = document.getElementById("unloadbutton");
    if (unloadstartbtn) {
        unloadstartbtn.addEventListener("click", function () {
-       document.getElementById("unloadstartbutton").disabled = true;
        document.getElementById("unloadstart").value = getTimeStamp();
        });
    }
    
-   var unloadstopbtn = document.getElementById("unloadstopbutton");
+   var unloadstopbtn = document.getElementById("submit-mbhydrohaulage");
    if (unloadstopbtn) {
        unloadstopbtn.addEventListener("click", function () {
        document.getElementById("unloadstop").value = getTimeStamp();
        });
    }
+   var unloadstopbtn1 = document.getElementById("endtrip-mbhydrohaulage");
+   if (unloadstopbtn1) {
+       unloadstopbtn1.addEventListener("click", function () {
+       document.getElementById("unloadstop").value = getTimeStamp();
+       });
+   }
    
-   var breakstartbtn = document.getElementById("breakstartbutton");
+   var breakstartbtn = document.getElementById("breakbutton");
    if (breakstartbtn) {
        breakstartbtn.addEventListener("click", function () {
-       document.getElementById("breakstartbutton").disabled = true;
        document.getElementById("breakstart").value = getTimeStamp();
        });
    }
    
-   var breakstopbtn = document.getElementById("breakstopbutton");
+   var breakstopbtn = document.getElementById("submit-mbhydrohaulage");
    if (breakstopbtn) {
        breakstopbtn.addEventListener("click", function () {
        document.getElementById("breakstop").value = getTimeStamp();
        });
    }
+   var breakstopbtn1 = document.getElementById("endtrip-mbhydrohaulage");
+   if (breakstopbtn1) {
+       breakstopbtn1.addEventListener("click", function () {
+       document.getElementById("breakstop").value = getTimeStamp();
+       });
+   }
    
-    var otherstartbtn = document.getElementById("otherstartbutton");
+    var otherstartbtn = document.getElementById("otherbutton");
    if (otherstartbtn) {
        otherstartbtn.addEventListener("click", function () {
-       document.getElementById("otherstartbutton").disabled = true;
        document.getElementById("otherstart").value = getTimeStamp();
        });
    }
    
-   var otherstopbtn = document.getElementById("otherstopbutton");
+   var otherstopbtn = document.getElementById("submit-mbhydrohaulage");
    if (otherstopbtn) {
        otherstopbtn.addEventListener("click", function () {
+       document.getElementById("otherstop").value = getTimeStamp();
+       });
+   }
+var otherstopbtn1 = document.getElementById("endtrip-mbhydrohaulage");
+   if (otherstopbtn1) {
+       otherstopbtn1.addEventListener("click", function () {
        document.getElementById("otherstop").value = getTimeStamp();
        });
    }
