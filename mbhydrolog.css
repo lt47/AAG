@@ -328,5 +328,5 @@ height: 30px;
     text-align:center;
 }
 #submit-mbhydrohaulage{
-background-image: linear-gradient(#ed98b1);
+background-image: linear-gradient(to right, #ed98b1 50%, red 5%);
 }
