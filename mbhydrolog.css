@@ -337,5 +337,5 @@ background-image: linear-gradient(to right, #7293a6 99%, red 1%);
 .starttripbutton{
 font-size: 20px;
 padding: 15px 32px;
-background-image: linear-gradient(to right, #9bd1ad 50%, #066ea8 50%);
+background-image: linear-gradient(#9bd1ad);
 }
