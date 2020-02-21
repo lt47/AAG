@@ -62,8 +62,11 @@
        document.getElementById("drivingbutton").disabled = true;
        document.getElementById("otherbutton").disabled = true;
        document.getElementById("unloadbutton").style.backgroundColor = "#b4b5b8";
+       document.getElementById("unloadbutton").style.color = "#434445";
        document.getElementById("drivingbutton").style.backgroundColor = "#b4b5b8";
+       document.getElementById("drivingbutton").style.color = "#434445";
        document.getElementById("otherbutton").style.backgroundColor = "#b4b5b8";
+       document.getElementById("otherbutton").style.color = "#434445";
        document.getElementById("comments").style.display ="block";
        document.getElementById("submit-mbhydrohaulage").style.display ="block";
        document.getElementById("endtrip-mbhydrohaulage").style.display ="block";
@@ -91,8 +94,11 @@
        document.getElementById("drivingbutton").disabled = true;
        document.getElementById("otherbutton").disabled = true;
        document.getElementById("loadbutton").style.backgroundColor = "#b4b5b8";
+       document.getElementById("loadbutton").style.color = "#434445";
        document.getElementById("drivingbutton").style.backgroundColor = "#b4b5b8";
+       document.getElementById("drivingbutton").style.color = "#434445";
        document.getElementById("otherbutton").style.backgroundColor = "#b4b5b8";
+       document.getElementById("otherbutton").style.color = "#434445";
        document.getElementById("comments").style.display ="block";
        document.getElementById("submit-mbhydrohaulage").style.display ="block";
        document.getElementById("endtrip-mbhydrohaulage").style.display ="block";
@@ -120,8 +126,11 @@
        document.getElementById("loadbutton").disabled = true;
        document.getElementById("otherbutton").disabled = true;
        document.getElementById("unloadbutton").style.backgroundColor = "#b4b5b8";
+       document.getElementById("unloadbutton").style.color = "#434445";
        document.getElementById("loadbutton").style.backgroundColor = "#b4b5b8";
+       document.getElementById("loadbutton").style.color = "#434445";
        document.getElementById("otherbutton").style.backgroundColor = "#b4b5b8";
+       document.getElementById("otherbutton").style.color = "#434445";
        document.getElementById("comments").style.display ="block";
        document.getElementById("submit-mbhydrohaulage").style.display ="block";
        document.getElementById("endtrip-mbhydrohaulage").style.display ="block";
@@ -149,8 +158,11 @@
        document.getElementById("loadbutton").disabled = true;
        document.getElementById("otherbutton").disabled = true;
        document.getElementById("unloadbutton").style.backgroundColor = "#b4b5b8";
+       document.getElementById("unloadbutton").style.color = "#434445";
        document.getElementById("drivingbutton").style.backgroundColor = "#b4b5b8";
+       document.getElementById("drivingbutton").style.color = "#434445";
        document.getElementById("loadbutton").style.backgroundColor = "#b4b5b8";
+       document.getElementById("loadbutton").style.color = "#434445";
        document.getElementById("comments").style.display ="block";
        document.getElementById("submit-mbhydrohaulage").style.display ="block";
        document.getElementById("endtrip-mbhydrohaulage").style.display ="block";
@@ -185,6 +197,7 @@
    var endtrip = document.getElementById("endtrip-mbhydrohaulage");
    if (endtrip) {
        endtrip.addEventListener("click", function () {
+       document.getElementById("divb").style.display ="none";
        document.getElementById("unloadbutton").disabled = false;
        document.getElementById("loadbutton").disabled = false;
        document.getElementById("otherbutton").disabled = false;
@@ -380,7 +393,7 @@ var otherstopbtn1 = document.getElementById("endtrip-mbhydrohaulage");
         <div>
           <img src="https://drive.google.com/uc?id=1XBfvN90w_QkVJrdgf3CGDlp_kUQfJtRn" top=35px left=65px height=80 width=130 />
         </div>
-	<div id="tripdesc"> <textarea id="copytripdescription" name="copytripdescription" style="font-size:23px;background-color:gray;display:none;" rows="1" cols="60" disabled></textarea></div>
+	<div id="tripdesc"> <textarea id="copytripdescription" name="copytripdescription" style="color:#434445;font-size:23px;background-color:gray;display:none;" rows="1" cols="60" disabled></textarea></div>
 	<div id="diva" class="a">
 	<label id="tripdescriptionlabel" size="6">Trip description:</label><br><br>
 	<textarea id="tripdescription" name="tripdescription" style="font-size:23px;" rows="4" cols="30" placeholder="Enter trip summary"></textarea><br><br><br>
