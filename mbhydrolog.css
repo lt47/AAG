@@ -334,3 +334,6 @@ background-image: linear-gradient(to right, #ed98b1 99%, red 1%);
 #endtrip-mbhydrohaulage{
 background-image: linear-gradient(to right, #7293a6 99%, red 1%);
 }
+#starttrip{
+linear-gradient(to right, #9bd1ad 50%, #066ea8 50%)
+}
