@@ -327,10 +327,10 @@ height: 30px;
     text-align:center;
 }
 #submit-mbhydrohaulage{
-background-image: linear-gradient(to right, #ed98b1 99%, red 1%);
+background-color: #ed98b1;
 }
 #endtrip-mbhydrohaulage{
-background-image: linear-gradient(to right, #7293a6 99%, red 1%);
+background-color: #7293a6;
 }
 .starttripbutton{
 font-size: 24px;
@@ -349,4 +349,8 @@ padding: 0.005px 175px;
 }
 .endactivitybutton{
 padding: 15px 32px;
+}
+.canceltripbutton{
+border-color: #224cb5;
+padding: 0.005px 175px;
 }
