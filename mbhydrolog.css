@@ -25,7 +25,7 @@ div.b {
   left: 2px;
   top: 290px;
   bottom: 70px;
-  width: 300px;
+  width: 700px;
   height: 67%;
   overflow: scroll;
 } 
@@ -44,7 +44,7 @@ div.d {
   bottom: 100px;
   width: 240px;
   height: 67%;
-  margin-left:320px;
+  margin-left:750px;
   margin-right:auto;
   clear:left;
   text-align:center;
