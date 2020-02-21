@@ -176,7 +176,7 @@ input[type=password] {
 .pinkfield {background-color:#ff8cea;}
 .peachfield {background-color:#f0c3a3;}
 .button {font-size: 16px;}
-.submitbutton {font-size: 16px;
+.submitbutton {
 background-color: #00A146;
 }
 .bigbutton {font-size: 20px;
@@ -345,7 +345,7 @@ background-color: #97a5d1;
 border-color: #224cb5;
 }
 .widthbutton{
-padding: 6px 175px;
+padding: 4px 175px;
 }
 .endactivitybutton{
 padding: 15px 32px;
