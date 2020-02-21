@@ -345,8 +345,8 @@ background-color: #97a5d1;
 border-color: #224cb5;
 }
 .widthbutton{
-padding: 4px 175px;
+padding: 0.005px 175px;
 }
 .endactivitybutton{
-padding: 0.005px 32px;
+padding: 15px 32px;
 }
