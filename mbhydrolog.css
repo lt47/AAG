@@ -26,12 +26,8 @@ div.b {
   top: 130px;
   bottom: 100px;
   width: 650px;
-  height: 67%;
+  height: 45%;
 } 
-div.b::-webkit-scrollbar {
-    display: none;
-}
-
 div.c {
     position: fixed;
     bottom: 0;
@@ -319,7 +315,7 @@ height: 30px;
     position:relative;
     margin-top:0px;
     margin-bottom:0px;
-    margin-left:100px;
+    margin-left:35px;
     margin-right:auto;
     clear:left;
     height:auto;
