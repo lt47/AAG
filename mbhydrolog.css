@@ -34,7 +34,7 @@ div.c {
     width: 100%;
 }
 div.d {
-  position: sticky;
+  position: fixed;
   top: 345px;
   bottom: 100px;
   width: 240px;
