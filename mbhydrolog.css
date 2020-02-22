@@ -339,12 +339,14 @@ font-size: 30px;
 padding: 25px 35px;
 background-color: #97a5d1;
 border-color: #224cb5;
+left: 0px;
 }
 .widthbutton{
 padding: 0.005px 175px;
 }
 .endactivitybutton{
 padding: 15px 32px;
+text-align: center;
 }
 .canceltripbutton{
 border-color: #224cb5;
