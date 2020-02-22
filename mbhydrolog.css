@@ -38,10 +38,18 @@ div.d {
   top: 345px;
   bottom: 100px;
   width: 240px;
-  height: 67%;
+  height: 50%;
   margin-left:420px;
   margin-right:auto;
   clear:left;
+  text-align:center;
+} 
+div.e {
+  position: sticky;
+  top: 345px;
+  bottom: 20px;
+  width: 240px;
+  height: 15%;
   text-align:center;
 } 
 table {
