@@ -46,10 +46,11 @@ div.d {
 } 
 div.e {
   position: fixed;
-  top: 500px;
+  top: 375px;
   bottom: 20px;
   width: 450px;
   height: 15%;
+  margin-left:325px;
   text-align:center;
 } 
 table {
