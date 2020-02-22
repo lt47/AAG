@@ -165,12 +165,20 @@
        document.getElementById("loadbutton").style.backgroundColor = "#b4b5b8";
        document.getElementById("loadbutton").style.color = "#434445";
        document.getElementById("comments").style.display ="block";
-       document.getElementById("submit-mbhydrohaulage").style.display ="block";
+       document.getElementById("submit-mbhydrohaulage").style.display ="block";       
+       document.getElementById("submit-mbhydrohaulage").style.backgroundColor ="gray";
+       document.getElementById("submit-mbhydrohaulage").disabled =true;
        document.getElementById("endtrip-mbhydrohaulage").style.display ="block";
        document.getElementById("activitylabel").style.display ="none";
        });
    }
-   
+   var commentsbox = document.getElementById("comments");
+   if (commentsbox) {
+       commentsbox.addEventListener("keydown", function () { 
+       document.getElementById("submit-mbhydrohaulage").style.backgroundColor ="#ed98b1";
+       document.getElementById("submit-mbhydrohaulage").disabled =false;
+       });
+   }
    var hideother = document.getElementById("otherstopbutton");
    if (hideother) {
        hideother.addEventListener("click", function () {
