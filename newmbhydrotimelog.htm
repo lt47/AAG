@@ -71,6 +71,7 @@
        document.getElementById("otherbutton").style.color = "#434445";
        document.getElementById("comments").style.display ="block";
        document.getElementById("submit-mbhydrohaulage").style.display ="block";
+       document.getElementById("testendtrip").style.display ="block";
        document.getElementById("endtrip-mbhydrohaulage").style.display ="block";
        document.getElementById("activitylabel").style.display ="none";
        document.getElementById("cancelbutton").style.display ="none";
@@ -104,6 +105,7 @@
        document.getElementById("otherbutton").style.color = "#434445";
        document.getElementById("comments").style.display ="block";
        document.getElementById("submit-mbhydrohaulage").style.display ="block";
+       document.getElementById("testendtrip").style.display ="block";
        document.getElementById("endtrip-mbhydrohaulage").style.display ="block";
        document.getElementById("activitylabel").style.display ="none";
        document.getElementById("cancelbutton").style.display ="none";
@@ -137,6 +139,7 @@
        document.getElementById("otherbutton").style.color = "#434445";
        document.getElementById("comments").style.display ="block";
        document.getElementById("submit-mbhydrohaulage").style.display ="block";
+       document.getElementById("testendtrip").style.display ="block";
        document.getElementById("endtrip-mbhydrohaulage").style.display ="block";
        document.getElementById("activitylabel").style.display ="none";
        document.getElementById("cancelbutton").style.display ="none";
@@ -172,6 +175,7 @@
        document.getElementById("submit-mbhydrohaulage").style.display ="block";       
        document.getElementById("submit-mbhydrohaulage").style.backgroundColor ="gray";
        document.getElementById("submit-mbhydrohaulage").disabled =true;
+       document.getElementById("testendtrip").style.display ="block";
        document.getElementById("endtrip-mbhydrohaulage").style.display ="block";
        document.getElementById("activitylabel").style.display ="none";
        document.getElementById("cancelbutton").style.display ="none";
@@ -242,6 +246,7 @@
        document.getElementById("comments").style.display ="none";
        document.getElementById("submit-mbhydrohaulage").style.display ="none";
        document.getElementById("endtrip-mbhydrohaulage").style.display ="none";
+       document.getElementById("testendtrip").style.display ="none";
        });
    }
 var cancelbtn = document.getElementById("cancelbutton");
@@ -466,9 +471,10 @@ var otherstopbtn1 = document.getElementById("endtrip-mbhydrohaulage");
 	<div class="e" style="margin-top:110px">
 	<button class="canceltripbutton" id="cancelbutton" type="button" style="font-size:17px;display:none;">Cancel Trip</button>
 	</div>
-	<div style="margin-top:30px">
+	<div class="e" style="margin-top:110px" id="testendtrip" style="display:none">
 	<button class="submitbutton widthbutton" id="endtrip-mbhydrohaulage" type="submit" style="font-size:17px;display:none;">End Trip</button>
-	</div> 
+	</div>
+	
        <input type="text" id="loadstart" name="loadstart" style="display:none;">
        <input type="text" id="loadstop" name="loadstop" style="display:none;">
        <input type="text" id="unloadstart" name="unloadstart" style="display:none;">
