@@ -34,7 +34,7 @@ div.c {
     width: 100%;
 }
 div.d {
-  position: fixed;
+  position: sticky;
   top: 345px;
   bottom: 100px;
   width: 240px;
@@ -45,7 +45,7 @@ div.d {
   text-align:center;
 } 
 div.e {
-  position: sticky;
+  position: fixed;
   top: 975px;
   bottom: 20px;
   width: 450px;
