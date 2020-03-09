@@ -339,7 +339,7 @@ background-color: #7293a6;
 }
 .starttripbutton{
 font-size: 24px;
-padding: 0.005px 175px;
+padding: 0.8px 175px;
 background-color: #a1ffbd;
 border-color: #224cb5;
 text-align:center;
@@ -352,7 +352,7 @@ border-color: #224cb5;
 left: 0px;
 }
 .widthbutton{
-padding: 0.005px 175px;
+padding: 0.8px 175px;
 }
 .endactivitybutton{
 padding: 15px 32px;
