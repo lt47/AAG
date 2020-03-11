@@ -312,29 +312,40 @@ function update_blackroutenotifications() {$.getJSON( "https://www.fort-seven.co
  var interval = setInterval(update_blackroutenotifications, 500);
 });
 
-function yellowroutepanel(){
-document.getElementById('redrouteheader').style.display = "none";
-document.getElementById('redroutediv').style.display = "none";
-document.getElementById('blackrouteheader').style.display = "none";
-document.getElementById('blackroutediv').style.display = "none";
-document.getElementById('yellowrouteheader').style.display = "block";
-document.getElementById('yellowroutediv').style.display = "block";
+var yellowroutebtn = document.getElementById("yellowrouteimg");
+if (yellowroutebtn) {
+    yellowroutebtn.addEventListener("click", function(){
+    document.getElementById('redrouteheader').style.display = "none";
+    document.getElementById('redroutediv').style.display = "none";
+    document.getElementById('blackrouteheader').style.display = "none";
+    document.getElementById('blackroutediv').style.display = "none";
+    document.getElementById('yellowrouteheader').style.display = "block";
+    document.getElementById('yellowroutediv').style.display = "block";
+      });
 }
-function redroutepanel(){
-document.getElementById('redrouteheader').style.display = "block";
-document.getElementById('redroutediv').style.display = "block";
-document.getElementById('blackrouteheader').style.display = "none";
-document.getElementById('blackroutediv').style.display = "none";
-document.getElementById('yellowrouteheader').style.display = "none";
-document.getElementById('yellowroutediv').style.display = "none";
+  
+var redroutebtn = document.getElementById("redrouteimg");
+if (redroutebtn) {
+    redroutebtn.addEventListener("click", function(){
+    document.getElementById('redrouteheader').style.display = "block";
+    document.getElementById('redroutediv').style.display = "block";
+    document.getElementById('blackrouteheader').style.display = "none";
+    document.getElementById('blackroutediv').style.display = "none";
+    document.getElementById('yellowrouteheader').style.display = "none";
+    document.getElementById('yellowroutediv').style.display = "none";
+      });
 }
-function blackroutepanel(){
-document.getElementById('redrouteheader').style.display = "none";
-document.getElementById('redroutediv').style.display = "none";
-document.getElementById('blackrouteheader').style.display = "block";
-document.getElementById('blackroutediv').style.display = "block";
-document.getElementById('yellowrouteheader').style.display = "none";
-document.getElementById('yellowroutediv').style.display = "none";
+
+var blackroutebtn = document.getElementById("blackrouteimg");
+if (blackroutebtn) {
+    blackroutebtn.addEventListener("click", function(){
+    document.getElementById('redrouteheader').style.display = "none";
+    document.getElementById('redroutediv').style.display = "none";
+    document.getElementById('blackrouteheader').style.display = "block";
+    document.getElementById('blackroutediv').style.display = "block";
+    document.getElementById('yellowrouteheader').style.display = "none";
+    document.getElementById('yellowroutediv').style.display = "none";
+      });
 }
 
 
@@ -356,9 +367,9 @@ document.getElementById('yellowroutediv').style.display = "none";
 <body>
 <div id="map" style="width:100%; height:100%;"></div>
 <div class='map-overlay' id='routeupdates'>
-<img src="https://lt47.github.io/AAG/iconmonstr-bus-2-24yellow.png" style="float:left" height="20" width="22" onclick="yellowroutepanel();">&nbsp;&nbsp;
-<img src="https://lt47.github.io/AAG/redbus.png" style="display:inline-block" height="20" width="22" onclick="redroutepanel();">&nbsp;&nbsp;
-<img src="https://lt47.github.io/AAG/blackbus.png" style="display:inline-block" height="20" width="22" onclick="blackroutepanel();">
+<img src="https://lt47.github.io/AAG/iconmonstr-bus-2-24yellow.png" style="float:left" height="20" width="22" id="yellowrouteimg">&nbsp;&nbsp;
+<img src="https://lt47.github.io/AAG/redbus.png" style="display:inline-block" height="20" width="22" id="redrouteimg">&nbsp;&nbsp;
+<img src="https://lt47.github.io/AAG/blackbus.png" style="display:inline-block" height="20" width="22" id="blackrouteimg" >
 <center><h2 id="redrouteheader">Red Route Updates</h2></center>
 <div id="redroutediv">
 </div>
