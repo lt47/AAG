@@ -13,7 +13,7 @@
 .main {font-size: 1.2em;
 }
 div.a {
-  position: fixed;
+  position: sticky;
   right: 220px;
   top: 85px;
   bottom: 100px;
