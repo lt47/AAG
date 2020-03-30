@@ -1,4 +1,4 @@
-<!-- body {font-family: Gill Sans, Helvetica, sans-serif;} --> body {font-family: "Lucida Console", monospace;} .sidenav {
+<!-- body {font-family: Gill Sans, Helvetica, sans-serif;overflow: hidden;height: 100%;} --> body {font-family: "Lucida Console", monospace;} .sidenav {
   height: 100%;
   width: 125px;
   position: fixed;
@@ -6,7 +6,7 @@
   top: 0;
   left: 0;
   background-color: #4a4a4a;
-  overflow: hidden;
+  overflow-x: hidden;
   padding-top: 20px;
   font-size: 1.3em;
 }
