@@ -3,7 +3,30 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
-
+<script>
+  geotab.addin.filedrop = () => {
+   // Initialize required Add-In variables
+   // Example:
+   // var element = document.getElementById("myButton");
+   // if (element) {
+   //     element.addEventListener("click", function (event) {
+   //         event.preventDefault();
+   //         alert("Action performed");
+   //     });
+   // }
+   return {
+    initialize(api, state, callback) {
+     callback();
+    },
+    focus(api, state) {
+     // User interface is available
+    },
+    blur(api, state) {
+     // Save any Add-In state
+    }
+   };
+  };
+ </script>
 
 </head>
 <body style="background-color:grey">
