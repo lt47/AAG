@@ -1,0 +1,109 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="https://lt47.github.io/AAG/mbhydrolog.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+      (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-56318310-1', 'auto');
+      ga('send', 'pageview');
+
+</script>
+<base target="_top" />
+
+<script>
+  geotab.addin.timelog = function (api,state){
+   // Initialize required Add-In variables
+   var userbtn = document.getElementById("userbutton");
+   if (userbtn) {
+       userbtn.addEventListener("click", function () {
+       document.getElementById("user").value = state.device.id;
+       });
+   }
+   
+  
+	  
+   $.fn.serializeObject = function() {
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function() {
+          if (o[this.name]) {
+            if (!o[this.name].push) {
+              o[this.name] = [o[this.name]];
+            }
+            o[this.name].push(this.value || '');
+          } else {
+            o[this.name] = this.value || '';
+          }
+        });
+        return o;
+      };
+   
+   
+   var $form = $('form#timelogreview'),
+            url1 = 'https://script.google.com/macros/s/AKfycbzhQ5nTA44A6P8GEi-OrFDG951iyaD1PSP0HMeZbOfb5gEV6f0/exec',
+
+            $submit = $('#review-mbhydrohaulage').on('click', function(j) {
+              j.preventDefault();
+              var jqxhr = $.ajax({
+                url: url1,
+                method: "GET",
+                dataType: "json",
+                data: $form.serializeObject()
+              }).done(
+                // do something
+              );
+	       //submit without resetting the form
+              $('#timelogreview')[0].reset();
+            })
+
+   
+   
+   
+   
+   return {
+    initialize(api, state, callback) {
+     callback();
+    },
+    focus(api, state) {
+     // User interface is available
+    },
+    blur(api, state) {
+     // Save any Add-In state
+    }
+   };
+  };
+ </script>
+
+ 
+</head>
+
+<body>
+
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ8ULmvIPkNrOnXxh8L0fIXcTzOt906g1tncsQvHaoL4RLJk7YHxRltbyRLqBFQRMEvHYW_ntA7yz2R/pubhtml?gid=402125563&single=true" width=60% height="45%" scrolling="no" frameborder="0" style="float:left"></iframe>
+
+<form id="timelogreview" method="POST" style="display:inline-block">
+<textarea id="comment1" name="comment1" style="font-size:23px;" rows="2" cols="30" placeholder="Comments:"></textarea><br>
+<textarea id="comment2" name="comment2" style="font-size:23px;" rows="2" cols="30" placeholder="Comments:"></textarea><br>
+<textarea id="comment3" name="comment3" style="font-size:23px;" rows="2" cols="30" placeholder="Comments:"></textarea><br>
+<textarea id="comment4" name="comment4" style="font-size:23px;" rows="2" cols="30" placeholder="Comments:"></textarea><br>
+<textarea id="comment5" name="comment5" style="font-size:23px;" rows="2" cols="30" placeholder="Comments:"></textarea><br>
+<button class="submitbutton widthbutton" id="review-mbhydrohaulage" type="submit" style="font-size:17px;">End Trip</button>
+      </form> 
+  
+
+
+</body>
+
+</html>
