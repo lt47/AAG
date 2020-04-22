@@ -32,7 +32,38 @@
        });
    }
    
-  
+   var nelson = document.getElementById("nelsonperry");
+   if (nelson) {
+       nelson.addEventListener("click", function() {
+       document.getElementById("userbutton").click();
+       document.getElementById("diva").style.display ="none";
+       document.getElementById("diva1").style.display ="block";
+       });
+   }
+   
+   
+   var loadbtn = document.getElementById("loadbutton");
+   if (loadbtn) {
+       loadbtn.addEventListener("click", function () {
+       document.getElementById("userbutton").click();
+       document.getElementById("unloadbutton").disabled = true;
+       document.getElementById("drivingbutton").disabled = true;
+       document.getElementById("otherbutton").disabled = true;
+       document.getElementById("unloadbutton").style.backgroundColor = "#b4b5b8";
+       document.getElementById("unloadbutton").style.color = "#434445";
+       document.getElementById("drivingbutton").style.backgroundColor = "#b4b5b8";
+       document.getElementById("drivingbutton").style.color = "#434445";
+       document.getElementById("otherbutton").style.backgroundColor = "#b4b5b8";
+       document.getElementById("otherbutton").style.color = "#434445";
+       document.getElementById("comments").style.display ="block";
+       document.getElementById("submit-mbhydrohaulage").style.display ="block";
+       document.getElementById("testendtrip").style.display ="block";
+       document.getElementById("endtrip-mbhydrohaulage").style.display ="block";
+       document.getElementById("activitylabel").style.display ="none";
+       document.getElementById("cancelbuttondiv").style.display ="none";
+       });
+   }
+   
 	  
    $.fn.serializeObject = function() {
         var o = {};
@@ -50,11 +81,30 @@
         return o;
       };
    
-   
-   var $form = $('form#timelogreview'),
-            url1 = 'https://script.google.com/macros/s/AKfycbzhQ5nTA44A6P8GEi-OrFDG951iyaD1PSP0HMeZbOfb5gEV6f0/exec',
+   var $form = $('form#mbhydrohaulage'),
+            url = 'https://script.google.com/macros/s/AKfycbxnq6pZi9vVVgaTz8y4g9Z9X8LtN1koPmeWw3Aizj-NXB2gGpw/exec',
 
-            $submit = $('#review-mbhydrohaulage').on('click', function(j) {
+            $submit = $('#submit-mbhydrohaulage').on('click', function(i) {
+              i.preventDefault();
+              var jqxhr = $.ajax({
+                url: url,
+                method: "GET",
+                dataType: "json",
+                data: $form.serializeObject()
+              }).done(
+                // do something
+              );
+              $('#comments').val("");
+	      $('#loadstart').val("");
+              $('#unloadstart').val("");
+	      $('#otherstart').val("");
+	      $('#drivingstart').val("");
+            })
+
+   var $form = $('form#mbhydrohaulage'),
+            url1 = 'https://script.google.com/macros/s/AKfycbxnq6pZi9vVVgaTz8y4g9Z9X8LtN1koPmeWw3Aizj-NXB2gGpw/exec',
+
+            $submit = $('#endtrip-mbhydrohaulage').on('click', function(j) {
               j.preventDefault();
               var jqxhr = $.ajax({
                 url: url1,
@@ -65,7 +115,7 @@
                 // do something
               );
 	       //submit without resetting the form
-              $('#timelogreview')[0].reset();
+              $('#mbhydrohaulage')[0].reset();
             })
 
    
@@ -91,15 +141,61 @@
 
 <body>
 
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ8ULmvIPkNrOnXxh8L0fIXcTzOt906g1tncsQvHaoL4RLJk7YHxRltbyRLqBFQRMEvHYW_ntA7yz2R/pubhtml?gid=402125563&single=true" width=40% height="45%" scrolling="no" frameborder="0" style="float:left"></iframe>
+<center>
 
-<form id="timelogreview" method="POST" style="display:inline-block;margin-left:35px;">
-<textarea id="comment1" name="comment1" style="font-size:23px;" rows="2" cols="30" placeholder="Comments:"></textarea><br>
-<textarea id="comment2" name="comment2" style="font-size:23px;" rows="2" cols="30" placeholder="Comments:"></textarea><br>
-<textarea id="comment3" name="comment3" style="font-size:23px;" rows="2" cols="30" placeholder="Comments:"></textarea><br>
-<textarea id="comment4" name="comment4" style="font-size:23px;" rows="2" cols="30" placeholder="Comments:"></textarea><br>
-<textarea id="comment5" name="comment5" style="font-size:23px;" rows="2" cols="30" placeholder="Comments:"></textarea><br><br>
-<button class="submitbutton widthbutton" id="review-mbhydrohaulage" type="submit" style="font-size:17px;">Submit</button>
+<form id="mbhydrohaulage" method="POST">
+	<div id="diva" class="a">
+	<input type="button" id="nelsonperry" class="activitybutton" value="Nelson Perry">
+	</div>
+	
+<div id="diva1" style="display:none" class="a">
+<tr>
+    <th>User's Name</th>
+    <th>Activity</th>
+    <th>Comments</th>
+    <th>Trip Description</th>
+  </tr>
+  <tr>
+    <td><textarea id="username1" name="username1" style="font-size:23px;" rows="3" cols="24" ></textarea></td>
+    <td><textarea id="activity1" name="activity1" style="font-size:23px;" rows="3" cols="24" ></textarea></td>
+    <td><textarea id="comments1" name="comments1" style="font-size:23px;" rows="3" cols="24" ></textarea></td>
+    <td><textarea id="tripdescription1" name="tripdescription1" style="font-size:23px;" rows="3" cols="24" ></textarea></td>
+  </tr>
+  <tr>
+    <td><textarea id="username1" name="username1" style="font-size:23px;" rows="3" cols="24" ></textarea></td>
+    <td><textarea id="activity1" name="activity1" style="font-size:23px;" rows="3" cols="24" ></textarea></td>
+    <td><textarea id="comments1" name="comments1" style="font-size:23px;" rows="3" cols="24" ></textarea></td>
+    <td><textarea id="tripdescription1" name="tripdescription1" style="font-size:23px;" rows="3" cols="24" ></textarea></td>
+  </tr>
+  <tr>
+    <td><textarea id="username1" name="username1" style="font-size:23px;" rows="3" cols="24" ></textarea></td>
+    <td><textarea id="activity1" name="activity1" style="font-size:23px;" rows="3" cols="24" ></textarea></td>
+    <td><textarea id="comments1" name="comments1" style="font-size:23px;" rows="3" cols="24" ></textarea></td>
+    <td><textarea id="tripdescription1" name="tripdescription1" style="font-size:23px;" rows="3" cols="24" ></textarea></td>
+  </tr>
+  <tr>
+   <td><textarea id="username1" name="username1" style="font-size:23px;" rows="3" cols="24" ></textarea></td>
+    <td><textarea id="activity1" name="activity1" style="font-size:23px;" rows="3" cols="24" ></textarea></td>
+    <td><textarea id="comments1" name="comments1" style="font-size:23px;" rows="3" cols="24" ></textarea></td>
+    <td><textarea id="tripdescription1" name="tripdescription1" style="font-size:23px;" rows="3" cols="24" ></textarea></td>
+  </tr>
+  <tr>
+    <td><textarea id="username1" name="username1" style="font-size:23px;" rows="3" cols="24" ></textarea></td>
+    <td><textarea id="activity1" name="activity1" style="font-size:23px;" rows="3" cols="24" ></textarea></td>
+    <td><textarea id="comments1" name="comments1" style="font-size:23px;" rows="3" cols="24" ></textarea></td>
+    <td><textarea id="tripdescription1" name="tripdescription1" style="font-size:23px;" rows="3" cols="24" ></textarea></td>
+  </tr>
+	</div>
+	
+	<div class="e" style="margin-top:110px;display:none;" id="testendtrip" >
+	<button class="submitbutton widthbutton" id="endtrip-mbhydrohaulage" type="submit" style="font-size:17px;display:none;">End Trip</button>
+	</div>
+	
+       <input type="text" id="user" name="user" style="display:none">
+       <input id="userbutton" type="button" class="biggerbutton" value="User" style="font-size:23px;display:none;">
+       
+       
+
       </form> 
   
 
