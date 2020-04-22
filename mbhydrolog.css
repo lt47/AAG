@@ -53,17 +53,6 @@ div.e {
   margin-left:275px;
   text-align:center;
 } 
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  font-size: 1.1em;
-}
-td, th {
-  border: 1px solid #dddddd;
-  text-align: center;
-  padding: 8px;
-  font-size: 1.6em;
-}
 .modal { 
   position: fixed; 
   z-index: 1; 
@@ -366,7 +355,7 @@ padding: 15px 175px;
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  width: 600px;
 }
 
 td, th {
