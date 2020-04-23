@@ -1,0 +1,2231 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="https://lt47.github.io/AAG/mbhydrolog.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+<script>
+      (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-56318310-1', 'auto');
+      ga('send', 'pageview');
+
+</script>
+<base target="_top" />
+
+<script>
+  geotab.addin.timelog = function (api,state){
+   // Initialize required Add-In variables
+   var userbtn = document.getElementById("userbutton");
+   if (userbtn) {
+       userbtn.addEventListener("click", function () {
+       document.getElementById("user").value = state.device.id;
+       });
+   }
+   
+   var nelson = document.getElementById("nelsonperry");
+   if (nelson) {
+       nelson.addEventListener("click", function() {
+       document.getElementById("userbutton").click();
+       document.getElementById("diva").style.display ="none";
+       document.getElementById("diva1").style.display ="block";
+       });
+   }
+   
+   
+   var loadbtn = document.getElementById("loadbutton");
+   if (loadbtn) {
+       loadbtn.addEventListener("click", function () {
+       document.getElementById("userbutton").click();
+       document.getElementById("unloadbutton").disabled = true;
+       document.getElementById("drivingbutton").disabled = true;
+       document.getElementById("otherbutton").disabled = true;
+       document.getElementById("unloadbutton").style.backgroundColor = "#b4b5b8";
+       document.getElementById("unloadbutton").style.color = "#434445";
+       document.getElementById("drivingbutton").style.backgroundColor = "#b4b5b8";
+       document.getElementById("drivingbutton").style.color = "#434445";
+       document.getElementById("otherbutton").style.backgroundColor = "#b4b5b8";
+       document.getElementById("otherbutton").style.color = "#434445";
+       document.getElementById("comments").style.display ="block";
+       document.getElementById("submit-mbhydrohaulage").style.display ="block";
+       document.getElementById("testendtrip").style.display ="block";
+       document.getElementById("endtrip-mbhydrohaulage").style.display ="block";
+       document.getElementById("activitylabel").style.display ="none";
+       document.getElementById("cancelbuttondiv").style.display ="none";
+       });
+   }
+  
+  
+$(document).ready(function() {
+setTimeout(function update_dataentry() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('username').innerHTML = JSON.stringify(text);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry1() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('activity').innerHTML = JSON.stringify(text1);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry2() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('comments').innerHTML = JSON.stringify(text2);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry3() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('tripdescription').innerHTML = JSON.stringify(text3);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry4() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('username1').innerHTML = JSON.stringify(text4);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry5() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('activity1').innerHTML = JSON.stringify(text5);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry6() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('comments1').innerHTML = JSON.stringify(text6);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry7() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('tripdescription1').innerHTML = JSON.stringify(text7);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry8() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('username2').innerHTML = JSON.stringify(text8);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry9() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('activity2').innerHTML = JSON.stringify(text9);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry10() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('comments2').innerHTML = JSON.stringify(text10);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry11() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('tripdescription2').innerHTML = JSON.stringify(text11);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry12() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('username3').innerHTML = JSON.stringify(text12);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry13() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('activity3').innerHTML = JSON.stringify(text13);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry14() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('comments3').innerHTML = JSON.stringify(text14);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry15() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('tripdescription3').innerHTML = JSON.stringify(text15);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry16() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('username4').innerHTML = JSON.stringify(text16);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry17() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('activity4').innerHTML = JSON.stringify(text17);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry18() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('comments4').innerHTML = JSON.stringify(text18);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry19() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('tripdescription4').innerHTML = JSON.stringify(text19);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry20() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('username5').innerHTML = JSON.stringify(text20);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry21() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('activity5').innerHTML = JSON.stringify(text21);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry22() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('comments5').innerHTML = JSON.stringify(text22);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('tripdescription5').innerHTML = JSON.stringify(text23);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry24() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('username6').innerHTML = JSON.stringify(text24);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry25() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('activity6').innerHTML = JSON.stringify(text25);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry26() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('comments6').innerHTML = JSON.stringify(text26);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry27() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('tripdescription6').innerHTML = JSON.stringify(text27);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry28() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('username7').innerHTML = JSON.stringify(text28);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry29() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('activity7').innerHTML = JSON.stringify(text29);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry30() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('comments7').innerHTML = JSON.stringify(text30);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry31() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('tripdescription7').innerHTML = JSON.stringify(text31);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry32() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('username8').innerHTML = JSON.stringify(text32);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry33() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('activity8').innerHTML = JSON.stringify(text33);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry34() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('comments8').innerHTML = JSON.stringify(text34);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry35() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('tripdescription8').innerHTML = JSON.stringify(text35);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry36() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('username9').innerHTML = JSON.stringify(text36);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry37() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('activity9').innerHTML = JSON.stringify(text37);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry38() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('comments9').innerHTML = JSON.stringify(text38);
+ }); 
+ return false;
+ }, 2000);
+});
+
+
+
+$(document).ready(function() {
+setTimeout(function update_dataentry39() {$.getJSON( "https://www.fort-seven.com/mbhydro/nelsontimelogreview.json", function(data) {
+ var text = data.slice(-1)[0].username;
+ var text1 = data.slice(-1)[0].activity;
+ var text2 = data.slice(-1)[0].comments;
+ var text3 = data.slice(-1)[0].tripdescription;
+ var text4 = data.slice(-1)[0].username1;
+ var text5 = data.slice(-1)[0].activity1;
+ var text6 = data.slice(-1)[0].comments1;
+ var text7 = data.slice(-1)[0].tripdescription1;
+ var text8 = data.slice(-1)[0].username2;
+ var text9 = data.slice(-1)[0].activity2;
+ var text10 = data.slice(-1)[0].comments2;
+ var text11 = data.slice(-1)[0].tripdescription2;
+ var text12 = data.slice(-1)[0].username3;
+ var text13 = data.slice(-1)[0].activity3;
+ var text14 = data.slice(-1)[0].comments3;
+ var text15 = data.slice(-1)[0].tripdescription3;
+ var text16 = data.slice(-1)[0].username4;
+ var text17 = data.slice(-1)[0].activity4;
+ var text18 = data.slice(-1)[0].comments4;
+ var text19 = data.slice(-1)[0].tripdescription4;
+ var text20 = data.slice(-1)[0].username5;
+ var text21 = data.slice(-1)[0].activity5;
+ var text22 = data.slice(-1)[0].comments5;
+ var text23 = data.slice(-1)[0].tripdescription5;
+ var text24 = data.slice(-1)[0].username6;
+ var text25 = data.slice(-1)[0].activity6;
+ var text26 = data.slice(-1)[0].comments6;
+ var text27 = data.slice(-1)[0].tripdescription6;
+ var text28 = data.slice(-1)[0].username7;
+ var text29 = data.slice(-1)[0].activity7;
+ var text30 = data.slice(-1)[0].comments7;
+ var text31 = data.slice(-1)[0].tripdescription7;
+ var text32 = data.slice(-1)[0].username8;
+ var text33 = data.slice(-1)[0].activity8;
+ var text34 = data.slice(-1)[0].comments8;
+ var text35 = data.slice(-1)[0].tripdescription8;
+ var text36 = data.slice(-1)[0].username9;
+ var text37 = data.slice(-1)[0].activity9;
+ var text38 = data.slice(-1)[0].comments9;
+ var text39 = data.slice(-1)[0].tripdescription9;
+  document.getElementById('tripdescription9').innerHTML = JSON.stringify(text39);
+ }); 
+ return false;
+ }, 2000);
+});
+  
+	  
+	  
+   $.fn.serializeObject = function() {
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function() {
+          if (o[this.name]) {
+            if (!o[this.name].push) {
+              o[this.name] = [o[this.name]];
+            }
+            o[this.name].push(this.value || '');
+          } else {
+            o[this.name] = this.value || '';
+          }
+        });
+        return o;
+      };
+   
+   var $form = $('form#mbhydrohaulage'),
+            url = 'https://script.google.com/macros/s/AKfycbxnq6pZi9vVVgaTz8y4g9Z9X8LtN1koPmeWw3Aizj-NXB2gGpw/exec',
+
+            $submit = $('#submit-mbhydrohaulage').on('click', function(i) {
+              i.preventDefault();
+              var jqxhr = $.ajax({
+                url: url,
+                method: "GET",
+                dataType: "json",
+                data: $form.serializeObject()
+              }).done(
+                // do something
+              );
+              $('#comments').val("");
+	      $('#loadstart').val("");
+              $('#unloadstart').val("");
+	      $('#otherstart').val("");
+	      $('#drivingstart').val("");
+            })
+
+   var $form = $('form#mbhydrohaulage'),
+            url1 = 'https://script.google.com/macros/s/AKfycbxnq6pZi9vVVgaTz8y4g9Z9X8LtN1koPmeWw3Aizj-NXB2gGpw/exec',
+
+            $submit = $('#endtrip-mbhydrohaulage').on('click', function(j) {
+              j.preventDefault();
+              var jqxhr = $.ajax({
+                url: url1,
+                method: "GET",
+                dataType: "json",
+                data: $form.serializeObject()
+              }).done(
+                // do something
+              );
+	       //submit without resetting the form
+              $('#mbhydrohaulage')[0].reset();
+            })
+
+   
+   
+   
+   
+   return {
+    initialize(api, state, callback) {
+     callback();
+    },
+    focus(api, state) {
+     // User interface is available
+    },
+    blur(api, state) {
+     // Save any Add-In state
+    }
+   };
+  };
+ </script>
+
+ 
+</head>
+
+<body>
+
+<center>
+
+<form id="mbhydrohaulage" method="POST">
+	
+<div id="diva1">
+<table>
+  <tr>
+    <th>Username</th>
+    <th>Activity</th>
+    <th>Comments</th>
+    <th>Trip Description</th>
+  </tr>
+  <tr>
+    <td><textarea id="username1" name="username1" style="font-size:23px;" rows="3" cols="12" disabled></textarea></td>
+    <td><textarea id="activity1" name="activity1" style="font-size:23px;" rows="3" cols="12" ></textarea></td>
+    <td><textarea id="comments1" name="comments1" style="font-size:23px;" rows="3" cols="20" ></textarea></td>
+    <td><textarea id="tripdescription1" name="tripdescription1" style="font-size:23px;" rows="3" cols="20" ></textarea></td>
+  </tr>
+  <tr>
+    <td><textarea id="username2" name="username2" style="font-size:23px;" rows="3" cols="12" disabled></textarea></td>
+    <td><textarea id="activity2" name="activity2" style="font-size:23px;" rows="3" cols="12" ></textarea></td>
+    <td><textarea id="comments2" name="comments2" style="font-size:23px;" rows="3" cols="20" ></textarea></td>
+    <td><textarea id="tripdescription2" name="tripdescription2" style="font-size:23px;" rows="3" cols="20" ></textarea></td>
+  </tr>
+  <tr>
+    <td><textarea id="username3" name="username3" style="font-size:23px;" rows="3" cols="12" disabled></textarea></td>
+    <td><textarea id="activity3" name="activity3" style="font-size:23px;" rows="3" cols="12" ></textarea></td>
+    <td><textarea id="comments3" name="comments3" style="font-size:23px;" rows="3" cols="20" ></textarea></td>
+    <td><textarea id="tripdescription3" name="tripdescription3" style="font-size:23px;" rows="3" cols="20" ></textarea></td>
+  </tr><br>
+  <tr>
+   <td><textarea id="username4" name="username4" style="font-size:23px;" rows="3" cols="12" disabled></textarea></td>
+    <td><textarea id="activity4" name="activity4" style="font-size:23px;" rows="3" cols="12" ></textarea></td>
+    <td><textarea id="comments4" name="comments4" style="font-size:23px;" rows="3" cols="20" ></textarea></td>
+    <td><textarea id="tripdescription4" name="tripdescription4" style="font-size:23px;" rows="3" cols="20" ></textarea></td>
+  </tr>
+  <tr>
+    <td><textarea id="username5" name="username5" style="font-size:23px;" rows="3" cols="12" disabled></textarea></td>
+    <td><textarea id="activity5" name="activity5" style="font-size:23px;" rows="3" cols="12" ></textarea></td>
+    <td><textarea id="comments5" name="comments5" style="font-size:23px;" rows="3" cols="20" ></textarea></td>
+    <td><textarea id="tripdescription5" name="tripdescription5" style="font-size:23px;" rows="3" cols="20" ></textarea></td>
+	</tr>
+   <tr>
+    <td><textarea id="username6" name="username6" style="font-size:23px;" rows="3" cols="12" disabled></textarea></td>
+    <td><textarea id="activity6" name="activity6" style="font-size:23px;" rows="3" cols="12" ></textarea></td>
+    <td><textarea id="comments6" name="comments6" style="font-size:23px;" rows="3" cols="20" ></textarea></td>
+    <td><textarea id="tripdescription6" name="tripdescription6" style="font-size:23px;" rows="3" cols="20" ></textarea></td>
+	</tr>
+    <tr>
+    <td><textarea id="username7" name="username7" style="font-size:23px;" rows="3" cols="12" disabled></textarea></td>
+    <td><textarea id="activity7" name="activity7" style="font-size:23px;" rows="3" cols="12" ></textarea></td>
+    <td><textarea id="comments7" name="comments7" style="font-size:23px;" rows="3" cols="20" ></textarea></td>
+    <td><textarea id="tripdescription7" name="tripdescription7" style="font-size:23px;" rows="3" cols="20" ></textarea></td>
+	</tr>
+    <tr>
+    <td><textarea id="username8" name="username8" style="font-size:23px;" rows="3" cols="12" disabled></textarea></td>
+    <td><textarea id="activity8" name="activity8" style="font-size:23px;" rows="3" cols="12" ></textarea></td>
+    <td><textarea id="comments8" name="comments8" style="font-size:23px;" rows="3" cols="20" ></textarea></td>
+    <td><textarea id="tripdescription8" name="tripdescription8" style="font-size:23px;" rows="3" cols="20" ></textarea></td>
+	</tr>
+    <tr>
+    <td><textarea id="username9" name="username9" style="font-size:23px;" rows="3" cols="12" disabled></textarea></td>
+    <td><textarea id="activity9" name="activity9" style="font-size:23px;" rows="3" cols="12" ></textarea></td>
+    <td><textarea id="comments9" name="comments9" style="font-size:23px;" rows="3" cols="20" ></textarea></td>
+    <td><textarea id="tripdescription9" name="tripdescription9" style="font-size:23px;" rows="3" cols="20" ></textarea></td>
+	</tr>
+   <tr>
+    <td><textarea id="username10" name="username10" style="font-size:23px;" rows="3" cols="12" disabled></textarea></td>
+    <td><textarea id="activity10" name="activity10" style="font-size:23px;" rows="3" cols="12" ></textarea></td>
+    <td><textarea id="comments10" name="comments10" style="font-size:23px;" rows="3" cols="20" ></textarea></td>
+    <td><textarea id="tripdescription10" name="tripdescription10" style="font-size:23px;" rows="3" cols="20" ></textarea></td>
+	</tr>
+	</table><br>
+	<button class="submitbutton widthbutton" id="endtrip-mbhydrohaulage" type="submit" style="font-size:17px;">Submit</button>
+	</div>
+	
+       <input type="text" id="user" name="user" style="display:none">
+       <input id="userbutton" type="button" class="biggerbutton" value="User" style="font-size:23px;display:none;">
+       
+       
+
+      </form> 
+  
+
+
+</body>
+
+</html>
